@@ -19,7 +19,7 @@
 <li><a href="#parse-user-input">Parse user input</a></li>
 </ul>
 </li>
-<li><a href="#add-code-remark-code-to-the-addressmodel">Add <code>Remark</code> to the addressModel</a>
+<li><a href="#add-code-remark-code-to-the-model">Add <code>Remark</code> to the model</a>
 <ul class="sectlevel2">
 <li><a href="#add-a-new-code-remark-code-class">Add a new <code>Remark</code> class</a></li>
 <li><a href="#make-use-of-code-remark-code">Make use of <code>Remark</code></a></li>
@@ -85,7 +85,7 @@ We accomplish that by returning a <code>CommandResult</code> with an accompanyin
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">seedu.address.logic.commands</span>;
 
-<span class="keyword">import</span> <span class="include">seedu.address.addressModel.Model</span>;
+<span class="keyword">import</span> <span class="include">seedu.address.model.Model</span>;
 
 <span class="comment">/**
  * Changes the remark of an existing person in the address book.
@@ -95,7 +95,7 @@ We accomplish that by returning a <code>CommandResult</code> with an accompanyin
     <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> COMMAND_WORD = <span class="string"><span class="delimiter">&quot;</span><span class="content">remark</span><span class="delimiter">&quot;</span></span>;
 
     <span class="annotation">@Override</span>
-    <span class="directive">public</span> CommandResult execute(Model addressModel) {
+    <span class="directive">public</span> CommandResult execute(Model model) {
         <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="string"><span class="delimiter">&quot;</span><span class="content">Hello from remark</span><span class="delimiter">&quot;</span></span>);
     }
 }</code></pre>
@@ -156,7 +156,7 @@ Let&#8217;s change the command to throw an <code>CommandException</code> to accu
     <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> MESSAGE_NOT_IMPLEMENTED_YET = <span class="string"><span class="delimiter">&quot;</span><span class="content">Remark command not implemented yet</span><span class="delimiter">&quot;</span></span>;
 
     <span class="annotation">@Override</span>
-    <span class="directive">public</span> CommandResult execute(Model addressModel) <span class="directive">throws</span> CommandException {
+    <span class="directive">public</span> CommandResult execute(Model model) <span class="directive">throws</span> CommandException {
         <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_NOT_IMPLEMENTED_YET);
     }</code></pre>
 </div>
@@ -198,7 +198,7 @@ While this is not a replacement for tests, it is an obvious way to tell if our c
         <span class="local-variable">this</span>.remark = remark;
     }
     <span class="annotation">@Override</span>
-    <span class="directive">public</span> CommandResult execute(Model addressModel) <span class="directive">throws</span> CommandException {
+    <span class="directive">public</span> CommandResult execute(Model model) <span class="directive">throws</span> CommandException {
         <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(<span class="predefined-type">String</span>.format(MESSAGE_ARGUMENTS, index.getOneBased(), remark));
     }
 
@@ -337,18 +337,18 @@ Don&#8217;t forget to update <code>AddressBookParser</code> to use our new <code
 </div>
 </div>
 <div class="sect1">
-<h2 id="add-code-remark-code-to-the-addressmodel"><a class="link" href="#add-code-remark-code-to-the-addressmodel">Add <code>Remark</code> to the addressModel</a></h2>
+<h2 id="add-code-remark-code-to-the-model"><a class="link" href="#add-code-remark-code-to-the-model">Add <code>Remark</code> to the model</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Now that we have all the information that we need, let&#8217;s lay the groundwork for some <em>persistent</em> changes.
-We achieve that by working with the <code>Person</code> addressModel.
+We achieve that by working with the <code>Person</code> model.
 Each field in a Person is implemented as a separate class (e.g. a <code>Name</code> object represents the person&#8217;s name).
 That means we should add a <code>Remark</code> class so that we can use a <code>Remark</code> object to represent a remark given to a person.</p>
 </div>
 <div class="sect2">
 <h3 id="add-a-new-code-remark-code-class"><a class="link" href="#add-a-new-code-remark-code-class">Add a new <code>Remark</code> class</a></h3>
 <div class="paragraph">
-<p>Create a new <code>Remark</code> in <code>seedu.address.addressModel.person</code>. Since a <code>Remark</code> is a field that is similar to <code>Address</code>, we can reuse a significant bit of code.</p>
+<p>Create a new <code>Remark</code> in <code>seedu.address.model.person</code>. Since a <code>Remark</code> is a field that is similar to <code>Address</code>, we can reuse a significant bit of code.</p>
 </div>
 <div class="paragraph">
 <p>A copy-paste and search-replace later, you should have something like <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/b7a47c50c8e5f0430d343a23d2863446b6ce9298#diff-af2f075d24dfcd333876f0fbce321f25">this</a>.
@@ -518,8 +518,8 @@ Since all fields in a <code>Person</code> are immutable, we create a new instanc
     <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> MESSAGE_DELETE_REMARK_SUCCESS = <span class="string"><span class="delimiter">&quot;</span><span class="content">Removed remark from Person: %1$s</span><span class="delimiter">&quot;</span></span>;
 <span class="comment">//...</span>
     <span class="annotation">@Override</span>
-    <span class="directive">public</span> CommandResult execute(Model addressModel) <span class="directive">throws</span> CommandException {
-        <span class="predefined-type">List</span>&lt;Person&gt; lastShownList = addressModel.getFilteredPersonList();
+    <span class="directive">public</span> CommandResult execute(Model model) <span class="directive">throws</span> CommandException {
+        <span class="predefined-type">List</span>&lt;Person&gt; lastShownList = model.getFilteredPersonList();
 
         <span class="keyword">if</span> (index.getZeroBased() &gt;= lastShownList.size()) {
             <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
@@ -529,8 +529,8 @@ Since all fields in a <code>Person</code> are immutable, we create a new instanc
         Person editedPerson = <span class="keyword">new</span> Person(personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
                 personToEdit.getAddress(), remark, personToEdit.getTags());
 
-        addressModel.setPerson(personToEdit, editedPerson);
-        addressModel.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        model.setPerson(personToEdit, editedPerson);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
         <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(generateSuccessMessage(editedPerson));
     }
@@ -616,4 +616,4 @@ In this case, <code>CommandTestUtil#assertCommandSuccess</code> is the best fit 
 <p>This concludes the tutorial for adding a new <code>Command</code> to AddressBook.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-24 07:43:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-26 07:53:30 UTC</div></div></div></body></html>
