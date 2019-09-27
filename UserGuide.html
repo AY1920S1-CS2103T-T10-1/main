@@ -1,366 +1,978 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Jarvis - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jarvis - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team T10-1</code>      Since: <code>Sep 2019</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle"></div>
+<ul class="sectlevel0">
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#features">Features</a>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a></li>
-<li><a href="#Features">3. Features</a>
-<ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.9. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#command-format">1. Command Format</a></li>
+<li><a href="#task-scheduler">2. Task Scheduler</a>
+<ul class="sectlevel3">
+<li><a href="#list-all-tasks-code-list-code">2.1. List all tasks: <code>list</code></a></li>
+<li><a href="#adding-a-task-code-add-code">2.2. Adding a task: <code>add</code></a></li>
+<li><a href="#deleting-a-task-code-delete-code">2.3. Deleting a task: <code>delete</code></a></li>
+<li><a href="#finding-a-task-code-find-code">2.4. Finding a task: <code>find</code></a></li>
+<li><a href="#editing-a-task-code-edit-code">2.5. Editing a task: <code>edit</code></a></li>
+<li><a href="#tagging-a-task-code-tag-code">2.6. Tagging a task: <code>#tag</code></a></li>
+<li><a href="#updating-a-task-s-status-code-done-code">2.7. Updating a task&#8217;s status: <code>done</code></a></li>
+<li><a href="#clearing-entries-code-clear-code">2.8. Clearing entries: <code>clear</code></a></li>
+<li><a href="#retrieving-statistics-code-stats-code">2.9. Retrieving statistics: <code>stats</code></a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
+<li><a href="#finance-tracker">3. Finance Tracker</a>
+<ul class="sectlevel3">
+<li><a href="#add-a-single-use-payment-code-pay-code">3.1. Add a single-use payment: <code>pay</code></a></li>
+<li><a href="#delete-a-payment-code-pay-delete-code">3.2. Delete a payment: <code>pay delete</code></a></li>
+<li><a href="#setting-instalments-code-instal-set-code">3.3. Setting Instalments: <code>instal set</code></a></li>
+<li><a href="#edit-instalments-code-instal-edit-code">3.4. Edit Instalments: <code>instal edit</code></a></li>
+<li><a href="#delete-instalments-code-instal-delete-code">3.5. Delete Instalments: <code>instal delete</code></a></li>
+<li><a href="#listing-instalments-code-instal-list-code">3.6. Listing Instalments: <code>instal list</code></a></li>
+<li><a href="#listing-expenditures-code-expenses-list-code">3.7. Listing Expenditures: <code>expenses list</code></a></li>
+<li><a href="#setting-monthly-limit-code-set-monthly-code">3.8. Setting Monthly Limit: <code>set monthly</code></a></li>
+<li><a href="#compare-expenditure-between-two-months-code-compare-code">3.9. Compare Expenditure between Two Months: <code>compare</code></a></li>
+<li><a href="#estimating-remaining-budget-code-est-code">3.10. Estimating Remaining Budget: <code>est</code></a></li>
+<li><a href="#adding-owed-amounts-code-owe-code-code-debt-code">3.11. Adding owed amounts: <code>owe</code> &amp; <code>debt</code></a></li>
+<li><a href="#splitting-a-tab-code-tab-code">3.12. Splitting a Tab: <code>tab</code></a></li>
+<li><a href="#mark-a-debt-as-paid-code-paid-debt-code">3.13. Mark a debt as paid: <code>paid debt</code></a></li>
+<li><a href="#listing-debts">3.14. Listing Debts</a></li>
+<li><a href="#loans-code-set-loans-code">3.15. Loans: <code>set loans</code></a></li>
+<li><a href="#export-to-file-code-export-code">3.16. Export to File: <code>export</code></a></li>
+<li><a href="#track-income-code-income-code">3.17. Track Income: <code>income</code></a></li>
+<li><a href="#display-as-graph-code-graph-code">3.18. Display as Graph: <code>graph</code></a></li>
+</ul>
+</li>
+<li><a href="#course-lookup">4. Course Lookup</a>
+<ul class="sectlevel3">
+<li><a href="#add-a-course-code-add-code">4.1. Add a course: <code>add</code></a></li>
+<li><a href="#delete-a-course-code-delete-code">4.2. Delete a course: <code>delete</code></a></li>
+<li><a href="#lookup-a-course-s-information-code-lookup-code">4.3. Lookup a course&#8217;s information: <code>lookup</code></a></li>
+<li><a href="#check-a-course-code-check-code">4.4. Check a course: <code>check</code></a></li>
+<li><a href="#calculate-cap-code-cap-code">4.5. Calculate CAP: <code>cap</code></a></li>
+<li><a href="#check-nus-focus-areas-code-focus-code">4.6. Check NUS focus-areas: <code>focus</code></a></li>
+</ul>
+</li>
+<li><a href="#app-history">5. App History</a>
+<ul class="sectlevel3">
+<li><a href="#undo">5.1. undo</a></li>
+<li><a href="#redo">5.2. redo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#command-summary">Command Summary</a>
+<ul class="sectlevel2">
+<li><a href="#task-scheduler-2">1.1. Task Scheduler</a></li>
+<li><a href="#finance-tracker-2">1.2. Finance Tracker</a></li>
+<li><a href="#course-lookup-2">1.3. Course Lookup</a></li>
+<li><a href="#app-history-2">1.4. App History</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
-<div class="sectionbody">
+<h1 id="introduction" class="sect0"><a class="link" href="#introduction">Introduction</a></h1>
 <div class="paragraph">
-<p>AddressBook Level 3 (AB3) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB3 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>First paragraph changes font.</p>
 </div>
+<div class="paragraph">
+<p>Ensure you have <a href="https://www.java.com/en/download/">Java 11</a> or above installed
+on your PC.</p>
 </div>
+<div class="paragraph">
+<p>Jarvis is your personal student assistant. He is able to manage your schoolwork
+and finances. Jarvis offers three main features to bolster your productivity,
+a:</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Schedule Planner</strong></p>
+</li>
+<li>
+<p><strong>Finance Planner</strong></p>
+</li>
+<li>
+<p><strong>Module Planner</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Jarvis allows you to track calendar events, keep an eye on your expenses and
+many more features as listed below.</p>
+</div>
+<div class="paragraph">
+<p>Jarvis also supports undo and redo functionality, allowing you easily
+undo and redo any mistakes in the application.</p>
+</div>
+<h1 id="quick-start" class="sect0"><a class="link" href="#quick-start">Quick Start</a></h1>
+<div class="paragraph">
+<p>Ensure you have <a href="https://www.java.com/en/download/">Java 11</a> or above installed
+on your PC.</p>
+</div>
+<div class="paragraph">
+<p>Download the latest <code>Jarvis</code> <a href="https://www.google.com/">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>Copy the downloaded file to the folder that you would like to use as the
+home folder for <code>Jarvis</code>.</p>
+</div>
+<div class="paragraph">
+<p>Double-click <code>jarvis.jar</code> to start the app. The GUI will appear in a few
+seconds.</p>
+</div>
+<h1 id="features" class="sect0"><a class="link" href="#features">Features</a></h1>
 <div class="sect1">
-<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
+<h2 id="command-format"><a class="link" href="#command-format">1. Command Format</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
-</li>
-<li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
-</li>
-<li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
-</li>
-<li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<p>Words in <code>UPPER CASE</code> are the parameters supplied by the user, while those in <code>lower case</code> are <strong>key-words</strong> used by the program.</p>
+<div class="paragraph">
+<p>For example:</p>
 </div>
+<div class="paragraph">
+<p><code>add t/TASK-TYPE/TASK-DESCRIPTION</code></p>
+</div>
+<div class="paragraph">
+<p>In this case, <code>TASK-TYPE</code> and <code>TASK-DESCRIPTION</code>. and <code>add</code> is a key-word.</p>
 </div>
 </li>
 <li>
-<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
-</li>
-<li>
-<p>Some example commands you can try:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
-</li>
-<li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
-</li>
-<li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
-</li>
-<li>
-<p><strong><code>exit</code></strong> : exits the app</p>
-</li>
-</ul>
+<p>Items in square brackets <code>[]</code> are option</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p><code>add t/TASK-TYPE/TASK-DESCRIPTION [d/DATE]</code></p>
+</div>
+<div class="paragraph">
+<p>Can be used as</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">THIS</dt>
+<dd>
+<p><code>t/todo/CS2103T Assignment d/12/03/2019</code></p>
+</dd>
+<dt class="hdlist1">OR</dt>
+<dd>
+<p><code>t/todo/CS2103T Assignment</code></p>
+</dd>
+</dl>
 </div>
 </li>
 <li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
+<p>Parameters with <code>&#8230;&#8203;</code> can be used a multiple times including zero times</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p><code>[#TAG]&#8230;&#8203;</code> can be used <code>#friend #family #food</code> etc</p>
+</div>
+</li>
+<li>
+<p>Jarvis can parse the commands in any order.</p>
+</li>
+<li>
+<p>Commands that can take different inputs are represented with a pipe <code>{|}</code>.</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p><code>delete {INDEX | t/TASK-DESCRIPTION}</code></p>
+</div>
+<div class="paragraph">
+<p>means you can use the command as <code>delete 2</code> or <code>delete t/Assignment</code></p>
+</div>
+</li>
+<li>
+<p><code>DATE</code></p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Coordinate date formatting amongst Scheduler and Finance Tracker
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
+<h2 id="task-scheduler"><a class="link" href="#task-scheduler">2. Task Scheduler</a></h2>
 <div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
+<div class="sect3">
+<h4 id="list-all-tasks-code-list-code"><a class="link" href="#list-all-tasks-code-list-code">2.1. List all tasks: <code>list</code></a></h4>
 <div class="paragraph">
-<p><strong>Command Format</strong></p>
+<p>Lists tasks in the planner based on the given <code>DATE</code> or <code>#TAG</code>(s).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list {d/DATE | #TAG&#8230;&#8203;}</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>list #food #science_club</code>
+<code>list d/10/06/2019</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-task-code-add-code"><a class="link" href="#adding-a-task-code-add-code">2.2. Adding a task: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds a task to the planner.</p>
+</div>
+<div class="paragraph">
+<p>A task must have a:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p><code>TASK-TYPE</code>: <code>todo</code>, <code>event</code> or <code>deadline</code></p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
-</li>
-<li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
-</li>
-<li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p><code>TASK-DESCRIPTION</code>: a short description of the task</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
-<div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-A person can have any number of tags (including 0)
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
+<p>A task <strong>can</strong> have a:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>DATE</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>TAG</code>: any number of tags, such as <code>#school</code> or <code>#cca</code></p>
+</li>
+<li>
+<p><code>PRIORITY</code> level: <code>high</code>, <code>medium</code> or <code>low</code></p>
+</li>
+<li>
+<p><code>FREQ</code> frequency: <code>daily</code>, <code>weekly</code>, <code>monthly</code> or <code>yearly</code></p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
-<div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>Format: <code>add t/TASK-TYPE/TASK-DESCRIPTION [d/DATE] [#TAG]&#8230;&#8203; [p/PRIORITY r/FREQ]</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
-</li>
-<li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
-</li>
-</ul>
+<p>Examples:<br>
+<code>add t/event/my birthday d/10/04/2017 r/yearly</code><br>
+<code>add t/deadline/cs2101 assignment d/20/09/2019 p/high</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></h3>
+<div class="sect3">
+<h4 id="deleting-a-task-code-delete-code"><a class="link" href="#deleting-a-task-code-delete-code">2.3. Deleting a task: <code>delete</code></a></h4>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
-</li>
-<li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
-</li>
-<li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
-</li>
-</ul>
-</div>
-</div>
+<p>Deletes a task from the planner.</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
-</li>
-<li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
-<div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed person list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
+<p>Format: <code>delete {INDEX | t/TASK-DESCRIPTION}</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>where <code>INDEX</code> is the <strong>one-based</strong> index of the task list.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>Examples:<br>
+<code>delete 3</code><br>
+<code>delete t/cs2101 assignment</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></h3>
+<div class="sect3">
+<h4 id="finding-a-task-code-find-code"><a class="link" href="#finding-a-task-code-find-code">2.4. Finding a task: <code>find</code></a></h4>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>Locates a task from a given <code>KEYWORD</code></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.9. Saving the data</a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
+<p>Format: <code>find KEYWORD</code></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Examples:<br>
+<code>find assignment</code><br>
+<code>find homework cs ma1101r</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-task-code-edit-code"><a class="link" href="#editing-a-task-code-edit-code">2.5. Editing a task: <code>edit</code></a></h4>
+<div class="paragraph">
+<p>Edits the task by <code>TASK-DESCRIPTION</code> or <code>INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>NEW-DESCRIPTION</code> can be a new task description or any of the characteristics
+used to create a task.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit {t/TASK-DESCRIPTION/NEW-DESCRIPTION | INDEX/NEW-DESCRIPTION}</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>edit t/project part 1/project part 2</code><br>
+<code>edit t/project part 1/project part2 d/18/09/2019</code><br>
+<code>edit 3/r/weekly</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tagging-a-task-code-tag-code"><a class="link" href="#tagging-a-task-code-tag-code">2.6. Tagging a task: <code>#tag</code></a></h4>
+<div class="paragraph">
+<p>Creates a tag. Tags can then be added to different tasks.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>create #TAG&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>create #work</code><br>
+<code>create #play</code><br>
+<code>create #study</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="updating-a-task-s-status-code-done-code"><a class="link" href="#updating-a-task-s-status-code-done-code">2.7. Updating a task&#8217;s status: <code>done</code></a></h4>
+<div class="paragraph">
+<p>Updates the status of a task. By default on an <code>add</code>, all tasks are marked
+as undone, represented by a <code>[✗]</code>. Upon finishing the task, the task will be
+represented with a <code>[✓]</code>.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>done INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clearing-entries-code-clear-code"><a class="link" href="#clearing-entries-code-clear-code">2.8. Clearing entries: <code>clear</code></a></h4>
+<div class="paragraph">
+<p>Clears tasks from the planner. Tasks can be cleared by <code>#TAG</code> or <code>d/DATE</code>.
+The command <code>clear</code> with no parameters succeeding it will result in all tasks
+being cleared.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>clear [#TAG]&#8230;&#8203; [d/DATE]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>clear #school</code><br>
+<code>clear d/12/09/2019</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="retrieving-statistics-code-stats-code"><a class="link" href="#retrieving-statistics-code-stats-code">2.9. Retrieving statistics: <code>stats</code></a></h4>
+<div class="paragraph">
+<p>Shows various statistics of the items in the app. This will include statistics
+such as the total number of tasks done, the total number of tasks left and
+blocks of free time.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>stats</code></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<h2 id="finance-tracker"><a class="link" href="#finance-tracker">3. Finance Tracker</a></h2>
 <div class="sectionbody">
+<div class="sect3">
+<h4 id="add-a-single-use-payment-code-pay-code"><a class="link" href="#add-a-single-use-payment-code-pay-code">3.1. Add a single-use payment: <code>pay</code></a></h4>
 <div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<p>Adds a single use payment to the finance tracker. The amount spent will be
+added to the current spending to keep track of the budget set by the user.</p>
+</div>
+<div class="paragraph">
+<p>Payments can be added either by a tag, or to a person.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>pay a/AMOUNT {#TAG | n/PERSON}</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>pay a/30 #food</code><br>
+<code>pay a/30 n/jessica</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-a-payment-code-pay-delete-code"><a class="link" href="#delete-a-payment-code-pay-delete-code">3.2. Delete a payment: <code>pay delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes payments in the list of payments tracked by Jarvis.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>pay delete INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>INDEX</code> is the <strong>one-based</strong> index of the payment list.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="setting-instalments-code-instal-set-code"><a class="link" href="#setting-instalments-code-instal-set-code">3.3. Setting Instalments: <code>instal set</code></a></h4>
+<div class="paragraph">
+<p>Sets instalments, such as a subscription to a service that is paid monthly.
+The amount is assumed to be deducted on the first of every month.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>instal set n/ITEM a/AMOUNT</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>instal set n/Spotify a/10</code><br>
+<code>instal set n/Netflix a/5</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-instalments-code-instal-edit-code"><a class="link" href="#edit-instalments-code-instal-edit-code">3.4. Edit Instalments: <code>instal edit</code></a></h4>
+<div class="paragraph">
+<p>Edits the instalments in the list of existing instalments.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>instal edit INDEX {n/ITEM | a/AMOUNT}</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>instal edit 1 a/10</code><br>
+<code>instal edit 2 n/Spotify-Family</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-instalments-code-instal-delete-code"><a class="link" href="#delete-instalments-code-instal-delete-code">3.5. Delete Instalments: <code>instal delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes instalments in the list of existing instalments</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>instal delete INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-instalments-code-instal-list-code"><a class="link" href="#listing-instalments-code-instal-list-code">3.6. Listing Instalments: <code>instal list</code></a></h4>
+<div class="paragraph">
+<p>Shows all instalments that the user has subscribed to.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>instal list</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-expenditures-code-expenses-list-code"><a class="link" href="#listing-expenditures-code-expenses-list-code">3.7. Listing Expenditures: <code>expenses list</code></a></h4>
+<div class="paragraph">
+<p>Shows all payments that the user has made this month.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>expenses list</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="setting-monthly-limit-code-set-monthly-code"><a class="link" href="#setting-monthly-limit-code-set-monthly-code">3.8. Setting Monthly Limit: <code>set monthly</code></a></h4>
+<div class="paragraph">
+<p>Sets a monthly budget limit. From the monthly limit, the program will
+automatically calculate your weekly and daily limit.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>set monthly a/AMOUNT</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>set monthly a/300</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="compare-expenditure-between-two-months-code-compare-code"><a class="link" href="#compare-expenditure-between-two-months-code-compare-code">3.9. Compare Expenditure between Two Months: <code>compare</code></a></h4>
+<div class="paragraph">
+<p>Shows a comparison of expenditure between the two given months.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>compare m/DATE m/DATE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>compare m/Jan2019 m/Feb2019</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="estimating-remaining-budget-code-est-code"><a class="link" href="#estimating-remaining-budget-code-est-code">3.10. Estimating Remaining Budget: <code>est</code></a></h4>
+<div class="paragraph">
+<p>Estimates the amount of money that can be spent for</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the current day</p>
+</li>
+<li>
+<p>the current month</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Format: <code>est {day | month}</code></p>
+</div>
+<div class="paragraph">
+<p>The amount shown takes the amount spent for the current day or month, and
+minuses it from the user&#8217;s monthly limit. If no monthly limit has been
+specified, the program will show:</p>
+</div>
+<div class="paragraph">
+<p><code>Oops, there does not seem to be a monthly limit.</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-owed-amounts-code-owe-code-code-debt-code"><a class="link" href="#adding-owed-amounts-code-owe-code-code-debt-code">3.11. Adding owed amounts: <code>owe</code> &amp; <code>debt</code></a></h4>
+<div class="paragraph">
+<p><code>owe</code>: saves a payment owed by someone else to the user.<br>
+<code>debt</code>: saves a payment owed by the user to someone else.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>owe n/PERSON a/AMOUNT</code> or <code>debt n/PERSON a/AMOUNT</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="splitting-a-tab-code-tab-code"><a class="link" href="#splitting-a-tab-code-tab-code">3.12. Splitting a Tab: <code>tab</code></a></h4>
+<div class="paragraph">
+<p>Divides and tracks a tab for a bill. All names are input to Jarvis will
+then have a separate tab</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>tab a/AMOUNT n/PERSON&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>tab a/20 n/Alice n/Bob n/Charlie</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mark-a-debt-as-paid-code-paid-debt-code"><a class="link" href="#mark-a-debt-as-paid-code-paid-debt-code">3.13. Mark a debt as paid: <code>paid debt</code></a></h4>
+<div class="paragraph">
+<p>Marks a payment owed by the user to someone else as paid. Payment is identified
+by its index in the list of debts. Once marked as paid, the corresponding
+amount will be added to spending amount. The debt will be removed form the
+list of debts and added t othe list of payments.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>paid debt INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>INDEX</code> is the <strong>one-based</strong> index of the payment list.</p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>paid tab 1</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-debts"><a class="link" href="#listing-debts">3.14. Listing Debts</a></h4>
+<div class="paragraph">
+<p>Shows all debts that user owes or is owed.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list debts</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="loans-code-set-loans-code"><a class="link" href="#loans-code-set-loans-code">3.15. Loans: <code>set loans</code></a></h4>
+<div class="paragraph">
+<p>Set loans with interest per annum.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>set loan a/TOTAL [i/INTEREST]</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>INTEREST</code> is in <code>% per annum</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>set loan a/10000 i/3.7</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-to-file-code-export-code"><a class="link" href="#export-to-file-code-export-code">3.16. Export to File: <code>export</code></a></h4>
+<div class="paragraph">
+<p>Export the current expenditure to a file, either as a <code>.txt</code>, <code>.csv</code>
+or <code>xlsx</code> format.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export {csv | txt | xlsx} f/FILENAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>export csv f/expenditures</code></p>
+</div>
+<div class="paragraph">
+<p>This will create a file called <code>expenditures.csv</code> in the current directory,
+containing all expenditures.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="track-income-code-income-code"><a class="link" href="#track-income-code-income-code">3.17. Track Income: <code>income</code></a></h4>
+<div class="paragraph">
+<p>Enables additional budgeting options when monthly income is specified.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>income a/AMOUNT</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>income a/3000</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="display-as-graph-code-graph-code"><a class="link" href="#display-as-graph-code-graph-code">3.18. Display as Graph: <code>graph</code></a></h4>
+<div class="paragraph">
+<p>Show detailed statistics about your expenditures.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>graph</code></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<h2 id="course-lookup"><a class="link" href="#course-lookup">4. Course Lookup</a></h2>
 <div class="sectionbody">
+<div class="sect3">
+<h4 id="add-a-course-code-add-code"><a class="link" href="#add-a-course-code-add-code">4.1. Add a course: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds the specified module to the user&#8217;s list. If the user does not
+specify any grade, the grade will be taken as to not exist.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add c/MODCODE [g/GRADE]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>add cs3230</code><br>
+<code>add ab1234 A+</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-a-course-code-delete-code"><a class="link" href="#delete-a-course-code-delete-code">4.2. Delete a course: <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes the specified course from the user&#8217;s list. If no such course exists,
+a warning is thrown.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete c/MODCODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>delete cs3230</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="lookup-a-course-s-information-code-lookup-code"><a class="link" href="#lookup-a-course-s-information-code-lookup-code">4.3. Lookup a course&#8217;s information: <code>lookup</code></a></h4>
+<div class="paragraph">
+<p>Retrieves information about the specified course - such as name, course code,
+number of credits and its prerequisites.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>lookup c/MODCODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>lookup cs3230</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="check-a-course-code-check-code"><a class="link" href="#check-a-course-code-check-code">4.4. Check a course: <code>check</code></a></h4>
+<div class="paragraph">
+<p>Checks if the user can take the specified course. The outcome is dependent
+on the courses that the user has added into their list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>check c/MODCODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>check cs2103t</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calculate-cap-code-cap-code"><a class="link" href="#calculate-cap-code-cap-code">4.5. Calculate CAP: <code>cap</code></a></h4>
+<div class="paragraph">
+<p>Calculates the user&#8217;s Cumulative Average Point (CAP). Requires at least one
+course to have been added.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>cap</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="check-nus-focus-areas-code-focus-code"><a class="link" href="#check-nus-focus-areas-code-focus-code">4.6. Check NUS focus-areas: <code>focus</code></a></h4>
+<div class="paragraph">
+<p>Returns a list of courses available to take to fulfill <strong>Focus Area</strong> requirements
+for NUS Computer Science. The list can also tell you</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Number of courses to take</p>
+</li>
+<li>
+<p>The courses you have already fulfilled</p>
+</li>
+<li>
+<p>Giving suggestions on what courses to take</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Available Focus Areas
+<a href="https://www.comp.nus.edu.sg/programmes/ug/focus/">reference</a></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p>Algorithms &amp; Theory <code>algorithms</code> <code>algo</code></p>
 </li>
 <li>
-<p><strong>Clear</strong> : <code>clear</code></p>
+<p>Artificial Intelligence <code>artificial</code> <code>intelligence</code> <code>ai</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
+<p>Computer Graphics and Games <code>computer graphics</code> <code>gfx</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+<p>Computer Security <code>computer security</code> <code>cs</code></p>
 </li>
 <li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
+<p>Database Systems <code>database</code> <code>db</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p>Multimedia Information Retrieval <code>multimedia</code> <code>media</code></p>
 </li>
 <li>
-<p><strong>Help</strong> : <code>help</code></p>
+<p>Networking and Distributed Systems <code>networking</code> <code>net</code></p>
+</li>
+<li>
+<p>Parallel Computing <code>parallel computing</code> <code>pc</code></p>
+</li>
+<li>
+<p>Programming Languages <code>programming languages</code> <code>pl</code></p>
+</li>
+<li>
+<p>Software Engineering <code>software engineering</code> <code>swe</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <code>focus n/FOCUS-AREA</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>focus algo</code><br>
+<code>focus computer graphics</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="app-history"><a class="link" href="#app-history">5. App History</a></h2>
+<div class="sectionbody">
+<div class="sect3">
+<h4 id="undo"><a class="link" href="#undo">5.1. undo</a></h4>
+<div class="paragraph">
+<p>Undo action(s) on the application. This will allow users to roll back certain
+actions that the user may have accidentally or erroneously done on the
+application.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>undo [r/NUMBER-OF-COMMANDS]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>undo</code> (undoes the latest action)<br>
+<code>undo r/3</code> (undoes the last three actions)<br>
+<code>undo r/all</code> (undoes all actions that Jarvis remembers (20 max))</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="redo"><a class="link" href="#redo">5.2. redo</a></h4>
+<div class="paragraph">
+<p>Redo action(s) on the application. This will allow users to redo certain
+actions, or any accidental or erroneous undos.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>redo [r/NUMBER-OF-COMMANDS]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>redo</code> (redoes the latest undo)<br>
+<code>redo r/3</code> (redoes the last three undos)<br>
+<code>redo r/all</code> (redoes all actions that has been undone (20 max))</p>
+</div>
+</div>
+</div>
+</div>
+<h1 id="faq" class="sect0"><a class="link" href="#faq">FAQ</a></h1>
+<div class="paragraph">
+<p><strong>Q:</strong> How is the budget for monthly limit calculated?</p>
+</div>
+<div class="paragraph">
+<p><strong>A:</strong> Budget is calculated from the 1st to the last day of every month. The budget is split evenly across all days.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Q:</strong> What if I am still learning this application and I make a mistake on the application and I do not know how to revert the changes made in my latest command?</p>
+</div>
+<div class="paragraph">
+<p><strong>A:</strong> Simple undo the command, the application will revert your changes automatically.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Q:</strong> How do I know what I am undo-ing?</p>
+</div>
+<div class="paragraph">
+<p><strong>A:</strong> enter history into the command line, which will display where you are relative to what you can undo and redo.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Q:</strong> If I accidentally undo something, can i revert this mistake?</p>
+</div>
+<div class="paragraph">
+<p><strong>A:</strong> enter redo to undo your undo mistake, if you made multiple undo mistakes, you can redo &lt;number&gt; to redo those mistakes quickly.</p>
+</div>
+<h1 id="command-summary" class="sect0"><a class="link" href="#command-summary">Command Summary</a></h1>
+<div class="sect2">
+<h3 id="task-scheduler-2"><a class="link" href="#task-scheduler-2">1.1. Task Scheduler</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list {d/DATE | #TAG&#8230;&#8203;}</code></p>
+</li>
+<li>
+<p><code>add t/TASK-TYPE/TASK-DESCRIPTION [d/DATE] [#TAG]&#8230;&#8203; [p/PRIORITY] [r/FREQ]</code></p>
+</li>
+<li>
+<p><code>delete {INDEX | t/TASK-DESCRIPTION}</code></p>
+</li>
+<li>
+<p><code>find KEYWORD</code></p>
+</li>
+<li>
+<p><code>edit {t/TASK-DESCRIPTION/NEW-DESCRIPTION | INDEX/NEW-DESCRIPTION}</code></p>
+</li>
+<li>
+<p><code>create #TAG&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><code>done INDEX</code></p>
+</li>
+<li>
+<p><code>clear [#TAG]&#8230;&#8203; [d/DATE]</code></p>
+</li>
+<li>
+<p><code>stats</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-26 07:53:30 UTC</div></div></div></body></html>
+<div class="sect2">
+<h3 id="finance-tracker-2"><a class="link" href="#finance-tracker-2">1.2. Finance Tracker</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pay a/AMOUNT {#TAG | n/PERSON}</code></p>
+</li>
+<li>
+<p><code>pay delete INDEX</code></p>
+</li>
+<li>
+<p><code>instal set n/ITEM a/AMOUNT</code></p>
+</li>
+<li>
+<p><code>instal edit INDEX {n/ITEM | a/AMOUNT}</code></p>
+</li>
+<li>
+<p><code>instal delete INDEX</code></p>
+</li>
+<li>
+<p><code>instal list</code></p>
+</li>
+<li>
+<p><code>expenses list</code></p>
+</li>
+<li>
+<p><code>set monthly a/AMOUNT</code></p>
+</li>
+<li>
+<p><code>compare m/DATE m/DATE</code></p>
+</li>
+<li>
+<p><code>est {day | month}</code></p>
+</li>
+<li>
+<p><code>owe n/PERSON a/AMOUNT</code></p>
+</li>
+<li>
+<p><code>debt n/PERSON a/AMOUNT</code></p>
+</li>
+<li>
+<p><code>tab a/AMOUNT n/PERSON&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><code>paid debt INDEX</code></p>
+</li>
+<li>
+<p><code>list debts</code></p>
+</li>
+<li>
+<p><code>set loans a/TOTAL [i/INTEREST]</code></p>
+</li>
+<li>
+<p><code>export {csv | txt | xlsx} f/FILENAME</code></p>
+</li>
+<li>
+<p><code>income a/AMOUNT</code></p>
+</li>
+<li>
+<p><code>graph</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="course-lookup-2"><a class="link" href="#course-lookup-2">1.3. Course Lookup</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add c/MODCODE [g/GRADE</code></p>
+</li>
+<li>
+<p><code>delete c/MODCODE</code></p>
+</li>
+<li>
+<p><code>lookup c/MODCODE</code></p>
+</li>
+<li>
+<p><code>check c/MODCODE</code></p>
+</li>
+<li>
+<p><code>cap</code></p>
+</li>
+<li>
+<p><code>focus n/FOCUS-AREA</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="app-history-2"><a class="link" href="#app-history-2">1.4. App History</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>undo</code></p>
+</li>
+<li>
+<p><code>redo</code></p>
+</li>
+</ul>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-27 06:29:45 UTC</div></div></div></body></html>
