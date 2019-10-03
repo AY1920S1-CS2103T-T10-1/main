@@ -52,7 +52,7 @@ public class AndOrTree {
             throw new IOException(courseCode + " could not be found");
         }
 
-        AndOrNode rootNode = AndOrNode.createLeafNode(course, null);
+        AndOrNode rootNode = AndOrNode.createLeafNode(course);
         JsonNode node;
 
         try {
@@ -83,7 +83,7 @@ public class AndOrTree {
      * Handles the case where the current JsonNode is an object.
      */
     private static void handleObject(JsonNode node, AndOrNode curr) {
-        AndOrNode newNode = AndOrNode.createAndOrNode(curr, getKey(node));
+        AndOrNode newNode = AndOrNode.createAndOrNode(getKey(node));
         curr.insert(newNode);
         node.fields().forEachRemaining(field -> {
             buildTree(field.getValue(), newNode);
@@ -111,7 +111,7 @@ public class AndOrTree {
             // course is likely no longer being offered
             return;
         }
-        AndOrNode newNode = AndOrNode.createLeafNode(leaf, curr);
+        AndOrNode newNode = AndOrNode.createLeafNode(leaf);
         curr.insert(newNode);
     }
 

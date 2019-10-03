@@ -30,20 +30,20 @@ public class OrNodeTest {
 
     @Test
     public void hasFulfilledCondition_validInput_returnsTrue() {
-        OrNode or = new OrNode(null, null, CHILDREN);
+        OrNode or = new OrNode(null, CHILDREN);
         assertTrue(() -> or.hasFulfilledCondition(COLLECTION_PASSES_REQUIREMENTS_SINGLE));
         assertTrue(() -> or.hasFulfilledCondition(COLLECTION_PASSES_REQUIREMENTS_MULTIPLE));
     }
 
     @Test
     public void hasFulfilledCondition_invalidInput_returnsFalse() {
-        OrNode or = new OrNode(null, null, CHILDREN);
+        OrNode or = new OrNode(null, CHILDREN);
         assertFalse(() -> or.hasFulfilledCondition(COLLECTION_FAILS_REQUIREMENTS));
     }
 
     @Test
     public void toString_returnsStringForm() {
         assertEquals("one of",
-                new OrNode(null, null, null).toString());
+                new OrNode(null, null).toString());
     }
 }

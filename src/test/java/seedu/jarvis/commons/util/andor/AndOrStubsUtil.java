@@ -49,7 +49,7 @@ public class AndOrStubsUtil {
      */
     protected static class NodeStub extends AndOrNode {
         public NodeStub(CourseStub data) {
-            super(data, null, null);
+            super(data, null);
         }
 
         public boolean hasFulfilledCondition(Collection<Course> collection) {

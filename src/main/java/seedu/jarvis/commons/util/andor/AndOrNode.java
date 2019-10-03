@@ -27,18 +27,15 @@ import seedu.jarvis.model.course.Course;
  */
 public abstract class AndOrNode {
     protected Course data;
-    protected AndOrNode parent;
     protected List<AndOrNode> children;
 
-    protected AndOrNode(Course data, AndOrNode parent, List<AndOrNode> children) {
+    protected AndOrNode(Course data, List<AndOrNode> children) {
         this.data = data;
-        this.parent = parent;
         this.children = children;
     }
 
-    protected AndOrNode(Course data, AndOrNode parent) {
+    protected AndOrNode(Course data) {
         this.data = data;
-        this.parent = parent;
         this.children = new ArrayList<>();
     }
 
@@ -67,18 +64,17 @@ public abstract class AndOrNode {
     /**
      * Returns an {@code AND} or {@code OR} node.
      *
-     * @param parent of this node to be created
      * @param type of the node as a {@code String}
      * @return a new {@AndOr} node
      */
-    public static AndOrNode createAndOrNode(AndOrNode parent, String... type) {
+    public static AndOrNode createAndOrNode(String... type) {
         String nodeType = type.length == 0 ? "" : type[0];
         AndOrOperation andOrNodeType = AndOrOperationMapperUtil.resolveType(nodeType);
         switch (andOrNodeType) {
         case AND:
-            return new AndNode(null, parent);
+            return new AndNode(null);
         case OR:
-            return new OrNode(null, parent);
+            return new OrNode(null);
         default:
             return null;
         }
@@ -88,11 +84,10 @@ public abstract class AndOrNode {
      * Returns a {@code LEAF} node.
      *
      * @param data course data of the node
-     * @param parent of this node to be created
      * @return a new {@AndOr} node
      */
-    public static AndOrNode createLeafNode(Course data, AndOrNode parent) {
-        return new LeafNode(data, parent);
+    public static AndOrNode createLeafNode(Course data) {
+        return new LeafNode(data);
     }
 
     /**

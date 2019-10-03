@@ -15,12 +15,12 @@ import seedu.jarvis.model.course.Course;
 public class OrNode extends AndOrNode {
     private static final String STRING_FORM = "one of";
 
-    protected OrNode(Course data, AndOrNode parent, List<AndOrNode> children) {
-        super(data, parent, children);
+    protected OrNode(Course data, List<AndOrNode> children) {
+        super(data, children);
     }
 
-    protected OrNode(Course data, AndOrNode parent) {
-        super(data, parent);
+    protected OrNode(Course data) {
+        super(data);
     }
 
     @Override

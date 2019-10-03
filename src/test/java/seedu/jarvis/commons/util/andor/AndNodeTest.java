@@ -31,19 +31,18 @@ public class AndNodeTest {
 
     @Test
     public void hasFulfilledCondition_validInput_returnsTrue() {
-        AndNode an = new AndNode(null, null, CHILDREN);
+        AndNode an = new AndNode(null, CHILDREN);
         assertTrue(() -> an.hasFulfilledCondition(COLLECTION_PASSES_REQUIREMENTS));
     }
 
     @Test
     public void hasFulfilledCondition_invalidInput_returnsFalse() {
-        AndNode an = new AndNode(null, null, CHILDREN);
+        AndNode an = new AndNode(null, CHILDREN);
         assertFalse(() -> an.hasFulfilledCondition(COLLECTION_FAILS_REQUIREMENTS));
     }
 
     @Test
     public void toString_returnsStringForm() {
-        assertEquals("all of",
-                new AndNode(null, null, null).toString());
+        assertEquals("all of", new AndNode(null, null).toString());
     }
 }

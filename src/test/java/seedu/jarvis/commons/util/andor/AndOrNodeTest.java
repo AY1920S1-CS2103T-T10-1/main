@@ -16,39 +16,39 @@ public class AndOrNodeTest {
 
     @Test
     public void createAndOrNode_validInputs_returnsCorrectNode() {
-        assertTrue(AndOrNode.createAndOrNode(null, "and") instanceof AndNode);
-        assertTrue(AndOrNode.createAndOrNode(null, "or") instanceof OrNode);
+        assertTrue(AndOrNode.createAndOrNode("and") instanceof AndNode);
+        assertTrue(AndOrNode.createAndOrNode("or") instanceof OrNode);
         for (String invalid : CREATE_NODE_INVALID_INPUTS) {
-            assertTrue(AndOrNode.createAndOrNode(null, invalid) == null);
+            assertTrue(AndOrNode.createAndOrNode(invalid) == null);
         }
     }
 
     @Test
     public void createLeafNode_validInputs_returnsNotNull() {
-        assertTrue(AndOrNode.createLeafNode(null, null) instanceof LeafNode);
+        assertTrue(AndOrNode.createLeafNode(null) instanceof LeafNode);
         for (String any : CREATE_NODE_INVALID_INPUTS) {
-            assertTrue(AndOrNode.createLeafNode(new CourseStub(any), null) instanceof LeafNode);
+            assertTrue(AndOrNode.createLeafNode(new CourseStub(any)) instanceof LeafNode);
         }
     }
 
     @Test
     public void insert_validNode_success() {
-        AndOrNode node = AndOrNode.createAndOrNode(null, "and");
-        AndOrNode anotherNode = AndOrNode.createLeafNode(new CourseStub(""), null);
+        AndOrNode node = AndOrNode.createAndOrNode("and");
+        AndOrNode anotherNode = AndOrNode.createLeafNode(new CourseStub(""));
         node.insert(anotherNode);
         assertTrue(node.getChildren().contains(anotherNode));
     }
 
     @Test
     public void toTreeString_validTree_returnsCorrectString() {
-        AndOrNode node = AndOrNode.createAndOrNode(null, "and");
-        AndOrNode child1 = AndOrNode.createAndOrNode(null, "or");
-        child1.insert(AndOrNode.createLeafNode(new CourseStub("t1"), null));
-        child1.insert(AndOrNode.createLeafNode(new CourseStub("t2"), null));
+        AndOrNode node = AndOrNode.createAndOrNode("and");
+        AndOrNode child1 = AndOrNode.createAndOrNode("or");
+        child1.insert(AndOrNode.createLeafNode(new CourseStub("t1")));
+        child1.insert(AndOrNode.createLeafNode(new CourseStub("t2")));
         node.insert(child1);
-        node.insert(AndOrNode.createLeafNode(new CourseStub("t3"), null));
-        node.insert(AndOrNode.createLeafNode(new CourseStub("t4"), null));
-        node.insert(AndOrNode.createLeafNode(new CourseStub("t5"), null));
+        node.insert(AndOrNode.createLeafNode(new CourseStub("t3")));
+        node.insert(AndOrNode.createLeafNode(new CourseStub("t4")));
+        node.insert(AndOrNode.createLeafNode(new CourseStub("t5")));
 
         String correctString = "all of\n├── one of\n│   "
                 + "├── t1\n│   └── t2\n├── t3\n├── t4\n└── t5\n";

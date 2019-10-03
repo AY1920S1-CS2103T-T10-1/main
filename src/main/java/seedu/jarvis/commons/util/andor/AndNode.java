@@ -16,12 +16,12 @@ import seedu.jarvis.model.course.Course;
 public class AndNode extends AndOrNode {
     private static final String STRING_FORM = "all of";
 
-    protected AndNode(Course data, AndOrNode parent, List<AndOrNode> children) {
-        super(data, parent, children);
+    protected AndNode(Course data, List<AndOrNode> children) {
+        super(data, children);
     }
 
-    protected AndNode(Course data, AndOrNode parent) {
-        super(data, parent);
+    protected AndNode(Course data) {
+        super(data);
     }
 
     @Override

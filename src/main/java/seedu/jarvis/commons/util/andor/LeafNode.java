@@ -14,12 +14,12 @@ public class LeafNode extends AndOrNode {
     /** Return if data is {@code null} */
     private static final String EMPTY_FORM = "null";
 
-    protected LeafNode(Course data, AndOrNode parent, List<AndOrNode> children) {
-        super(data, parent, children);
+    protected LeafNode(Course data, List<AndOrNode> children) {
+        super(data, children);
     }
 
-    protected LeafNode(Course data, AndOrNode parent) {
-        super(data, parent);
+    protected LeafNode(Course data) {
+        super(data);
     }
 
     private boolean isNull() {
