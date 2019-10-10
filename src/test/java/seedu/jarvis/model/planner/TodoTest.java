@@ -24,7 +24,7 @@ class TodoTest {
         Date end = new Date(2019, 10, 11);
 
         Todo t = new Todo("homework");
-        t.addFrequency("weekly");
+        t.addPriority("weekly");
         assertNotNull(t.frequency);
     }
 
