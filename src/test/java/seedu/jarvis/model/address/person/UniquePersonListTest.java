@@ -1,4 +1,4 @@
-package seedu.jarvis.model.person;
+package seedu.jarvis.model.address.person;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -15,8 +15,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.jarvis.model.person.exceptions.DuplicatePersonException;
-import seedu.jarvis.model.person.exceptions.PersonNotFoundException;
+import seedu.jarvis.model.address.person.exceptions.DuplicatePersonException;
+import seedu.jarvis.model.address.person.exceptions.PersonNotFoundException;
 import seedu.jarvis.testutil.PersonBuilder;
 
 public class UniquePersonListTest {

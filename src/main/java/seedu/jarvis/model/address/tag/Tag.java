@@ -1,4 +1,4 @@
-package seedu.jarvis.model.tag;
+package seedu.jarvis.model.address.tag;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.jarvis.commons.util.AppUtil.checkArgument;

@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import seedu.jarvis.model.Model;
 import seedu.jarvis.model.ModelManager;
 import seedu.jarvis.model.UserPrefs;
-import seedu.jarvis.model.person.Person;
+import seedu.jarvis.model.address.person.Person;
 import seedu.jarvis.testutil.PersonBuilder;
 
 /**

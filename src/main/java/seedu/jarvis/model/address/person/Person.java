@@ -1,4 +1,4 @@
-package seedu.jarvis.model.person;
+package seedu.jarvis.model.address.person;
 
 import static seedu.jarvis.commons.util.CollectionUtil.requireAllNonNull;
 
@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import seedu.jarvis.model.tag.Tag;
+import seedu.jarvis.model.address.tag.Tag;
 
 /**
  * Represents a Person in the address book.

@@ -26,8 +26,8 @@ import seedu.jarvis.logic.commands.address.EditAddressCommand.EditPersonDescript
 import seedu.jarvis.logic.commands.address.FindAddressCommand;
 import seedu.jarvis.logic.commands.address.ListAddressCommand;
 import seedu.jarvis.logic.parser.exceptions.ParseException;
-import seedu.jarvis.model.person.NameContainsKeywordsPredicate;
-import seedu.jarvis.model.person.Person;
+import seedu.jarvis.model.address.person.NameContainsKeywordsPredicate;
+import seedu.jarvis.model.address.person.Person;
 import seedu.jarvis.testutil.EditPersonDescriptorBuilder;
 import seedu.jarvis.testutil.PersonBuilder;
 import seedu.jarvis.testutil.PersonUtil;

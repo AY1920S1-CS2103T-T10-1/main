@@ -1,4 +1,4 @@
-package seedu.jarvis.model.person;
+package seedu.jarvis.model.address.person;
 
 import java.util.List;
 import java.util.function.Predicate;

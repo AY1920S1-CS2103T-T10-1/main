@@ -1,4 +1,4 @@
-package seedu.jarvis.model.person;
+package seedu.jarvis.model.address.person;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.jarvis.commons.util.AppUtil.checkArgument;

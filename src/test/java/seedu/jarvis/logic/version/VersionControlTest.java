@@ -21,7 +21,7 @@ import seedu.jarvis.logic.commands.exceptions.CommandNotInvertibleException;
 import seedu.jarvis.logic.commands.exceptions.DuplicateCommandException;
 import seedu.jarvis.model.Model;
 import seedu.jarvis.model.ModelManager;
-import seedu.jarvis.model.person.Person;
+import seedu.jarvis.model.address.person.Person;
 import seedu.jarvis.testutil.PersonBuilder;
 
 /**

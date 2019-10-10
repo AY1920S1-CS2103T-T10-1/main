@@ -1,4 +1,4 @@
-package seedu.jarvis.model.person.exceptions;
+package seedu.jarvis.model.address.person.exceptions;
 
 /**
  * Signals that the operation is unable to find the specified person.

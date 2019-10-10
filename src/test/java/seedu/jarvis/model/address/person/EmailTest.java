@@ -1,4 +1,4 @@
-package seedu.jarvis.model.person;
+package seedu.jarvis.model.address.person;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
