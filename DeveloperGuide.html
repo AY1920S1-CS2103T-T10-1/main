@@ -23,9 +23,10 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#undo-redo-feature">3.2. Undo/Redo Feature</a></li>
+<li><a href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.4. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -544,20 +545,298 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.2. Undo/Redo Feature</a></h3>
+<div class="sect3">
+<h4 id="overview"><a class="link" href="#overview">3.2.1. Overview</a></h4>
+<div class="paragraph">
+<p>The application should be able to undo and redo changes made by commands to give the user more flexibility in their inputs.
+Undo and redo operations should also be undo or redo multiple commands in a command.</p>
+</div>
+<div class="paragraph">
+<p>Therefore there is a need to remember commands that change the state of the <code>Model</code>. Commands that just render a view without
+actually changing the application should not be stored as it does not make sense to undo or redo them.
+We will distinguish these types of commands into two categories, <strong>invertible commands</strong> and <strong>non-invertible commands</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Invertible commands</strong>&#8201;&#8212;&#8201;commands that mutate the state of the <code>Model</code> and should be stored for undo/redo functions.</p>
+</li>
+<li>
+<p><strong>Non-invertible commands</strong>&#8201;&#8212;&#8201;commands that do not mutate the state of the <code>Model</code> and should not be stored for undo/redo functions.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Undo and redo commands will be considered non-invertible commands even though they technically change the state of the <code>Model</code>.
+The reason is that they are commands facilitating the undo and redo operation, thus they should not be stored.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.2.2. Implementation</a></h4>
+<div class="paragraph">
+<p>The undo/redo feature mechanism is facilitated by <code>HistoryManager</code>. <code>HistoryManager</code> remembers <strong>invertible commands</strong>. These commands are stored internally in
+two <code>CommandDeque</code> objects, <code>executedCommands</code> and <code>inverselyExecutedCommands</code>. <code>CommandDeque</code> serve as custom <code>Deque</code>
+data structure, which stores the latest added command to the top.</p>
+</div>
+<div class="paragraph">
+<p>An undo operation would comprise of taking the latest executed command from <code>executedCommands</code>, inversely executing it, and adding it to
+<code>inverselyExecutedCommands</code>. A redo operation would comprise of a taking the latest inversely executed command from
+<code>inverselyExecutedCommands</code>, executing it, and adding it to <code>executedCommands</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>Model</code> supports operations to facilitate
+undo and redo capabilities by extending the <code>HistoryModel</code> which has the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model#getHistoryManager()</code>&#8201;&#8212;&#8201;Gets the <code>HistoryManager</code> instance.</p>
+</li>
+<li>
+<p><code>Model#setHistoryManager(HistoryManager)</code>&#8201;&#8212;&#8201;Resets the <code>HistoryManager</code> data to the given <code>HistoryManager</code> in the argument.</p>
+</li>
+<li>
+<p><code>Model#getAvailableNumberOfExecutedCommands()</code>&#8201;&#8212;&#8201;Gets the maximum available number of commands that can be undone.</p>
+</li>
+<li>
+<p><code>Model#getAvailableNumberOfInverselyExecutedCommands()</code>&#8201;&#8212;&#8201;Gets the maximum available number of commands that can be redone.</p>
+</li>
+<li>
+<p><code>Model#canRollback()</code>&#8201;&#8212;&#8201;Checks if it is possible to undo a command at the given state.</p>
+</li>
+<li>
+<p><code>Model#canCommit()</code>&#8201;&#8212;&#8201;Checks if it is possible to redo a command at the given state.</p>
+</li>
+<li>
+<p><code>Model#rememberExecutedCommand(Command)</code>&#8201;&#8212;&#8201;Remembers the given <code>Command</code> and stores it in <code>executedCommands</code> to facilitate undo capability for this command.</p>
+</li>
+<li>
+<p><code>Model#rememberInverselyExecutedCommand(Command)</code>&#8201;&#8212;&#8201;Remembers the given <code>Command</code> and stores it in <code>inverselyExecutedCommands</code> to facilitate redo capability for this command.</p>
+</li>
+<li>
+<p><code>Model#rollback()</code>&#8201;&#8212;&#8201;Inversely executes the latest command stored in <code>executedCommands</code> to revert the changes of the latest executed command made onto <code>Model</code>.</p>
+</li>
+<li>
+<p><code>Model#commit()</code>&#8201;&#8212;&#8201;Executes the latest undone command stored in <code>inverselyExecutedCommands</code> to reapply the changes that were made onto <code>Model</code> by the latest undone command.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Commands support the given operations to mutate the state of the <code>Model</code> and to check if they should be stored for undo/redo function:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Command#hasInverseExecution()</code>&#8201;&#8212;&#8201;Checks if the command&#8217;s execution mutates the state of the <code>Model</code>, which is used to determine if the command should be remembered by <code>HistoryManager</code>.</p>
+</li>
+<li>
+<p><code>Command#execute(Model)</code>&#8201;&#8212;&#8201;Executes the command on the given <code>Model</code>.</p>
+</li>
+<li>
+<p><code>Command#executeInverse(Model)</code>&#8201;&#8212;&#8201;Executes on the given <code>Model</code> such that it will undo whatever changes were made when <code>Command#execute(Model)</code> was called.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates how commands are remembered when a user types in a command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CommandActivityDiagram.png" alt="CommandActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>. These commands store an integer value referencing the number of commands to undo or redo,
+represented by <code>UndoCommand#numberOfTimes</code> and <code>RedoCommand#numberOfTimes</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The <code>HistoryManager</code> is initialized.
+<code>HistoryManager#executedCommands</code> and <code>HistoryManager#inverselyExecutedCommands</code> are empty.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book.
+A <code>DeleteAddressCommand</code> is created and executed in <code>LogicManager#execute(String)</code>.
+Since <code>DeleteCommand</code> is an invertible command, <code>HistoryManager</code> remembers the command, adding it to <code>HistoryManager#executedCommands</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person.
+A <code>AddAddressCommand</code> is created and executed in <code>LogicManager#execute(String)</code>.
+Since <code>AddAddressCommand</code> is an invertible command, <code>HistoryManager</code> remembers the command, adding it to <code>HistoryManager#executedCommands</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a invertible command execution fails, <code>HistoryManager</code> will not remember it, therefore it will not be stored for undo/redo capabilities.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. The user now decides that the last two commands entered was a mistake, and decides to undo those commands by executing the <code>undo</code> command by typing in the command <code>undo r/2</code>.
+An <code>UndoCommand</code> is created and executed in <code>LogicManager#execute(String)</code> to undo the latest two commands.
+The command will call <code>Model#rollback()</code> two times. During each <code>Model#rollback()</code> call, the <code>Model</code> will call <code>HistoryManager</code> to take the latest command
+from <code>HistoryManager#executedCommands</code> and call <code>Command#executeInverse(Model)</code> on the <code>Model</code>, undoing the changes made to <code>Model</code> by the command, before adding it to
+<code>HistoryManager#inverselyExecutedCommands</code>. After the <code>undo</code> command execution is complete, the <code>Model</code> state is reverted to what it was before the two undone commands were executed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>undo</code>/<code>redo</code> commands can undo/redo one or more commands. To undo/redo one command, entering <code>undo</code>/<code>redo</code> is equivalent to entering  <code>undo 1</code>/<code>redo 1</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If an <code>undo</code>/<code>redo</code> command is given to undo/redo more commands than available, the operation will fail and no <code>undo</code>/<code>redo</code> is applied at all.
+This check is enforced by <code>Model#getAvailableNumberOfExecutedCommands()</code>, <code>Model#getAvailableNumberOfInverselyExecutedCommands()</code>, <code>Model#canRollback()</code> and <code>Model#canCommit()</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 5. The user then decides to execute the command <code>list</code>. <code>list</code> command is a <strong>non-invertible command</strong>. Therefore, it will not be stored by <code>HistoryManager</code> after its execution.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. The user decides to redo the last command that was undone by executing a <code>redo</code> command by typing in the command <code>redo</code>.
+A <code>RedoCommand</code> is created and executed in <code>LogicManager#execute(String)</code> to redo the latest undo.
+The command will call <code>Model#commit()</code> once. <code>Model</code> will call <code>HistoryManager</code> to take the latest command from <code>HistoryManager#inverselyExecutedCommands</code>
+and call <code>Command#execute(Model)</code> on the <code>Model</code>, reapplying the changes that were made by the command, before adding it to <code>HistoryManager#executedCommands</code>.
+After the <code>redo</code> command execution is complete, the <code>Model</code> has the changes made by the latest the command that was redone.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. The user executes <code>add n/John &#8230;&#8203;</code> to add a new person.
+A <code>AddAddressCommand</code> is created and executed in <code>LogicManager#execute(String)</code>.
+The <code>HistoryManager</code> clears all commands stored in <code>HistoryManager#inverselyExecutedCommands</code>.
+Similar to <code>Step 3</code>, <code>HistoryManager</code> remembers this command.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Whenever a new invertible command is executed that is not currently in <code>HistoryManager</code>, it will clear all the commands that are stored in <code>HistoryManager#inverselyExecutedCommands</code>.
+This means that all potential redo actions are cleared.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-undo-redo-executes-2"><a class="link" href="#aspect-how-undo-redo-executes-2">Aspect: How undo &amp; redo executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Saves the entire <code>Model</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+</li>
+<li>
+<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-support-the-undo-redo-commands-2"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands-2">Aspect: Data structure to support the undo/redo commands</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Use a list to store the history of <code>Model</code> states.
+Maintain a pointer to point to the current version of <code>Model</code>, and shift the pointer along the list to facilitate undo/redo operations.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simple implementation.</p>
+</li>
+<li>
+<p>Cons: Expensive on storage as multiple copies of <code>Model</code> is stored.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Implement invertible commands whereby they support their inverse execution. Use two <code>Deque</code> data structures to store the history of commands, to represent
+executed commands and inversely executed commands. Move commands from one deque to another and executing/inversely executing them to facilitate undo/redo operations.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Storage efficient, as application only needs to keep track of invertible commands, and do not need to store multiple copies of <code>Model</code>.</p>
+</li>
+<li>
+<p>Cons: Need to ensure that invertible commands implement their inverse execution correctly.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.3. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -588,7 +867,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1044,4 +1323,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-21 07:04:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-22 07:21:30 UTC</div></div></div></body></html>
