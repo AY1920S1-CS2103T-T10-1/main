@@ -20,12 +20,12 @@
 <li><a href="#Design-Commons">2.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#implementation-implementation">3. Implementation==== Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo Feature</a></li>
 <li><a href="#course-planner-feature">3.2. Course Planner feature</a></li>
 <li><a href="#planner-feature">3.3. Planner Feature</a></li>
-<li><a href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></li>
+<li><a href="#ccatracker-feature">3.4. CcaTracker Feature</a></li>
 <li><a href="#logging">3.5. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
 </ul>
@@ -325,7 +325,7 @@ data in json format and read it back.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation-implementation"><a class="link" href="#implementation-implementation">3. Implementation==== Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
@@ -385,7 +385,7 @@ The reason is that they are commands facilitating the undo and redo operation, t
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.2. Implementation</a></h4>
+<h4 id="implementation"><a class="link" href="#implementation">3.1.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo feature mechanism is facilitated by <code>HistoryManager</code>. <code>HistoryManager</code> remembers <strong>invertible commands</strong>. These commands are stored internally in
 two <code>CommandDeque</code> objects, <code>executedCommands</code> and <code>inverselyExecutedCommands</code>. <code>CommandDeque</code> serve as custom <code>Deque</code>
@@ -653,7 +653,7 @@ along with convenient add, delete and check operations on their course list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.2. Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.2.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The Course Planner feature closely follows the extendable OOP solution already
 implemented within AB3. In the Course Planner, the <code>CoursePlanner</code> object
@@ -1077,7 +1077,7 @@ have yet to do.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.2. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.3.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks a user has. A simple
 outline of the <code>Planner</code> can be seen in Fig 11 below.</p>
@@ -1160,9 +1160,218 @@ appended to the end of the <code>TaskList</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></h3>
+<h3 id="ccatracker-feature"><a class="link" href="#ccatracker-feature">3.4. CcaTracker Feature</a></h3>
+<div class="sect3">
+<h4 id="overview-5"><a class="link" href="#overview-5">3.4.1. Overview</a></h4>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>The application is able to track Ccas. Each user can have multiple Ccas and each Cca can have multiple equipments
+needed. In addition, the application is able to track the progress of each person in their Ccas. Hence, there is a
+need to represent the CcaTracker as a list of Ccas on which the application can perform create, read, update and delete
+operations on each Cca.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.4.2. Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>CcaTracker</code> mechanism is facilitated by <code>CcaTrackerModel</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>Model</code> supports operations to facilitate
+cca tracking capabilities by extending the <code>CcaTrackerModel</code> which has the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model#containsCca(Cca cca)</code>&#8201;&#8212;&#8201;Checks if the <code>CcaTracker</code> contains the given cca.</p>
+</li>
+<li>
+<p><code>Model#addCca(Cca cca)</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#removeCca(Cca cca)</code>&#8201;&#8212;&#8201;Removes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#updateCca(Cca toBeUpdatedCca, Cca updatedCca)</code>&#8201;&#8212;&#8201;Updates a <code>Cca</code> in the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#getCcaTracker()</code>&#8201;&#8212;&#8201;Gets the <code>CcaTracker</code> instance.</p>
+</li>
+<li>
+<p><code>Model#getNumberOfCcas()</code>&#8201;&#8212;&#8201;Returns the number of <code>Ccas</code> currently in the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#getCca(Index index)</code>&#8201;&#8212;&#8201;Gets the <code>Cca</code> instance by its index in the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#updateFilteredCcaList(Predicate&lt;Cca&gt; predicate)</code>&#8201;&#8212;&#8201;Updates the <code>FilteredCcaList</code> by passing it a predicate.</p>
+</li>
+<li>
+<p><code>Model#getFilteredCcaList()</code>&#8201;&#8212;&#8201;Returns an instance of the <code>FilteredCcaList</code></p>
+</li>
+<li>
+<p><code>Model#addProgress(Cca targetCca, CcaProgressList toAddCcaProgressList)</code> - Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
+</li>
+<li>
+<p><code>Model#increaseProgress(Index index)</code>&#8201;&#8212;&#8201;Increases the progress of the <code>Cca</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CcaTracker has 7 specific commands that support the given operations to mutate the state of the <code>Model</code>. Each command is
+represented as seperate class:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AddCcaCommand</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>DeleteCcaCommand</code>&#8201;&#8212;&#8201;Deletes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>EditCcaCommand</code>&#8201;&#8212;&#8201;Edits the selected <code>Cca</code> in the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>FindCcaCommand</code>&#8201;&#8212;&#8201;Finds a <code>Cca</code> from the <code>CcaTracker</code> based on the keywords specified .</p>
+</li>
+<li>
+<p><code>ListCcaCommand</code>&#8201;&#8212;&#8201;Lists all the <code>Cca</code> from the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>AddProgressCommand</code>&#8201;&#8212;&#8201;Adds a progress tracker to a cca.</p>
+</li>
+<li>
+<p><code>IncreaseProgressCommand</code>&#8201;&#8212;&#8201;Increments the progress level of a cca.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its execution on model.
+The following activity diagram illustrates how a <code>Cca&#8217;s progress is incremented when a user types in a
+`increase-progress</code> command:</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how increase-progress mechanism behaves.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The <code>CcaTracker</code> is initialized. Assume that a <code>Cca</code> has
+already been added to the Cca and that a progress tracker has already been set for that <code>Cca</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>increase-progress 1</code> command to increment the progress of the 1st <code>Cca</code> in the CcaTracker.
+A <code>IncreaseProgressCommandParser</code> object is created and its <code>#parse</code> method is called. The parse method returns a new
+<code>IncreaseProgressCommand</code> object.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <code>IncreaseProgressCommand</code> object is then executed on model. The <code>IncreaseProgressCommand#execute</code> method is
+called and in this method, the <code>Model#increaseProgress</code> method is called.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>IncreaseProgressCommand#execute</code> method first checks for whether the index is within the size of CcaList.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the methods in the <code>CcaTracker</code> class. As such,
+the <code>CcaTracker#increaseProgress</code> method is called. This in turn calls the <code>CcaList#increaseProgress</code> method. This
+method first finds the <code>Cca</code> based on its corresponding index. Then, it calls the <code>Cca#increaseProgress</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. This in turn calls the <code>CcaProgress#increaseProgress</code> method that calls <code>CcaCurrentProgress#increaseProgress</code>
+method. At long last, the final <code>#increaseProgress</code> method in the <code>CcaCurrentProgress</code> instance is called and the
+<code>currentProgress</code> counter is incremented by 1.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TLDR: The calling of the <code>#increaseProgress</code> method at the <code>CcaTracker</code> level triggers a cascading series of
+<code>#increaseProgress</code> methods which culminates in the <code>currentProgress</code> variable being incremented by 1.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-whether-to-have-subclasses-for-each-type-of-cca"><a class="link" href="#aspect-whether-to-have-subclasses-for-each-type-of-cca">Aspect: Whether to have subclasses for each type of cca.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current choice):</strong> Instantiate a generic <code>CcaProgress</code> for each <code>Cca</code>  .</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less code needed.</p>
+</li>
+<li>
+<p>Cons: Less extensible as CcaProgress is now limited to a list of strings.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Implement <code>CcaProgress</code> as a parent class. Create classes such as SportProgress/PerformingArtsProgress
+that extend from CcaProgress for each type of <code>Cca</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to extend functionality for each type of cca.</p>
+</li>
+<li>
+<p>Cons: Does not significantly extend functionality for this version of Jarvis.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-whether-to-use-observable-list-for-code-ccaprogresslist-code"><a class="link" href="#aspect-whether-to-use-observable-list-for-code-ccaprogresslist-code">Aspect: Whether to use observable list for <code>CcaProgressList</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current choice):</strong> Implement CcaProgressList as an <code>ObservableList</code> .</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to manipulate for JavaFx.</p>
+</li>
+<li>
+<p>Cons: Potentially complicated nesting when passing arguments to it as CcaProgressList is nested several classes
+within <code>Cca</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Implement CcaProgressList as a normal <code>List</code> e.g. <code>ArrayList</code> .</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Does not require predicates to be passed in.</p>
+</li>
+<li>
+<p>Cons: Might be more complicated when rendering in Javafx.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1660,4 +1869,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 13:50:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 14:12:43 UTC</div></div></div></body></html>
