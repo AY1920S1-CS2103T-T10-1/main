@@ -101,11 +101,11 @@ in <code>lower case</code> are <strong>key-words</strong> used by the program.</
 <p>For example:</p>
 </div>
 <div class="paragraph">
-<p><code>add t/TASK-TYPE/TASK-DESCRIPTION</code></p>
+<p><code>add-task t/TASK-TYPE/TASK-DESCRIPTION</code></p>
 </div>
 <div class="paragraph">
 <p>In this case, <code>TASK-TYPE</code> and <code>TASK-DESCRIPTION</code> are parameters supplied by
-the user, and <code>add</code> is a key-word.</p>
+the user, and <code>add-task</code> is a key-word.</p>
 </div>
 </li>
 <li>
@@ -114,20 +114,20 @@ the user, and <code>add</code> is a key-word.</p>
 <p>For example:</p>
 </div>
 <div class="paragraph">
-<p><code>add t/TASK-TYPE/TASK-DESCRIPTION [d/DATE]</code></p>
+<p><code>add-task t/TASK-TYPE/TASK-DESCRIPTION [p/PRIORITY]</code></p>
 </div>
 <div class="paragraph">
 <p>Can be used</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">With a date</dt>
+<dt class="hdlist1">With a priority level</dt>
 <dd>
-<p><code>add t/todo/assignment d/12/03/2019</code></p>
+<p><code>add-task t/todo/assignment p/high</code></p>
 </dd>
-<dt class="hdlist1">Without a date</dt>
+<dt class="hdlist1">Without a priority level</dt>
 <dd>
-<p><code>add t/todo/assignment</code></p>
+<p><code>add-task t/todo/assignment</code></p>
 </dd>
 </dl>
 </div>
@@ -144,11 +144,11 @@ the user, and <code>add</code> is a key-word.</p>
 <dl>
 <dt class="hdlist1">Without optional parameter</dt>
 <dd>
-<p><code>add t/todo/assignment</code></p>
+<p><code>add-task t/todo/assignment</code></p>
 </dd>
 <dt class="hdlist1">With optional parameter</dt>
 <dd>
-<p><code>add t/todo/assignment #cs2103t #urgent</code></p>
+<p><code>add-task t/todo/assignment #cs2103t #urgent</code></p>
 </dd>
 </dl>
 </div>
@@ -163,7 +163,7 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <p>For example:</p>
 </div>
 <div class="paragraph">
-<p><code>delete {INDEX | t/TASK-DESCRIPTION}</code></p>
+<p><code>delete-task {INDEX | t/TASK-DESCRIPTION}</code></p>
 </div>
 <div class="dlist">
 <dl>
@@ -184,7 +184,7 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <p>For example:</p>
 </div>
 <div class="paragraph">
-<p><code>add t/todo/assignment d/01/01/1970</code></p>
+<p><code>add-task t/todo/assignment d/01/01/1970</code></p>
 </div>
 </li>
 </ol>
@@ -193,21 +193,21 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <div class="sect2">
 <h3 id="task-scheduler"><a class="link" href="#task-scheduler">3.2. Task Scheduler</a></h3>
 <div class="sect3">
-<h4 id="list-all-tasks-code-list-code"><a class="link" href="#list-all-tasks-code-list-code">3.2.1. List all tasks: <code>list</code></a></h4>
+<h4 id="list-all-tasks-code-list-task-code"><a class="link" href="#list-all-tasks-code-list-task-code">3.2.1. List all tasks: <code>list-task</code></a></h4>
 <div class="paragraph">
 <p>Lists tasks in the planner based on the given <code>DATE</code> or <code>#TAG</code>(s).</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>list {d/DATE | #TAG&#8230;&#8203;}</code></p>
+<p>Format: <code>list-task {d/DATE | #TAG&#8230;&#8203;}</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:<br>
-<code>list #food #science_club</code><br>
-<code>list d/10/06/2019</code></p>
+<code>list-task #food #science_club</code><br>
+<code>list-task d/10/06/2019</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-task-code-add-code"><a class="link" href="#adding-a-task-code-add-code">3.2.2. Adding a task: <code>add</code></a></h4>
+<h4 id="adding-a-task-code-add-task-code"><a class="link" href="#adding-a-task-code-add-task-code">3.2.2. Adding a task: <code>add-task</code></a></h4>
 <div class="paragraph">
 <p>Adds a task to the planner.</p>
 </div>
@@ -225,7 +225,7 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>A task <strong>can</strong> have a:</p>
+<p>A task <strong>can</strong> have the following <strong>attributes</strong>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -243,119 +243,129 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Format: <code>add t/TASK-TYPE/TASK-DESCRIPTION [d/DATE] [#TAG]&#8230;&#8203; [p/PRIORITY r/FREQ]</code></p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Task Type</th>
+<th class="tableblock halign-left valign-top">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Todo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/todo des/TASK-DESCRIPTION [#TAG]&#8230;&#8203; [p/PRIORITY r/FREQ]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Event</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/event des/TASK-DESCRIPTION d/START-DATE//END-DATE [#TAG]&#8230;&#8203; [p/PRIORITY r/FREQ]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Deadline</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/deadline des/TASK-DESCRIPTION d/DUE-DATE [#TAG]&#8230;&#8203; [p/PRIORITY r/FREQ]</code></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Examples:<br>
-<code>add t/event/my birthday d/10/04/2017 r/yearly</code><br>
+<code>add t/event/my birthday r/yearly</code><br>
 <code>add t/deadline/cs2101 assignment d/20/09/2019 p/high</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-task-code-delete-code"><a class="link" href="#deleting-a-task-code-delete-code">3.2.3. Deleting a task: <code>delete</code></a></h4>
+<h4 id="deleting-a-task-code-delete-task-code"><a class="link" href="#deleting-a-task-code-delete-task-code">3.2.3. Deleting a task: <code>delete-task</code></a></h4>
 <div class="paragraph">
 <p>Deletes a task from the planner.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>delete {INDEX | t/TASK-DESCRIPTION}</code></p>
+<p>Format: <code>delete-task {INDEX | t/TASK-DESCRIPTION}</code></p>
 </div>
 <div class="paragraph">
 <p>where <code>INDEX</code> is the <strong>one-based</strong> index of the task list.</p>
 </div>
 <div class="paragraph">
 <p>Examples:<br>
-<code>delete 3</code><br>
-<code>delete t/cs2101 assignment</code></p>
+<code>delete-task 3</code><br>
+<code>delete-task t/cs2101 assignment</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-a-task-code-find-code"><a class="link" href="#finding-a-task-code-find-code">3.2.4. Finding a task: <code>find</code></a></h4>
+<h4 id="finding-a-task-code-find-task-code"><a class="link" href="#finding-a-task-code-find-task-code">3.2.4. Finding a task: <code>find-task</code></a></h4>
 <div class="paragraph">
 <p>Locates a task from a given <code>KEYWORD</code></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find KEYWORD</code></p>
+<p>Format: <code>find-task KEYWORD</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:<br>
-<code>find assignment</code><br>
-<code>find homework cs ma1101r</code></p>
+<code>find-task assignment</code><br>
+<code>find-task homework cs ma1101r</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-task-code-edit-code"><a class="link" href="#editing-a-task-code-edit-code">3.2.5. Editing a task: <code>edit</code></a></h4>
+<h4 id="editing-a-task-code-edit-task-code"><a class="link" href="#editing-a-task-code-edit-task-code">3.2.5. Editing a task: <code>edit-task</code></a></h4>
 <div class="paragraph">
 <p>Edits the task by <code>TASK-DESCRIPTION</code> or <code>INDEX</code>.</p>
 </div>
 <div class="paragraph">
-<p><code>NEW-DESCRIPTION</code> can be a new task description or any of the characteristics
+<p><code>NEW-DESCRIPTION</code> can be a new task description or any of the attributes (refer to 3.2.2 Adding a Task)
 used to create a task.</p>
 </div>
-<div class="paragraph">
-<p>Format: <code>edit {t/TASK-DESCRIPTION/NEW-DESCRIPTION | INDEX/NEW-DESCRIPTION}</code></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>NEW-DESCRIPTION</code> must be tagged with the attribute prefix. For example, if you want to edit the task description
+or priority level of a task: <code>edit-task t/taskToBeEdited//des/NEW-TASK-DESCRIPTION p/NEW-PRIORITY-LEVEL</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Examples:<br>
-<code>edit t/project part 1/project part 2</code><br>
-<code>edit t/project part 1/project part2 d/18/09/2019</code><br>
-<code>edit 3/r/weekly</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="tagging-a-task-code-tag-code"><a class="link" href="#tagging-a-task-code-tag-code">3.2.6. Tagging a task: <code>#tag</code></a></h4>
-<div class="paragraph">
-<p>Creates a tag. Tags can then be added to different tasks.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>create #TAG&#8230;&#8203;</code></p>
+<p>Format: <code>edit-task {t/TASK-DESCRIPTION//NEW-DESCRIPTION | INDEX//NEW-DESCRIPTION}</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:<br>
-<code>create #work</code><br>
-<code>create #play</code><br>
-<code>create #study</code></p>
+<code>edit-task t/project part 1//des/project part 2</code><br>
+<code>edit-task t/project part 1//des/project part2 d/18/09/2019</code><br>
+<code>edit-task 3//r/weekly</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="updating-a-task-s-status-code-done-code"><a class="link" href="#updating-a-task-s-status-code-done-code">3.2.7. Updating a task&#8217;s status: <code>done</code></a></h4>
+<h4 id="updating-a-task-s-status-code-done-task-code"><a class="link" href="#updating-a-task-s-status-code-done-task-code">3.2.6. Updating a task&#8217;s status: <code>done-task</code></a></h4>
 <div class="paragraph">
-<p>Updates the status of a task. By default on an <code>add</code>, all tasks are marked
+<p>Updates the status of a task. By default on an <code>add-task</code>, all tasks are marked
 as undone, represented by a <code>[✗]</code>. Upon finishing the task, the task will be
 represented with a <code>[✓]</code>.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>done INDEX</code></p>
+<p>Format: <code>done-task INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>where <code>INDEX</code> is the <strong>one-based</strong> index of the task list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-entries-code-clear-code"><a class="link" href="#clearing-entries-code-clear-code">3.2.8. Clearing entries: <code>clear</code></a></h4>
+<h4 id="clearing-entries-code-clear-task-code"><a class="link" href="#clearing-entries-code-clear-task-code">3.2.7. Clearing entries: <code>clear-task</code></a></h4>
 <div class="paragraph">
 <p>Clears tasks from the planner. Tasks can be cleared by <code>#TAG</code> or <code>d/DATE</code>.
-The command <code>clear</code> with no parameters succeeding it will result in all tasks
+The command <code>clear-task</code> with no parameters succeeding it will result in all tasks
 being cleared.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>clear [#TAG]&#8230;&#8203; [d/DATE]</code></p>
+<p>Format: <code>clear-task [#TAG]&#8230;&#8203; [d/DATE]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:<br>
-<code>clear #school</code><br>
-<code>clear d/12/09/2019</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="retrieving-statistics-code-stats-code"><a class="link" href="#retrieving-statistics-code-stats-code">3.2.9. Retrieving statistics: <code>stats</code></a></h4>
-<div class="paragraph">
-<p>Shows various statistics of the items in the app. This will include statistics
-such as the total number of tasks done, the total number of tasks left and
-blocks of free time.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>stats</code></p>
+<code>clear-task #school</code><br>
+<code>clear-task d/12/09/2019</code></p>
 </div>
 </div>
 </div>
@@ -1142,4 +1152,4 @@ redo [r/NUMBER]</pre>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 14:15:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 16:10:44 UTC</div></div></div></body></html>
