@@ -833,7 +833,7 @@ object as a string and processes it to form the tree data structure.</p>
 <p>This is compressed to</p>
 </div>
 <div class="paragraph">
-<p><code>"prereqTree": {"and": [{"or": ["CD1111", "XY2222"]},"EF3333"]}"</code></p>
+<p><code>"prereqTree":{"and":[{"or":["CD1111","XY2222"]},"EF3333"]}</code></p>
 </div>
 </div>
 <div class="sect4">
@@ -844,19 +844,20 @@ object as a string and processes it to form the tree data structure.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>AndOrTree#buildTree(String, jsonString, Function)</code></p>
+<p><code>AndOrTree#buildTree(String, Function&lt;String, ? extends R&gt;)</code></p>
 <div class="paragraph">
 <p>Builds a tree from the given jsonString. <code>Function</code> is a mapper function
-that processes a <code>String</code> returns a value of type <code>R</code>, where <code>R</code> is the
-type of data stored by each node in the tree.</p>
+that processes a <code>String</code> and returns a value of type <code>R</code>, where <code>R</code> is the
+type of data stored by each node in the tree, and therefore the overall
+type of the tree.</p>
 </div>
 </li>
 <li>
-<p><code>AndOrTree#fulfills(Collection)</code></p>
+<p><code>AndOrTree#fulfills(Collection&lt;? super R&gt;)</code></p>
 <div class="paragraph">
-<p>Checks if the given <code>Collection</code> fulfills the condition specified by this tree.
-<code>AndOrNode</code> has its own corresponding <code>fulfill</code> that checks its children or
-data against <code>Collection</code></p>
+<p>Checks if the given <code>Collection</code> of type <code>? super R</code> fulfills the condition
+specified by this tree. <code>AndOrNode</code> has its own corresponding <code>fulfill</code> that
+checks its children or data against <code>Collection</code></p>
 </div>
 </li>
 </ul>
@@ -893,7 +894,7 @@ this node</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/AndOrNodeConditionDiagram.png" alt="700" width="700">
+<img src="images/AndOrNodeConditionDiagram.png" alt="600" width="600">
 </div>
 <div class="title">Figure 14. AndOrNode Condition Diagram</div>
 </div>
@@ -2138,4 +2139,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 14:14:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 14:15:05 UTC</div></div></div></body></html>
