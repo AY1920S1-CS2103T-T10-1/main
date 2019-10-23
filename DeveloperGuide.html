@@ -22,13 +22,12 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#undo-redo-feature">3.2. Undo/Redo Feature</a></li>
-<li><a href="#course-planner-feature">3.3. Course Planner feature</a></li>
-<li><a href="#planner-feature">3.4. Planner Feature</a></li>
-<li><a href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
+<li><a href="#undo-redo-feature">3.1. Undo/Redo Feature</a></li>
+<li><a href="#course-planner-feature">3.2. Course Planner feature</a></li>
+<li><a href="#planner-feature">3.3. Planner Feature</a></li>
+<li><a href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -252,14 +251,9 @@ The lifeline for <code>DeleteAddressCommandParser</code> should end at the destr
 <h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
-</div>
-<div class="title">Figure 7. Structure of the Model Component</div>
-</div>
-<div class="imageblock">
-<div class="content">
 <img src="images/ModelDiagram.png" alt="ModelDiagram">
 </div>
+<div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -337,226 +331,20 @@ data in json format and read it back.</p>
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo/Redo Feature</a></h3>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
-<div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.2. Undo/Redo Feature</a></h3>
-<div class="sect3">
-<h4 id="overview"><a class="link" href="#overview">3.2.1. Overview</a></h4>
+<h4 id="overview"><a class="link" href="#overview">3.1.1. Overview</a></h4>
 <div class="paragraph">
 <p>The application should be able to undo and redo changes made by commands to give the user more flexibility in their inputs.
-Undo and redo operations should also be undo or redo multiple commands in a command.</p>
+Undo and redo operations should also be undo or redo multiple commands in a command.
+In the event that a undo/redo command that comprises of multiple undo/redo operations fails at any point, all changes made
+by the command should be rolled back. This is reflected in the Activity Diagram below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram">
+</div>
+<div class="title">Figure 9. Activity Diagram for undo and redo commands</div>
 </div>
 <div class="paragraph">
 <p>Therefore there is a need to remember commands that change the state of the <code>Model</code>. Commands that just render a view without
@@ -586,9 +374,18 @@ The reason is that they are commands facilitating the undo and redo operation, t
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>The following activity diagram illustrates how commands are remembered when a user types in a command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CommandActivityDiagram.png" alt="CommandActivityDiagram">
+</div>
+<div class="title">Figure 10. Activity Diagram for how commands are remembered after their successful execution</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.2.2. Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo feature mechanism is facilitated by <code>HistoryManager</code>. <code>HistoryManager</code> remembers <strong>invertible commands</strong>. These commands are stored internally in
 two <code>CommandDeque</code> objects, <code>executedCommands</code> and <code>inverselyExecutedCommands</code>. <code>CommandDeque</code> serve as custom <code>Deque</code>
@@ -654,16 +451,32 @@ undo and redo capabilities by extending the <code>HistoryModel</code> which has 
 </ul>
 </div>
 <div class="paragraph">
-<p>The following activity diagram illustrates how commands are remembered when a user types in a command:</p>
+<p>Below is a class diagram between <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/CommandActivityDiagram.png" alt="CommandActivityDiagram">
+<img src="images/HistoryManagerClassDiagram.png" alt="HistoryManagerClassDiagram">
 </div>
+<div class="title">Figure 11. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>. These commands store an integer value referencing the number of commands to undo or redo,
-represented by <code>UndoCommand#numberOfTimes</code> and <code>RedoCommand#numberOfTimes</code>.</p>
+represented by <code>UndoCommand#numberOfTimes</code> and <code>RedoCommand#numberOfTimes</code>. The Class Diagram below shows details about <code>UndoCommand</code> and <code>RedoCommand</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoCommandClassDiagram.png" alt="UndoRedoCommandClassDiagram">
+</div>
+<div class="title">Figure 12. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
+</div>
+<div class="paragraph">
+<p>Below is a Sequence Diagram of how an <code>UndoCommand</code> executes in the program. <code>RedoCommand</code> follows a similar process.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
+</div>
+<div class="title">Figure 13. Sequence Diagram for <code>UndoCommand</code></div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
@@ -757,9 +570,9 @@ This means that all potential redo actions are cleared.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.3. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.3. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-undo-redo-executes-2"><a class="link" href="#aspect-how-undo-redo-executes-2">Aspect: How undo &amp; redo executes</a></h5>
+<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -792,11 +605,11 @@ This means that all potential redo actions are cleared.
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands-2"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands-2">Aspect: Data structure to support the undo/redo commands</a></h5>
+<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1:</strong> Use a list to store the history of <code>Model</code> states.
+<p><strong>Alternative 1:</strong> Use a <code>List</code> to store the history of <code>Model</code> states.
 Maintain a pointer to point to the current version of <code>Model</code>, and shift the pointer along the list to facilitate undo/redo operations.</p>
 <div class="ulist">
 <ul>
@@ -818,7 +631,7 @@ executed commands and inversely executed commands. Move commands from one deque 
 <p>Pros: Storage efficient, as application only needs to keep track of invertible commands, and do not need to store multiple copies of <code>Model</code>.</p>
 </li>
 <li>
-<p>Cons: Need to ensure that invertible commands implement their inverse execution correctly.</p>
+<p>Cons: Implementation is more complex.</p>
 </li>
 </ul>
 </div>
@@ -829,9 +642,9 @@ executed commands and inversely executed commands. Move commands from one deque 
 </div>
 </div>
 <div class="sect2">
-<h3 id="course-planner-feature"><a class="link" href="#course-planner-feature">3.3. Course Planner feature</a></h3>
+<h3 id="course-planner-feature"><a class="link" href="#course-planner-feature">3.2. Course Planner feature</a></h3>
 <div class="sect3">
-<h4 id="overview-2"><a class="link" href="#overview-2">3.3.1. Overview</a></h4>
+<h4 id="overview-2"><a class="link" href="#overview-2">3.2.1. Overview</a></h4>
 <div class="paragraph">
 <p>The Course Planner feature allows the user to track what courses they have
 taken, are taking and plan out what they would want to take after the current
@@ -840,7 +653,7 @@ along with convenient add, delete and check operations on their course list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.3.2. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The Course Planner feature closely follows the extendable OOP solution already
 implemented within AB3. In the Course Planner, the <code>CoursePlanner</code> object
@@ -964,7 +777,7 @@ school timetable.
 </div>
 </div>
 <div class="sect3">
-<h4 id="and-or-tree"><a class="link" href="#and-or-tree">3.3.3. And-Or Tree</a></h4>
+<h4 id="and-or-tree"><a class="link" href="#and-or-tree">3.2.3. And-Or Tree</a></h4>
 <div class="sect4">
 <h5 id="overview-3"><a class="link" href="#overview-3">Overview</a></h5>
 <div class="paragraph">
@@ -1081,7 +894,7 @@ this node</p>
 <div class="content">
 <img src="images/AndOrNodeConditionDiagram.png" alt="700" width="700">
 </div>
-<div class="title">Figure 9. AndOrNode Condition Diagram</div>
+<div class="title">Figure 14. AndOrNode Condition Diagram</div>
 </div>
 <div class="paragraph">
 <p>The tree is built recursively using the Jackson JSON API&#8217;s <code>JsonNode</code> class,
@@ -1095,7 +908,7 @@ traverse the <code>json</code> object tree structure.</p>
 <div class="content">
 <img src="images/AndOrSequenceDiagram.png" alt="AndOrSequenceDiagram">
 </div>
-<div class="title">Figure 10. AndOrTree Sequence Diagram</div>
+<div class="title">Figure 15. AndOrTree Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class looks at each node - checks if its a json Object, json Array or
@@ -1109,7 +922,7 @@ of the tree.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.4. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.4. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-storing-of-course-datasets"><a class="link" href="#aspect-storing-of-course-datasets">Aspect: Storing of Course datasets</a></h5>
 <div class="ulist">
@@ -1234,9 +1047,9 @@ between these two approaches.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="planner-feature"><a class="link" href="#planner-feature">3.4. Planner Feature</a></h3>
+<h3 id="planner-feature"><a class="link" href="#planner-feature">3.3. Planner Feature</a></h3>
 <div class="sect3">
-<h4 id="overview-4"><a class="link" href="#overview-4">3.4.1. Overview</a></h4>
+<h4 id="overview-4"><a class="link" href="#overview-4">3.3.1. Overview</a></h4>
 <div class="paragraph">
 <p>The planner feature in JARVIS enables users to easily organise and manage their different
 tasks in school. Users will be able to keep track of tasks they have done, and tasks they
@@ -1264,7 +1077,7 @@ have yet to do.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.4.2. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks a user has. A simple
 outline of the <code>Planner</code> can be seen in Fig 11 below.</p>
@@ -1273,7 +1086,7 @@ outline of the <code>Planner</code> can be seen in Fig 11 below.</p>
 <div class="content">
 <img src="images/plannermodel.png" alt="plannermodel">
 </div>
-<div class="title">Figure 11. Overview of the entire Planner</div>
+<div class="title">Figure 16. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
 <p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations necessary to carry out commands
@@ -1310,7 +1123,7 @@ appended to the end of the <code>TaskList</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.3. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-task-descriptions-in-a-task"><a class="link" href="#aspect-task-descriptions-in-a-task">Aspect: Task Descriptions in a Task</a></h5>
 <div class="ulist">
@@ -1347,20 +1160,20 @@ appended to the end of the <code>TaskList</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1391,7 +1204,7 @@ appended to the end of the <code>TaskList</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1847,4 +1660,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 12:27:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 13:23:52 UTC</div></div></div></body></html>
