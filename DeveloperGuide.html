@@ -25,9 +25,10 @@
 <li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
 <li><a href="#undo-redo-feature">3.2. Undo/Redo Feature</a></li>
 <li><a href="#course-planner-feature">3.3. Course Planner feature</a></li>
-<li><a href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.5. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
+<li><a href="#planner-feature">3.4. Planner Feature</a></li>
+<li><a href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -1233,20 +1234,133 @@ between these two approaches.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.4. [Proposed] Data Encryption</a></h3>
+<h3 id="planner-feature"><a class="link" href="#planner-feature">3.4. Planner Feature</a></h3>
+<div class="sect3">
+<h4 id="overview-4"><a class="link" href="#overview-4">3.4.1. Overview</a></h4>
+<div class="paragraph">
+<p>The planner feature in JARVIS enables users to easily organise and manage their different
+tasks in school. Users will be able to keep track of tasks they have done, and tasks they
+have yet to do.</p>
+</div>
+<div class="paragraph">
+<p>There are three types of tasks in the planner:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Todo</code>: Tasks with a description only</p>
+</li>
+<li>
+<p><code>Event</code>: Tasks with a start and end date</p>
+</li>
+<li>
+<p><code>Deadline</code>: Tasks with a due date</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Users can <code>Tag</code> these tasks to sort them into different categories, as well as add <code>Priority</code> and
+<code>Frequency</code> levels to them.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.4.2. Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks a user has. A simple
+outline of the <code>Planner</code> can be seen in Fig 11 below.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="images/plannermodel.png" alt="plannermodel">
+</div>
+<div class="title">Figure 11. Overview of the entire Planner</div>
+</div>
+<div class="paragraph">
+<p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations necessary to carry out commands
+by the user.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model#getPlanner()</code>&#8201;&#8212;&#8201;Returns an instance of a <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#addTask(int zeroBasedIndex, Task task</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the planner at the specified <code>Index</code>.</p>
+</li>
+<li>
+<p><code>Model#addTask(Task t)</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the <code>Planner</code>. Since no <code>Index</code> is specified, the <code>Task</code> is
+appended to the end of the <code>TaskList</code>.</p>
+</li>
+<li>
+<p><code>Model#deleteTask(Index index)</code>&#8201;&#8212;&#8201;Deletes the <code>Task</code> at the specified <code>Index</code> from the <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#deleteTask(Task t)</code>&#8201;&#8212;&#8201;Deletes the specified <code>Task</code> from the <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#size()</code>&#8201;&#8212;&#8201;Returns the total number of <code>Task</code> objects in the <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#hasTask(Task t)</code>&#8201;&#8212;&#8201;Checks if a given <code>Task</code> is already in the <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#getTasks()</code>&#8201;&#8212;&#8201;Returns the <code>TaskList</code> in the <code>Planner</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-task-descriptions-in-a-task"><a class="link" href="#aspect-task-descriptions-in-a-task">Aspect: Task Descriptions in a Task</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current choice):</strong> As a string attribute in <code>Task</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Intuitive, easy to implement, less code required</p>
+</li>
+<li>
+<p>Cons: Provides a lower level of abstraction, especially when <code>edit-task</code> command is implemented</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Building a separate <code>TaskDescription</code> class</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Higher level of abstraction</p>
+</li>
+<li>
+<p>Cons: More code, will take time to replace current methods that deal with String <code>TaskDes</code> directly</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1277,7 +1391,7 @@ between these two approaches.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1733,4 +1847,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 07:36:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-23 10:04:45 UTC</div></div></div></body></html>
