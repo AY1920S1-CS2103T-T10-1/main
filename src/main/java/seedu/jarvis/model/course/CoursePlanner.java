@@ -63,7 +63,7 @@ public class CoursePlanner {
      */
     public void checkCourse(AndOrTree<Course> tree) {
         Course course = tree.getRoot();
-        String message = tree.fulfills(getCourseList())
+        String message = tree.fulfills(getCourseList()) || hasCourse(course)
             ? String.format(MESSAGE_CAN_TAKE_COURSE, course)
             : String.format(MESSAGE_CANNOT_TAKE_COURSE, course);
         courseText.setText(message + "\n" + tree.toString());

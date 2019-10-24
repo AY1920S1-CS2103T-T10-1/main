@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.jarvis.logic.commands.course.CheckCommand.MESSAGE_CANNOT_TAKE_COURSE;
+import static seedu.jarvis.logic.commands.course.CheckCommand.MESSAGE_CAN_TAKE_COURSE;
 import static seedu.jarvis.testutil.course.TypicalCourses.MA1521;
 import static seedu.jarvis.testutil.course.TypicalCourses.getTypicalCoursePlanner;
 import static seedu.jarvis.testutil.course.TypicalCourses.getTypicalCourses;
@@ -16,6 +18,8 @@ import org.junit.jupiter.api.Test;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.jarvis.commons.util.CourseUtil;
+import seedu.jarvis.commons.util.andor.AndOrTree;
 import seedu.jarvis.model.course.exceptions.DuplicateCourseException;
 
 
@@ -68,6 +72,44 @@ public class CoursePlannerTest {
         assertThrows(UnsupportedOperationException.class, () -> {
             coursePlanner.getCourseList().remove(0);
         });
+    }
+
+    @Test
+    public void checkCourse_doesNotSatisfyPrereqs_cannotTakeCourse() {
+        Course actualCourse = CourseUtil.getCourse("CS2040").get();
+        AndOrTree<Course> tree = AndOrTree.buildTree(
+            actualCourse.toString(),
+            actualCourse.getPrereqTree().toString(), (c) -> CourseUtil.getCourse(c).orElse(null)
+        );
+        coursePlanner.checkCourse(tree);
+        assertEquals(coursePlanner.getCourseText().getText(),
+                String.format(MESSAGE_CANNOT_TAKE_COURSE, actualCourse) + "\n" + tree.toString());
+    }
+
+    @Test
+    public void checkCourse_tookTheCourse_cannotTakeCourse() {
+        Course actualCourse = CourseUtil.getCourse("CS2040").get();
+        AndOrTree<Course> tree = AndOrTree.buildTree(
+            actualCourse.toString(),
+            actualCourse.getPrereqTree().toString(), (c) -> CourseUtil.getCourse(c).orElse(null)
+        );
+        coursePlanner.addCourse(actualCourse);
+        coursePlanner.checkCourse(tree);
+        assertEquals(coursePlanner.getCourseText().getText(),
+            String.format(MESSAGE_CAN_TAKE_COURSE, actualCourse) + "\n" + tree.toString());
+    }
+
+    @Test
+    public void checkCourse_satisfyPrereqs_cannotTakeCourse() {
+        Course actualCourse = CourseUtil.getCourse("CS2040").get();
+        AndOrTree<Course> tree = AndOrTree.buildTree(
+            actualCourse.toString(),
+            actualCourse.getPrereqTree().toString(), (c) -> CourseUtil.getCourse(c).orElse(null)
+        );
+        coursePlanner.addCourse(CourseUtil.getCourse("CS1010").get());
+        coursePlanner.checkCourse(tree);
+        assertEquals(coursePlanner.getCourseText().getText(),
+            String.format(MESSAGE_CAN_TAKE_COURSE, actualCourse) + "\n" + tree.toString());
     }
 
     private static class CoursePlannerStub extends CoursePlanner {
