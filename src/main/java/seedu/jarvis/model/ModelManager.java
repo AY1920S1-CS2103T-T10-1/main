@@ -709,4 +709,9 @@ public class ModelManager implements Model {
     public CoursePlanner getCoursePlanner() {
         return coursePlanner;
     }
+
+    @Override
+    public String getStringToDisplay() {
+        return coursePlanner.getShowString();
+    }
 }

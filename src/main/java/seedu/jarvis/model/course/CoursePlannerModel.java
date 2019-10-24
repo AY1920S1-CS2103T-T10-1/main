@@ -37,6 +37,11 @@ public interface CoursePlannerModel {
     ObservableList<Course> getUnfilteredCourseList();
 
     /**
+     * Returns a displayable {@code String} to the user.
+     */
+    String getStringToDisplay();
+
+    /**
      * Gets this Model's course planner
      */
     CoursePlanner getCoursePlanner();
