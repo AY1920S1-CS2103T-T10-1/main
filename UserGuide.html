@@ -372,215 +372,96 @@ being cleared.</p>
 <div class="sect2">
 <h3 id="finance-tracker"><a class="link" href="#finance-tracker">3.3. Finance Tracker</a></h3>
 <div class="sect3">
-<h4 id="add-a-single-use-payment-code-pay-code"><a class="link" href="#add-a-single-use-payment-code-pay-code">3.3.1. Add a single-use payment: <code>pay</code></a></h4>
+<h4 id="add-a-single-use-purchase-code-add-paid-code"><a class="link" href="#add-a-single-use-purchase-code-add-paid-code">3.3.1. Add a single-use purchase: <code>add-paid</code></a></h4>
 <div class="paragraph">
-<p>Adds a single use payment to the finance tracker. The amount spent will be
+<p>Adds a single use purchase to the finance tracker. The amount spent will be
 added to the current spending to keep track of the budget set by the user.</p>
 </div>
 <div class="paragraph">
-<p>Payments can be added either by a tag, or to a person.</p>
+<p>Payments have to be added with a description and a payment amount.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>pay a/AMOUNT {#TAG | n/PERSON}</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:<br>
-<code>pay a/30 #food</code><br>
-<code>pay a/30 n/jessica</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-a-payment-code-pay-delete-code"><a class="link" href="#delete-a-payment-code-pay-delete-code">3.3.2. Delete a payment: <code>pay-delete</code></a></h4>
-<div class="paragraph">
-<p>Deletes payments in the list of payments tracked by Jarvis.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>pay delete INDEX</code></p>
-</div>
-<div class="paragraph">
-<p>where <code>INDEX</code> is the <strong>one-based</strong> index of the payment list.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="setting-instalments-code-install-set-code"><a class="link" href="#setting-instalments-code-install-set-code">3.3.3. Setting Instalments: <code>install-set</code></a></h4>
-<div class="paragraph">
-<p>Sets instalments, such as a subscription to a service that is paid monthly.
-The amount is assumed to be deducted on the first of every month.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>instal set n/ITEM a/AMOUNT</code></p>
+<p>Format: <code>pay d/PURCHASE-DESCRIPTION a/AMOUNT</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:<br>
-<code>instal set n/Spotify a/10</code><br>
-<code>instal set n/Netflix a/5</code></p>
+<code>pay d/lunch at the Deck a/4.50</code><br>
+<code>pay d/paid Jessica for milk tea a/2.0</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-instalments-code-install-edit-code"><a class="link" href="#edit-instalments-code-install-edit-code">3.3.4. Edit Instalments: <code>install-edit</code></a></h4>
+<h4 id="delete-a-purchase-code-delete-paid-code"><a class="link" href="#delete-a-purchase-code-delete-paid-code">3.3.2. Delete a purchase: <code>delete-paid</code></a></h4>
 <div class="paragraph">
-<p>Edits the instalments in the list of existing instalments.</p>
+<p>Deletes a single use purchase from the list of purchases tracked by Jarvis.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>instal edit INDEX {n/ITEM | a/AMOUNT}</code></p>
+<p>Format: <code>delete-paid INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>INDEX</code> is the <strong>one-based</strong> index of the purchases list.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="setting-an-installment-code-add-install-code"><a class="link" href="#setting-an-installment-code-add-install-code">3.3.3. Setting an installment: <code>add-install</code></a></h4>
+<div class="paragraph">
+<p>Sets an installment, which is a subscription to a service that is paid monthly.
+The amount is assumed to be deducted on the first of every month. Each installment
+must contain a description and a subscription fee.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add-install d/INSTALLMENT-DESCRIPTION a/AMOUNT</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:<br>
-<code>instal edit 1 a/10</code><br>
-<code>instal edit 2 n/Spotify-Family</code></p>
+<code>add-install n/Spotify a/9.50</code><br>
+<code>add-install n/Netflix a/13.0</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-instalments-code-install-delete-code"><a class="link" href="#delete-instalments-code-install-delete-code">3.3.5. Delete Instalments: <code>install-delete</code></a></h4>
+<h4 id="edit-an-installment-code-edit-install-code"><a class="link" href="#edit-an-installment-code-edit-install-code">3.3.4. Edit an installment: <code>edit-install</code></a></h4>
 <div class="paragraph">
-<p>Deletes instalments in the list of existing instalments</p>
+<p>Edits an existing installment in the list of existing installments.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit-install INDEX {d/INSTALLMENT-DESCRIPTION | a/AMOUNT}</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:<br>
+<code>edit-install 1 a/10</code><br>
+<code>edit-install 2 d/Spotify-Family</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-an-installment-code-delete-install-code"><a class="link" href="#delete-an-installment-code-delete-install-code">3.3.5. Delete an installment: <code>delete-install</code></a></h4>
+<div class="paragraph">
+<p>Deletes an installment in the list of existing installments.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>instal delete INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-instalments-code-install-list-code"><a class="link" href="#listing-instalments-code-install-list-code">3.3.6. Listing Instalments: <code>install-list</code></a></h4>
-<div class="paragraph">
-<p>Shows all instalments that the user has subscribed to.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>instal list</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-expenditures-code-expenses-list-code"><a class="link" href="#listing-expenditures-code-expenses-list-code">3.3.7. Listing Expenditures: <code>expenses-list</code></a></h4>
-<div class="paragraph">
-<p>Shows all payments that the user has made this month.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>expenses list</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="setting-monthly-limit-code-set-monthly-code"><a class="link" href="#setting-monthly-limit-code-set-monthly-code">3.3.8. Setting Monthly Limit: <code>set-monthly</code></a></h4>
+<h4 id="setting-monthly-limit-code-set-monthly-code"><a class="link" href="#setting-monthly-limit-code-set-monthly-code">3.3.6. Setting Monthly Limit: <code>set-monthly</code></a></h4>
 <div class="paragraph">
 <p>Sets a monthly budget limit. From the monthly limit, the program will
 automatically calculate your weekly and daily limit.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>set monthly a/AMOUNT</code></p>
+<p>Format: <code>set-limit a/AMOUNT</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:<br>
-<code>set monthly a/300</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="compare-expenditure-between-two-months-code-compare-code"><a class="link" href="#compare-expenditure-between-two-months-code-compare-code">3.3.9. Compare Expenditure between Two Months: <code>compare</code></a></h4>
-<div class="paragraph">
-<p>Shows a comparison of expenditure between the two given months.</p>
+<code>set-limit a/300</code></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>compare m/DATE m/DATE</code></p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>compare m/Jan2019 m/Feb2019</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="estimating-remaining-budget-code-est-code"><a class="link" href="#estimating-remaining-budget-code-est-code">3.3.10. Estimating Remaining Budget: <code>est</code></a></h4>
-<div class="paragraph">
-<p>Estimates the amount of money that can be spent for</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>the current day</p>
-</li>
-<li>
-<p>the current month</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Format: <code>est {day | month}</code></p>
-</div>
-<div class="paragraph">
-<p>The amount shown takes the amount spent for the current day or month, and
-minuses it from the user&#8217;s monthly limit. If no monthly limit has been
-specified, the program will show:</p>
+<p>If no monthly limit has been specified, the program will show:</p>
 </div>
 <div class="paragraph">
 <p><code>Oops, there does not seem to be a monthly limit.</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-owed-amounts-code-owe-code-code-debt-code"><a class="link" href="#adding-owed-amounts-code-owe-code-code-debt-code">3.3.11. Adding owed amounts: <code>owe</code> &amp; <code>debt</code></a></h4>
-<div class="paragraph">
-<p><code>owe</code>: saves a payment owed by someone else to the user.<br>
-<code>debt</code>: saves a payment owed by the user to someone else.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>owe n/PERSON a/AMOUNT</code> or <code>debt n/PERSON a/AMOUNT</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="splitting-a-tab-code-tab-code"><a class="link" href="#splitting-a-tab-code-tab-code">3.3.12. Splitting a Tab: <code>tab</code></a></h4>
-<div class="paragraph">
-<p>Divides and tracks a tab for a bill. All names are input to Jarvis will
-then have a separate tab</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>tab a/AMOUNT n/PERSON&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:<br>
-<code>tab a/20 n/Alice n/Bob n/Charlie</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="mark-a-debt-as-paid-code-paid-debt-code"><a class="link" href="#mark-a-debt-as-paid-code-paid-debt-code">3.3.13. Mark a debt as paid: <code>paid debt</code></a></h4>
-<div class="paragraph">
-<p>Marks a payment owed by the user to someone else as paid. Payment is identified
-by its index in the list of debts. Once marked as paid, the corresponding
-amount will be added to spending amount. The debt will be removed form the
-list of debts and added t othe list of payments.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>paid debt INDEX</code></p>
-</div>
-<div class="paragraph">
-<p>where <code>INDEX</code> is the <strong>one-based</strong> index of the payment list.</p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>paid tab 1</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-debts"><a class="link" href="#listing-debts">3.3.14. Listing Debts</a></h4>
-<div class="paragraph">
-<p>Shows all debts that user owes or is owed.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>list debts</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="loans-code-set-loans-code"><a class="link" href="#loans-code-set-loans-code">3.3.15. Loans: <code>set loans</code></a></h4>
-<div class="paragraph">
-<p>Set loans with interest per annum.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>set loan a/TOTAL [i/INTEREST]</code></p>
-</div>
-<div class="paragraph">
-<p>where <code>INTEREST</code> is in <code>% per annum</code></p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>set loan a/10000 i/3.7</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="export-to-file-code-export-code"><a class="link" href="#export-to-file-code-export-code">3.3.16. Export to File: <code>export</code></a></h4>
+<h4 id="export-to-file-code-export-code"><a class="link" href="#export-to-file-code-export-code">3.3.7. Export to File: <code>export</code></a></h4>
 <div class="paragraph">
 <p>Export the current expenditure to a file, either as a <code>.txt</code>, <code>.csv</code>
 or <code>xlsx</code> format.</p>
@@ -595,28 +476,6 @@ or <code>xlsx</code> format.</p>
 <div class="paragraph">
 <p>This will create a file called <code>expenditures.csv</code> in the current directory,
 containing all expenditures.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="track-income-code-income-code"><a class="link" href="#track-income-code-income-code">3.3.17. Track Income: <code>income</code></a></h4>
-<div class="paragraph">
-<p>Enables additional budgeting options when monthly income is specified.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>income a/AMOUNT</code></p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>income a/3000</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="display-as-graph-code-graph-code"><a class="link" href="#display-as-graph-code-graph-code">3.3.18. Display as Graph: <code>graph</code></a></h4>
-<div class="paragraph">
-<p>Show detailed statistics about your expenditures.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>graph</code></p>
 </div>
 </div>
 </div>
@@ -1152,4 +1011,4 @@ redo [r/NUMBER]</pre>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 15:31:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 15:42:52 UTC</div></div></div></body></html>
