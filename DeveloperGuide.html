@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Jarvis - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jarvis - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team T10-1</code>      Since: <code>Aug 2019</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -20,9 +20,9 @@
 <li><a href="#Design-Commons">2.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation-implementation">3. Implementation==== Implementation</a>
+<li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#undo-redo-feature">3.1. Undo/Redo Feature</a></li>
+<li><a href="#undo-redo-feature">3.1. Undo / Redo Feature</a></li>
 <li><a href="#course-planner-feature">3.2. Course Planner feature</a></li>
 <li><a href="#finance-tracker-feature">3.3. Finance Tracker feature</a></li>
 <li><a href="#planner-feature">3.4. Planner Feature</a></li>
@@ -70,42 +70,37 @@
 <div class="title">Figure 1. Architecture Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/se-edu/addressbook-level3/tree/master/docs/diagrams/">diagrams</a> folder.
-Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
-</td>
-</tr>
-</table>
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the
+App. Given below is a quick overview of each component.</p>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has two classes called
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>.
+They are responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+<p>At app launch: Initializes the components in the correct sequence, and
+connects them up with each other.</p>
 </li>
 <li>
-<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+<p>At shut down: Shuts down the components and invokes cleanup method where
+necessary.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
-The following class plays an important role at the architecture level:</p>
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used byx
+multiple other components. The following class plays an important role at the
+architecture level:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log
+file.</p>
 </li>
 </ul>
 </div>
@@ -124,7 +119,8 @@ The following class plays an important role at the architecture level:</p>
 <p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
 </li>
 <li>
-<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
+<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the
+hard disk.</p>
 </li>
 </ul>
 </div>
@@ -142,7 +138,9 @@ The following class plays an important role at the architecture level:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+<p>For example, the <code>Logic</code> component (see the class diagram given below) defines
+it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using
+the <code>LogicManager.java</code> class.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -152,7 +150,8 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each
+other for the scenario where the user issues the command <code>delete 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -173,13 +172,20 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>,
+<code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these,
+including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are
+defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code>
+folder. For example, the layout of the
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a>
+is specified in
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -190,7 +196,8 @@ The following class plays an important role at the architecture level:</p>
 <p>Executes user commands using the <code>Logic</code> component.</p>
 </li>
 <li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
+<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the
+modified data.</p>
 </li>
 </ul>
 </div>
@@ -205,7 +212,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -219,15 +226,18 @@ The following class plays an important role at the architecture level:</p>
 <p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code>
+object which is passed back to the <code>Ui</code>.</p>
 </li>
 <li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to
+perform certain actions, such as displaying help to the user.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code>
+component for the <code>execute("delete 1")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -242,7 +252,9 @@ The following class plays an important role at the architecture level:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>DeleteAddressCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>DeleteAddressCommandParser</code> should end at the destroy
+marker (X) but due to a limitation of PlantUML, the lifeline reaches the end
+of diagram.
 </td>
 </tr>
 </table>
@@ -257,7 +269,7 @@ The lifeline for <code>DeleteAddressCommandParser</code> should end at the destr
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -300,7 +312,7 @@ The lifeline for <code>DeleteAddressCommandParser</code> should end at the destr
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -311,8 +323,8 @@ The lifeline for <code>DeleteAddressCommandParser</code> should end at the destr
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book, History Manager, Finance Tracker, Cca Tracker, Course Planner and Planner
-data in json format and read it back.</p>
+<p>can save the Address Book, History Manager, Finance Tracker, Cca Tracker,
+Course Planner and Planner data in json format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -326,20 +338,23 @@ data in json format and read it back.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation-implementation"><a class="link" href="#implementation-implementation">3. Implementation==== Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
+<p>This section describes some noteworthy details on how certain features are
+implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo/Redo Feature</a></h3>
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo / Redo Feature</a></h3>
 <div class="sect3">
 <h4 id="overview"><a class="link" href="#overview">3.1.1. Overview</a></h4>
 <div class="paragraph">
-<p>The application should be able to undo and redo changes made by commands to give the user more flexibility in their inputs.
-Undo and redo operations should also be undo or redo multiple commands in a command.
-In the event that a undo/redo command that comprises of multiple undo/redo operations fails at any point, all changes made
-by the command should be rolled back. This is reflected in the Activity Diagram below:</p>
+<p>The application should be able to undo and redo changes made by commands to
+give the user more flexibility in their inputs. Undo and redo operations
+should also be undo or redo multiple commands in a command. In the event that
+a undo/redo command that comprises of multiple undo/redo operations fails at
+any point, all changes made by the command should be rolled back. This is
+reflected in the Activity Diagram below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -348,17 +363,21 @@ by the command should be rolled back. This is reflected in the Activity Diagram 
 <div class="title">Figure 9. Activity Diagram for undo and redo commands</div>
 </div>
 <div class="paragraph">
-<p>Therefore there is a need to remember commands that change the state of the <code>Model</code>. Commands that just render a view without
-actually changing the application should not be stored as it does not make sense to undo or redo them.
-We will distinguish these types of commands into two categories, <strong>invertible commands</strong> and <strong>non-invertible commands</strong>.</p>
+<p>Therefore there is a need to remember commands that change the state of the
+<code>Model</code>. Commands that just render a view without actually changing the
+application should not be stored as it does not make sense to undo or redo
+them. We will distinguish these types of commands into two categories,
+<strong>invertible commands</strong> and <strong>non-invertible commands</strong>.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Invertible commands</strong>&#8201;&#8212;&#8201;commands that mutate the state of the <code>Model</code> and should be stored for undo/redo functions.</p>
+<p><strong>Invertible commands</strong>&#8201;&#8212;&#8201;commands that mutate the state of the <code>Model</code> and
+should be stored for undo/redo functions.</p>
 </li>
 <li>
-<p><strong>Non-invertible commands</strong>&#8201;&#8212;&#8201;commands that do not mutate the state of the <code>Model</code> and should not be stored for undo/redo functions.</p>
+<p><strong>Non-invertible commands</strong>&#8201;&#8212;&#8201;commands that do not mutate the state of the
+<code>Model</code> and should not be stored for undo/redo functions.</p>
 </li>
 </ul>
 </div>
@@ -369,14 +388,17 @@ We will distinguish these types of commands into two categories, <strong>inverti
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Undo and redo commands will be considered non-invertible commands even though they technically change the state of the <code>Model</code>.
-The reason is that they are commands facilitating the undo and redo operation, thus they should not be stored.
+Undo and redo commands will be considered non-invertible commands even though
+they technically change the state of the <code>Model</code>. The reason is that they are
+commands facilitating the undo and redo operation, thus they should not be
+stored.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following activity diagram illustrates how commands are remembered when a user types in a command:</p>
+<p>The following activity diagram illustrates how commands are remembered when a
+user types in a command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -386,20 +408,24 @@ The reason is that they are commands facilitating the undo and redo operation, t
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation"><a class="link" href="#implementation">3.1.2. Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.2. Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo feature mechanism is facilitated by <code>HistoryManager</code>. <code>HistoryManager</code> remembers <strong>invertible commands</strong>. These commands are stored internally in
-two <code>CommandDeque</code> objects, <code>executedCommands</code> and <code>inverselyExecutedCommands</code>. <code>CommandDeque</code> serve as custom <code>Deque</code>
-data structure, which stores the latest added command to the top.</p>
+<p>The undo/redo feature mechanism is facilitated by <code>HistoryManager</code>.
+<code>HistoryManager</code> remembers <strong>invertible commands</strong>. These commands are stored
+internally in two <code>CommandDeque</code> objects, <code>executedCommands</code> and
+<code>inverselyExecutedCommands</code>. <code>CommandDeque</code> serve as custom <code>Deque</code> data
+structure, which stores the latest added command to the top.</p>
 </div>
 <div class="paragraph">
-<p>An undo operation would comprise of taking the latest executed command from <code>executedCommands</code>, inversely executing it, and adding it to
-<code>inverselyExecutedCommands</code>. A redo operation would comprise of a taking the latest inversely executed command from
-<code>inverselyExecutedCommands</code>, executing it, and adding it to <code>executedCommands</code>.</p>
+<p>An undo operation would comprise of taking the latest executed command from
+<code>executedCommands</code>, inversely executing it, and adding it to
+<code>inverselyExecutedCommands</code>. A redo operation would comprise of a taking the
+latest inversely executed command from <code>inverselyExecutedCommands</code>, executing
+it, and adding it to <code>executedCommands</code>.</p>
 </div>
 <div class="paragraph">
-<p><code>Model</code> supports operations to facilitate
-undo and redo capabilities by extending the <code>HistoryModel</code> which has the following operations:</p>
+<p><code>Model</code> supports operations to facilitate undo and redo capabilities by
+extending the <code>HistoryModel</code> which has the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -407,52 +433,71 @@ undo and redo capabilities by extending the <code>HistoryModel</code> which has 
 <p><code>Model#getHistoryManager()</code>&#8201;&#8212;&#8201;Gets the <code>HistoryManager</code> instance.</p>
 </li>
 <li>
-<p><code>Model#setHistoryManager(HistoryManager)</code>&#8201;&#8212;&#8201;Resets the <code>HistoryManager</code> data to the given <code>HistoryManager</code> in the argument.</p>
+<p><code>Model#setHistoryManager(HistoryManager)</code>&#8201;&#8212;&#8201;Resets the <code>HistoryManager</code>
+data to the given <code>HistoryManager</code> in the argument.</p>
 </li>
 <li>
-<p><code>Model#getAvailableNumberOfExecutedCommands()</code>&#8201;&#8212;&#8201;Gets the maximum available number of commands that can be undone.</p>
+<p><code>Model#getAvailableNumberOfExecutedCommands()</code>&#8201;&#8212;&#8201;Gets the maximum available
+number of commands that can be undone.</p>
 </li>
 <li>
-<p><code>Model#getAvailableNumberOfInverselyExecutedCommands()</code>&#8201;&#8212;&#8201;Gets the maximum available number of commands that can be redone.</p>
+<p><code>Model#getAvailableNumberOfInverselyExecutedCommands()</code>&#8201;&#8212;&#8201;Gets the maximum
+available number of commands that can be redone.</p>
 </li>
 <li>
-<p><code>Model#canRollback()</code>&#8201;&#8212;&#8201;Checks if it is possible to undo a command at the given state.</p>
+<p><code>Model#canRollback()</code>&#8201;&#8212;&#8201;Checks if it is possible to undo a command at the
+given state.</p>
 </li>
 <li>
-<p><code>Model#canCommit()</code>&#8201;&#8212;&#8201;Checks if it is possible to redo a command at the given state.</p>
+<p><code>Model#canCommit()</code>&#8201;&#8212;&#8201;Checks if it is possible to redo a command at the
+given state.</p>
 </li>
 <li>
-<p><code>Model#rememberExecutedCommand(Command)</code>&#8201;&#8212;&#8201;Remembers the given <code>Command</code> and stores it in <code>executedCommands</code> to facilitate undo capability for this command.</p>
+<p><code>Model#rememberExecutedCommand(Command)</code>&#8201;&#8212;&#8201;Remembers the given <code>Command</code>
+and stores it in <code>executedCommands</code> to facilitate undo capability for this
+command.</p>
 </li>
 <li>
-<p><code>Model#rememberInverselyExecutedCommand(Command)</code>&#8201;&#8212;&#8201;Remembers the given <code>Command</code> and stores it in <code>inverselyExecutedCommands</code> to facilitate redo capability for this command.</p>
+<p><code>Model#rememberInverselyExecutedCommand(Command)</code>&#8201;&#8212;&#8201;Remembers the given
+<code>Command</code> and stores it in <code>inverselyExecutedCommands</code> to facilitate redo
+capability for this command.</p>
 </li>
 <li>
-<p><code>Model#rollback()</code>&#8201;&#8212;&#8201;Inversely executes the latest command stored in <code>executedCommands</code> to revert the changes of the latest executed command made onto <code>Model</code>.</p>
+<p><code>Model#rollback()</code>&#8201;&#8212;&#8201;Inversely executes the latest command stored in
+<code>executedCommands</code> to revert the changes of the latest executed command
+made onto <code>Model</code>.</p>
 </li>
 <li>
-<p><code>Model#commit()</code>&#8201;&#8212;&#8201;Executes the latest undone command stored in <code>inverselyExecutedCommands</code> to reapply the changes that were made onto <code>Model</code> by the latest undone command.</p>
+<p><code>Model#commit()</code>&#8201;&#8212;&#8201;Executes the latest undone command stored in
+<code>inverselyExecutedCommands</code> to reapply the changes that were made onto
+<code>Model</code> by the latest undone command.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Commands support the given operations to mutate the state of the <code>Model</code> and to check if they should be stored for undo/redo function:</p>
+<p>Commands support the given operations to mutate the state of the <code>Model</code> and
+to check if they should be stored for undo/redo function:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Command#hasInverseExecution()</code>&#8201;&#8212;&#8201;Checks if the command&#8217;s execution mutates the state of the <code>Model</code>, which is used to determine if the command should be remembered by <code>HistoryManager</code>.</p>
+<p><code>Command#hasInverseExecution()</code>&#8201;&#8212;&#8201;Checks if the command&#8217;s execution mutates
+the state of the <code>Model</code>, which is used to determine if the command should
+be remembered by <code>HistoryManager</code>.</p>
 </li>
 <li>
 <p><code>Command#execute(Model)</code>&#8201;&#8212;&#8201;Executes the command on the given <code>Model</code>.</p>
 </li>
 <li>
-<p><code>Command#executeInverse(Model)</code>&#8201;&#8212;&#8201;Executes on the given <code>Model</code> such that it will undo whatever changes were made when <code>Command#execute(Model)</code> was called.</p>
+<p><code>Command#executeInverse(Model)</code>&#8201;&#8212;&#8201;Executes on the given <code>Model</code> such that
+it will undo whatever changes were made when <code>Command#execute(Model)</code> was
+called.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Below is a class diagram between <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code>.</p>
+<p>Below is a class diagram between <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>,
+<code>CommandDeque</code> and <code>Command</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -461,8 +506,11 @@ undo and redo capabilities by extending the <code>HistoryModel</code> which has 
 <div class="title">Figure 11. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
-<p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>. These commands store an integer value referencing the number of commands to undo or redo,
-represented by <code>UndoCommand#numberOfTimes</code> and <code>RedoCommand#numberOfTimes</code>. The Class Diagram below shows details about <code>UndoCommand</code> and <code>RedoCommand</code>.</p>
+<p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>
+These commands store an integer value referencing the number of commands to
+undo or redo, represented by <code>UndoCommand#numberOfTimes</code> and
+<code>RedoCommand#numberOfTimes</code>. The Class Diagram below shows details about
+<code>UndoCommand</code> and <code>RedoCommand</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -471,7 +519,8 @@ represented by <code>UndoCommand#numberOfTimes</code> and <code>RedoCommand#numb
 <div class="title">Figure 12. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
-<p>Below is a Sequence Diagram of how an <code>UndoCommand</code> executes in the program. <code>RedoCommand</code> follows a similar process.</p>
+<p>Below is a Sequence Diagram of how an <code>UndoCommand</code> executes in the program.
+<code>RedoCommand</code> follows a similar process.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -483,18 +532,23 @@ represented by <code>UndoCommand#numberOfTimes</code> and <code>RedoCommand#numb
 <p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>HistoryManager</code> is initialized.
-<code>HistoryManager#executedCommands</code> and <code>HistoryManager#inverselyExecutedCommands</code> are empty.</p>
+<p>Step 1. The user launches the application for the first time. The
+<code>HistoryManager</code> is initialized. <code>HistoryManager#executedCommands</code> and
+<code>HistoryManager#inverselyExecutedCommands</code> are empty.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book.
-A <code>DeleteAddressCommand</code> is created and executed in <code>LogicManager#execute(String)</code>.
-Since <code>DeleteCommand</code> is an invertible command, <code>HistoryManager</code> remembers the command, adding it to <code>HistoryManager#executedCommands</code>.</p>
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the
+address book. A <code>DeleteAddressCommand</code> is created and executed in
+<code>LogicManager#execute(String)</code>. Since <code>DeleteCommand</code> is an invertible
+command, <code>HistoryManager</code> remembers the command, adding it to
+<code>HistoryManager#executedCommands</code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person.
-A <code>AddAddressCommand</code> is created and executed in <code>LogicManager#execute(String)</code>.
-Since <code>AddAddressCommand</code> is an invertible command, <code>HistoryManager</code> remembers the command, adding it to <code>HistoryManager#executedCommands</code>.</p>
+A <code>AddAddressCommand</code> is created and executed in
+<code>LogicManager#execute(String)</code>. Since <code>AddAddressCommand</code> is an invertible
+command, <code>HistoryManager</code> remembers the command, adding it to
+<code>HistoryManager#executedCommands</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -503,17 +557,24 @@ Since <code>AddAddressCommand</code> is an invertible command, <code>HistoryMana
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a invertible command execution fails, <code>HistoryManager</code> will not remember it, therefore it will not be stored for undo/redo capabilities.
+If a invertible command execution fails, <code>HistoryManager</code> will not remember
+it, therefore it will not be stored for undo/redo capabilities.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that the last two commands entered was a mistake, and decides to undo those commands by executing the <code>undo</code> command by typing in the command <code>undo r/2</code>.
-An <code>UndoCommand</code> is created and executed in <code>LogicManager#execute(String)</code> to undo the latest two commands.
-The command will call <code>Model#rollback()</code> two times. During each <code>Model#rollback()</code> call, the <code>Model</code> will call <code>HistoryManager</code> to take the latest command
-from <code>HistoryManager#executedCommands</code> and call <code>Command#executeInverse(Model)</code> on the <code>Model</code>, undoing the changes made to <code>Model</code> by the command, before adding it to
-<code>HistoryManager#inverselyExecutedCommands</code>. After the <code>undo</code> command execution is complete, the <code>Model</code> state is reverted to what it was before the two undone commands were executed.</p>
+<p>Step 4. The user now decides that the last two commands entered was a mistake,
+and decides to undo those commands by executing the <code>undo</code> command by typing
+in the command <code>undo r/2</code>. An <code>UndoCommand</code> is created and executed in
+<code>LogicManager#execute(String)</code> to undo the latest two commands. The command
+will call <code>Model#rollback()</code> two times. During each <code>Model#rollback()</code> call,
+the <code>Model</code> will call <code>HistoryManager</code> to take the latest command from
+<code>HistoryManager#executedCommands</code> and call <code>Command#executeInverse(Model)</code> on
+the <code>Model</code>, undoing the changes made to <code>Model</code> by the command, before adding
+it to <code>HistoryManager#inverselyExecutedCommands</code>. After the <code>undo</code> command
+execution is complete, the <code>Model</code> state is reverted to what it was before the
+two undone commands were executed.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -522,7 +583,8 @@ from <code>HistoryManager#executedCommands</code> and call <code>Command#execute
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>undo</code>/<code>redo</code> commands can undo/redo one or more commands. To undo/redo one command, entering <code>undo</code>/<code>redo</code> is equivalent to entering  <code>undo 1</code>/<code>redo 1</code>.
+<code>undo</code>/<code>redo</code> commands can undo/redo one or more commands. To undo/redo one
+command, entering <code>undo</code>/<code>redo</code> is equivalent to entering  <code>undo 1</code>/<code>redo 1</code>.
 </td>
 </tr>
 </table>
@@ -534,27 +596,38 @@ from <code>HistoryManager#executedCommands</code> and call <code>Command#execute
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If an <code>undo</code>/<code>redo</code> command is given to undo/redo more commands than available, the operation will fail and no <code>undo</code>/<code>redo</code> is applied at all.
-This check is enforced by <code>Model#getAvailableNumberOfExecutedCommands()</code>, <code>Model#getAvailableNumberOfInverselyExecutedCommands()</code>, <code>Model#canRollback()</code> and <code>Model#canCommit()</code>.
+If an <code>undo</code>/<code>redo</code> command is given to undo/redo more commands than
+available, the operation will fail and no <code>undo</code>/<code>redo</code> is applied at all.
+This check is enforced by <code>Model#getAvailableNumberOfExecutedCommands()</code>,
+<code>Model#getAvailableNumberOfInverselyExecutedCommands()</code>, <code>Model#canRollback()</code>
+and <code>Model#canCommit()</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. <code>list</code> command is a <strong>non-invertible command</strong>. Therefore, it will not be stored by <code>HistoryManager</code> after its execution.</p>
+<p>Step 5. The user then decides to execute the command <code>list</code>. <code>list</code> command
+is a <strong>non-invertible command</strong>. Therefore, it will not be stored by
+<code>HistoryManager</code> after its execution.</p>
 </div>
 <div class="paragraph">
-<p>Step 6. The user decides to redo the last command that was undone by executing a <code>redo</code> command by typing in the command <code>redo</code>.
-A <code>RedoCommand</code> is created and executed in <code>LogicManager#execute(String)</code> to redo the latest undo.
-The command will call <code>Model#commit()</code> once. <code>Model</code> will call <code>HistoryManager</code> to take the latest command from <code>HistoryManager#inverselyExecutedCommands</code>
-and call <code>Command#execute(Model)</code> on the <code>Model</code>, reapplying the changes that were made by the command, before adding it to <code>HistoryManager#executedCommands</code>.
-After the <code>redo</code> command execution is complete, the <code>Model</code> has the changes made by the latest the command that was redone.</p>
+<p>Step 6. The user decides to redo the last command that was undone by executing
+a <code>redo</code> command by typing in the command <code>redo</code>. A <code>RedoCommand</code> is created
+and executed in <code>LogicManager#execute(String)</code> to redo the latest undo. The
+command will call <code>Model#commit()</code> once. <code>Model</code> will call <code>HistoryManager</code>
+to take the latest command from <code>HistoryManager#inverselyExecutedCommands</code>
+and call <code>Command#execute(Model)</code> on the <code>Model</code>, reapplying the changes that
+were made by the command, before adding it to
+<code>HistoryManager#executedCommands</code>. After the <code>redo</code> command execution is
+complete, the <code>Model</code> has the changes made by the latest the command that was
+redone.</p>
 </div>
 <div class="paragraph">
 <p>Step 7. The user executes <code>add n/John &#8230;&#8203;</code> to add a new person.
-A <code>AddAddressCommand</code> is created and executed in <code>LogicManager#execute(String)</code>.
-The <code>HistoryManager</code> clears all commands stored in <code>HistoryManager#inverselyExecutedCommands</code>.
-Similar to <code>Step 3</code>, <code>HistoryManager</code> remembers this command.</p>
+A <code>AddAddressCommand</code> is created and executed in
+<code>LogicManager#execute(String)</code>. The <code>HistoryManager</code> clears all commands
+stored in <code>HistoryManager#inverselyExecutedCommands</code>. Similar to <code>Step 3</code>,
+<code>HistoryManager</code> remembers this command.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -563,8 +636,10 @@ Similar to <code>Step 3</code>, <code>HistoryManager</code> remembers this comma
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Whenever a new invertible command is executed that is not currently in <code>HistoryManager</code>, it will clear all the commands that are stored in <code>HistoryManager#inverselyExecutedCommands</code>.
-This means that all potential redo actions are cleared.
+Whenever a new invertible command is executed that is not currently in
+<code>HistoryManager</code>, it will clear all the commands that are stored in
+<code>HistoryManager#inverselyExecutedCommands</code>. This means that all potential
+redo actions are cleared.
 </td>
 </tr>
 </table>
@@ -594,10 +669,12 @@ This means that all potential redo actions are cleared.
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being
+deleted).</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: We must ensure that the implementation of each individual command
+are correct.</p>
 </li>
 </ul>
 </div>
@@ -611,7 +688,8 @@ This means that all potential redo actions are cleared.
 <ul>
 <li>
 <p><strong>Alternative 1:</strong> Use a <code>List</code> to store the history of <code>Model</code> states.
-Maintain a pointer to point to the current version of <code>Model</code>, and shift the pointer along the list to facilitate undo/redo operations.</p>
+Maintain a pointer to point to the current version of <code>Model</code>, and shift the
+pointer along the list to facilitate undo/redo operations.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -624,12 +702,16 @@ Maintain a pointer to point to the current version of <code>Model</code>, and sh
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Implement invertible commands whereby they support their inverse execution. Use two <code>Deque</code> data structures to store the history of commands, to represent
-executed commands and inversely executed commands. Move commands from one deque to another and executing/inversely executing them to facilitate undo/redo operations.</p>
+<p><strong>Alternative 2:</strong> Implement invertible commands whereby they support their
+inverse execution. Use two <code>Deque</code> data structures to store the history of
+commands, to represent executed commands and inversely executed commands.
+Move commands from one deque to another and executing/inversely executing
+them to facilitate undo/redo operations.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Storage efficient, as application only needs to keep track of invertible commands, and do not need to store multiple copies of <code>Model</code>.</p>
+<p>Pros: Storage efficient, as application only needs to keep track of
+invertible commands, and do not need to store multiple copies of <code>Model</code>.</p>
 </li>
 <li>
 <p>Cons: Implementation is more complex.</p>
@@ -647,20 +729,34 @@ executed commands and inversely executed commands. Move commands from one deque 
 <div class="sect3">
 <h4 id="overview-2"><a class="link" href="#overview-2">3.2.1. Overview</a></h4>
 <div class="paragraph">
-<p>The Course Planner feature allows the user to track what courses they have
-taken, are taking and plan out what they would want to take after the current
-semester. The program offers updated information on courses offered by NUS,
-along with convenient add, delete and check operations on their course list.</p>
+<p>The Course Planner feature allows the user to track what courses they</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Have taken</p>
+</li>
+<li>
+<p>Are taking, and</p>
+</li>
+<li>
+<p>Want to take</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The feature offers updated information on courses offered by NUS, along with
+convenient add, delete and check operations on the user&#8217;s course list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.2.2. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.2. Implementation</a></h4>
 <div class="paragraph">
-<p>The Course Planner feature closely follows the extendable OOP solution already
-implemented within AB3. In the Course Planner, the <code>CoursePlanner</code> object
+<p>The Course Planner feature closely follows the extendable OOP solution
+implemented within Jarvis. Within <code>model</code>, the <code>CoursePlanner</code> class
 manages all aspects related to this feature. The course list of the user is
 stored internally using a <code>UniqueCourseList</code> object, providing an abstraction
-with <code>add</code>, <code>delete</code> and <code>getList</code> operations that are called by
+with <code>add</code>, <code>delete</code> and <code>getCourseList</code> operations that are called by
 <code>CoursePlanner</code>.</p>
 </div>
 <div class="ulist">
@@ -686,22 +782,30 @@ specified index</p>
 </li>
 <li>
 <p><code>Model#getUnfilteredCourseList()</code> - Returns an <code>ObservableList</code> containing
-the user&#8217;s list of courses.</p>
+the user&#8217;s list of courses</p>
+</li>
+<li>
+<p><code>Model#getCourseText()</code> - Returns a <code>CourseText</code> object</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelCoursePlannerClassDiagram.png" alt="ModelCoursePlannerClassDiagram">
+</div>
+<div class="title">Figure 14. Course Model Class Diagram</div>
 </div>
 <div class="sect4">
 <h5 id="course-datasets"><a class="link" href="#course-datasets">Course Datasets</a></h5>
 <div class="paragraph">
-<p>Course datasets are taken directly from the <a href="https://api.nusmods.com/v2/">NUSMods API</a>. They
-conveniently store their data used on their website using the <code>.json</code> file
-format. Therefore, all course data within the program are read directly from
-<code>.json</code> files using the Jackson JSON API.</p>
+<p>Course data-sets are taken directly from the <a href="https://api.nusmods.com/v2/">NUSMods API</a>. These
+data-sets are stored using the <code>.json</code> file format on NUSMod&#8217;s API. Therefore,
+all course data within Jarvis is read directly from <code>.json</code> files using the
+Jackson JSON API.</p>
 </div>
 <div class="paragraph">
 <p>Each course, and their data, are given its own file. These files are laid out
-in a <code>/modinfo</code> directory within the <code>resources</code> folder to be easily
-accessible by the program.</p>
+in <code>/modinfo</code> within <code>/resources</code> to be easily accessible by the program.</p>
 </div>
 <div class="paragraph">
 <p>A sample <code>.json</code> is given below for a fictional course <code>AB1234</code>.</p>
@@ -756,10 +860,10 @@ following attributes:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>These attributes are <strong>non-nullable</strong>, as fro the 11000+ course datafiles
-downloaded from NUSMods, all at least have these attributes. The other three:
-<code>fulfillRequirements</code>, <code>preclusion</code> and <code>prereqTree</code> are optional/nullable
-attributes.</p>
+<p>These attributes are <strong>non-nullable</strong>, this is as from the 11000+ course
+datafiles downloaded from NUSMods, all at least have these attributes. The
+other three: <code>fulfillRequirements</code>, <code>preclusion</code> and <code>prereqTree</code> are
+optional, nullable attributes.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -770,7 +874,8 @@ attributes.</p>
 <td class="content">
 NUSMods is a popular website officially affiliated with NUS, where
 students are able to look up information about courses and plan their
-school timetable.
+school timetable. This makes its data-set a reliable source of course
+information.
 </td>
 </tr>
 </table>
@@ -782,37 +887,96 @@ school timetable.
 <div class="sect4">
 <h5 id="overview-3"><a class="link" href="#overview-3">Overview</a></h5>
 <div class="paragraph">
-<p>The <code>AndOrTree</code> is a tree data structure served by the <code>andor</code> package that
-provides an abstraction for processing the prerequisite tree. The prerequisite
-tree (henceforth referred to as <code>prereqTree</code>) is an attribute of a <code>Course</code>
-that is available in the NUSMod&#8217;s course dataset.</p>
+<p>The <code>AndOrTree&lt;R&gt;</code> is a tree data structure served by the <code>util/andor</code>
+package that provides an abstraction for processing the prerequisite tree.
+The prerequisite tree (henceforth referred to as <code>prereqTree</code>) is an attribute
+of a <code>Course</code> that is available in the NUSMod&#8217;s course data-set.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="the-code-andortree-code-class"><a class="link" href="#the-code-andortree-code-class">The <code>AndOrTree</code> Class</a></h5>
+<div class="paragraph">
+<p>The following are <code>public</code> methods in <code>AndOrTree</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>buildTree(String, Function&lt;String, ? extends R&gt;)</code></p>
+<div class="paragraph">
+<p>Builds a tree from the given jsonString. <code>Function</code> is a mapper function
+that processes a <code>String</code> and returns a value of type <code>R</code>, where <code>R</code> is the
+type of data stored by each node in the tree.</p>
+</div>
+</li>
+<li>
+<p><code>fulfills(Collection&lt;R&gt;)</code></p>
+<div class="paragraph">
+<p>Checks if the given <code>Collection</code> of type <code>R</code> fulfills the condition
+specified by this tree. <code>AndOrNode</code> has its own corresponding <code>fulfill</code> that
+checks its children or data against <code>Collection</code>.</p>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>In order to show the user whether they are able to take a course, we use this
-<code>prereqTree</code> attribute that is checked against the user&#8217;s list of taken courses.
-The <code>prereqTree</code> can be either:</p>
+<p>Due to the arbitrary ordering of the tree, <code>insert()</code> and <code>delete()</code>
+operations commonly found in implementations of ordered trees are
+difficult to implement. Instead, the tree is fully created upon the call to
+<code>buildTree()</code> and is then enforced to be immutable once built. This is
+reflected in the class' lack of mutator methods.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="the-code-andornode-code-class"><a class="link" href="#the-code-andornode-code-class">The <code>AndOrNode</code> Class</a></h5>
+<div class="paragraph">
+<p>Each node in the tree of type <code>R</code> is represented by an <code>AndOrNode&lt;R&gt;</code>. Every
+node can either  of these types:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>empty - no prerequisites needed for this course</p>
+<p><code>AND</code></p>
+<div class="paragraph">
+<p>Any subset of elements in a <code>Collection&lt;R&gt;</code> must match all children
+of this node.</p>
+</div>
 </li>
 <li>
-<p>consist of one element only - only one course is a prerequisite</p>
+<p><code>OR</code></p>
+<div class="paragraph">
+<p>Any element in a <code>Collection&lt;R&gt;</code> must match at least one of the
+children of this node</p>
+</div>
 </li>
 <li>
-<p>a nested <code>json</code> object - complex prerequisites</p>
+<p><code>DATA</code></p>
+<div class="paragraph">
+<p>Any element in a  <code>Collection&lt;R&gt;</code> must match the data stored in
+this node</p>
+</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>In the most complex case, <code>prereqTree</code> will be a nested <code>json</code> object
-with object keys being either strings <code>"and"</code> or <code>"or"</code>, while array or
-individual elements mappable strings. The program reads this nested <code>json</code>
-object as a string and processes it to form the tree data structure.</p>
+<p>The following class diagram demonstrates the structure of the <code>AndOrNode</code>
+<code>abstract class</code> and its sub-classes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
+</div>
+<div class="title">Figure 15. AndOrNode Inheritance Diagram</div>
 </div>
 <div class="paragraph">
-<p>An example of a processable json string is as such:</p>
+<p>Using this format, <code>AndOrNode#createNode(T,String)</code> is able to instantiate
+all instances of its sub-class, thus the caller will not need to know the
+different types of nodes there are.</p>
+</div>
+<div class="sect5">
+<h6 id="building-of-the-code-andortree-code"><a class="link" href="#building-of-the-code-andortree-code">Building of the <code>AndOrTree</code></a></h6>
+<div class="paragraph">
+<p>As mentioned above, we use the <code>prereqTree</code> attribute in order to build
+the tree. An example of a processable json string is as such:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -830,91 +994,37 @@ object as a string and processes it to form the tree data structure.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This is compressed to</p>
+<p>This can be read as:</p>
 </div>
-<div class="paragraph">
-<p><code>"prereqTree":{"and":[{"or":["CD1111","XY2222"]},"EF3333"]}</code></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="methods-of-the-code-andortree-code-class"><a class="link" href="#methods-of-the-code-andortree-code-class">Methods of the <code>AndOrTree</code> class</a></h5>
-<div class="paragraph">
-<p>The following are <code>public</code> methods in <code>AndOrTree</code>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>AndOrTree#buildTree(String, Function&lt;String, ? extends R&gt;)</code></p>
-<div class="paragraph">
-<p>Builds a tree from the given jsonString. <code>Function</code> is a mapper function
-that processes a <code>String</code> and returns a value of type <code>R</code>, where <code>R</code> is the
-type of data stored by each node in the tree, and therefore the overall
-type of the tree.</p>
-</div>
-</li>
-<li>
-<p><code>AndOrTree#fulfills(Collection&lt;? super R&gt;)</code></p>
-<div class="paragraph">
-<p>Checks if the given <code>Collection</code> of type <code>? super R</code> fulfills the condition
-specified by this tree. <code>AndOrNode</code> has its own corresponding <code>fulfill</code> that
-checks its children or data against <code>Collection</code></p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Due to the arbitrary ordering of the tree, <code>insert()</code> and <code>delete()</code>
-operations commonly found in implementations of standard, ordered trees are
-difficult to implement. Instead, the tree is fully created upon the call to
-<code>buildTree()</code> and is then enforced to be immutable once built.</p>
-</div>
-<div class="paragraph">
-<p>Each node in the tree of type <code>T</code> is represented by an <code>AndOrNode&lt;T&gt;</code>. Every
-node can either  of these types:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>AND</code> - any subset of elements in a <code>Collection&lt;T&gt;</code> must match all children
-of this node</p>
-</li>
-<li>
-<p><code>OR</code> - any element in a <code>Collection&lt;T&gt;</code> must match at least one of the
-children of this node</p>
-</li>
-<li>
-<p><code>DATA</code> - any element in a  <code>Collection&lt;T&gt;</code> must match the data stored in
-this node</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The following diagram shows the conditions for which
-<code>AndOrNode#fulfills(Collection)</code> returns <code>true</code> or <code>false</code>.</p>
-</div>
-<div class="imageblock" style="text-align: center">
+<div class="listingblock">
 <div class="content">
-<img src="images/AndOrNodeConditionDiagram.png" alt="600" width="600">
+<pre>To take AB1234, you require...
+|
+└ all of
+  ├── one of
+  |   ├─ "CD1111"
+  |   └─ "XY2222"
+  └─ "EF3333"</pre>
 </div>
-<div class="title">Figure 14. AndOrNode Condition Diagram</div>
 </div>
 <div class="paragraph">
-<p>The tree is built recursively using the Jackson JSON API&#8217;s <code>JsonNode</code> class,
-which along with <code>ObjectMapper()</code> that can read <code>json</code> strings, lets us
-traverse the <code>json</code> object tree structure.</p>
+<p>This means that to take the fictional course <code>AB1234</code>, a user would have to
+complete <code>EF3333</code>, <strong>and</strong> either <code>CD1111</code> or <code>XY2222</code>.</p>
 </div>
 <div class="paragraph">
-<p>The sequence diagram of the tree building process is shown below:</p>
+<p>The <code>buildTree()</code> method takes in the <code>json</code> string as an input. A root
+<code>JsonNode</code> object is created, and the tree is built recursively from
+the root. The sequence diagram of the tree building process is shown below:</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock">
 <div class="content">
-<img src="images/AndOrSequenceDiagram.png" alt="AndOrSequenceDiagram">
+<img src="images/AndOrSequenceDiagramSimplified.png" alt="AndOrSequenceDiagramSimplified">
 </div>
-<div class="title">Figure 15. AndOrTree Sequence Diagram</div>
+<div class="title">Figure 16. buildTree() Sequence Diagram</div>
 </div>
 <div class="paragraph">
-<p>The class looks at each node - checks if its a json Object, json Array or
-a String, and does the appropriate actions and method calls to build the tree.</p>
+<p>The class looks at each node - checks if its is an <code>Object</code>, <code>Array</code> or
+a <code>String</code>, and does the appropriate actions and function calls.</p>
 </div>
 <div class="paragraph">
 <p>Other ways of building the tree can be easily extended by overloading the
@@ -923,50 +1033,70 @@ of the tree.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.4. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-storing-of-course-datasets"><a class="link" href="#aspect-storing-of-course-datasets">Aspect: Storing of Course datasets</a></h5>
+<h5 id="aspect-storing-of-course-data-sets"><a class="link" href="#aspect-storing-of-course-data-sets">Aspect: Storing of Course data-sets</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Alternative 1 (current choice): Storing each course as its own file</p>
+<p><strong>Alternative 1</strong>: Storing each course in one, large JSON file</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p><strong>Pros:</strong></p>
 <div class="paragraph">
-<p>Fast lookup as the contents of 11000+ files worth of data do not need
-to be scanned directly. Concatenating file paths directly to the file
-is used instead.</p>
+<p>Easier to manage. Every course can be found in a single file. The code need
+not deal with <code>FileNotFoundException</code> or <code>IOException</code> as the single file
+is guaranteed to exist.</p>
 </div>
 </li>
 <li>
-<p>Cons:</p>
-<div class="paragraph">
-<p>Difficult to manage. If we want to modify the datasets in any way, a script
-will have to be written to process every file in the dataset.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Alternative 2: Storing each course in one, large JSON file</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros:</p>
-<div class="paragraph">
-<p>Easier to manage. Every course can be found in a single file.</p>
-</div>
-</li>
-<li>
-<p>Cons:</p>
+<p><strong>Cons:</strong></p>
 <div class="paragraph">
 <p>A large file will be difficult to view for a developer. It will also have
-a slow performance as the entire file would have to be processed to look up
+slow performance as the entire file would have to be processed to look up
 one course.</p>
+</div>
+<div class="paragraph">
+<p>A developer may also:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Store the whole file in a buffer for faster lookup, but this may be
+time-consuming and troublesome to implement.</p>
+</li>
+<li>
+<p>Process the whole file and create all <code>Course</code> objects upon start-up.
+However, due to the large number of course files (11000+), this may have
+significant memory overhead.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Current Choice</strong>: Storing each course as its own file</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros:</strong></p>
+<div class="paragraph">
+<p>Fast lookup as the contents of 11000+ files worth of data do not need
+to be scanned directly. Fast, <code>String</code> concatenation of file paths directly
+to the file is used instead.</p>
+</div>
+</li>
+<li>
+<p><strong>Cons:</strong></p>
+<div class="paragraph">
+<p>Difficult to manage. If we want to modify the data-sets in any way, a script
+will have to be written to process every file in the dataset, unless a
+developer wants to manually change all files.</p>
 </div>
 </li>
 </ul>
@@ -975,10 +1105,11 @@ one course.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>We ultimately went with alternative #1 as once the files were downloaded and
-processed, there was no need to modify them any further. Manual lookup of
-information about a specific  course during development is also much easier
-with such a method.</p>
+<p>We did not go with alternative 1 as once the files were downloaded and
+processed, there was no need to modify them any further. Processing, or
+loading inside a buffer, of very large text files will likely significantly
+hamper performance for little benefit. Manual lookup information about a
+specific course during development is also much easier with such a method.</p>
 </div>
 </div>
 <div class="sect4">
@@ -986,37 +1117,11 @@ with such a method.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Alternative 1 (current choice): <code>AndOrTree</code> with generics</p>
+<p><strong>Alternative 1</strong>: <code>AndOrTree</code> dependent on <code>Course</code> (or any fixed datatype)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros</p>
-<div class="paragraph">
-<p>This makes the tree reusable in the future. The tree will also be able to
-store any data-type which allows for easier unit testing, since it won&#8217;t be
-dependent on the correctness of the fixed data-type (<code>Course</code> in this
-instance), and instead well-tested libraries such as Java&#8217;s <code>String</code> API can
-be used to test the class instead.</p>
-</div>
-</li>
-<li>
-<p>Cons</p>
-<div class="paragraph">
-<p>Due to how the tree is built (i.e from a json string), a
-<strong>mapper function</strong> must be passed into the <code>buildTree()</code> method to process the
-string in each node to the generic type of the tree. The function is of a type
-<code>Function&lt;? super String, ? extends R&gt;</code>, for a tree of type <code>R</code>.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Alternative 2: <code>AndOrTree</code> dependent on <code>Course</code> (or any fixed datatype)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros</p>
+<p><strong>Pros:</strong></p>
 <div class="paragraph">
 <p>There is no need to pass any mapper function into the <code>buildTree()</code> method as
 the class will already know how to map each <code>String</code> to a type <code>R</code>. This
@@ -1025,7 +1130,7 @@ instead of by the caller.</p>
 </div>
 </li>
 <li>
-<p>Cons</p>
+<p><strong>Cons:</strong></p>
 <div class="paragraph">
 <p>This increases coupling between the tree and the fixed data-type used by
 the tree, resulting the correctness of the <code>AndOrTree</code> class being dependent
@@ -1037,13 +1142,41 @@ non-extendable.</p>
 </ul>
 </div>
 </li>
+<li>
+<p><strong>Current choice</strong>: <code>AndOrTree</code> with generics</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros:</strong></p>
+<div class="paragraph">
+<p>This makes the tree reusable in the future. The tree will also be able to
+store any data-type which allows for easier unit testing, since it won&#8217;t be
+dependent on the correctness of the fixed data-type (<code>Course</code> in this
+instance), and instead well-tested libraries such as Java&#8217;s <code>String</code> API can
+be used to test the class instead.</p>
+</div>
+</li>
+<li>
+<p><strong>Cons:</strong></p>
+<div class="paragraph">
+<p>Due to how the tree is built (i.e from a json string), a
+<strong>mapper function</strong> must be passed into the <code>buildTree()</code> method to process the
+string in each node to the generic type of the tree. The function should be of
+a type <code>Function&lt;String, ? extends R&gt;</code>, for a tree of type <code>R</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>We picked alternative #1 as its benefits far outweigh its disadvantages. While
-extendability and resusability of the class is a nice bonus, the decrease in
-coupling and increase in testability was the deciding factor in choosing
-between these two approaches.</p>
+<p>Due to its benefits far outweighing its disadvantages, we picked out
+current choice. While extendability and resusability of the class is a nice
+bonus, the decrease in coupling and increase in testability was the deciding
+factor in choosing between these two approaches. Furthermore, behaviour of the
+class can be easily extended by either inheritance, or overloading of the
+<code>buildTree()</code> method.</p>
 </div>
 </div>
 </div>
@@ -1053,47 +1186,89 @@ between these two approaches.</p>
 <div class="sect3">
 <h4 id="overview-4"><a class="link" href="#overview-4">3.3.1. Overview</a></h4>
 <div class="paragraph">
-<p>The Finance Tracker feature allows the user to track what purchases they have made for the month
-and the list of installments that they have subscribed to. Such installments would be added to
-their purchases once a month. The user can store the information of the description and the amount of both
-purchases and installments. Furthermore, the user can set a monthly limit to keep track of his expenses
-for the month.</p>
+<p>The Finance Tracker feature allows the user to track what purchases they have
+made for the month and the list of installments that they have subscribed to.
+Such installments would be added to their purchases once a month. The user
+can store the information of the description and the amount of both purchases
+and installments. Furthermore, the user can set a monthly limit to keep track
+of his expenses for the month.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.3.2. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The Finance Tracker feature closely follows the extendable OOP solution already
-implemented within AB3. In the Finance Tracker, the <code>Installment</code> objects (containing
-<code>InstallmentDescription</code> and <code>InstallmentMoneyPaid</code> objects) and the <code>Purchase</code> objects (containing
-'PurchaseDescription' and <code>PurchaseMoneySpent</code> objects) manage most aspects related to this feature.</p>
+implemented within AB3. In the Finance Tracker, the <code>Installment</code> objects
+(containing <code>InstallmentDescription</code> and <code>InstallmentMoneyPaid</code> objects) and
+the <code>Purchase</code> objects (containing <code>PurchaseDescription</code> and
+<code>PurchaseMoneySpent</code> objects) manage most aspects related to this feature.</p>
 </div>
 <div class="paragraph">
 <p>The finance tracker mechanism is facilitated by <code>FinanceTrackerModel</code>.</p>
 </div>
-<div class="paragraph">
-<p><code>Model#getFinanceTracker()</code> - Gets the <code>FinanceTracker</code> instance
-<code>Model#getPurchase(index)</code> - Retrieves the purchase at that index
-<code>Model#updateFilteredPurchaseList(Predicate)</code> - Updates the filter of the purchase list with the predicate
-<code>Model#getFilteredPurchaseList()</code> - Retrieves the list of purchases with current predicate applied
-<code>Model#addPurchase(Purchase)</code> - Adds a single use payment
-<code>Model#deletePurchase(index)</code> - Deletes single use payment at that index
-<code>Model#getInstallment(index)</code> - Retrieves the installment at that index
-<code>Model#updateFilteredInstallmentList(Predicate)</code> - Updates the filter of the installment list with the predicate
-<code>Model#getFilteredInstallmentList()</code> - Retrieves the list of installments with current predicate applied
-<code>Model#addInstallment(Installment)</code> - Adds an installment
-<code>Model#deleteInstallment(index)</code> - Deletes installment at that index
-<code>Model#hasInstallment(Installment)</code> - Checks for the existence of the same installment in the finance tracker
-<code>Model#setInstallment(Installment, Installment)</code> - Replaces an existing installment with a new installment for editing
-<code>Model#setMonthlyLimit(MonthlyLimit)</code> - Sets the monthly limit for spending
-<code>Model#getMonthlyLimit()</code> - Retrieves the monthly limit if it has been set by user</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model#getFinanceTracker()</code> - Gets the <code>FinanceTracker</code> instance</p>
+</li>
+<li>
+<p><code>Model#getPurchase(index)</code> - Retrieves the purchase at that index</p>
+</li>
+<li>
+<p><code>Model#updateFilteredPurchaseList(Predicate)</code> - Updates the filter of the
+purchase list with the predicate</p>
+</li>
+<li>
+<p><code>Model#getFilteredPurchaseList()</code> - Retrieves the list of purchases with
+current predicate applied</p>
+</li>
+<li>
+<p><code>Model#addPurchase(Purchase)</code> - Adds a single use payment</p>
+</li>
+<li>
+<p><code>Model#deletePurchase(index)</code> - Deletes single use payment at that index</p>
+</li>
+<li>
+<p><code>Model#getInstallment(index)</code> - Retrieves the installment at that index</p>
+</li>
+<li>
+<p><code>Model#updateFilteredInstallmentList(Predicate)</code> - Updates the filter of the
+installment list with the predicate</p>
+</li>
+<li>
+<p><code>Model#getFilteredInstallmentList()</code> - Retrieves the list of installments
+with current predicate applied</p>
+</li>
+<li>
+<p><code>Model#addInstallment(Installment)</code> - Adds an installment</p>
+</li>
+<li>
+<p><code>Model#deleteInstallment(index)</code> - Deletes installment at that index</p>
+</li>
+<li>
+<p><code>Model#hasInstallment(Installment)</code> - Checks for the existence of the same
+installment in the finance tracker</p>
+</li>
+<li>
+<p><code>Model#setInstallment(Installment, Installment)</code> - Replaces an existing
+installment with a new installment for editing</p>
+</li>
+<li>
+<p><code>Model#setMonthlyLimit(MonthlyLimit)</code> - Sets the monthly limit for spending</p>
+</li>
+<li>
+<p><code>Model#getMonthlyLimit()</code> - Retrieves the monthly limit if it has been set
+by user</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="installments"><a class="link" href="#installments">3.3.3. Installments</a></h4>
 <div class="paragraph">
-<p>Installments are added by the user to the FinanceTracker and are stored in an <code>InstallmentList</code>. The current
-codebase requires that all installments <strong>must</strong> have the following attributes:</p>
+<p>Installments are added by the user to the FinanceTracker and are stored in an
+<code>InstallmentList</code>. The current codebase requires that all installments
+<strong>must</strong> have the following attributes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1112,8 +1287,9 @@ codebase requires that all installments <strong>must</strong> have the following
 <div class="sect3">
 <h4 id="purchases"><a class="link" href="#purchases">3.3.4. Purchases</a></h4>
 <div class="paragraph">
-<p>Purchases are added by the user to the FinanceTracker and are stored in a <code>PurchaseList</code>. The current
-codebase requires that all purchases <strong>must</strong> have the following attributes:</p>
+<p>Purchases are added by the user to the FinanceTracker and are stored in a
+<code>PurchaseList</code>. The current codebase requires that all purchases <strong>must</strong> have
+the following attributes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1132,25 +1308,29 @@ codebase requires that all purchases <strong>must</strong> have the following at
 <div class="sect3">
 <h4 id="command-execution"><a class="link" href="#command-execution">3.3.5. Command Execution</a></h4>
 <div class="paragraph">
-<p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its execution on model.
-The following activity diagram illustrates how an <code>Installment</code> is edited when a user types
-in a <code>edit-install</code> command:</p>
+<p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
+execution on model. The following activity diagram illustrates how an
+<code>Installment</code> is edited when a user types in a <code>edit-install</code> command:</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>FinanceTracker</code> is initialized. Assume
-that a valid <code>Installment</code> has already been added to the <code>InstallmentList</code> in <code>FinanceTracker</code>.</p>
+<p>Step 1. The user launches the application for the first time. The
+<code>FinanceTracker</code> is initialized. Assume that a valid <code>Installment</code> has already
+been added to the <code>InstallmentList</code> in <code>FinanceTracker</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>edit-install 1 d/student-price Spotify subscription a/7.50</code> command
-to edit both the description and money spent on the existing Installment in the FinanceTracker. An
-<code>EditInstallmentCommandParser</code> object is created and its <code>#parse</code> method is called. The parse method returns
-a new <code>EditInstallmentCommand</code> object.</p>
+<p>Step 2. The user executes
+<code>edit-install 1 d/student-price Spotify subscription a/7.50</code>
+command to edit both the description and money spent on the existing
+Installment in the FinanceTracker. An <code>EditInstallmentCommandParser</code> object is
+created and its <code>#parse</code> method is called. The parse method returns a new
+<code>EditInstallmentCommand</code> object.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. The <code>EditInstallmentCommand</code> object is executed on the model. The <code>EditInstallmentCommand#execute</code>
-method is called, and this will create a new <code>Installment</code> object from the existing installment
-but with all the edited fields changed. In this method, <code>Model#setInstallment(Installment, Installment)</code>
-method is called.</p>
+<p>Step 3. The <code>EditInstallmentCommand</code> object is executed on the model. The
+<code>EditInstallmentCommand#execute</code> method is called, and this will create a new
+<code>Installment</code> object from the existing installment but with all the edited
+fields changed. In this method,
+<code>Model#setInstallment(Installment, Installment)</code> method is called.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1159,20 +1339,23 @@ method is called.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>EditInstallmentCommand#execute</code> method first checks for whether the index is within the size
-of InstallmentList.
+The <code>EditInstallmentCommand#execute</code> method first checks for whether the
+index is within the size of InstallmentList.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the methods in the <code>FinanceTracker</code> class.
-As such, the <code>FinanceTracker#setInstallment(Installment, Installment)</code> method is called. This in turns calls
-the <code>#InstallmentList#setInstallment(Installment, Installment)</code> method.</p>
+<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
+methods in the <code>FinanceTracker</code> class. As such, the
+<code>FinanceTracker#setInstallment(Installment, Installment)</code> method is called.
+This in turns calls the
+<code>#InstallmentList#setInstallment(Installment, Installment)</code> method.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. This <code>#InstallmentList#setInstallment(Installment, Installment)</code> method first finds the <code>Installment</code>
-based on its corresponding index. Then, it sets the edited installment at the index found earlier.</p>
+<p>Step 5. This <code>#InstallmentList#setInstallment(Installment, Installment)</code>
+method first finds the <code>Installment</code> based on its corresponding index. Then,
+it sets the edited installment at the index found earlier.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1181,8 +1364,9 @@ based on its corresponding index. Then, it sets the edited installment at the in
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-TLDR: The calling of the <code>#setInstallment</code> method at the <code>FinanceTracker</code> level triggers a cascading series of
-<code>#setInstallment</code> method which culminates in target installment being edited with the corresponding fields.
+TLDR: The calling of the <code>#setInstallment</code> method at the <code>FinanceTracker</code>
+level triggers a cascading series of <code>#setInstallment</code> method which culminates
+in target installment being edited with the corresponding fields.
 </td>
 </tr>
 </table>
@@ -1209,7 +1393,8 @@ TLDR: The calling of the <code>#setInstallment</code> method at the <code>Financ
 </ul>
 </div>
 <div class="paragraph">
-<p>Increases OOP to allow better manipulation of objects and makes objects more extensible.</p>
+<p>Increases OOP to allow better manipulation of objects and makes objects more
+extensible.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1224,7 +1409,8 @@ TLDR: The calling of the <code>#setInstallment</code> method at the <code>Financ
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 2:</strong> Use primitive Java data types for fields in <code>Installment</code> and <code>Purchase</code> objects.</p>
+<p><strong>Alternative 2:</strong> Use primitive Java data types for fields in <code>Installment</code>
+and <code>Purchase</code> objects.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1249,13 +1435,18 @@ TLDR: The calling of the <code>#setInstallment</code> method at the <code>Financ
 <p>Less extensible as all data contained is primitive.</p>
 </div>
 <div class="paragraph">
-<p>We ultimately went with alternative #1 as it allowed us to better practice OOP, providing a clear modular structure
-for abstracting data types in which implementation details are hidden. Furthermore, it would make the codebase easier
-to maintain. The objects created can also be reused across the application.</p>
+<p>We ultimately went with alternative #1 as it allowed us to better practice
+OOP, providing a clear modular structure for abstracting data types in which
+implementation details are hidden. Furthermore, it would make the codebase
+easier to maintain. The objects created can also be reused across the
+application.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code-and-code-purchaselist-code"><a class="link" href="#aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code-and-code-purchaselist-code">3.3.8. Aspect: Whether <code>ObservableList`s should be used for `InstallmentList</code> and <code>PurchaseList</code>.</a></h4>
+<h4 id="aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code"><a class="link" href="#aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code">3.3.8. Aspect: Whether <code>ObservableList`s should be used for `InstallmentList</code></a></h4>
+<div class="paragraph">
+<p>and <code>PurchaseList</code>.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1311,8 +1502,8 @@ to maintain. The objects created can also be reused across the application.</p>
 <p>Might be more complicated when rendering in Javafx.</p>
 </div>
 <div class="paragraph">
-<p>We ultimately went with alternative #1 as it provided better support for rendering when implementing the Ui of
-JARVIS.</p>
+<p>We ultimately went with alternative #1 as it provided better support for
+rendering when implementing the Ui of JARVIS.</p>
 </div>
 </div>
 </div>
@@ -1321,9 +1512,9 @@ JARVIS.</p>
 <div class="sect3">
 <h4 id="overview-5"><a class="link" href="#overview-5">3.4.1. Overview</a></h4>
 <div class="paragraph">
-<p>The planner feature in JARVIS enables users to easily organise and manage their different
-tasks in school. Users will be able to keep track of tasks they have done, and tasks they
-have yet to do.</p>
+<p>The planner feature in JARVIS enables users to easily organise and manage
+their different tasks in school. Users will be able to keep track of tasks
+they have done, and tasks they have yet to do.</p>
 </div>
 <div class="paragraph">
 <p>There are three types of tasks in the planner:</p>
@@ -1342,25 +1533,25 @@ have yet to do.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Users can <code>Tag</code> these tasks to sort them into different categories, as well as add <code>Priority</code> and
-<code>Frequency</code> levels to them.</p>
+<p>Users can <code>Tag</code> these tasks to sort them into different categories, as well
+as add <code>Priority</code> and <code>Frequency</code> levels to them.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.4.2. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.4.2. Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks a user has. A simple
-outline of the <code>Planner</code> can be seen in Fig 11 below.</p>
+<p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks
+a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
 <img src="images/plannermodel.png" alt="plannermodel">
 </div>
-<div class="title">Figure 16. Overview of the entire Planner</div>
+<div class="title">Figure 17. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
-<p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations necessary to carry out commands
-by the user.</p>
+<p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations
+necessary to carry out commands by the user.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1368,23 +1559,28 @@ by the user.</p>
 <p><code>Model#getPlanner()</code>&#8201;&#8212;&#8201;Returns an instance of a <code>Planner</code>.</p>
 </li>
 <li>
-<p><code>Model#addTask(int zeroBasedIndex, Task task</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the planner at the specified <code>Index</code>.</p>
+<p><code>Model#addTask(int zeroBasedIndex, Task task</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the
+planner at the specified <code>Index</code>.</p>
 </li>
 <li>
-<p><code>Model#addTask(Task t)</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the <code>Planner</code>. Since no <code>Index</code> is specified, the <code>Task</code> is
-appended to the end of the <code>TaskList</code>.</p>
+<p><code>Model#addTask(Task t)</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the <code>Planner</code>. Since no <code>Index</code>
+is specified, the <code>Task</code> is appended to the end of the <code>TaskList</code>.</p>
 </li>
 <li>
-<p><code>Model#deleteTask(Index index)</code>&#8201;&#8212;&#8201;Deletes the <code>Task</code> at the specified <code>Index</code> from the <code>Planner</code>.</p>
+<p><code>Model#deleteTask(Index index)</code>&#8201;&#8212;&#8201;Deletes the <code>Task</code> at the specified
+<code>Index</code> from the <code>Planner</code>.</p>
 </li>
 <li>
-<p><code>Model#deleteTask(Task t)</code>&#8201;&#8212;&#8201;Deletes the specified <code>Task</code> from the <code>Planner</code>.</p>
+<p><code>Model#deleteTask(Task t)</code>&#8201;&#8212;&#8201;Deletes the specified <code>Task</code> from the
+<code>Planner</code>.</p>
 </li>
 <li>
-<p><code>Model#size()</code>&#8201;&#8212;&#8201;Returns the total number of <code>Task</code> objects in the <code>Planner</code>.</p>
+<p><code>Model#size()</code>&#8201;&#8212;&#8201;Returns the total number of <code>Task</code> objects in the
+<code>Planner</code>.</p>
 </li>
 <li>
-<p><code>Model#hasTask(Task t)</code>&#8201;&#8212;&#8201;Checks if a given <code>Task</code> is already in the <code>Planner</code>.</p>
+<p><code>Model#hasTask(Task t)</code>&#8201;&#8212;&#8201;Checks if a given <code>Task</code> is already in the
+<code>Planner</code>.</p>
 </li>
 <li>
 <p><code>Model#getTasks()</code>&#8201;&#8212;&#8201;Returns the <code>TaskList</code> in the <code>Planner</code>.</p>
@@ -1406,7 +1602,8 @@ appended to the end of the <code>TaskList</code>.</p>
 <p>Pros: Intuitive, easy to implement, less code required</p>
 </li>
 <li>
-<p>Cons: Provides a lower level of abstraction, especially when <code>edit-task</code> command is implemented</p>
+<p>Cons: Provides a lower level of abstraction, especially when <code>edit-task</code>
+command is implemented</p>
 </li>
 </ul>
 </div>
@@ -1419,7 +1616,8 @@ appended to the end of the <code>TaskList</code>.</p>
 <p>Pros: Higher level of abstraction</p>
 </li>
 <li>
-<p>Cons: More code, will take time to replace current methods that deal with String <code>TaskDes</code> directly</p>
+<p>Cons: More code, will take time to replace current methods that deal with
+String <code>TaskDes</code> directly</p>
 </li>
 </ul>
 </div>
@@ -1434,25 +1632,28 @@ appended to the end of the <code>TaskList</code>.</p>
 <div class="sect3">
 <h4 id="overview-6"><a class="link" href="#overview-6">3.5.1. Overview</a></h4>
 <div class="paragraph">
-<p>The application is able to track Ccas. Each user can have multiple Ccas and each Cca can have multiple equipments
-needed. In addition, the application is able to track the progress of each person in their Ccas. Hence, there is a
-need to represent the CcaTracker as a list of Ccas on which the application can perform create, read, update and delete
-operations on each Cca.</p>
+<p>The application is able to track Ccas. Each user can have multiple Ccas and
+each Cca can have multiple equipments needed. In addition, the application is
+able to track the progress of each person in their Ccas. Hence, there is a
+need to represent the CcaTracker as a list of Ccas on which the application
+can perform create, read, update and delete operations on each Cca.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">3.5.2. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">3.5.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>CcaTracker</code> mechanism is facilitated by <code>CcaTrackerModel</code>.</p>
 </div>
 <div class="paragraph">
 <p><code>Model</code> supports operations to facilitate
-cca tracking capabilities by extending the <code>CcaTrackerModel</code> which has the following operations:</p>
+cca tracking capabilities by extending the <code>CcaTrackerModel</code> which has the
+following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Model#containsCca(Cca cca)</code>&#8201;&#8212;&#8201;Checks if the <code>CcaTracker</code> contains the given cca.</p>
+<p><code>Model#containsCca(Cca cca)</code>&#8201;&#8212;&#8201;Checks if the <code>CcaTracker</code> contains the
+given cca.</p>
 </li>
 <li>
 <p><code>Model#addCca(Cca cca)</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
@@ -1461,25 +1662,30 @@ cca tracking capabilities by extending the <code>CcaTrackerModel</code> which ha
 <p><code>Model#removeCca(Cca cca)</code>&#8201;&#8212;&#8201;Removes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
 </li>
 <li>
-<p><code>Model#updateCca(Cca toBeUpdatedCca, Cca updatedCca)</code>&#8201;&#8212;&#8201;Updates a <code>Cca</code> in the <code>CcaTracker</code>.</p>
+<p><code>Model#updateCca(Cca toBeUpdatedCca, Cca updatedCca)</code>&#8201;&#8212;&#8201;Updates a <code>Cca</code> in
+the <code>CcaTracker</code>.</p>
 </li>
 <li>
 <p><code>Model#getCcaTracker()</code>&#8201;&#8212;&#8201;Gets the <code>CcaTracker</code> instance.</p>
 </li>
 <li>
-<p><code>Model#getNumberOfCcas()</code>&#8201;&#8212;&#8201;Returns the number of <code>Ccas</code> currently in the <code>CcaTracker</code>.</p>
+<p><code>Model#getNumberOfCcas()</code>&#8201;&#8212;&#8201;Returns the number of <code>Ccas</code> currently in the
+<code>CcaTracker</code>.</p>
 </li>
 <li>
-<p><code>Model#getCca(Index index)</code>&#8201;&#8212;&#8201;Gets the <code>Cca</code> instance by its index in the <code>CcaTracker</code>.</p>
+<p><code>Model#getCca(Index index)</code>&#8201;&#8212;&#8201;Gets the <code>Cca</code> instance by its index in the
+<code>CcaTracker</code>.</p>
 </li>
 <li>
-<p><code>Model#updateFilteredCcaList(Predicate&lt;Cca&gt; predicate)</code>&#8201;&#8212;&#8201;Updates the <code>FilteredCcaList</code> by passing it a predicate.</p>
+<p><code>Model#updateFilteredCcaList(Predicate&lt;Cca&gt; predicate)</code>&#8201;&#8212;&#8201;Updates the
+<code>FilteredCcaList</code> by passing it a predicate.</p>
 </li>
 <li>
 <p><code>Model#getFilteredCcaList()</code>&#8201;&#8212;&#8201;Returns an instance of the <code>FilteredCcaList</code></p>
 </li>
 <li>
-<p><code>Model#addProgress(Cca targetCca, CcaProgressList toAddCcaProgressList)</code> - Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
+<p><code>Model#addProgress(Cca targetCca, CcaProgressList toAddCcaProgressList)</code> -
+Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
 </li>
 <li>
 <p><code>Model#increaseProgress(Index index)</code>&#8201;&#8212;&#8201;Increases the progress of the <code>Cca</code></p>
@@ -1487,8 +1693,8 @@ cca tracking capabilities by extending the <code>CcaTrackerModel</code> which ha
 </ul>
 </div>
 <div class="paragraph">
-<p>CcaTracker has 7 specific commands that support the given operations to mutate the state of the <code>Model</code>. Each command is
-represented as seperate class:</p>
+<p>CcaTracker has 7 specific commands that support the given operations to mutate
+the state of the <code>Model</code>. Each command is represented as seperate class:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1502,7 +1708,8 @@ represented as seperate class:</p>
 <p><code>EditCcaCommand</code>&#8201;&#8212;&#8201;Edits the selected <code>Cca</code> in the <code>CcaTracker</code>.</p>
 </li>
 <li>
-<p><code>FindCcaCommand</code>&#8201;&#8212;&#8201;Finds a <code>Cca</code> from the <code>CcaTracker</code> based on the keywords specified .</p>
+<p><code>FindCcaCommand</code>&#8201;&#8212;&#8201;Finds a <code>Cca</code> from the <code>CcaTracker</code> based on the
+keywords specified .</p>
 </li>
 <li>
 <p><code>ListCcaCommand</code>&#8201;&#8212;&#8201;Lists all the <code>Cca</code> from the <code>CcaTracker</code>.</p>
@@ -1516,25 +1723,29 @@ represented as seperate class:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its execution on model.
-The following activity diagram illustrates how a <code>Cca&#8217;s progress is incremented when a user types in a
-`increase-progress</code> command:</p>
+<p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
+execution on model. The following activity diagram illustrates how a <code>Cca&#8217;s
+progress is incremented when a user types in a `increase-progress</code> command:</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario of how increase-progress mechanism behaves.</p>
+<p>Given below is an example usage scenario of how increase-progress mechanism
+behaves.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>CcaTracker</code> is initialized. Assume that a <code>Cca</code> has
-already been added to the Cca and that a progress tracker has already been set for that <code>Cca</code>.</p>
+<p>Step 1. The user launches the application for the first time. The <code>CcaTracker</code>
+is initialized. Assume that a <code>Cca</code> has already been added to the Cca and that
+a progress tracker has already been set for that <code>Cca</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>increase-progress 1</code> command to increment the progress of the 1st <code>Cca</code> in the CcaTracker.
-A <code>IncreaseProgressCommandParser</code> object is created and its <code>#parse</code> method is called. The parse method returns a new
-<code>IncreaseProgressCommand</code> object.</p>
+<p>Step 2. The user executes <code>increase-progress 1</code> command to increment the
+progress of the 1st <code>Cca</code> in the CcaTracker. A <code>IncreaseProgressCommandParser</code>
+object is created and its <code>#parse</code> method is called. The parse method returns
+a new <code>IncreaseProgressCommand</code> object.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. The <code>IncreaseProgressCommand</code> object is then executed on model. The <code>IncreaseProgressCommand#execute</code> method is
-called and in this method, the <code>Model#increaseProgress</code> method is called.</p>
+<p>Step 3. The <code>IncreaseProgressCommand</code> object is then executed on model. The
+<code>IncreaseProgressCommand#execute</code> method is called and in this method, the
+<code>Model#increaseProgress</code> method is called.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1543,20 +1754,24 @@ called and in this method, the <code>Model#increaseProgress</code> method is cal
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>IncreaseProgressCommand#execute</code> method first checks for whether the index is within the size of CcaList.
+The <code>IncreaseProgressCommand#execute</code> method first checks for whether the
+index is within the size of CcaList.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the methods in the <code>CcaTracker</code> class. As such,
-the <code>CcaTracker#increaseProgress</code> method is called. This in turn calls the <code>CcaList#increaseProgress</code> method. This
-method first finds the <code>Cca</code> based on its corresponding index. Then, it calls the <code>Cca#increaseProgress</code> method.</p>
+<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
+methods in the <code>CcaTracker</code> class. As such, the <code>CcaTracker#increaseProgress</code>
+method is called. This in turn calls the <code>CcaList#increaseProgress</code> method.
+This method first finds the <code>Cca</code> based on its corresponding index. Then, it
+calls the <code>Cca#increaseProgress</code> method.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. This in turn calls the <code>CcaProgress#increaseProgress</code> method that calls <code>CcaCurrentProgress#increaseProgress</code>
-method. At long last, the final <code>#increaseProgress</code> method in the <code>CcaCurrentProgress</code> instance is called and the
-<code>currentProgress</code> counter is incremented by 1.</p>
+<p>Step 5. This in turn calls the <code>CcaProgress#increaseProgress</code> method that
+calls <code>CcaCurrentProgress#increaseProgress</code> method. At long last, the final
+<code>#increaseProgress</code> method in the <code>CcaCurrentProgress</code> instance is called and
+the <code>currentProgress</code> counter is incremented by 1.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1565,8 +1780,9 @@ method. At long last, the final <code>#increaseProgress</code> method in the <co
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-TLDR: The calling of the <code>#increaseProgress</code> method at the <code>CcaTracker</code> level triggers a cascading series of
-<code>#increaseProgress</code> methods which culminates in the <code>currentProgress</code> variable being incremented by 1.
+TLDR: The calling of the <code>#increaseProgress</code> method at the <code>CcaTracker</code> level
+triggers a cascading series of <code>#increaseProgress</code> methods which culminates in
+the <code>currentProgress</code> variable being incremented by 1.
 </td>
 </tr>
 </table>
@@ -1579,7 +1795,8 @@ TLDR: The calling of the <code>#increaseProgress</code> method at the <code>CcaT
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (Current choice):</strong> Instantiate a generic <code>CcaProgress</code> for each <code>Cca</code>  .</p>
+<p><strong>Alternative 1 (Current choice):</strong> Instantiate a generic <code>CcaProgress</code> for
+each <code>Cca</code>.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1592,15 +1809,17 @@ TLDR: The calling of the <code>#increaseProgress</code> method at the <code>CcaT
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Implement <code>CcaProgress</code> as a parent class. Create classes such as SportProgress/PerformingArtsProgress
-that extend from CcaProgress for each type of <code>Cca</code></p>
+<p><strong>Alternative 2:</strong> Implement <code>CcaProgress</code> as a parent class. Create classes
+such as SportProgress/PerformingArtsProgress that extend from CcaProgress
+for each type of <code>Cca</code></p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Easier to extend functionality for each type of cca.</p>
 </li>
 <li>
-<p>Cons: Does not significantly extend functionality for this version of Jarvis.</p>
+<p>Cons: Does not significantly extend functionality for this version of
+Jarvis.</p>
 </li>
 </ul>
 </div>
@@ -1613,21 +1832,23 @@ that extend from CcaProgress for each type of <code>Cca</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (Current choice):</strong> Implement CcaProgressList as an <code>ObservableList</code> .</p>
+<p><strong>Alternative 1 (Current choice):</strong> Implement CcaProgressList as an
+<code>ObservableList</code> .</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Easier to manipulate for JavaFx.</p>
 </li>
 <li>
-<p>Cons: Potentially complicated nesting when passing arguments to it as CcaProgressList is nested several classes
-within <code>Cca</code>.</p>
+<p>Cons: Potentially complicated nesting when passing arguments to it as
+CcaProgressList is nested several classes within <code>Cca</code>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Implement CcaProgressList as a normal <code>List</code> e.g. <code>ArrayList</code> .</p>
+<p><strong>Alternative 2:</strong> Implement CcaProgressList as a normal <code>List</code> e.g.
+<code>ArrayList</code>.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1647,15 +1868,18 @@ within <code>Cca</code>.</p>
 <div class="sect2">
 <h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
 <div class="paragraph">
-<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
+<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class
+is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the
+configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
-<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
+<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code>
+which will log messages according to the specified logging level</p>
 </li>
 <li>
 <p>Currently log messages are output through: <code>Console</code> and to a <code>.log</code> file.</p>
@@ -1668,7 +1892,8 @@ within <code>Cca</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application</p>
+<p><code>SEVERE</code> : Critical problem detected which may possibly cause the
+termination of the application</p>
 </li>
 <li>
 <p><code>WARNING</code> : Can continue, but with caution</p>
@@ -1677,7 +1902,8 @@ within <code>Cca</code>.</p>
 <p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
 </li>
 <li>
-<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
+<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in
+debugging e.g. print the actual list instead of just its size</p>
 </li>
 </ul>
 </div>
@@ -1685,7 +1911,9 @@ within <code>Cca</code>.</p>
 <div class="sect2">
 <h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
 <div class="paragraph">
-<p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
+<p>Certain properties of the application can be controlled (e.g user prefs file
+location, logging level) through the configuration file (default:
+<code>config.json</code>).</p>
 </div>
 </div>
 </div>
@@ -1746,7 +1974,8 @@ within <code>Cca</code>.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: optimised for NUS students who have busy schedules and a tight budget</p>
+<p><strong>Value proposition</strong>: optimised for NUS students who have busy schedules and a
+tight budget</p>
 </div>
 </div>
 </div>
@@ -1754,7 +1983,8 @@ within <code>Cca</code>.</p>
 <h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low
+(unlikely to have) - <code>*</code></p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
 <colgroup>
@@ -1958,16 +2188,20 @@ within <code>Cca</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>JARVIS should work on any mainstream OS as long as it has Java 12 or above installed.</p>
+<p>JARVIS should work on any mainstream OS as long as it has Java 11 or
+above installed.</p>
 </li>
 <li>
-<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+<p>A user with above average typing speed for regular English text (i.e. not
+code, not system admin commands) should be able to accomplish most of the
+tasks faster using commands than using the mouse.</p>
 </li>
 <li>
 <p>JARVIS should respond within two seconds.</p>
 </li>
 <li>
-<p>JARVIS should be usable by a novice who has never used a command line interface.</p>
+<p>JARVIS should be usable by a novice who has never used a command line
+interface.</p>
 </li>
 <li>
 <p>JARVIS should be able to work without any internet connection.</p>
@@ -2043,7 +2277,8 @@ within <code>Cca</code>.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+These instructions only provide a starting point for testers to work on;
+testers are expected to do more <em>exploratory</em> testing.
 </td>
 </tr>
 </table>
@@ -2061,7 +2296,8 @@ These instructions only provide a starting point for testers to work on; testers
 </li>
 <li>
 <p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
+Expected: Shows the GUI with a set of sample contacts. The window size may
+not be optimum.</p>
 </li>
 </ol>
 </div>
@@ -2071,7 +2307,8 @@ Expected: Shows the GUI with a set of sample contacts. The window size may not b
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+<p>Resize the window to an optimum size. Move the window to a different
+location. Close the window.</p>
 </li>
 <li>
 <p>Re-launch the app by double-clicking the jar file.<br>
@@ -2095,27 +2332,28 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons
+in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First contact is deleted from the list. Details of the deleted
+contact shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No person is deleted. Error details shown in the status message.
+Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is
+larger than the list size) <em>{give more}</em><br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -2127,7 +2365,8 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p><em>{explain how to simulate a missing/corrupted file and the expected
+behavior}</em></p>
 </li>
 </ol>
 </div>
@@ -2139,4 +2378,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 03:44:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 14:54:44 UTC</div></div></div></body></html>
