@@ -26,7 +26,10 @@ public class CheckCommand extends Command {
     );
 
     public static final String MESSAGE_SUCCESS = "Checked %1$s";
-    public static final String MESSAGE_FAILURE = "%1$s has no prerequisites!";
+    public static final String MESSAGE_RETURN = "%s\n %s";
+    public static final String MESSAGE_CAN_TAKE_COURSE = "You are able to take: %1$s.";
+    public static final String MESSAGE_CANNOT_TAKE_COURSE = "You are unable to take: %1$s.";
+
     public static final String MESSAGE_NO_INVERSE =
             "The command " + COMMAND_WORD + " cannot be undone";
     public static final boolean HAS_INVERSE = false;
@@ -71,19 +74,18 @@ public class CheckCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
+        // no prereqs
         if (isNull(toCheck.getPrereqTree())) {
-            throw new CommandException(String.format(MESSAGE_FAILURE, toCheck));
+            return new CommandResult(String.format(MESSAGE_SUCCESS, toCheck));
         }
 
-        AndOrTree tree = AndOrTree.buildTree(
+        AndOrTree<Course> tree = AndOrTree.buildTree(
             toCheck.toString(),
             toCheck.getPrereqTree().toString(), (c) -> CourseUtil.getCourse(c).orElse(null)
         );
 
-        // TODO act on model
-        // return new CommandResult(String.format(MESSAGE_SUCCESS, toCheck));
-
-        return new CommandResult(tree.toString());
+        model.checkCourse(tree);
+        return new CommandResult(String.format(MESSAGE_SUCCESS, toCheck));
     }
 
     @Override

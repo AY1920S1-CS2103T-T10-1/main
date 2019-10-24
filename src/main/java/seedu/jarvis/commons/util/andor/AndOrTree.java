@@ -136,13 +136,22 @@ public class AndOrTree<T> {
     }
 
     /**
+     * Returns the data stored in the root of this tree.
+     *
+     * @return the root
+     */
+    public T getRoot() {
+        return root.getData().orElse(null);
+    }
+
+    /**
      * Returns a {@code String} representing the tree structure of this object.
      *
      * @return a {@code String}
      */
     public String toString() {
         if (root.getChildren().size() <= 0) {
-            return "";
+            return "This course has no prerequisites!";
         }
         return root.toTreeString();
     }
