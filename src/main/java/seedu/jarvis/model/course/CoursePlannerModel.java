@@ -1,6 +1,7 @@
 package seedu.jarvis.model.course;
 
 import javafx.collections.ObservableList;
+import seedu.jarvis.commons.util.andor.AndOrTree;
 
 /**
  * The API of Course Planner component.
@@ -10,6 +11,11 @@ public interface CoursePlannerModel {
      * Looks up a course.
      */
     void lookUpCourse(Course course);
+
+    /**
+     * Checks if the user can take this course.
+     */
+    void checkCourse(AndOrTree<Course> course);
 
     /**
      * Adds a course into the list.
@@ -39,7 +45,7 @@ public interface CoursePlannerModel {
     /**
      * Returns a displayable {@code String} to the user.
      */
-    String getStringToDisplay();
+    String getCourseText();
 
     /**
      * Gets this Model's course planner

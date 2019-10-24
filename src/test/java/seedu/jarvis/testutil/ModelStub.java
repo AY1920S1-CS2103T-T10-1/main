@@ -7,6 +7,7 @@ import java.util.function.Predicate;
 import javafx.collections.ObservableList;
 import seedu.jarvis.commons.core.GuiSettings;
 import seedu.jarvis.commons.core.index.Index;
+import seedu.jarvis.commons.util.andor.AndOrTree;
 import seedu.jarvis.logic.commands.Command;
 import seedu.jarvis.logic.commands.exceptions.CommandException;
 import seedu.jarvis.logic.commands.exceptions.CommandNotInvertibleException;
@@ -381,6 +382,11 @@ public class ModelStub implements Model {
     }
 
     @Override
+    public void checkCourse(AndOrTree<Course> course) {
+        throw new AssertionError("This method should not be called.");
+    }
+
+    @Override
     public void addCourse(Course course) {
         throw new AssertionError("This method should not be called.");
     }
@@ -406,7 +412,7 @@ public class ModelStub implements Model {
     }
 
     @Override
-    public String getStringToDisplay() {
+    public String getCourseText() {
         throw new AssertionError("This method should not be called.");
     }
 

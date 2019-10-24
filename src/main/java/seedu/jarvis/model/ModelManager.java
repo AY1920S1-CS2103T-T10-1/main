@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import seedu.jarvis.commons.core.GuiSettings;
 import seedu.jarvis.commons.core.LogsCenter;
 import seedu.jarvis.commons.core.index.Index;
+import seedu.jarvis.commons.util.andor.AndOrTree;
 import seedu.jarvis.logic.commands.Command;
 import seedu.jarvis.logic.commands.exceptions.CommandException;
 import seedu.jarvis.model.address.AddressBook;
@@ -681,6 +682,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void checkCourse(AndOrTree<Course> tree) {
+        coursePlanner.checkCourse(tree);
+    }
+
+    @Override
     public void addCourse(Course course) {
         coursePlanner.addCourse(course);
     }
@@ -706,12 +712,12 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public CoursePlanner getCoursePlanner() {
-        return coursePlanner;
+    public String getCourseText() {
+        return coursePlanner.getCourseText().getText();
     }
 
     @Override
-    public String getStringToDisplay() {
-        return coursePlanner.getShowString();
+    public CoursePlanner getCoursePlanner() {
+        return coursePlanner;
     }
 }

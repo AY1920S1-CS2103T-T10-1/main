@@ -1,24 +1,25 @@
 package seedu.jarvis.model.course;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.jarvis.logic.commands.course.CheckCommand.MESSAGE_CANNOT_TAKE_COURSE;
+import static seedu.jarvis.logic.commands.course.CheckCommand.MESSAGE_CAN_TAKE_COURSE;
 
 import java.util.List;
 import java.util.Objects;
 
 import javafx.collections.ObservableList;
+import seedu.jarvis.commons.util.andor.AndOrTree;
 
 /**
  * Wraps all data for the Course Planner.
  */
 public class CoursePlanner {
     private UniqueCourseList uniqueCourseList;
-
-    /** String to render to display */
-    private String showString;
+    private CourseText courseText;
 
     public CoursePlanner() {
         uniqueCourseList = new UniqueCourseList();
-        showString = "";
+        courseText = new CourseText();
     }
 
     public CoursePlanner(CoursePlanner coursePlanner) {
@@ -32,27 +33,40 @@ public class CoursePlanner {
     public void resetData(CoursePlanner newData) {
         requireNonNull(newData);
         setUniqueCourseList(newData.getCourseList());
-        setShowString(newData.getShowString());
+        setCourseText(newData.getCourseText().getText());
     }
 
     public UniqueCourseList getUniqueCourseList() {
         return uniqueCourseList;
     }
 
-    public String getShowString() {
-        return showString;
+    public CourseText getCourseText() {
+        return courseText;
     }
 
     public void setUniqueCourseList(List<Course> courses) {
-        this.uniqueCourseList.setCourses(courses);
+        uniqueCourseList.setCourses(courses);
     }
 
-    public void setShowString(String showString) {
-        this.showString = showString;
+    public void setCourseText(String text) {
+        courseText.setText(text);
     }
 
     public void lookUpCourse(Course course) {
-        showString = course.toDisplayableString();
+        courseText.setText(course.toDisplayableString());
+    }
+
+    /**
+     * Updates Course Planner on whether the user can take this course.
+     *
+     * @param tree {@code AndOrTree}
+     */
+    public void checkCourse(AndOrTree<Course> tree) {
+        Course course = tree.getRoot();
+        String message = tree.fulfills(getCourseList())
+            ? String.format(MESSAGE_CAN_TAKE_COURSE, course)
+            : String.format(MESSAGE_CANNOT_TAKE_COURSE, course);
+        courseText.setText(message + "\n" + tree.toString());
     }
 
     public boolean hasCourse(Course course) {
@@ -91,11 +105,11 @@ public class CoursePlanner {
 
         CoursePlanner that = (CoursePlanner) o;
         return Objects.equals(uniqueCourseList, that.uniqueCourseList)
-                && Objects.equals(showString, that.showString);
+                && Objects.equals(courseText, that.courseText);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uniqueCourseList, showString);
+        return Objects.hash(uniqueCourseList, courseText);
     }
 }
