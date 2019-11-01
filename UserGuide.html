@@ -194,21 +194,12 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <div class="sect2">
 <h3 id="task-scheduler"><a class="link" href="#task-scheduler">3.2. Task Scheduler</a></h3>
 <div class="sect3">
-<h4 id="list-all-tasks-code-list-task-code-v1-4"><a class="link" href="#list-all-tasks-code-list-task-code-v1-4">3.2.1. List all tasks: <code>list-task</code>[v1.4]</a></h4>
+<h4 id="list-all-tasks-code-list-tasks-code-v1-4"><a class="link" href="#list-all-tasks-code-list-tasks-code-v1-4">3.2.1. List all tasks: <code>list-tasks</code> [v1.4]</a></h4>
 <div class="paragraph">
-<p>Lists tasks in the planner based on the given <code>DATE</code> or <code>#TAG</code>(s).</p>
+<p>Lists all the tasks in the planner.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>list-task {d/DATE | #TAG&#8230;&#8203;}</code></p>
-</div>
-<div class="sect4">
-<h5 id="example"><a class="link" href="#example">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>list-task #food #science_club
-list-task d/10/06/2019</pre>
-</div>
-</div>
+<p>Format: <code>list-tasks</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -275,7 +266,7 @@ list-task d/10/06/2019</pre>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="example-2"><a class="link" href="#example-2">Example</a></h5>
+<h5 id="example"><a class="link" href="#example">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-task t/event/workshop r/weekly d/25/12/2019//26/12/2019
@@ -296,7 +287,7 @@ add-task t/deadline/cs2101 assignment d/20/09/2019 p/high</pre>
 <p>where <code>INDEX</code> is the <strong>one-based</strong> index of the task list.</p>
 </div>
 <div class="sect4">
-<h5 id="example-3"><a class="link" href="#example-3">Example</a></h5>
+<h5 id="example-2"><a class="link" href="#example-2">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>delete-task 3</pre>
@@ -313,7 +304,7 @@ add-task t/deadline/cs2101 assignment d/20/09/2019 p/high</pre>
 <p>Format: <code>find-task KEYWORD&#8230;&#8203;</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-4"><a class="link" href="#example-4">Example</a></h5>
+<h5 id="example-3"><a class="link" href="#example-3">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>find-task assignment
@@ -348,7 +339,7 @@ or priority level of a task: <code>edit-task t/taskToBeEdited//des/NEW-TASK-DESC
 <p>Format: <code>edit-task {t/TASK-DESCRIPTION//NEW-DESCRIPTION | INDEX//NEW-DESCRIPTION}</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-5"><a class="link" href="#example-5">Example</a></h5>
+<h5 id="example-4"><a class="link" href="#example-4">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>edit-task t/project part 1//des/project part 2
@@ -383,7 +374,7 @@ being cleared.</p>
 <p>Format: <code>clear-task [#TAG]&#8230;&#8203; [d/DATE]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-6"><a class="link" href="#example-6">Example</a></h5>
+<h5 id="example-5"><a class="link" href="#example-5">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>clear-task #school
@@ -408,7 +399,7 @@ added to the current spending to keep track of the budget set by the user.</p>
 <p>Format: <code>add-paid d/PURCHASE-DESCRIPTION a/AMOUNT</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-7"><a class="link" href="#example-7">Example</a></h5>
+<h5 id="example-6"><a class="link" href="#example-6">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>pay d/lunch at the Deck a/4.50
@@ -440,7 +431,7 @@ must contain a description and a subscription fee.</p>
 <p>Format: <code>add-install d/INSTALLMENT-DESCRIPTION a/AMOUNT</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-8"><a class="link" href="#example-8">Example</a></h5>
+<h5 id="example-7"><a class="link" href="#example-7">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-install n/Spotify a/9.50
@@ -458,7 +449,7 @@ add-install n/Netflix a/13.0</pre>
 <p>Format: <code>edit-install INDEX {d/INSTALLMENT-DESCRIPTION | a/AMOUNT}</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-9"><a class="link" href="#example-9">Example</a></h5>
+<h5 id="example-8"><a class="link" href="#example-8">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>edit-install 1 a/10
@@ -486,7 +477,7 @@ automatically calculate your weekly and daily limit.</p>
 <p>Format: <code>set-monthly a/AMOUNT</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-10"><a class="link" href="#example-10">Example</a></h5>
+<h5 id="example-9"><a class="link" href="#example-9">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>set-monthly a/300</pre>
@@ -529,7 +520,7 @@ or <code>xlsx</code> format.</p>
 <p>Format: <code>export {csv | txt | xlsx} f/FILENAME</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-11"><a class="link" href="#example-11">Example</a></h5>
+<h5 id="example-10"><a class="link" href="#example-10">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>export csv f/expenditures</pre>
@@ -557,7 +548,7 @@ containing all expenditures.</p>
 are able to specify multiple courses to add.</p>
 </div>
 <div class="sect4">
-<h5 id="example-12"><a class="link" href="#example-12">Example</a></h5>
+<h5 id="example-11"><a class="link" href="#example-11">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-course c/CS1010
@@ -576,7 +567,7 @@ by its <strong>id</strong> within the list.</p>
 <p>Format: <code>delete-course {c/COURSECODE | INDEX}</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-13"><a class="link" href="#example-13">Example</a></h5>
+<h5 id="example-12"><a class="link" href="#example-12">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>delete-course c/CS1010
@@ -595,7 +586,7 @@ number of credits and its prerequisites - and displays it on the screen.</p>
 <p>Format: <code>lookup c/COURSECODE</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-14"><a class="link" href="#example-14">Example</a></h5>
+<h5 id="example-13"><a class="link" href="#example-13">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>lookup c/CS1010</pre>
@@ -614,7 +605,7 @@ tree to show you what requirements you need for each course.</p>
 <p>Format: <code>check c/COURSECODE</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
+<h5 id="example-14"><a class="link" href="#example-14">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>check c/CS1010</pre>
@@ -651,7 +642,7 @@ type of CCA. The types of the CCA will be limited to the following:</p>
 <p>Format: <code>add-cca n/NAME t/TYPE</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
+<h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-cca n/Canoeing t/Sports
@@ -669,7 +660,7 @@ add-cca n/Guitar Ensemble t/PerformingArts</pre>
 <p>Format: <code>delete-cca n/[NAME]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
+<h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>delete-cca n/Canoeing</pre>
@@ -686,7 +677,7 @@ add-cca n/Guitar Ensemble t/PerformingArts</pre>
 <p>Format: <code>edit-cca [n/NAME]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
+<h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>edit-cca n/Canoeing</pre>
@@ -714,7 +705,7 @@ be shown.</p>
 <p>Format: <code>find-cca [k/KEYWORD]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
+<h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>find-cca k/Canoeing</pre>
@@ -731,7 +722,7 @@ be shown.</p>
 <p>Format: <code>add-progress n/[NAME] l/[LEVELS]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-20"><a class="link" href="#example-20">Example</a></h5>
+<h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-progress n/Canoeing l/10
@@ -749,7 +740,7 @@ add-progress n/Guitar Ensemble l/8</pre>
 <p>Format: <code>increment-progress INDEX</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-21"><a class="link" href="#example-21">Example</a></h5>
+<h5 id="example-20"><a class="link" href="#example-20">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>increment-progress 1</pre>
@@ -776,7 +767,7 @@ currently <strong>20</strong> actions.</p>
 <p>Format: <code>undo [r/NUMBER]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
+<h5 id="example-21"><a class="link" href="#example-21">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>undo        (undoes the latest action)
@@ -809,7 +800,7 @@ a single tab.</p>
 <p>Format: <code>redo [r/NUMBER]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-23"><a class="link" href="#example-23">Example</a></h5>
+<h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>redo        (redoes the latest undo)
@@ -987,4 +978,4 @@ redo r/3    (redoes the last three undos)</pre>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 16:30:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 05:10:58 UTC</div></div></div></body></html>
