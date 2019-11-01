@@ -625,28 +625,29 @@ type of CCA. The types of the CCA will be limited to the following:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>PerformingArts</code></p>
+<p><code>performingArt</code></p>
 </li>
 <li>
-<p><code>Sports</code></p>
+<p><code>sport</code></p>
 </li>
 <li>
-<p><code>ClubsSocieties</code></p>
+<p><code>club</code></p>
 </li>
 <li>
-<p><code>UniformedGroups</code></p>
+<p><code>uniformedGroup</code></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Format: <code>add-cca n/NAME t/TYPE</code></p>
+<p>Format: <code>add-cca n/NAME t/TYPE e/EQUIPMENT</code></p>
 </div>
 <div class="sect4">
 <h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>add-cca n/Canoeing t/Sports
-add-cca n/Guitar Ensemble t/PerformingArts</pre>
+<pre>add-cca n/Swimming t/sport e/swimming trunks e/goggles
+add-cca n/Canoeing t/sport e/Boat e/Paddle
+add-cca n/Guitar Ensemble t/performingArt e/guitar</pre>
 </div>
 </div>
 </div>
@@ -654,16 +655,16 @@ add-cca n/Guitar Ensemble t/PerformingArts</pre>
 <div class="sect3">
 <h4 id="delete-a-cca-code-delete-cca-code"><a class="link" href="#delete-a-cca-code-delete-cca-code">3.5.2. Delete a CCA: <code>delete-cca</code></a></h4>
 <div class="paragraph">
-<p>Deletes the specified CCA from your list.</p>
+<p>Deletes the specified CCA by index from your list.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>delete-cca n/[NAME]</code></p>
+<p>Format: <code>delete-cca INDEX</code></p>
 </div>
 <div class="sect4">
 <h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>delete-cca n/Canoeing</pre>
+<pre>delete-cca 1</pre>
 </div>
 </div>
 </div>
@@ -671,16 +672,18 @@ add-cca n/Guitar Ensemble t/PerformingArts</pre>
 <div class="sect3">
 <h4 id="edit-a-cca-code-edit-cca-code"><a class="link" href="#edit-a-cca-code-edit-cca-code">3.5.3. Edit a CCA: <code>edit-cca</code></a></h4>
 <div class="paragraph">
-<p>Edit the CCA type.</p>
+<p>Edits the CCA. Note that the keywords in square brackets are optional.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit-cca [n/NAME]</code></p>
+<p>Format: <code>edit-cca INDEX [n/NAME] [t/TYPE] [e/EQUIPMENT]</code></p>
 </div>
 <div class="sect4">
 <h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>edit-cca n/Canoeing</pre>
+<pre>edit-cca 1 t/sport e/tennis racket
+edit-cca 1 t/performingArt
+edit-cca 1 n/Running e/shoes e/water bottle</pre>
 </div>
 </div>
 </div>
@@ -699,16 +702,17 @@ in any CCAs, an empty list will be shown.</p>
 <h4 id="find-a-cca-code-find-cca-code"><a class="link" href="#find-a-cca-code-find-cca-code">3.5.5. Find a CCA: <code>find-cca</code></a></h4>
 <div class="paragraph">
 <p>Find a CCA based on keyword. If no such CCA can be found, an empty list will
-be shown.</p>
+be shown. Note that you can use any number of keywords.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find-cca [k/KEYWORD]</code></p>
+<p>Format: <code>find-cca KEYWORD</code></p>
 </div>
 <div class="sect4">
 <h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>find-cca k/Canoeing</pre>
+<pre>find-cca swimming
+find-cca canoeing guitar</pre>
 </div>
 </div>
 </div>
@@ -716,16 +720,17 @@ be shown.</p>
 <div class="sect3">
 <h4 id="add-progress-levels-for-a-cca-code-add-progress-code"><a class="link" href="#add-progress-levels-for-a-cca-code-add-progress-code">3.5.6. Add progress levels for a CCA: <code>add-progress</code></a></h4>
 <div class="paragraph">
-<p>Add the number of levels of possible progress for the CCA.</p>
+<p>Adds the progress milestones for the CCA.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add-progress n/[NAME] l/[LEVELS]</code></p>
+<p>Format: `add-progress INDEX p/MILESTONE `</p>
 </div>
 <div class="sect4">
 <h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>add-progress n/Canoeing l/10
+<pre>add-progress 1 p/bronze p/silver p/gold p/gold star
+add-progress 2 p/Beginner boat p/Intermediate boat p/Racing boat
 add-progress n/Guitar Ensemble l/8</pre>
 </div>
 </div>
@@ -978,4 +983,4 @@ redo r/3    (redoes the last three undos)</pre>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 05:10:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 07:16:19 UTC</div></div></div></body></html>
