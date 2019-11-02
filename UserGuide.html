@@ -730,14 +730,17 @@ type of CCA. The types of the CCA will be limited to the following:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Format: <code>add-cca n/NAME t/TYPE e/EQUIPMENT</code></p>
+<p>Note that equipment for each <code>Cca</code> is not compulsory.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add-cca n/NAME t/TYPE [e/EQUIPMENT]</code></p>
 </div>
 <div class="sect4">
 <h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-cca n/Swimming t/sport e/swimming trunks e/goggles
-add-cca n/Canoeing t/sport e/Boat e/Paddle
+add-cca n/Canoeing t/sport
 add-cca n/Guitar Ensemble t/performingArt e/guitar</pre>
 </div>
 </div>
@@ -831,6 +834,9 @@ add-progress n/Guitar Ensemble l/8</pre>
 <h4 id="increment-progress-level-code-increment-progress-code"><a class="link" href="#increment-progress-level-code-increment-progress-code">3.5.7. Increment progress level: <code>increment-progress</code></a></h4>
 <div class="paragraph">
 <p>Increments the progress for a CCA at the specified index.</p>
+</div>
+<div class="paragraph">
+<p>Note that progress can only be incremented if a progress has been added to that Cca.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>increment-progress INDEX</code></p>
@@ -1074,4 +1080,4 @@ redo r/3    (redoes the last three undos)</pre>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 11:16:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 11:22:16 UTC</div></div></div></body></html>
