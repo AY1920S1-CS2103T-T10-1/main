@@ -180,12 +180,12 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 </div>
 </li>
 <li>
-<p>Dates <code>d/DATE</code> follow the following format: <code>DD/MM/YYYY</code>.</p>
+<p>Dates <code>d/DATE</code> follow the following format: <code>d/m/yyyy</code>.</p>
 <div class="paragraph">
 <p>For example:</p>
 </div>
 <div class="paragraph">
-<p><code>add-task t/todo des/assignment d/01/01/1970</code></p>
+<p><code>add-task t/todo des/assignment d/1/1/1970</code></p>
 </div>
 </li>
 </ol>
@@ -253,15 +253,15 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Todo</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/todo des/TASK-DESCRIPTION [#TAG]&#8230;&#8203; [p/PRIORITY r/FREQ]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/todo des/TASK-DESCRIPTION [#TAG]&#8230;&#8203; [p/PRIORITY f/FREQ]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Event</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/event des/TASK-DESCRIPTION d/START-DATE//END-DATE [#TAG]&#8230;&#8203; [p/PRIORITY r/FREQ]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/event des/TASK-DESCRIPTION d/START-DATE//END-DATE [#TAG]&#8230;&#8203; [p/PRIORITY f/FREQ]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Deadline</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/deadline des/TASK-DESCRIPTION d/DUE-DATE [#TAG]&#8230;&#8203; [p/PRIORITY r/FREQ]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-task t/deadline des/TASK-DESCRIPTION d/DUE-DATE [#TAG]&#8230;&#8203; [p/PRIORITY f/FREQ]</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@ Duplicate tasks are not allowed in the Planner!
 <h5 id="example"><a class="link" href="#example">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>add-task t/event des/workshop r/weekly d/25/12/2019//26/12/2019
+<pre>add-task t/event des/workshop f/weekly d/25/12/2019//26/12/2019
 add-task t/deadline des/cs2101 assignment d/20/09/2019 p/high</pre>
 </div>
 </div>
@@ -357,7 +357,7 @@ and priority level of a task: <code>edit-task INDEX//des/NEW-TASK-DESCRIPTION p/
 <div class="content">
 <pre>edit-task 1//des/project part 2
 edit-task 2//des/project part 2 d/18/09/2019
-edit-task 3//r/weekly</pre>
+edit-task 3//f/weekly</pre>
 </div>
 </div>
 </div>
@@ -1074,4 +1074,4 @@ redo r/3    (redoes the last three undos)</pre>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 10:10:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 10:58:57 UTC</div></div></div></body></html>
