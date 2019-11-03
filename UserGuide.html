@@ -853,61 +853,158 @@ add-progress n/Guitar Ensemble l/8</pre>
 </div>
 <div class="sect2">
 <h3 id="app-history"><a class="link" href="#app-history">3.6. App History</a></h3>
+<div class="paragraph">
+<p><em>"Oops! I have entered a command that has entered inaccurate information to the
+application, and I am not sure where to find the mistake or how to fix it!"</em></p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s great that JARVIS remembers your changes and allows you to easily undo your
+commands!</p>
+</div>
+<div class="paragraph">
+<p><em>"Wait! What if I am not sure if I want to undo the changes made by the
+command?"</em></p>
+</div>
+<div class="paragraph">
+<p>JARVIS also allows you to redo any changes that you have undone! Therefore, you
+can confidently undo and redo changes that you have made without worrying about
+the inconvenience of remembering and re-entering commands all over again.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only commands that make changes to the JARVIS can be undone and redone. Commands that
+list items or finds items in JARVIS are not remembered and thus cannot be undone or
+redone.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>JARVIS remembers the last thousand commands that you have entered into the
+application, even after you exit the application!</p>
+</div>
+<div class="paragraph">
+<p>JARVIS also lets you undo and redo multiple commands in a single undo or redo
+command! This means that you can undo and redo up to a thousand commands with
+a single undo or redo command.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+JARVIS undo and redo commands in a specific sequence:
+<br>
+<br>
+Undo commands will undo command(s) starting from the latest command the user entered.
+<br>
+<br>
+Redo commands will redo command(s) starting from the latest command that was undone.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s show you how to undo and redo commands in JARVIS in the following
+sections below, which will cover two new commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>undo [NUMBER]</code></p>
+</li>
+<li>
+<p><code>redo [NUMBER]</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>[NUMBER]</code> is an optional argument indicating the number of commands that you
+want to undo/redo.
+<br>
+<br>
+<code>[NUMBER]</code> should be a positive integer that is not larger than
+the available number of commands that can be undone/redone (Don&#8217;t worry, JARVIS
+will let you know if <code>[NUMBER]</code> is out of range).
+<br>
+<br>
+If <code>[NUMBER]</code> parameter is not
+supplied, then <code>[NUMBER]</code> is taken to be the value <strong>1</strong>.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="undo"><a class="link" href="#undo">3.6.1. undo</a></h4>
+<div class="sect4">
+<h5 id="format"><a class="link" href="#format">Format</a></h5>
 <div class="paragraph">
-<p>Undo action(s) on the application. This will allow you to roll back certain
-actions that you may have accidentally or erroneously done on the application.
-Keep in mind that only commands that change the data on the application
-are undoable. Commands that render and display information cannot be undone.</p>
+<p><code>undo [NUMBER]</code></p>
 </div>
-<div class="paragraph">
-<p>The limit of the number of undoable actions you can make in the application is
-currently <strong>20</strong> actions.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>undo [r/NUMBER]</code></p>
 </div>
 <div class="sect4">
 <h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>undo        (undoes the latest action)
-undo r/3    (undoes the last three actions)</pre>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>undo</code>&#8201;&#8212;&#8201;This command will undo the latest command entered by the user.
+It is equivalent to the command <code>undo 1</code></p>
+</li>
+<li>
+<p><code>undo 5</code>&#8201;&#8212;&#8201;This command will undo the 5 latest commands entered by the user,
+starting from the latest command.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="redo"><a class="link" href="#redo">3.6.2. redo</a></h4>
+<div class="sect4">
+<h5 id="format-2"><a class="link" href="#format-2">Format</a></h5>
 <div class="paragraph">
-<p>Redo action(s) on the application. This will allow you to redo certain
-actions, or any accidental or erroneous undo actions. Keep in mind that
-only commands that can be undone can be redone. Therefore, only commands
-that change the data on the application can be redone as they can be undone.
-Commands that render and display information are not actions that can be
-undone and hence will not be able to be redone.</p>
+<p><code>redo [NUMBER]</code></p>
 </div>
-<div class="paragraph">
-<p>The limit of the number of available redo actions you can make in the
-application is currently <strong>20</strong> actions.</p>
-</div>
-<div class="paragraph">
-<p>Take note that if you have undone a certain amount of actions and from that
-point, you type in a new command that is not <code>redo</code>, the actions available to
-be redone will be cleared as of that point, similar to a browser navigation on
-a single tab.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>redo [r/NUMBER]</code></p>
 </div>
 <div class="sect4">
 <h5 id="example-23"><a class="link" href="#example-23">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>redo        (redoes the latest undo)
-redo r/3    (redoes the last three undos)</pre>
+<div class="ulist">
+<ul>
+<li>
+<p><code>redo</code>&#8201;&#8212;&#8201;This command will redo the latest command undone by the user.
+It is equivalent to the command <code>redo 1</code></p>
+</li>
+<li>
+<p><code>redo 5</code>&#8201;&#8212;&#8201;This command will redo the 5 latest commands undone by the user,
+starting from the latest command that was undone.</p>
+</li>
+</ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Suppose you have undone a few commands, if you were to enter in new commands,
+you will not be able to redo the commands.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -930,20 +1027,6 @@ redo r/3    (redoes the last three undos)</pre>
 </div>
 <div class="paragraph">
 <p><strong>A:</strong> Simple undo the command, the application will revert your changes automatically.</p>
-</div>
-<hr>
-<div class="paragraph">
-<p><strong>Q:</strong> How do I know what I am undo-ing?</p>
-</div>
-<div class="paragraph">
-<p><strong>A:</strong> enter history into the command line, which will display where you are relative to what you can undo and redo.</p>
-</div>
-<hr>
-<div class="paragraph">
-<p><strong>Q:</strong> If I accidentally undo something, can i revert this mistake?</p>
-</div>
-<div class="paragraph">
-<p><strong>A:</strong> enter redo to undo your undo mistake, if you made multiple undo mistakes, you can redo &lt;number&gt; to redo those mistakes quickly.</p>
 </div>
 <hr>
 </div>
@@ -1071,13 +1154,13 @@ redo r/3    (redoes the last three undos)</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><code>undo [r/NUMBER]</code></p>
+<p><code>undo [NUMBER]</code></p>
 </li>
 <li>
-<p><code>redo [r/NUMBER]</code></p>
+<p><code>redo [NUMBER]</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 07:45:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 15:59:59 UTC</div></div></div></body></html>

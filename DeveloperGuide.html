@@ -346,8 +346,344 @@ implemented.</p>
 </div>
 <div class="sect2">
 <h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo / Redo Feature</a></h3>
+<div class="paragraph">
+<p>This section covers in detail the undo/redo feature of JARVIS.</p>
+</div>
+<div class="paragraph">
+<p>We will cover these main points:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Design Considerations</p>
+</li>
+<li>
+<p>Feature Details</p>
+</li>
+<li>
+<p>Implementations</p>
+</li>
+<li>
+<p>User Scenario demonstrating undo/redo</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s explore how we decided to implement the undo/redo feature in the Design
+Considerations section below.</p>
+</div>
 <div class="sect3">
-<h4 id="overview"><a class="link" href="#overview">3.1.1. Overview</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p>There were several available behavioral design patterns that we were
+considering to adopt to implement our undo/redo feature in the application.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Command Pattern</p>
+</li>
+<li>
+<p>Memento Pattern</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These patterns are common useful patterns to enable undo/redo functions.
+These are also viable options as our application design allows both of these
+approaches to be integrated easily.</p>
+</div>
+<div class="paragraph">
+<p>Let’s see how these adopting each of these approaches will span out in the
+development of the application.</p>
+</div>
+<div class="sect4">
+<h5 id="command-pattern-approach"><a class="link" href="#command-pattern-approach">Command Pattern Approach</a></h5>
+<div class="paragraph">
+<p>The application already makes use of the command pattern to decouple the
+internal state of the application and the user action. Therefore implementing
+undo/redo function with the command pattern would require us to achieve the
+following things:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Implement a class, <code>HistoryManager</code> to manage and store commands that
+have been done/undone in chronological sequence to facilitate undo and redo
+functions. This should be facilitated with the use of two <code>Deque</code>/<code>Stack</code>
+like structures. One will be fore storing the commands that have been done,
+while the other will be storing the commands that have been undone.</p>
+</li>
+<li>
+<p>Implement ways to discern amongst commands that should be added to
+<code>HistoryManager</code>, whereby undoable commands should be added, while
+non-undoable commands should not be added.</p>
+</li>
+<li>
+<p>Implement the inverse operation of commands that can be undone.</p>
+</li>
+<li>
+<p>Integrate <code>HistoryManager</code> into <code>Model</code> by Implementing undo and redo
+operations in <code>HistoryManager</code> to execute on the <code>Model</code> it is associated
+with and expose these operations to the <code>Model</code>. An undo operation will
+remove the latest done command and execute its inverse operation onto the
+<code>Model</code> before it is added as the latest undone command. A redo operation
+will remove the latest undone command and execute its normal execution on
+the <code>Model</code> before it is added as the latest done command.</p>
+</li>
+<li>
+<p>Implement commands, <code>UndoCommand</code> and <code>RedoCommand</code>, along with their
+respective parsers, <code>UndoCommandParser</code> and <code>RedoCommandParser</code>.</p>
+</li>
+<li>
+<p>Integrate commands and parsers into <code>JarvisParser</code>.</p>
+</li>
+<li>
+<p>Integrate logic in <code>LogicManager</code> to add undoable commands to
+<code>HistoryManager</code>.</p>
+</li>
+<li>
+<p>Implement storage for <code>HistoryManager</code> by implementing a <code>JSON</code>
+serializable <code>HistoryManager</code> along with the <code>JSON</code> adapted commands it
+stores so it can be written to a <code>JSON</code> file in local storage.</p>
+</li>
+<li>
+<p>Integrate the logic to save <code>HistoryManager</code> to local storage in
+<code>LogicManager</code> after the successful execution of commands.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="characteristics"><a class="link" href="#characteristics">Characteristics</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Space efficient due to storing commands instead of states of the entire
+application. Efficient usage of RAM and local storage for the application.</p>
+</li>
+<li>
+<p>Commands logic will be more complex as they must know how to undo its
+execution. Commands contain more data to retain information needed to undo
+its execution.</p>
+</li>
+<li>
+<p>Complex inverse executions may be unnecessarily convoluted compared other
+approaches (such as the memento pattern). This involves more planning and
+support on the classes that commands execute on.</p>
+</li>
+<li>
+<p>Requires implementation and testing of each command (and future commands)
+to enable undo/redo function with respect to that command. Development of the
+application will involve more overhead when integrating new commands to the
+application as there are more behaviour to test.</p>
+</li>
+<li>
+<p>Development of <code>HistoryManager</code> scales along with commands that are added
+to the application. Even after <code>HistoryManager</code> is developed and integrated
+into the application, additional work is required with each command, such as
+supporting inverse execution and serializing the command (for local storage).
+This can affect development schedule and add time constraints when working
+with tight deadlines.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="memento-pattern-approach"><a class="link" href="#memento-pattern-approach">Memento Pattern Approach</a></h5>
+<div class="paragraph">
+<p>The application follows a structural facade pattern, storing the data in
+<code>ModelManager</code> which implements the <code>Model</code>, which is an interface for
+commands to interact with. <code>ModelManager</code> manages classes that wrap their
+respective data. Therefore implementing undo/redo function with the command
+pattern would require us to achieve the following things:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Implement a <code>Version</code> class. This class wraps the state of another class
+as an immutable “snapshot”.</p>
+</li>
+<li>
+<p>Define the interface <code>VersionedModel</code> that extends <code>Model</code> with additional
+methods to save its current state and to change its state. <code>VersionedModel</code>
+could be viewed as a <em>originator</em> class that can produce “snapshots” of its
+own state and update its state from “snapshots”. These “snapshots” are in
+wrapped in the above <code>Version</code> class.</p>
+</li>
+<li>
+<p>Let <code>ModelManager</code> implement <code>VersionedModel</code> along with its methods to
+allow <code>ModelManager</code> to produce <code>Version</code> objects containing its current state
+and to update <code>ModelManager</code> to a state provided by a given <code>Version</code>.</p>
+</li>
+<li>
+<p>Implement a <code>HistoryManager</code> class to facilitate as a <em>caretaker</em> class.
+<code>HistoryManager</code> will store a series of <code>Version</code> objects containing states of
+the <code>VersionedModel</code> in two <code>Deque</code>/<code>Stack</code> like structures. One will be to
+store the previous versions, while the other is to store the future versions
+that were undone from.</p>
+</li>
+<li>
+<p>Implement commands, <code>UndoCommand</code> and <code>RedoCommand</code>, along with their
+respective parsers, <code>UndoCommandParser</code> and <code>RedoCommandParser</code>.</p>
+</li>
+<li>
+<p>Update commands to take in both <code>VersionedModel</code> and <code>HistoryManager</code>
+as arguments in their execute methods so that undo/redo commands can get
+<code>Version</code> objects containing previous or subsequent states of
+<code>VersionedModel</code> from <code>HistoryManager</code> for <code>VersionedModel</code> to update to.</p>
+</li>
+<li>
+<p>Integrate commands and parsers into <code>JarvisParser</code>.</p>
+</li>
+<li>
+<p>Implement storage for <code>HistoryManager</code> by implementing a <code>JSON</code>
+serializable <code>HistoryManager</code> along with the <code>JSON</code> adapted <code>Version</code> so
+that it can be written to a <code>JSON</code> file in local storage.</p>
+</li>
+<li>
+<p>Integrate the logic to save <code>HistoryManager</code> to local storage in
+<code>LogicManager</code> after the successful executions of commands.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="characteristics-2"><a class="link" href="#characteristics-2">Characteristics</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Expensive on space due to storing multiple copies of the application
+state. This increases the usage of RAM and local storage for the
+application.</p>
+</li>
+<li>
+<p>Simple robust implementation that can be developed quickly, which can be
+useful for tight schedules in the development process.</p>
+</li>
+<li>
+<p>Protects the encapsulation of private data of the application state
+(provided local storage data is also encrypted). This prevents violation of
+encapsulation of classes.</p>
+</li>
+<li>
+<p>Development of <code>HistoryManager</code> scales with how the information to be
+remembered changes. Whenever the nature of the information to be remembered
+changes, the memento class <code>Version</code> needs to be updated along with how
+<code>VersionedModel</code> updates and saves its state. Adding new commands also do not
+require any changed to <code>HistoryManager</code> unless there are changes to the data
+fields to be saved in <code>Model</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="our-thoughts"><a class="link" href="#our-thoughts">Our Thoughts</a></h5>
+<div class="paragraph">
+<p>These are the following questions we asked ourselves when deciding between
+these two approaches</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>RAM and storage</p>
+</li>
+<li>
+<p>Development process</p>
+</li>
+<li>
+<p>Software design principles</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="ram-and-storage"><a class="link" href="#ram-and-storage">RAM and storage</a></h5>
+<div class="paragraph">
+<p>Since storing commands is more space efficient than storing states of the
+<code>Model</code>, the command pattern will occupy less space than the memento pattern.</p>
+</div>
+<div class="paragraph">
+<p>Being space efficient will allow us to increase the range of undo/redo
+function of the application.</p>
+</div>
+<div class="paragraph">
+<p>Considering the target user group being students, we also want to develop an
+application that would not consume too much RAM or local storage given
+students budgets and varying tiers of laptops.</p>
+</div>
+<div class="paragraph">
+<p>Therefore regarding this aspect, we favor command pattern over the memento
+pattern.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="development-process"><a class="link" href="#development-process">Development process</a></h5>
+<div class="paragraph">
+<p>The memento pattern will require us to update <code>HistoryManager</code> whenever the
+<code>Model</code> changes, while the command pattern will require us to implement
+inverse executions for each additional command.</p>
+</div>
+<div class="paragraph">
+<p>Therefore the memento pattern would require more overhead when changing the
+<code>Model</code> of the application while the command pattern require more overhead
+when adding undoable commands.</p>
+</div>
+<div class="paragraph">
+<p>Our application are subject to both of these changes such as changes to the
+<code>Model</code> and adding new commands. Therefore both patterns are similar in
+overhead and depends on the frequency of changes made to <code>Model</code> or adding
+new commands. We feel that both options are viable and would be feasible for
+our team in the development of this application.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="software-design-principles"><a class="link" href="#software-design-principles">Software Design Principles</a></h5>
+<div class="paragraph">
+<p>Both patterns would involve introducing dependency between <code>Model</code> and
+<code>HistoryManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>The memento pattern would involve <code>HistoryManager</code> having a unidirectional
+dependency to <code>VersionedModel</code> while introducing <code>HistoryManager</code> as a
+dependency to <code>Command</code>.</p>
+</div>
+<div class="paragraph">
+<p>The command pattern would involve <code>HistoryManager</code> having dependency with
+<code>Model</code>. We can choose to nest <code>HistoryManager</code> into <code>Model</code> which would
+increase coupling between the two classes by introducing bidirectional
+dependency. We may choose to introduce this coupling to prevent increasing
+the dependency between <code>Command</code> as command will just be associated with
+<code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p>Both patterns involve <code>HistoryManager</code> with the responsibility of keeping
+track of commands/states. Single Responsibility Principle is not violated
+in both approaches.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-choice"><a class="link" href="#design-choice">Design Choice</a></h5>
+<div class="paragraph">
+<p>We determined that going along with the command pattern. We want to cater
+this application to students whose laptops may not have generous amounts of
+RAM. On top of the fact that students typically use their browsers
+<em>extensively</em>, we felt that we should be mindful of RAM usage.</p>
+</div>
+<div class="paragraph">
+<p>Comparisons between command pattern and memento pattern with respect to the
+development process were trivial since the <code>Model</code> and command sets are
+already planned, and future changes to <code>Model</code> and commands would not have
+any serious drawback regardless of the approach.</p>
+</div>
+<div class="paragraph">
+<p>The section below will discuss feature details and characteristics we have
+considered that would influence the logic of how we implement undo/redo.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-details"><a class="link" href="#feature-details">3.1.2. Feature Details</a></h4>
 <div class="paragraph">
 <p>The application should be able to undo and redo changes made by commands to
 give the user more flexibility in their inputs. Undo and redo operations
@@ -406,9 +742,12 @@ user types in a command:</p>
 </div>
 <div class="title">Figure 10. Activity Diagram for how commands are remembered after their successful execution</div>
 </div>
+<div class="paragraph">
+<p>The section below will discuss in more detail how undo/redo is implemented.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.2. Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.3. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo feature mechanism is facilitated by <code>HistoryManager</code>.
 <code>HistoryManager</code> remembers <strong>invertible commands</strong>. These commands are stored
@@ -531,6 +870,9 @@ undo or redo, represented by <code>UndoCommand#numberOfTimes</code> and
 <div class="paragraph">
 <p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="user-scenario-demonstrating-undo-redo"><a class="link" href="#user-scenario-demonstrating-undo-redo">3.1.4. User Scenario demonstrating undo/redo</a></h4>
 <div class="paragraph">
 <p>Step 1. The user launches the application for the first time. The
 <code>HistoryManager</code> is initialized. <code>HistoryManager#executedCommands</code> and
@@ -645,89 +987,11 @@ redo actions are cleared.
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.3. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1:</strong> Saves the entire <code>Model</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being
-deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command
-are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1:</strong> Use a <code>List</code> to store the history of <code>Model</code> states.
-Maintain a pointer to point to the current version of <code>Model</code>, and shift the
-pointer along the list to facilitate undo/redo operations.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Simple implementation.</p>
-</li>
-<li>
-<p>Cons: Expensive on storage as multiple copies of <code>Model</code> is stored.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Implement invertible commands whereby they support their
-inverse execution. Use two <code>Deque</code> data structures to store the history of
-commands, to represent executed commands and inversely executed commands.
-Move commands from one deque to another and executing/inversely executing
-them to facilitate undo/redo operations.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Storage efficient, as application only needs to keep track of
-invertible commands, and do not need to store multiple copies of <code>Model</code>.</p>
-</li>
-<li>
-<p>Cons: Implementation is more complex.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="course-planner-feature"><a class="link" href="#course-planner-feature">3.2. Course Planner feature</a></h3>
 <div class="sect3">
-<h4 id="overview-2"><a class="link" href="#overview-2">3.2.1. Overview</a></h4>
+<h4 id="overview"><a class="link" href="#overview">3.2.1. Overview</a></h4>
 <div class="paragraph">
 <p>The Course Planner feature allows the user to track what courses they</p>
 </div>
@@ -898,7 +1162,7 @@ optional, nullable attributes.</p>
 <div class="sect3">
 <h4 id="and-or-tree"><a class="link" href="#and-or-tree">3.2.3. And-Or Tree</a></h4>
 <div class="sect4">
-<h5 id="overview-3"><a class="link" href="#overview-3">Overview</a></h5>
+<h5 id="overview-2"><a class="link" href="#overview-2">Overview</a></h5>
 <div class="paragraph">
 <p>The <code>AndOrTree&lt;R&gt;</code> is a tree data structure served by the <code>util/andor</code>
 package that provides an abstraction for processing the prerequisite tree.
@@ -1199,7 +1463,7 @@ overloading of the <code>buildTree()</code> method.</p>
 <div class="sect2">
 <h3 id="finance-tracker-feature"><a class="link" href="#finance-tracker-feature">3.3. Finance Tracker feature</a></h3>
 <div class="sect3">
-<h4 id="overview-4"><a class="link" href="#overview-4">3.3.1. Overview</a></h4>
+<h4 id="overview-3"><a class="link" href="#overview-3">3.3.1. Overview</a></h4>
 <div class="paragraph">
 <p>The Finance Tracker feature allows the user to track what purchases they have
 made for the month and the list of installments that they have subscribed to.
@@ -1525,7 +1789,7 @@ rendering when implementing the Ui of JARVIS.</p>
 <div class="sect2">
 <h3 id="planner-feature"><a class="link" href="#planner-feature">3.4. Planner Feature</a></h3>
 <div class="sect3">
-<h4 id="overview-5"><a class="link" href="#overview-5">3.4.1. Overview</a></h4>
+<h4 id="overview-4"><a class="link" href="#overview-4">3.4.1. Overview</a></h4>
 <div class="paragraph">
 <p>The planner feature in JARVIS enables users to easily organise and manage
 their different tasks in school. Users will be able to keep track of tasks
@@ -1645,7 +1909,7 @@ String <code>TaskDes</code> directly</p>
 <div class="sect2">
 <h3 id="ccatracker-feature"><a class="link" href="#ccatracker-feature">3.5. CcaTracker Feature</a></h3>
 <div class="sect3">
-<h4 id="overview-6"><a class="link" href="#overview-6">3.5.1. Overview</a></h4>
+<h4 id="overview-5"><a class="link" href="#overview-5">3.5.1. Overview</a></h4>
 <div class="paragraph">
 <p>The application is able to track Ccas. Each user can have multiple Ccas and
 each Cca can have multiple equipments needed. In addition, the application is
@@ -2393,4 +2657,4 @@ behavior}</em></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 07:45:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 15:59:59 UTC</div></div></div></body></html>
