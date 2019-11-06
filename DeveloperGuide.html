@@ -301,17 +301,18 @@ of diagram.
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
 <div class="paragraph">
 <p>The <code>Storage</code> API is responsible for reading and writing data in
-json format. This allows the application is remeber information in
+json format. This allows the application is remember information in
 json format when the user closes the application.</p>
 </div>
 <div class="paragraph">
-<p>Below is a class diagram involving <code>Storage</code>.</p>
+<p>Below is a class diagram involving the <code>Storage</code> interface, which
+inherits from feature specific storage interfaces.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
+<img src="images/storage/StorageInterfaceClassDiagram.png" alt="StorageInterfaceClassDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 8. Storage Interface</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -329,6 +330,58 @@ json format when the user closes the application.</p>
 <code>CoursePlanner</code> and <code>Planner</code> data in json format and read it back.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The concrete class <code>StorageManager</code> implements <code>Storage</code> and manages
+the storage for <code>UserPrefs</code>, <code>FinanceTracker</code>, <code>CcaTracker</code>,
+<code>CoursePlanner</code>, <code>Planner</code> and <code>HistoryManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>Below is a class diagram of <code>StorageManager</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/storage/UpdatedStorageClassDiagram.png" alt="UpdatedStorageClassDiagram">
+</div>
+<div class="title">Figure 9. <code>StorageManager</code> class</div>
+</div>
+<div class="paragraph">
+<p>Each feature of JARVIS is able to save its information to local storage
+in <code>JSON</code> format, by adapting each feature component into
+<code>JsonSerializable{Component Name}</code> class.</p>
+</div>
+<div class="paragraph">
+<p>Below are the class diagrams for these adapted classes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/storage/HistoryManagerStorageClassDiagram.png" alt="HistoryManagerStorageClassDiagram">
+</div>
+<div class="title">Figure 10. <code>JsonSerializableHistoryManager</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/storage/CcaTrackerStorageClassDiagram.png" alt="CcaTrackerStorageClassDiagram">
+</div>
+<div class="title">Figure 11. <code>JsonSerializableCcaTracker</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/storage/CoursePlannerStorageClassDiagram.png" alt="CoursePlannerStorageClassDiagram">
+</div>
+<div class="title">Figure 12. <code>JsonSerializableCoursePlanner</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/storage/FinanceTrackerStorageClassDiagram.png" alt="FinanceTrackerStorageClassDiagram">
+</div>
+<div class="title">Figure 13. <code>JsonSerializableFinanceTracker</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/storage/PlannerStorageClassDiagram.png" alt="PlannerStorageClassDiagram">
+</div>
+<div class="title">Figure 14. <code>JsonSerializablePlanner</code></div>
 </div>
 </div>
 <div class="sect2">
@@ -698,7 +751,7 @@ reflected in the Activity Diagram below:</p>
 <div class="content">
 <img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram">
 </div>
-<div class="title">Figure 9. Activity Diagram for undo and redo commands</div>
+<div class="title">Figure 15. Activity Diagram for undo and redo commands</div>
 </div>
 <div class="paragraph">
 <p>Therefore there is a need to remember commands that change the state of the
@@ -742,7 +795,7 @@ user types in a command:</p>
 <div class="content">
 <img src="images/CommandActivityDiagram.png" alt="CommandActivityDiagram">
 </div>
-<div class="title">Figure 10. Activity Diagram for how commands are remembered after their successful execution</div>
+<div class="title">Figure 16. Activity Diagram for how commands are remembered after their successful execution</div>
 </div>
 <div class="paragraph">
 <p>The section below will discuss in more detail how undo/redo is implemented.</p>
@@ -844,7 +897,7 @@ called.</p>
 <div class="content">
 <img src="images/HistoryManagerClassDiagram.png" alt="HistoryManagerClassDiagram">
 </div>
-<div class="title">Figure 11. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
+<div class="title">Figure 17. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>
@@ -857,7 +910,7 @@ undo or redo, represented by <code>UndoCommand#numberOfTimes</code> and
 <div class="content">
 <img src="images/UndoRedoCommandClassDiagram.png" alt="UndoRedoCommandClassDiagram">
 </div>
-<div class="title">Figure 12. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
+<div class="title">Figure 18. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Below is a Sequence Diagram of how an <code>UndoCommand</code> executes in the program.
@@ -867,7 +920,7 @@ undo or redo, represented by <code>UndoCommand#numberOfTimes</code> and
 <div class="content">
 <img src="images/UndoCommandSequenceDiagram.png" alt="UndoCommandSequenceDiagram">
 </div>
-<div class="title">Figure 13. Sequence Diagram for <code>UndoCommand</code></div>
+<div class="title">Figure 19. Sequence Diagram for <code>UndoCommand</code></div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
@@ -1071,7 +1124,7 @@ the user&#8217;s list of courses</p>
 <div class="content">
 <img src="images/ModelCoursePlannerClassDiagram.png" alt="ModelCoursePlannerClassDiagram">
 </div>
-<div class="title">Figure 14. Course Model Class Diagram</div>
+<div class="title">Figure 20. Course Model Class Diagram</div>
 </div>
 <div class="sect4">
 <h5 id="course-datasets"><a class="link" href="#course-datasets">Course Datasets</a></h5>
@@ -1245,7 +1298,7 @@ this node</p>
 <div class="content">
 <img src="images/AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
 </div>
-<div class="title">Figure 15. AndOrNode Inheritance Diagram</div>
+<div class="title">Figure 21. AndOrNode Inheritance Diagram</div>
 </div>
 <div class="paragraph">
 <p>Using this format, <code>AndOrNode#createNode(T,String)</code> is able to construct
@@ -1301,7 +1354,7 @@ process is shown below:</p>
 <div class="content">
 <img src="images/AndOrSequenceDiagramSimplified.png" alt="AndOrSequenceDiagramSimplified">
 </div>
-<div class="title">Figure 16. buildTree() Sequence Diagram</div>
+<div class="title">Figure 22. buildTree() Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class looks at each node - checks if its is an <code>Object</code>, <code>Array</code> or
@@ -1828,7 +1881,7 @@ a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
 <div class="content">
 <img src="images/plannermodel.png" alt="plannermodel">
 </div>
-<div class="title">Figure 17. Overview of the entire Planner</div>
+<div class="title">Figure 23. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
 <p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations
@@ -2659,4 +2712,4 @@ behavior}</em></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 03:50:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 08:16:06 UTC</div></div></div></body></html>
