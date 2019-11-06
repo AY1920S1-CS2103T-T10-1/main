@@ -745,13 +745,19 @@ give the user more flexibility in their inputs. Undo and redo operations
 should also be undo or redo multiple commands in a command. In the event that
 a undo/redo command that comprises of multiple undo/redo operations fails at
 any point, all changes made by the command should be rolled back. This is
-reflected in the Activity Diagram below:</p>
+reflected in the Activity Diagrams below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram">
+<img src="images/undoredo/UndoCommandActivityDiagram.png" alt="UndoCommandActivityDiagram">
 </div>
-<div class="title">Figure 15. Activity Diagram for undo and redo commands</div>
+<div class="title">Figure 15. Activity Diagram for undo command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/undoredo/RedoCommandActivityDiagram.png" alt="RedoCommandActivityDiagram">
+</div>
+<div class="title">Figure 16. Activity Diagram for redo command</div>
 </div>
 <div class="paragraph">
 <p>Therefore there is a need to remember commands that change the state of the
@@ -793,9 +799,9 @@ user types in a command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/CommandActivityDiagram.png" alt="CommandActivityDiagram">
+<img src="images/undoredo/InverseCommandActivityDiagram.png" alt="InverseCommandActivityDiagram">
 </div>
-<div class="title">Figure 16. Activity Diagram for how commands are remembered after their successful execution</div>
+<div class="title">Figure 17. Activity Diagram for how commands are remembered after their successful execution</div>
 </div>
 <div class="paragraph">
 <p>The section below will discuss in more detail how undo/redo is implemented.</p>
@@ -895,9 +901,9 @@ called.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/HistoryManagerClassDiagram.png" alt="HistoryManagerClassDiagram">
+<img src="images/undoredo/HistoryManagerModelClassDiagram.png" alt="HistoryManagerModelClassDiagram">
 </div>
-<div class="title">Figure 17. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
+<div class="title">Figure 18. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>
@@ -908,19 +914,34 @@ undo or redo, represented by <code>UndoCommand#numberOfTimes</code> and
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoRedoCommandClassDiagram.png" alt="UndoRedoCommandClassDiagram">
+<img src="images/undoredo/CommandClassDiagram.png" alt="CommandClassDiagram">
 </div>
-<div class="title">Figure 18. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
+<div class="title">Figure 19. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
-<p>Below is a Sequence Diagram of how an <code>UndoCommand</code> executes in the program.
-<code>RedoCommand</code> follows a similar process.</p>
+<p>Below are two sequence diagrams of how a <code>UndoCommand</code> and <code>RedoCommand</code>
+executes in the program. The sequence diagrams below show the process of undo
+and redo of a single command for simplicity and clarity.</p>
+</div>
+<div class="paragraph">
+<p>Below is a Sequence Diagram of how an <code>UndoCommand</code> to undo a single command
+executes in the program.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UndoCommandSequenceDiagram.png" alt="UndoCommandSequenceDiagram">
+<img src="images/undoredo/UndoSequenceDiagramNew.png" alt="UndoSequenceDiagramNew">
 </div>
-<div class="title">Figure 19. Sequence Diagram for <code>UndoCommand</code></div>
+<div class="title">Figure 20. Sequence Diagram for <code>UndoCommand</code> (undo a single command)</div>
+</div>
+<div class="paragraph">
+<p>Below is a Sequence Diagram of how a <code>RedoCommand</code> to redo a single command
+executes in the program.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/undoredo/RedoSequenceDiagramNew.png" alt="RedoSequenceDiagramNew">
+</div>
+<div class="title">Figure 21. Sequence Diagram for <code>RedoCommand</code> (redo a single command)</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
@@ -1122,7 +1143,7 @@ printing to a displayable form, etc.</p>
 <div class="content">
 <img src="images/ModelCoursePlannerClassDiagram.png" alt="ModelCoursePlannerClassDiagram">
 </div>
-<div class="title">Figure 20. Course Model Class Diagram</div>
+<div class="title">Figure 22. Course Model Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>Every <code>Course</code> has a few non-nullable attributes - <code>Title</code>, <code>CourseCode</code>,
@@ -1341,7 +1362,7 @@ of <code>{"2", "3"}</code>.</p>
 <div class="content">
 <img src="images/AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
 </div>
-<div class="title">Figure 21. AndOrNode Inheritance Diagram</div>
+<div class="title">Figure 23. AndOrNode Inheritance Diagram</div>
 </div>
 <div class="paragraph">
 <p>Using this format, a static method of the form <code>AndOrNode#createNode(T,String)</code>
@@ -1431,7 +1452,7 @@ shown below:</p>
 <div class="content">
 <img src="images/AndOrSequenceDiagramSimplified.png" alt="AndOrSequenceDiagramSimplified">
 </div>
-<div class="title">Figure 22. buildTree() Sequence Diagram</div>
+<div class="title">Figure 24. buildTree() Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class looks at each node - checks if its is an <code>Object</code>, <code>Array</code> or a
@@ -1522,7 +1543,7 @@ when the user types a <code>check</code> command.</p>
 <div class="content">
 <img src="images/CheckActivityDiagram.png" alt="TODO">
 </div>
-<div class="title">Figure 23. Check Command Activity Diagram</div>
+<div class="title">Figure 25. Check Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>Additionally, the following below shows the sequence diagram of how the
@@ -1532,7 +1553,7 @@ program checks if the user satisfies the course&#8217;s prerequisites.</p>
 <div class="content">
 <img src="images/CheckCommandSequenceDiagram.png" alt="CheckCommandSequenceDiagram">
 </div>
-<div class="title">Figure 24. CheckCommand Sequence Diagram</div>
+<div class="title">Figure 26. CheckCommand Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -1902,7 +1923,7 @@ a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
 <div class="content">
 <img src="images/plannermodel.png" alt="plannermodel">
 </div>
-<div class="title">Figure 25. Overview of the entire Planner</div>
+<div class="title">Figure 27. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
 <p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations
@@ -2733,4 +2754,4 @@ behavior}</em></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 08:18:03 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 11:08:39 UTC</div></div></div></body></html>
