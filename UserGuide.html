@@ -402,8 +402,8 @@ clear-task d/12/09/2019</pre>
 <div class="paragraph">
 <p>Introducing the <strong>Finance Tracker</strong> feature of Jarvis, which is responsible for keeping track of all your purchases,
 monthly subscriptions and debts owed. Upon switching to the Finance tab, you will be able to see a list of purchases on
-the left and a list of your monthly subscriptions on the right. The circle in the middle indicates how much you have
-spent in relation to the spending limit set and you can see your "monthly expenses" right below that. How neat!</p>
+the left and a list of your monthly subscriptions on the right. At the bottom left, Jarvis shows the total amount you
+have spent this month and how much you are left (if you have set a spending limit). How neat!</p>
 </div>
 <div class="paragraph">
 <p>As students, we often forget what we have spent on so far, which makes it hard for us to save since we do not know how
@@ -422,6 +422,19 @@ Jarvis will then also update your monthly expenses accordingly.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-paid d/PURCHASE-DESCRIPTION a/AMOUNT</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Jarvis will show the latest purchase at the top of the list so you can easily see your last purchase without
+scrolling!
+</td>
+</tr>
+</table>
 </div>
 <div class="sect4">
 <h5 id="example-6"><a class="link" href="#example-6">Example</a></h5>
@@ -452,7 +465,7 @@ Jarvis will also update your monthly expenses accordingly, which also means you 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>INDEX</code> corresponds to index shown on the list "What I bought this month&#8230;&#8203;" under the Finance tab. This also
+<code>INDEX</code> corresponds to index shown on the list <em>What I bought this month&#8230;&#8203;</em> under the Finance tab. This also
 means that the index must exist within this list!
 </td>
 </tr>
@@ -460,21 +473,21 @@ means that the index must exist within this list!
 </div>
 </div>
 <div class="sect3">
-<h4 id="searching-for-a-purchase-code-find-purchases-code"><a class="link" href="#searching-for-a-purchase-code-find-purchases-code">3.3.3. Searching for a purchase: <code>find-purchases</code></a></h4>
+<h4 id="searching-for-a-purchase-code-find-paid-code"><a class="link" href="#searching-for-a-purchase-code-find-paid-code">3.3.3. Searching for a purchase: <code>find-paid</code></a></h4>
 <div class="paragraph">
-<p>Ever wondered how many cups of GongCha you bought over the past month? Brace yourself for the truth.</p>
+<p>Ever wondered how many cups of Gongcha you bought over the past month? Brace yourself for the truth.</p>
 </div>
 <div class="paragraph">
 <p>Jarvis can help you search for your purchases that match whatever keyword you give it!</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find-purchases KEYWORD</code></p>
+<p>Format: <code>find-paid KEYWORD</code></p>
 </div>
 <div class="sect4">
 <h5 id="example-7"><a class="link" href="#example-7">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>find-purchases GongCha</pre>
+<pre>find-paid Gongcha</pre>
 </div>
 </div>
 </div>
@@ -522,7 +535,7 @@ Finance tab. Jarvis will also update your monthly expenses accordingly.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>INDEX</code> corresponds to index shown on the list "What I spend on monthly&#8230;&#8203;" under the Finance tab. This also
+<code>INDEX</code> corresponds to index shown on the list <em>What I spend on monthly&#8230;&#8203;</em> under the Finance tab. This also
 means that the index must exist within this list!
 </td>
 </tr>
@@ -535,7 +548,7 @@ means that the index must exist within this list!
 <p>Spotify just released a new student plan? Great, that means a lower subscription fee every month!</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s inform Jarvis of the changes using the index of the installment on the list "What I spend on monthly&#8230;&#8203;" under
+<p>Let&#8217;s inform Jarvis of the changes using the index of the installment on the list <em>What I spend on monthly&#8230;&#8203;</em> under
 the Finance tab. You can either change the description or the amount or both.</p>
 </div>
 <div class="paragraph">
@@ -572,12 +585,6 @@ Finance Tracker.</p>
 set-limit a/500.90</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>If no monthly limit has been specified, the program will show:</p>
-</div>
-<div class="paragraph">
-<p><code>Oops, there does not seem to be a monthly limit.</code></p>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -591,12 +598,12 @@ purchases for something, then Jarvis returns you to the original list of purchas
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-to-file-code-export-code"><a class="link" href="#export-to-file-code-export-code">3.3.9. Export to File: <code>export</code></a></h4>
+<h4 id="export-to-file-code-export-code-coming-to-you-in-v2-0"><a class="link" href="#export-to-file-code-export-code-coming-to-you-in-v2-0">3.3.9. Export to File: <code>export</code> - coming to you in v2.0!</a></h4>
 <div class="paragraph">
-<p>A feature coming to you in v2.0!</p>
+<p>Want to keep a record of your finances for this month?</p>
 </div>
 <div class="paragraph">
-<p>Want to keep a record of your finances for this month? Simple export your current expenditures to a file, either
+<p>Simple export your current expenditures to a file, either
 as a <code>.txt</code>, <code>.csv</code> or <code>xlsx</code> format.</p>
 </div>
 <div class="paragraph">
@@ -623,6 +630,96 @@ Jarvis will create a file called <code>expenditures.csv</code> in the current di
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="adding-owed-amounts-code-owe-code-code-debt-code-coming-to-you-in-v2-0"><a class="link" href="#adding-owed-amounts-code-owe-code-code-debt-code-coming-to-you-in-v2-0">3.3.10. Adding owed amounts: <code>owe</code> &amp; <code>debt</code> - coming to you in v2.0!</a></h4>
+<div class="paragraph">
+<p>A night out with friends usually ends with someone paying and splitting the tab with his friends. But how do you
+remember who you owe or who owes you?</p>
+</div>
+<div class="paragraph">
+<p>Let Jarvis take care of your debts:<br>
+<code>add-owe</code>: someone else paid the bill, and now you owe him/her.<br>
+<code>add-debt</code>: you paid the bill, and now people owe you.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add-owe d/DESCRIPTION n/PERSON a/AMOUNT</code> or <code>add-debt d/DESCRIPTION n/PERSON a/AMOUNT</code></p>
+</div>
+<div class="sect4">
+<h5 id="example-12"><a class="link" href="#example-12">Example</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre>add-owe n/Jamie a/5.50
+add-debt n/Sean a/10</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="splitting-a-tab-code-add-tab-code-coming-to-you-in-v2-0"><a class="link" href="#splitting-a-tab-code-add-tab-code-coming-to-you-in-v2-0">3.3.11. Splitting a Tab: <code>add-tab</code> - coming to you in v2.0!</a></h4>
+<div class="paragraph">
+<p>So you&#8217;re the one who paid for your group of friends?</p>
+</div>
+<div class="paragraph">
+<p>Let Jarvis divide the total amount paid and track the tab for
+this bill! Remember to include the names of those who owe you.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add-tab d/DESCRIPTION a/AMOUNT n/PERSON&#8230;&#8203;</code></p>
+</div>
+<div class="sect4">
+<h5 id="example-13"><a class="link" href="#example-13">Example</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre>add-tab d/pizza party a/20 n/Alice n/Bob n/Charlie</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The above example is equivalent to adding these commands separately:<br>
+<code>add paid d/pizza party a/5</code><br>
+<code>add-debt n/Alice a/5</code><br>
+<code>add-debt n/Bob a/5</code><br>
+<code>add-debt n/Charlie a/5</code>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mark-a-debt-owe-as-paid-code-paid-debt-code-coming-to-you-in-v2-0"><a class="link" href="#mark-a-debt-owe-as-paid-code-paid-debt-code-coming-to-you-in-v2-0">3.3.12. Mark a debt/owe as paid: <code>paid-debt</code> - coming to you in v2.0!</a></h4>
+<div class="paragraph">
+<p>Your friend has finally paid off their debt to you! Mark that in Jarvis and the debt will be removed automatically!</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you paid what you owe your friend. Jarvis will remove the owed payment and put it under your purchases
+instead!</p>
+</div>
+<div class="paragraph">
+<p>Jarvis will identify the debt/owe by its index in the list of debts.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>done-owe INDEX</code> or <code>done-debt INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>INDEX</code> corresponds to index shown on the list of debts under the Finance tab. This also
+means that the index must exist within this list!</p>
+</div>
+<div class="sect4">
+<h5 id="example-14"><a class="link" href="#example-14">Example</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre>done-owe INDEX 1
+done-debt INDEX 2</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="course-planner"><a class="link" href="#course-planner">3.4. Course Planner</a></h3>
@@ -639,7 +736,7 @@ Jarvis will create a file called <code>expenditures.csv</code> in the current di
 are able to specify multiple courses to add.</p>
 </div>
 <div class="sect4">
-<h5 id="example-12"><a class="link" href="#example-12">Example</a></h5>
+<h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-course c/CS1010
@@ -658,7 +755,7 @@ by its <strong>id</strong> within the list.</p>
 <p>Format: <code>delete-course {c/COURSECODE | INDEX}</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-13"><a class="link" href="#example-13">Example</a></h5>
+<h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>delete-course c/CS1010
@@ -677,7 +774,7 @@ number of credits and its prerequisites - and displays it on the screen.</p>
 <p>Format: <code>lookup c/COURSECODE</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-14"><a class="link" href="#example-14">Example</a></h5>
+<h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>lookup c/CS1010</pre>
@@ -696,7 +793,7 @@ tree to show you what requirements you need for each course.</p>
 <p>Format: <code>check c/COURSECODE</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
+<h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>check c/CS1010</pre>
@@ -751,7 +848,7 @@ Note that the equipment for each <code>Cca</code> is not compulsory.
 <p>Format: <code>add-cca n/NAME t/TYPE [e/EQUIPMENT]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
+<h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-cca n/Swimming t/sport e/swimming trunks e/goggles
@@ -771,7 +868,7 @@ add-cca n/Guitar Ensemble t/performingArt e/guitar</pre>
 <p>Format: <code>delete-cca INDEX</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
+<h5 id="example-20"><a class="link" href="#example-20">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>delete-cca 1</pre>
@@ -790,7 +887,7 @@ optional.</p>
 <p>Format: <code>edit-cca INDEX [n/NAME] [t/TYPE] [e/EQUIPMENT]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
+<h5 id="example-21"><a class="link" href="#example-21">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>edit-cca 1 t/sport e/tennis racket
@@ -832,7 +929,7 @@ use any number of keywords.</p>
 <p>Format: <code>find-cca KEYWORD</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
+<h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>find-cca swimming
@@ -852,7 +949,7 @@ CCA.</p>
 <p>Format: `add-progress INDEX p/MILESTONE `</p>
 </div>
 <div class="sect4">
-<h5 id="example-20"><a class="link" href="#example-20">Example</a></h5>
+<h5 id="example-23"><a class="link" href="#example-23">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-progress 1 p/bronze p/silver p/gold p/gold star
@@ -883,7 +980,7 @@ Note that progress can only be incremented if a progress has been added to that 
 <p>Format: <code>increment-progress INDEX</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-21"><a class="link" href="#example-21">Example</a></h5>
+<h5 id="example-24"><a class="link" href="#example-24">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>increment-progress 1</pre>
@@ -997,7 +1094,7 @@ supplied, then <code>[NUMBER]</code> is taken to be the value <strong>1</strong>
 </div>
 </div>
 <div class="sect4">
-<h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
+<h5 id="example-25"><a class="link" href="#example-25">Example</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1021,7 +1118,7 @@ starting from the latest command.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="example-23"><a class="link" href="#example-23">Example</a></h5>
+<h5 id="example-26"><a class="link" href="#example-26">Example</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1129,7 +1226,7 @@ you will not be able to redo the commands.
 <p><code>set-monthly a/AMOUNT</code></p>
 </li>
 <li>
-<p><code>find-purchases k/KEYWORD</code></p>
+<p><code>find-paid k/KEYWORD</code></p>
 </li>
 <li>
 <p><code>list-finances</code></p>
@@ -1204,4 +1301,4 @@ you will not be able to redo the commands.
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 02:39:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 03:24:22 UTC</div></div></div></body></html>
