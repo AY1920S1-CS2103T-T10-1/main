@@ -9,25 +9,25 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#about-code-jarvis-code">1. About <code>Jarvis</code></a></li>
+<li><a href="#let-s-get-started">2. Let&#8217;s get started</a></li>
 <li><a href="#features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#command-format">3.1. Command Format</a></li>
-<li><a href="#task-scheduler">3.2. Task Scheduler</a></li>
-<li><a href="#where-did-all-my-money-go">3.3. Where did all my money go?</a></li>
+<li><a href="#command-format">Command Format</a></li>
+<li><a href="#task-planner">3.1. Task Planner</a></li>
+<li><a href="#finance-tracker">3.2. Finance Tracker</a></li>
+<li><a href="#cca-tracker">3.3. CCA tracker</a></li>
 <li><a href="#course-planner">3.4. Course Planner</a></li>
-<li><a href="#cca-tracker">3.5. CCA tracker</a></li>
-<li><a href="#app-history">3.6. App History</a></li>
+<li><a href="#app-history">3.5. App History</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
 <li><a href="#command-summary">5. Command Summary</a>
 <ul class="sectlevel2">
-<li><a href="#task-scheduler-2">5.1. Task Scheduler</a></li>
-<li><a href="#finance-tracker">5.2. Finance Tracker</a></li>
+<li><a href="#task-planner-2">5.1. Task Planner</a></li>
+<li><a href="#course-planner-2">5.2. Course Planner</a></li>
 <li><a href="#cca-tracker-2">5.3. Cca Tracker</a></li>
-<li><a href="#course-planner-2">5.4. Course Planner</a></li>
+<li><a href="#finance-tracker-2">5.4. Finance Tracker</a></li>
 <li><a href="#app-history-2">5.5. App History</a></li>
 </ul>
 </li>
@@ -35,69 +35,92 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<h2 id="about-code-jarvis-code"><a class="link" href="#about-code-jarvis-code">1. About <code>Jarvis</code></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ensure you have <a href="https://www.java.com/en/download/">Java 11</a> or above installed
-on your PC.</p>
+<p><code>Jarvis</code> is a one-stop solution to juggling all aspects of your hectic school life by helping you manage your
+schoolwork, finances and CCAs. Offering four main features to bolster your
+productivity, you can now always be on top of your:</p>
 </div>
-<div class="paragraph">
-<p>Jarvis is your personal student assistant. She is able to manage your
-schoolwork and finances. Jarvis offers four main features to bolster your
-productivity, he is able to track your:</p>
-</div>
-<div class="olist arabic">
+<div id="link-main-features" class="olist arabic">
 <ol class="arabic">
 <li>
 <p><strong>Tasks</strong></p>
 </li>
 <li>
-<p><strong>CCA Life</strong></p>
-</li>
-<li>
 <p><strong>Finances</strong></p>
 </li>
 <li>
-<p><strong>Courses Taken</strong></p>
+<p><strong>Co-Curricular Activities (CCA)</strong></p>
+</li>
+<li>
+<p><strong>NUS Courses</strong></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Jarvis also supports undo and redo functionality, allowing you easily
-undo and redo any mistakes that you may make in your application.</p>
+<p>all in one handy, nifty application. Our aim is to build an intuitive, user-friendly student life organiser
+to, as far as possible, alleviate the stress of NUS life.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
+<h2 id="let-s-get-started"><a class="link" href="#let-s-get-started">2. Let&#8217;s get started</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ensure you have <a href="https://www.java.com/en/download/">Java 11</a> or above installed
+<p>Please ensure you have <a href="https://www.java.com/en/download/">Java 11</a> or above installed
 on your PC.</p>
 </div>
-<div class="paragraph">
-<p>Download the latest <code>Jarvis</code> <a href="https://www.google.com/">here</a>.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You can download the latest version of <code>Jarvis</code> <a href="https://www.google.com/">here</a>.</p>
+</li>
+<li>
+<p>Move <code>Jarvis</code> to the directory you would like to use as the
+home folder for the application.</p>
+</li>
+<li>
+<p>Run <code>jarvis.jar</code> to start the app. You should see the following on starting the application up:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StartUpGUI.png" alt="StartUpGUI">
+</div>
+<div class="title">Figure 1. Jarvis' Graphical User Interface (GUI)</div>
 </div>
 <div class="paragraph">
-<p>Copy the downloaded file to the folder that you would like to use as the
-home folder for <code>Jarvis</code>.</p>
+<p> <br></p>
 </div>
 <div class="paragraph">
-<p>Double-click <code>jarvis.jar</code> to start the app. The GUI will appear in a few
-seconds.</p>
+<p>Jarvis' <a href="#link-main-features">four main features</a> have been split into four distinct tabs. You can
+toggle between tabs by either clicking on the tabs themselves, pressing the <code>tab</code> key or by using the
+features' <code>list</code> commands.</p>
+</div>
+<div class="paragraph">
+<p>You can learn more about the each feature&#8217;s individual GUI and its respective commands in the coming sections.</p>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="features"><a class="link" href="#features">3. Features</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Before delving straight into each feature, here are some things to note - in order to get the most
+out of this user guide.</p>
+</div>
 <div class="sect2">
-<h3 id="command-format"><a class="link" href="#command-format">3.1. Command Format</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
+<h3 id="command-format"><a class="link" href="#command-format">Command Format</a></h3>
+<div class="ulist">
+<ul>
 <li>
-<p>Words in <code>UPPER CASE</code> are the parameters supplied by the user, while those
-in <code>lower case</code> are <strong>key-words</strong> used by the program.</p>
+<p>Words in <code>UPPER CASE</code> are parameters supplied by the user, while those
+in <code>lower case</code> are <strong>commands</strong> used in <code>Jarvis</code>.</p>
 <div class="paragraph">
 <p>For example:</p>
 </div>
@@ -105,26 +128,29 @@ in <code>lower case</code> are <strong>key-words</strong> used by the program.</
 <p><code>add-task t/TASK-TYPE des/TASK-DESCRIPTION</code></p>
 </div>
 <div class="paragraph">
-<p>In this case, <code>TASK-TYPE</code> and <code>TASK-DESCRIPTION</code> are parameters supplied by
-the user, and <code>add-task</code> is a key-word.</p>
+<p>In the above example, <code>TASK-TYPE</code> and <code>TASK-DESCRIPTION</code> are the parameters supplied by
+the user, while <code>add-task</code> and the prefixes, <code>t/</code> and <code>des/</code>, are parts of a command.</p>
 </div>
 </li>
 <li>
-<p>Items in square brackets <code>[]</code> are optional fields with the command.</p>
+<p>Items in square brackets <code>[]</code> are optional.</p>
 <div class="paragraph">
-<p>For example:</p>
+<p>For example, the command:</p>
 </div>
 <div class="paragraph">
 <p><code>add-task t/TASK-TYPE des/TASK-DESCRIPTION [p/PRIORITY]</code></p>
 </div>
 <div class="paragraph">
-<p>Can be used</p>
+<p>Can be used:</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">With a priority level</dt>
 <dd>
 <p><code>add-task t/todo des/assignment p/high</code></p>
+<div class="paragraph">
+<p>or</p>
+</div>
 </dd>
 <dt class="hdlist1">Without a priority level</dt>
 <dd>
@@ -134,20 +160,24 @@ the user, and <code>add-task</code> is a key-word.</p>
 </div>
 </li>
 <li>
-<p>Parameters with <code>&#8230;&#8203;</code> can be used 0, or any number of items</p>
+<p>Parameters with <code>&#8230;&#8203;</code> can be used once or more.</p>
 <div class="paragraph">
 <p>For example:</p>
 </div>
 <div class="paragraph">
-<p><code>[#TAG]&#8230;&#8203;</code> is an optional parameter that can be used 0 or any number of times.</p>
+<p><code>[#TAG]&#8230;&#8203;</code> is an optional parameter that can either not be used, used once,
+or used multiple times.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Without optional parameter</dt>
+<dt class="hdlist1">Without an optional parameter</dt>
 <dd>
 <p><code>add-task t/todo des/assignment</code></p>
+<div class="paragraph">
+<p>or</p>
+</div>
 </dd>
-<dt class="hdlist1">With optional parameter</dt>
+<dt class="hdlist1">With an optional parameter</dt>
 <dd>
 <p><code>add-task t/todo des/assignment #cs2103t #urgent</code></p>
 </dd>
@@ -158,21 +188,27 @@ the user, and <code>add-task</code> is a key-word.</p>
 <p>Jarvis can parse parameters to commands in <strong>any order</strong>.</p>
 </li>
 <li>
-<p>Commands that can take different parameters are represented with a pipe <code>|</code>,
+<p>Some commands can take in different parameters. These parameters are represented with a pipe, <code>|</code> ,
 surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <div class="paragraph">
-<p>For example:</p>
+<p>For example, the command:</p>
 </div>
 <div class="paragraph">
 <p><code>export {csv | txt | xlsx} f/FILENAME</code></p>
 </div>
+<div class="paragraph">
+<p>can be used</p>
+</div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">As a .csv file</dt>
+<dt class="hdlist1">With a csv parameter</dt>
 <dd>
 <p><code>export csv f/MyFile</code></p>
+<div class="paragraph">
+<p>or</p>
+</div>
 </dd>
-<dt class="hdlist1">With a.txt file</dt>
+<dt class="hdlist1">With a txt parameter</dt>
 <dd>
 <p><code>export txt f/MyFile</code></p>
 </dd>
@@ -180,35 +216,34 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 </div>
 </li>
 <li>
-<p>Dates <code>d/DATE</code> follow the following format: <code>d/m/yyyy</code>.</p>
+<p>Dates follow the following format: <code>d/m/yyyy</code>.</p>
 <div class="paragraph">
 <p>For example:</p>
 </div>
 <div class="paragraph">
-<p><code>add-task t/todo des/assignment d/1/1/1970</code></p>
+<p><code>add-task t/deadline des/assignment d/1/1/1970</code></p>
 </div>
 </li>
-</ol>
+</ul>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="task-scheduler"><a class="link" href="#task-scheduler">3.2. Task Scheduler</a></h3>
-<div class="sect3">
-<h4 id="list-all-tasks-code-list-tasks-code"><a class="link" href="#list-all-tasks-code-list-tasks-code">3.2.1. List all tasks: <code>list-tasks</code></a></h4>
+<h3 id="task-planner"><a class="link" href="#task-planner">3.1. Task Planner</a></h3>
 <div class="paragraph">
-<p>Lists all the tasks in the planner.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>list-tasks</code></p>
-</div>
+<p>A digital planner to help you stay organized; <code>Jarvis</code> can help you cope with your interminable lists of deadlines,
+events, errands and more. Tagging and prioritizing tasks are just two of the many ways <code>Jarvis</code> will
+enable you to stay on top of everything you need to do!</p>
 </div>
 <div class="sect3">
-<h4 id="adding-a-task-code-add-task-code"><a class="link" href="#adding-a-task-code-add-task-code">3.2.2. Adding a task: <code>add-task</code></a></h4>
+<h4 id="adding-a-task-code-add-task-code"><a class="link" href="#adding-a-task-code-add-task-code">3.1.1. Adding a task: <code>add-task</code></a></h4>
 <div class="paragraph">
-<p>Adds a task to the planner.</p>
+<p>The most fundamental command for the Planner - <code>add-task</code> adds a task to the Planner.</p>
 </div>
-<div class="paragraph">
-<p>A task must have a:</p>
+<div id="link-attributes" class="paragraph">
+<p>A task <strong>must</strong> have a:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -218,16 +253,16 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <li>
 <p><code>TASK-DESCRIPTION</code>: a short description of the task</p>
 </li>
+<li>
+<p><code>DATE</code> (for <code>Event</code> and <code>Deadline</code> tasks only)</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A task <strong>can</strong> have the following <strong>attributes</strong>:</p>
+<p>A task <strong>may</strong> have the following <strong>attributes</strong>:</p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><code>DATE</code></p>
-</li>
 <li>
 <p><code>TAG</code>: any number of tags, such as <code>#school</code> or <code>#cca</code></p>
 </li>
@@ -238,6 +273,10 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <p><code>FREQ</code> frequency: <code>daily</code>, <code>weekly</code>, <code>monthly</code> or <code>yearly</code></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>You can refer to the table below for a brief overview of the different command formats for the
+different types of tasks.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -282,15 +321,19 @@ Duplicate tasks are not allowed in the Planner!
 <div class="listingblock">
 <div class="content">
 <pre>add-task t/event des/workshop f/weekly d/25/12/2019//26/12/2019
-add-task t/deadline des/cs2101 assignment d/20/09/2019 p/high</pre>
+add-task t/deadline des/cs2101 assignment d/20/9/2019 p/high</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>And as simple as that, <code>Jarvis</code> can begin to keep track of
+your tasks for you!</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-task-code-delete-task-code"><a class="link" href="#deleting-a-task-code-delete-task-code">3.2.3. Deleting a task: <code>delete-task</code></a></h4>
+<h4 id="deleting-a-task-code-delete-task-code"><a class="link" href="#deleting-a-task-code-delete-task-code">3.1.2. Deleting a task: <code>delete-task</code></a></h4>
 <div class="paragraph">
-<p>Deletes a task from the planner.</p>
+<p>If you want to keep your list of tasks updated and current, you can easily delete tasks from the planner.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-task INDEX</code></p>
@@ -308,12 +351,25 @@ add-task t/deadline des/cs2101 assignment d/20/09/2019 p/high</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-a-task-code-find-task-code"><a class="link" href="#finding-a-task-code-find-task-code">3.2.4. Finding a task: <code>find-task</code></a></h4>
+<h4 id="finding-a-task-code-find-task-code"><a class="link" href="#finding-a-task-code-find-task-code">3.1.3. Finding a task: <code>find-task</code></a></h4>
 <div class="paragraph">
-<p>Locates a task by task description from a given <code>KEYWORD</code></p>
+<p>Too many tasks to comb through? Ask <code>Jarvis</code> to find a task for you based on one or more keywords that match the
+descriptions of your tasks.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>find-task KEYWORD&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There must be at least one keyword &amp; this command is case-insensitive.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect4">
 <h5 id="example-3"><a class="link" href="#example-3">Example</a></h5>
@@ -326,15 +382,72 @@ find-task homework cs ma1101r</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-task-code-edit-task-code-v1-4"><a class="link" href="#editing-a-task-code-edit-task-code-v1-4">3.2.5. Editing a task: <code>edit-task</code> [v1.4]</a></h4>
+<h4 id="updating-a-task-s-status-code-done-task-code"><a class="link" href="#updating-a-task-s-status-code-done-task-code">3.1.4. Updating a task&#8217;s status: <code>done-task</code></a></h4>
 <div class="paragraph">
-<p>Edits the task at the specified index.</p>
+<p>Once you have completed a task (hooray!), you can let <code>Jarvis</code> know. By default on
+<code>add-task</code>, all tasks are marked as undone, represented by a <code>[✗]</code>. Upon marking the task as done, the task will be
+represented with a <code>[✓]</code>.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>done-task INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>INDEX</code> is the <strong>one-based</strong> index of the task list.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting-tasks-by-attribute-code-pull-task-code"><a class="link" href="#sorting-tasks-by-attribute-code-pull-task-code">3.1.5. Sorting tasks by attribute: <code>pull-task</code></a></h4>
+<div class="paragraph">
+<p>To get a quick glimpse of all the tasks you have in your Planner that match a certain <a href="#link-attributes">attribute</a>,
+simply pull all tasks relating to that attribute.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>pull-task { t/TYPE | #TAG | p/PRIORITY-LEVEL | f/FREQUENCY-LEVEL | d/DATE }</code></p>
+</div>
+<div class="sect4">
+<h5 id="example-4"><a class="link" href="#example-4">Example</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre>pull-task t/todo
+pull-task #cs2106</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>pull-task</code> is different from <code>find-task</code> so as to make a clear distinction between looking for tasks
+by task description only (<code>find-task</code>), and looking for tasks based on specific attributes (<code>pull-task</code>).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-tasks-code-list-task-code"><a class="link" href="#listing-all-tasks-code-list-task-code">3.1.6. Listing all tasks: <code>list-task</code></a></h4>
+<div class="paragraph">
+<p>Lists all the tasks in the Planner. Using <code>list-task</code> while on another page of Jarvis will
+pull up the Planner tab.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list-task</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-task-code-edit-task-code-v2-0"><a class="link" href="#editing-a-task-code-edit-task-code-v2-0">3.1.7. Editing a task: <code>edit-task</code> [v2.0]</a></h4>
+<div class="paragraph">
+<p>As you approach the deadlines for certain tasks, you might want to increase their priority levels. Soon, you will be able
+to edit existing tasks instead of deleting and adding them back in again.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>edit-task INDEX//NEW-DESCRIPTION&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
-<p><code>NEW-DESCRIPTION</code> can be a new task description or any of the other attributes (refer to 3.2.2 Adding a Task)
+<p><code>NEW-DESCRIPTION</code> can be a new task description or any of the other <a href="#link-attributes">attributes</a>
 used to create a task. You can also edit any number of attributes at the same time, each separated with a space.
 However, only one instance of each attribute is allowed per command.</p>
 </div>
@@ -352,7 +465,7 @@ and priority level of a task: <code>edit-task INDEX//des/NEW-TASK-DESCRIPTION p/
 </table>
 </div>
 <div class="sect4">
-<h5 id="example-4"><a class="link" href="#example-4">Example</a></h5>
+<h5 id="example-5"><a class="link" href="#example-5">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>edit-task 1//des/project part 2
@@ -363,23 +476,10 @@ edit-task 3//f/weekly</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="updating-a-task-s-status-code-done-task-code"><a class="link" href="#updating-a-task-s-status-code-done-task-code">3.2.6. Updating a task&#8217;s status: <code>done-task</code></a></h4>
+<h4 id="clearing-entries-code-clear-task-code-v2-0"><a class="link" href="#clearing-entries-code-clear-task-code-v2-0">3.1.8. Clearing entries: <code>clear-task</code> [v2.0]</a></h4>
 <div class="paragraph">
-<p>Updates the status of a task. By default on <code>add-task</code>, all tasks are marked
-as undone, represented by a <code>[✗]</code>. Upon finishing the task, the task will be
-represented with a <code>[✓]</code>.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>done-task INDEX</code></p>
-</div>
-<div class="paragraph">
-<p>where <code>INDEX</code> is the <strong>one-based</strong> index of the task list.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="clearing-entries-code-clear-task-code-v1-4"><a class="link" href="#clearing-entries-code-clear-task-code-v1-4">3.2.7. Clearing entries: <code>clear-task</code> [v1.4]</a></h4>
-<div class="paragraph">
-<p>Clears tasks from the planner. Tasks can be cleared by <code>#TAG</code> or <code>d/DATE</code>.
+<p>Soon you will also be able to delete multiple entries at one go. Tasks can be cleared by <code>#TAG</code> or <code>d/DATE</code> - where
+tasks with the specified tag or date will be cleared.
 The command <code>clear-task</code> with no parameters succeeding it will result in all tasks
 being cleared.</p>
 </div>
@@ -387,38 +487,42 @@ being cleared.</p>
 <p>Format: <code>clear-task [#TAG]&#8230;&#8203; [d/DATE]</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-5"><a class="link" href="#example-5">Example</a></h5>
+<h5 id="example-6"><a class="link" href="#example-6">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>clear-task #school
 clear-task d/12/09/2019</pre>
 </div>
 </div>
+<div class="paragraph">
+<p> <br></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="where-did-all-my-money-go"><a class="link" href="#where-did-all-my-money-go">3.3. Where did all my money go?</a></h3>
+<h3 id="finance-tracker"><a class="link" href="#finance-tracker">3.2. Finance Tracker</a></h3>
 <div class="paragraph">
-<p>Introducing the <strong>Finance Tracker</strong> feature of Jarvis, which is responsible for keeping track of all your purchases,
-monthly subscriptions and debts owed. Upon switching to the Finance tab, you will be able to see a list of purchases on
-the left and a list of your monthly subscriptions on the right. At the bottom left, Jarvis shows the total amount you
-have spent this month and how much you are left (if you have set a spending limit). How neat!</p>
+<p>Introducing the Finance Tracker feature of Jarvis - responsible for keeping track of all your purchases,
+monthly subscriptions and debts owed.</p>
 </div>
 <div class="paragraph">
-<p>As students, we often forget what we have spent on so far, which makes it hard for us to save since we do not know how
-much we are spending. But do not worry, as here&#8217;s what the Finance Tracker can
-do for you:</p>
+<p>On switching to the Finance tab, you will be able to see a list of purchases on
+the left and a list of your monthly subscriptions on the right. On the bottom left, Jarvis will show the accumulative
+spending for that month, as well as how much you are left with (if you have set a spending limit).</p>
+</div>
+<div class="paragraph">
+<p>As students, we often fail to keep our spending habits in check. But do not worry, as with <code>Jarvis</code>, you will never
+have to worry about not saving enough for that new laptop or yet another trip with your friends.</p>
 </div>
 <div class="sect3">
-<h4 id="add-a-single-use-purchase-code-add-paid-code"><a class="link" href="#add-a-single-use-purchase-code-add-paid-code">3.3.1. Add a single-use purchase: <code>add-paid</code></a></h4>
+<h4 id="add-a-single-use-purchase-code-add-paid-code"><a class="link" href="#add-a-single-use-purchase-code-add-paid-code">3.2.1. Add a single-use purchase: <code>add-paid</code></a></h4>
 <div class="paragraph">
-<p>So you bought another cup of GongCha at UTown? Let&#8217;s put that in.</p>
+<p>Bought another cup of GongCha at UTown? Let <code>Jarvis</code> know.</p>
 </div>
 <div class="paragraph">
-<p>This command adds a single purchase (with a description and a price) to the finance tracker.
-Don&#8217;t worry about remembering <em>when</em> you made your purchase, as Jarvis will automatically store it to today&#8217;s date!
-Jarvis will then also update your monthly expenses accordingly.</p>
+<p>Don&#8217;t worry about remembering <em>when</em> you made your purchase, as each purchase entered will automatically be set
+to its date of entry! Jarvis will then update your monthly expenses accordingly, as well.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-paid d/PURCHASE-DESCRIPTION a/AMOUNT</code></p>
@@ -437,7 +541,7 @@ scrolling!
 </table>
 </div>
 <div class="sect4">
-<h5 id="example-6"><a class="link" href="#example-6">Example</a></h5>
+<h5 id="example-7"><a class="link" href="#example-7">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-paid d/GongCha a/2.8
@@ -447,13 +551,11 @@ add-paid d/GongCha a/2.89</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-a-single-use-purchase-code-delete-paid-code"><a class="link" href="#delete-a-single-use-purchase-code-delete-paid-code">3.3.2. Delete a single-use purchase: <code>delete-paid</code></a></h4>
+<h4 id="delete-a-single-use-purchase-code-delete-paid-code"><a class="link" href="#delete-a-single-use-purchase-code-delete-paid-code">3.2.2. Delete a single-use purchase: <code>delete-paid</code></a></h4>
 <div class="paragraph">
-<p>Did you return something you bought on Zalora recently? Welp, I guess that&#8217;s one less purchase you made this month.</p>
-</div>
-<div class="paragraph">
-<p>This command tells Jarvis to remove the purchase at the given index on the list of purchases shown on the Finance tab.
-Jarvis will also update your monthly expenses accordingly, which also means you have more remaining budget left!</p>
+<p>If you have just returned something that you had bought online, <code>delete-paid</code> will remove the purchase at the specified
+<strong>one based</strong> index on the list of purchases shown on the Finance tab. Jarvis will update your monthly expenses accordingly - meaning you have more to spend for the
+rest of the month without exceeding your budget!</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-paid INDEX</code></p>
@@ -465,26 +567,24 @@ Jarvis will also update your monthly expenses accordingly, which also means you 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>INDEX</code> corresponds to index shown on the list <em>What I bought this month&#8230;&#8203;</em> under the Finance tab. This also
-means that the index must exist within this list!
+<code>INDEX</code> corresponds to <strong>one based</strong> index shown on the list <em>What I bought this month&#8230;&#8203;</em> under the Finance tab.
+This also means that the index must exist within this list!
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="searching-for-a-purchase-code-find-paid-code"><a class="link" href="#searching-for-a-purchase-code-find-paid-code">3.3.3. Searching for a purchase: <code>find-paid</code></a></h4>
+<h4 id="searching-for-a-purchase-code-find-paid-code"><a class="link" href="#searching-for-a-purchase-code-find-paid-code">3.2.3. Searching for a purchase: <code>find-paid</code></a></h4>
 <div class="paragraph">
-<p>Ever wondered how many cups of Gongcha you bought over the past month? Brace yourself for the truth.</p>
-</div>
-<div class="paragraph">
-<p>Jarvis can help you search for your purchases that match whatever keyword you give it!</p>
+<p>To have a quick view of the number of cups of Gongcha you have bought over the last month, you can used <code>find-paid</code>
+to pull up purchases with descriptions matching <code>KEYWORD</code> provided.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>find-paid KEYWORD</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-7"><a class="link" href="#example-7">Example</a></h5>
+<h5 id="example-8"><a class="link" href="#example-8">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>find-paid Gongcha</pre>
@@ -493,40 +593,35 @@ means that the index must exist within this list!
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-a-monthly-subscription-code-add-install-code"><a class="link" href="#add-a-monthly-subscription-code-add-install-code">3.3.4. Add a monthly subscription: <code>add-install</code></a></h4>
+<h4 id="add-a-monthly-subscription-code-add-install-code"><a class="link" href="#add-a-monthly-subscription-code-add-install-code">3.2.4. Add a monthly subscription: <code>add-install</code></a></h4>
 <div class="paragraph">
-<p>Who can resist the plethora of shows to watch on Netflix? So you decided to jump on the bandwagon and subscribe to it
-as well.</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s tell Jarvis to store this new installment. Don&#8217;t forget to key in the description and the amount you
-have to pay monthly so Jarvis can automatically keep track of this every month from now on!</p>
+<p><code>Jarvis</code> also supports installments so that you do not need to key in your Netflix subscription fees each month.
+Purchases entered with <code>add-install</code> will automatically be deducted from your budget at the same time every month.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-install d/INSTALLMENT-DESCRIPTION a/AMOUNT</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-8"><a class="link" href="#example-8">Example</a></h5>
+<h5 id="example-9"><a class="link" href="#example-9">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>add-install n/Netflix a/13.0
+<pre>add-install n/Phone bill a/43.0
 add-install n/Spotify a/9.50</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-a-monthly-subscription-code-delete-install-code"><a class="link" href="#delete-a-monthly-subscription-code-delete-install-code">3.3.5. Delete a monthly subscription: <code>delete-install</code></a></h4>
+<h4 id="delete-a-monthly-subscription-code-delete-install-code"><a class="link" href="#delete-a-monthly-subscription-code-delete-install-code">3.2.5. Delete a monthly subscription: <code>delete-install</code></a></h4>
 <div class="paragraph">
-<p>But alas, finals are approaching, and you decided to remove all distractions to help you better study. Unfortunately,
-this means deleting your Netflix account.</p>
-</div>
-<div class="paragraph">
-<p>This command will tell Jarvis to remove the installment at the given index on the list of installments shown on the
-Finance tab. Jarvis will also update your monthly expenses accordingly.</p>
+<p>With finals approaching, you might have decided to remove all distractions to help you study better. Unfortunately,
+this would also include your Netflix account.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-install INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Removing installments will also result in your monthly expenses being updated accordingly.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -535,7 +630,7 @@ Finance tab. Jarvis will also update your monthly expenses accordingly.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>INDEX</code> corresponds to index shown on the list <em>What I spend on monthly&#8230;&#8203;</em> under the Finance tab. This also
+<code>INDEX</code> corresponds to <strong>one based</strong> index shown on the list <em>What I spend on monthly&#8230;&#8203;</em> under the Finance tab. This also
 means that the index must exist within this list!
 </td>
 </tr>
@@ -543,19 +638,16 @@ means that the index must exist within this list!
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-an-installment-code-edit-install-code"><a class="link" href="#edit-an-installment-code-edit-install-code">3.3.6. Edit an installment: <code>edit-install</code></a></h4>
+<h4 id="edit-an-installment-code-edit-install-code"><a class="link" href="#edit-an-installment-code-edit-install-code">3.2.6. Edit an installment: <code>edit-install</code></a></h4>
 <div class="paragraph">
-<p>Spotify just released a new student plan? Great, that means a lower subscription fee every month!</p>
+<p>If you have just changed your contract for your phone, let <code>Jarvis</code> know! You can easily reflect any changes
+to your installments on the Finance Tracker through <code>edit-install</code>.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s inform Jarvis of the changes using the index of the installment on the list <em>What I spend on monthly&#8230;&#8203;</em> under
-the Finance tab. You can either change the description or the amount or both.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>edit-install INDEX {d/INSTALLMENT-DESCRIPTION | a/AMOUNT}</code></p>
+<p>Format: <code>edit-install INDEX { d/INSTALLMENT-DESCRIPTION | a/AMOUNT | d/INSTALLMENT-DESCRIPTION a/AMOUNT }</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-9"><a class="link" href="#example-9">Example</a></h5>
+<h5 id="example-10"><a class="link" href="#example-10">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>edit-install 1 a/10
@@ -566,19 +658,15 @@ edit-install 2 d/Spotify student plan a/7.50</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="setting-a-monthly-spending-limit-code-set-limit-code"><a class="link" href="#setting-a-monthly-spending-limit-code-set-limit-code">3.3.7. Setting a monthly spending limit: <code>set-limit</code></a></h4>
+<h4 id="setting-a-monthly-spending-limit-code-set-limit-code"><a class="link" href="#setting-a-monthly-spending-limit-code-set-limit-code">3.2.7. Setting a monthly spending limit: <code>set-limit</code></a></h4>
 <div class="paragraph">
-<p>It&#8217;s the season to stop spending so much!</p>
-</div>
-<div class="paragraph">
-<p>Let Jarvis keep track of how much you have limited yourself to spend this month. Simply set the limit to the
-Finance Tracker.</p>
+<p>Taking control of your spending might mean asking <code>Jarvis</code> to set a cap on your monthly budget.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>set-limit a/AMOUNT</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-10"><a class="link" href="#example-10">Example</a></h5>
+<h5 id="example-11"><a class="link" href="#example-11">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>set-limit a/300
@@ -588,32 +676,30 @@ set-limit a/500.90</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-finances-code-list-finances-code"><a class="link" href="#listing-finances-code-list-finances-code">3.3.8. Listing finances: <code>list-finances</code></a></h4>
+<h4 id="listing-finances-code-list-finances-code"><a class="link" href="#listing-finances-code-list-finances-code">3.2.8. Listing finances: <code>list-finances</code></a></h4>
 <div class="paragraph">
-<p>Jarvis will switch you onto the Finance tab if you are not already there. If you have previously searched through your
-purchases for something, then Jarvis returns you to the original list of purchases.</p>
+<p>Lists all the purchases in the Finance Tracker. Using <code>list-task</code> while on another page of <code>Jarvis</code> will
+pull up the Finance tab. If you have previously searched through your purchases for something, <code>list-finances</code>
+will return the original list of purchases.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-finances</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-to-file-code-export-code-coming-to-you-in-v2-0"><a class="link" href="#export-to-file-code-export-code-coming-to-you-in-v2-0">3.3.9. Export to File: <code>export</code> - coming to you in v2.0!</a></h4>
+<h4 id="exporting-to-file-code-export-code-v2-0"><a class="link" href="#exporting-to-file-code-export-code-v2-0">3.2.9. Exporting to File: <code>export</code> [v2.0]</a></h4>
 <div class="paragraph">
-<p>Want to keep a record of your finances for this month?</p>
-</div>
-<div class="paragraph">
-<p>Simple export your current expenditures to a file, either
-as a <code>.txt</code>, <code>.csv</code> or <code>xlsx</code> format.</p>
+<p>Conveniently export your expenditures to either a txt, csv, or xlsx file..</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export {csv | txt | xlsx} f/FILENAME</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-11"><a class="link" href="#example-11">Example</a></h5>
+<h5 id="example-12"><a class="link" href="#example-12">Example</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre>export csv f/expenditures</pre>
+<pre>export csv f/expenditures
+export txt f/MyFile</pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -623,7 +709,7 @@ as a <code>.txt</code>, <code>.csv</code> or <code>xlsx</code> format.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Jarvis will create a file called <code>expenditures.csv</code> in the current directory, containing all expenditures.
+Jarvis will export the file containing all expenditures to its current directory.
 </td>
 </tr>
 </table>
@@ -631,21 +717,31 @@ Jarvis will create a file called <code>expenditures.csv</code> in the current di
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-owed-amounts-code-owe-code-code-debt-code-coming-to-you-in-v2-0"><a class="link" href="#adding-owed-amounts-code-owe-code-code-debt-code-coming-to-you-in-v2-0">3.3.10. Adding owed amounts: <code>owe</code> &amp; <code>debt</code> - coming to you in v2.0!</a></h4>
+<h4 id="adding-owed-amounts-code-owe-code-code-debt-code-v2-0"><a class="link" href="#adding-owed-amounts-code-owe-code-code-debt-code-v2-0">3.2.10. Adding owed amounts: <code>owe</code> &amp; <code>debt</code> [v2.0]</a></h4>
 <div class="paragraph">
-<p>A night out with friends usually ends with someone paying and splitting the tab with his friends. But how do you
-remember who you owe or who owes you?</p>
+<p>A night out with friends usually ends in someone paying first and subsequently, splitting the tab with the rest of the
+group. If you need an easy way of remembered who owes whom, let <code>Jarvis</code> take care of your debts.</p>
 </div>
 <div class="paragraph">
-<p>Let Jarvis take care of your debts:<br>
-<code>add-owe</code>: someone else paid the bill, and now you owe him/her.<br>
-<code>add-debt</code>: you paid the bill, and now people owe you.</p>
+<p><code>add-owe</code>: someone else paid the bill, and now you owe him/her.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>add-owe d/DESCRIPTION n/PERSON a/AMOUNT</code> or <code>add-debt d/DESCRIPTION n/PERSON a/AMOUNT</code></p>
+<p><code>add-debt</code>: you paid the bill, and now people owe you.</p>
+</div>
+<div class="paragraph">
+<p>Format:</p>
+</div>
+<div class="paragraph">
+<p><code>add-owe d/DESCRIPTION n/PERSON a/AMOUNT</code></p>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="paragraph">
+<p><code>add-debt d/DESCRIPTION n/PERSON a/AMOUNT</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-12"><a class="link" href="#example-12">Example</a></h5>
+<h5 id="example-13"><a class="link" href="#example-13">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-owe n/Jamie a/5.50
@@ -655,19 +751,15 @@ add-debt n/Sean a/10</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="splitting-a-tab-code-add-tab-code-coming-to-you-in-v2-0"><a class="link" href="#splitting-a-tab-code-add-tab-code-coming-to-you-in-v2-0">3.3.11. Splitting a Tab: <code>add-tab</code> - coming to you in v2.0!</a></h4>
+<h4 id="splitting-a-tab-code-add-tab-code-v2-0"><a class="link" href="#splitting-a-tab-code-add-tab-code-v2-0">3.2.11. Splitting a Tab: <code>add-tab</code> [v2.0]</a></h4>
 <div class="paragraph">
-<p>So you&#8217;re the one who paid for your group of friends?</p>
+<p>You settled the bill first this time? Let <code>Jarvis</code> do the math!</p>
 </div>
 <div class="paragraph">
-<p>Let Jarvis divide the total amount paid and track the tab for
-this bill! Remember to include the names of those who owe you.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add-tab d/DESCRIPTION a/AMOUNT n/PERSON&#8230;&#8203;</code></p>
+<p>Format: <code>add-tab d/DESCRIPTION a/TOTAL-AMOUNT n/PERSON&#8230;&#8203;</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-13"><a class="link" href="#example-13">Example</a></h5>
+<h5 id="example-14"><a class="link" href="#example-14">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-tab d/pizza party a/20 n/Alice n/Bob n/Charlie</pre>
@@ -692,132 +784,68 @@ The above example is equivalent to adding these commands separately:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="mark-a-debt-owe-as-paid-code-paid-debt-code-coming-to-you-in-v2-0"><a class="link" href="#mark-a-debt-owe-as-paid-code-paid-debt-code-coming-to-you-in-v2-0">3.3.12. Mark a debt/owe as paid: <code>paid-debt</code> - coming to you in v2.0!</a></h4>
+<h4 id="mark-a-debt-owe-as-paid-code-paid-debt-code-v2-0"><a class="link" href="#mark-a-debt-owe-as-paid-code-paid-debt-code-v2-0">3.2.12. Mark a debt/owe as paid: <code>paid-debt</code> - [v2.0]</a></h4>
 <div class="paragraph">
-<p>Your friend has finally paid off their debt to you! Mark that in Jarvis and the debt will be removed automatically!</p>
+<p>Updating settled debts can be easily done through <code>paid-debt</code>. Soon <code>Jarvis</code> will be able to mark your debts or owed
+amounts as done.</p>
 </div>
 <div class="paragraph">
-<p>Alternatively, you paid what you owe your friend. Jarvis will remove the owed payment and put it under your purchases
-instead!</p>
+<p><code>done-owe</code> should be used when someone has paid you back for money they have owed you.</p>
 </div>
 <div class="paragraph">
-<p>Jarvis will identify the debt/owe by its index in the list of debts.</p>
+<p><code>done-debt</code> should be used when you have paid someone back from money you owed them.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>done-owe INDEX</code> or <code>done-debt INDEX</code></p>
+<p>Format:</p>
 </div>
 <div class="paragraph">
-<p>where <code>INDEX</code> corresponds to index shown on the list of debts under the Finance tab. This also
+<p><code>done-debt INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="paragraph">
+<p><code>done-owe INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>INDEX</code> corresponds to the <strong>one based</strong> index shown on the list of debts under the Finance tab. This also
 means that the index must exist within this list!</p>
 </div>
 <div class="sect4">
-<h5 id="example-14"><a class="link" href="#example-14">Example</a></h5>
+<h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>done-owe INDEX 1
 done-debt INDEX 2</pre>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="course-planner"><a class="link" href="#course-planner">3.4. Course Planner</a></h3>
-<div class="sect3">
-<h4 id="add-a-course-code-add-course-code"><a class="link" href="#add-a-course-code-add-course-code">3.4.1. Add a course: <code>add-course</code></a></h4>
 <div class="paragraph">
-<p>Adds the specified course(s) to your list.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add-course c/COURSE-CODE [c/COURSE-CODE]&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p><code>COURSE-CODE</code> may be the code of any <a href="https://nusmods.com/modules">NUS course</a> and you
-are able to specify multiple courses to add.</p>
-</div>
-<div class="sect4">
-<h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>add-course c/CS1010
-add-course c/CS1010 c/CS2030 c/CS2040</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-a-course-code-delete-course-code"><a class="link" href="#delete-a-course-code-delete-course-code">3.4.2. Delete a course: <code>delete-course</code></a></h4>
-<div class="paragraph">
-<p>Deletes the specified course from your list. You may also delete a course
-by its <strong>id</strong> within the list.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>delete-course {c/COURSECODE | INDEX}</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>delete-course c/CS1010
-delete-course 2</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="lookup-a-course-s-information-code-lookup-code"><a class="link" href="#lookup-a-course-s-information-code-lookup-code">3.4.3. Lookup a course&#8217;s information: <code>lookup</code></a></h4>
-<div class="paragraph">
-<p>Retrieves information about the specified course - such as name, course code,
-number of credits and its prerequisites - and displays it on the screen.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>lookup c/COURSECODE</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>lookup c/CS1010</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="check-a-course-code-check-code"><a class="link" href="#check-a-course-code-check-code">3.4.4. Check a course: <code>check</code></a></h4>
-<div class="paragraph">
-<p>Checks if you can take the specified course. The result is dependent on the
-courses you have added to your list. Jarvis will display a very helpful
-tree to show you what requirements you need for each course.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>check c/COURSECODE</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>check c/CS1010</pre>
-</div>
+<p> <br></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="cca-tracker"><a class="link" href="#cca-tracker">3.5. CCA tracker</a></h3>
+<h3 id="cca-tracker"><a class="link" href="#cca-tracker">3.3. CCA tracker</a></h3>
 <div class="paragraph">
-<p>Oh no, you have recently enrolled into NUS and are enthralled by the plethora of Ccas available. Before you know it,
-you are competing for your faculty&#8217;s basketball team, singing for your hall band , planning an overseas service-learning
-project and handing out welfare packs for NUSSU. Thankfully, the <strong>Cca Tracker</strong> feature is here to help you keep track
-of each Cca.</p>
+<p>The CCA tracker is a feature unique to <code>Jarvis</code>. Entirely customizable based on individual interest,
+<code>Jarvis</code> can support milestone tracking, equipment management and so much more! Never has being in multiple
+CCAs been so easy.</p>
 </div>
 <div class="sect3">
-<h4 id="add-a-cca-code-add-cca-code"><a class="link" href="#add-a-cca-code-add-cca-code">3.5.1. Add a CCA: <code>add-cca</code></a></h4>
+<h4 id="adding-a-cca-code-add-cca-code"><a class="link" href="#adding-a-cca-code-add-cca-code">3.3.1. Adding a CCA: <code>add-cca</code></a></h4>
 <div class="paragraph">
-<p>Firstly, lets add some Ccas to the Cca Tracker. The <code>add-cca</code> command adds a CCA to your list. You need to to specify
-the name of the cca and the type of CCA. The types of the CCA will be limited to the following:</p>
+<p>To start, we can add some CCAs to the CCA Tracker. You will need to to specify
+the name of the cca and the type of CCA.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="paragraph">
+<p>Format: <code>add-cca n/NAME t/TYPE [e/EQUIPMENT]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The <code>types</code> of the CCA are:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>performingArt</code></p>
 </li>
@@ -830,25 +858,10 @@ the name of the cca and the type of CCA. The types of the CCA will be limited to
 <li>
 <p><code>uniformedGroup</code></p>
 </li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Note that the equipment for each <code>Cca</code> is not compulsory.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Format: <code>add-cca n/NAME t/TYPE [e/EQUIPMENT]</code></p>
+</ul>
 </div>
 <div class="sect4">
-<h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
+<h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-cca n/Swimming t/sport e/swimming trunks e/goggles
@@ -859,16 +872,18 @@ add-cca n/Guitar Ensemble t/performingArt e/guitar</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-a-cca-code-delete-cca-code"><a class="link" href="#delete-a-cca-code-delete-cca-code">3.5.2. Delete a CCA: <code>delete-cca</code></a></h4>
+<h4 id="deleting-a-cca-code-delete-cca-code"><a class="link" href="#deleting-a-cca-code-delete-cca-code">3.3.2. Deleting a CCA: <code>delete-cca</code></a></h4>
 <div class="paragraph">
-<p>What if you over-commit and end up quitting the Cca? Don&#8217;t worry, you can delete the Cca from the tracker too!. The
-<code>delete-cca</code> command deletes the specified CCA by index from the tracker.</p>
+<p>New semester, new CCAs - deleting outdated ones is a breeze.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-cca INDEX</code></p>
 </div>
+<div class="paragraph">
+<p>where <code>INDEX</code> is the <strong>one-based</strong> of a CCA.</p>
+</div>
 <div class="sect4">
-<h5 id="example-20"><a class="link" href="#example-20">Example</a></h5>
+<h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>delete-cca 1</pre>
@@ -877,17 +892,16 @@ add-cca n/Guitar Ensemble t/performingArt e/guitar</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-a-cca-code-edit-cca-code"><a class="link" href="#edit-a-cca-code-edit-cca-code">3.5.3. Edit a CCA: <code>edit-cca</code></a></h4>
+<h4 id="editing-a-cca-code-edit-cca-code"><a class="link" href="#editing-a-cca-code-edit-cca-code">3.3.3. Editing a CCA: <code>edit-cca</code></a></h4>
 <div class="paragraph">
-<p>Oh no, a slip of the finger and you have accidentally classified the Canoeing as a 'club' instead of a 'cca'. Not to
-worry, the <code>edit-cca</code> command allows you to edit the details of your CCA. Note that the keywords in square brackets are
-optional.</p>
+<p>If you have bought some new running shoes, or the latest tuner for your violin, let <code>Jarvis</code>
+know so that your changes to your CCAs can be updated!</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit-cca INDEX [n/NAME] [t/TYPE] [e/EQUIPMENT]</code></p>
+<p>Format: <code>edit-cca INDEX { n/NAME | t/TYPE | e/EQUIPMENT&#8230;&#8203;}</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-21"><a class="link" href="#example-21">Example</a></h5>
+<h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>edit-cca 1 t/sport e/tennis racket
@@ -902,7 +916,7 @@ edit-cca 1 n/Running e/shoes e/water bottle</pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note that you cannot edit your milestones for the Cca! This feature is coming in v2.0!
+<code>Jarvis</code> will soon also be able to edit the milestones of your CCAs in v2.0!
 </td>
 </tr>
 </table>
@@ -910,26 +924,25 @@ Note that you cannot edit your milestones for the Cca! This feature is coming in
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-a-cca-code-list-cca-code"><a class="link" href="#list-a-cca-code-list-cca-code">3.5.4. List a CCA: <code>list-cca</code></a></h4>
+<h4 id="listing-a-cca-code-list-cca-code"><a class="link" href="#listing-a-cca-code-list-cca-code">3.3.4. Listing a CCA: <code>list-cca</code></a></h4>
 <div class="paragraph">
-<p>This command lists the CCAs that you are participating in. If you do not participate in any CCAs, an empty list will be
-shown.</p>
+<p>Lists all your CCAs in the CCA Tracker. Using <code>list-cca</code> while on another page of Jarvis will
+pull up the CCA Tracker tab.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-cca</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-a-cca-code-find-cca-code"><a class="link" href="#find-a-cca-code-find-cca-code">3.5.5. Find a CCA: <code>find-cca</code></a></h4>
+<h4 id="finding-a-cca-code-find-cca-code"><a class="link" href="#finding-a-cca-code-find-cca-code">3.3.5. Finding a CCA: <code>find-cca</code></a></h4>
 <div class="paragraph">
-<p>This command finds a CCA based on keyword. If no such CCA can be found, an empty list will be shown. Note that you can
-use any number of keywords.</p>
+<p>For a quick view of CCAs matching one or more keywords, <code>find-cca</code> will come in useful.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>find-cca KEYWORD</code></p>
+<p>Format: <code>find-cca KEYWORD&#8230;&#8203;</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
+<h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>find-cca swimming
@@ -939,17 +952,17 @@ find-cca canoeing guitar</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-progress-levels-for-a-cca-code-add-progress-code"><a class="link" href="#add-progress-levels-for-a-cca-code-add-progress-code">3.5.6. Add progress levels for a CCA: <code>add-progress</code></a></h4>
+<h4 id="adding-progress-levels-for-a-cca-code-add-progress-code"><a class="link" href="#adding-progress-levels-for-a-cca-code-add-progress-code">3.3.6. Adding progress levels for a CCA: <code>add-progress</code></a></h4>
 <div class="paragraph">
-<p>Very often, Ccas tend to have certain milestones to achieve. For example, swimming might require you to achieve the
-different grade levels (example show below). The <code>add-progress</code> command adds the progress milestones for each chosen
-CCA.</p>
+<p>Often, we strive to reach certain milestones in our CCAs. For example, in swimming, you might be aiming to
+progress through the various grade levels (shown in the example below) available. With <code>add-progress</code>,
+<code>Jarvis</code> can help you set and keep track of your progress towards each milestone in each of your CCAs.</p>
 </div>
 <div class="paragraph">
-<p>Format: `add-progress INDEX p/MILESTONE `</p>
+<p>Format: `add-progress INDEX p/MILESTONE&#8230;&#8203; `</p>
 </div>
 <div class="sect4">
-<h5 id="example-23"><a class="link" href="#example-23">Example</a></h5>
+<h5 id="example-20"><a class="link" href="#example-20">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-progress 1 p/bronze p/silver p/gold p/gold star
@@ -960,9 +973,13 @@ add-progress n/Guitar Ensemble l/8</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="increment-progress-level-code-increment-progress-code"><a class="link" href="#increment-progress-level-code-increment-progress-code">3.5.7. Increment progress level: <code>increment-progress</code></a></h4>
+<h4 id="incrementing-progress-level-code-increment-progress-code"><a class="link" href="#incrementing-progress-level-code-increment-progress-code">3.3.7. Incrementing progress level: <code>increment-progress</code></a></h4>
 <div class="paragraph">
-<p>This command increments the progress for a CCA at the specified index.</p>
+<p>Each time you have made progress towards any of your milestones, let <code>Jarvis</code> know! The progress bar for each CCA
+provides a clear view of how much closer you are to their respective milestones.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>increment-progress INDEX</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -971,35 +988,122 @@ add-progress n/Guitar Ensemble l/8</pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note that progress can only be incremented if a progress has been added to that Cca.
+Note that progress can only be incremented if <code>add-progress</code> has previously been executed on that particular CCA.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Note that progress can only be incremented if a progress has been added to that Cca.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>increment-progress INDEX</code></p>
-</div>
 <div class="sect4">
-<h5 id="example-24"><a class="link" href="#example-24">Example</a></h5>
+<h5 id="example-21"><a class="link" href="#example-21">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>increment-progress 1</pre>
 </div>
 </div>
+<div class="paragraph">
+<p> <br></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="app-history"><a class="link" href="#app-history">3.6. App History</a></h3>
+<h3 id="course-planner"><a class="link" href="#course-planner">3.4. Course Planner</a></h3>
+<div class="paragraph">
+<p>NUSMods serves as a complete knowledge bank of all modules in NUS. We often use it to plan our timetables,
+map out academic routes and learn more about the variety of courses NUS has to offer.
+As the Course Planner section of <code>Jarvis</code> is thoroughly integrated with NUSMods, you will be able to consolidate all
+the courses you have taken in NUS to date, as well as figure out what courses you could possibly take in the future.</p>
+</div>
+<div class="sect3">
+<h4 id="adding-a-course-code-add-course-code"><a class="link" href="#adding-a-course-code-add-course-code">3.4.1. Adding a course: <code>add-course</code></a></h4>
+<div class="paragraph">
+<p>To get started, you can add specific course(s) to your list. You may add one or more courses at one go.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add-course c/COURSE-CODE&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>where <code>COURSE-CODE</code> is the course code of the <a href="https://nusmods.com/modules">NUS course</a> you
+want to add.</p>
+</div>
+<div class="sect4">
+<h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre>add-course c/CS1010
+add-course c/CS1010 c/CS2030 c/CS2040</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-course-code-delete-course-code"><a class="link" href="#deleting-a-course-code-delete-course-code">3.4.2. Deleting a course: <code>delete-course</code></a></h4>
+<div class="paragraph">
+<p>You can easily delete a course from your list - either by the index of the course in the list,
+or by its course code.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-course {c/COURSECODE | INDEX}</code></p>
+</div>
+<div class="sect4">
+<h5 id="example-23"><a class="link" href="#example-23">Example</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre>delete-course c/CS1010
+delete-course 2</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="looking-up-a-course-s-information-code-lookup-code"><a class="link" href="#looking-up-a-course-s-information-code-lookup-code">3.4.3. Looking up a course&#8217;s information: <code>lookup</code></a></h4>
+<div class="paragraph">
+<p>You can also retrieve information about a specific course - such as name, course code,
+number of credits and its prerequisites.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>lookup c/COURSECODE</code></p>
+</div>
+<div class="sect4">
+<h5 id="example-24"><a class="link" href="#example-24">Example</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre>lookup c/CS1010</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="checking-a-course-code-check-code"><a class="link" href="#checking-a-course-code-check-code">3.4.4. Checking a course: <code>check</code></a></h4>
+<div class="paragraph">
+<p>If you are not sure if you can take a certain course next semester, this command would come in handy. Simply <code>check</code>
+the course in question.The result is dependent on the courses you have added to your list. <code>Jarvis</code> will
+display a very helpful tree to show you what requirements you need for each course.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>check c/COURSECODE</code></p>
+</div>
+<div class="sect4">
+<h5 id="example-25"><a class="link" href="#example-25">Example</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre>check c/CS1010</pre>
+</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="app-history"><a class="link" href="#app-history">3.5. App History</a></h3>
 <div class="paragraph">
 <p><em>"Oops! I have entered a command that has entered inaccurate information to the
 application, and I am not sure where to find the mistake or how to fix it!"</em></p>
 </div>
 <div class="paragraph">
-<p>It&#8217;s great that JARVIS remembers your changes and allows you to easily undo your
+<p>It&#8217;s great that <code>Jarvis</code> remembers your changes and allows you to easily <code>undo</code> your
 commands!</p>
 </div>
 <div class="paragraph">
@@ -1007,8 +1111,8 @@ commands!</p>
 command?"</em></p>
 </div>
 <div class="paragraph">
-<p>JARVIS also allows you to redo any changes that you have undone! Therefore, you
-can confidently undo and redo changes that you have made without worrying about
+<p><code>Jarvis</code> also enables you to <code>redo</code> any changes that you have undone! Therefore, you
+can confidently <code>undo</code> and <code>redo</code> changes that you have made without worrying about
 the inconvenience of remembering and re-entering commands all over again.</p>
 </div>
 <div class="admonitionblock note">
@@ -1018,19 +1122,18 @@ the inconvenience of remembering and re-entering commands all over again.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Only commands that make changes to the JARVIS can be undone and redone. Commands that
-list items or finds items in JARVIS are not remembered and thus cannot be undone or
-redone.
+Only commands that make changes to the content of JARVIS can be undone and redone. Commands that
+list items or finds items in <code>Jarvis</code> therefore cannot be undone or redone.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>JARVIS remembers the last thousand commands that you have entered into the
+<p><code>Jarvis</code> remembers the last thousand commands that you have entered into the
 application, even after you exit the application!</p>
 </div>
 <div class="paragraph">
-<p>JARVIS also lets you undo and redo multiple commands in a single undo or redo
+<p><code>Jarvis</code> also lets you undo and redo multiple commands in a single undo or redo
 command! This means that you can undo and redo up to a thousand commands with
 a single undo or redo command.</p>
 </div>
@@ -1053,7 +1156,7 @@ Redo commands will redo command(s) starting from the latest command that was und
 </table>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s show you how to undo and redo commands in JARVIS in the following
+<p>You can see how to undo and redo commands in JARVIS in the following
 sections below, which will cover two new commands:</p>
 </div>
 <div class="ulist">
@@ -1089,15 +1192,34 @@ supplied, then <code>[NUMBER]</code> is taken to be the value <strong>1</strong>
 </table>
 </div>
 <div class="sect3">
-<h4 id="undo"><a class="link" href="#undo">3.6.1. undo</a></h4>
-<div class="sect4">
-<h5 id="format"><a class="link" href="#format">Format</a></h5>
+<h4 id="undo"><a class="link" href="#undo">3.5.1. undo</a></h4>
 <div class="paragraph">
-<p><code>undo [NUMBER]</code></p>
+<p>Format: <code>undo [NUMBER]</code></p>
 </div>
+<div class="paragraph">
+<p>where <code>[NUMBER]</code> is an optional argument indicating the number of commands that you
+want to <code>undo</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>[NUMBER]</code> should be a positive integer, no larger than
+the available number of commands that can be undone. (Don&#8217;t worry, JARVIS
+will let you know if <code>[NUMBER]</code> is out of range).
+<br>
+<br>
+If <code>[NUMBER]</code> is not
+supplied, then it is taken to be the default value of <strong>1</strong>.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect4">
-<h5 id="example-25"><a class="link" href="#example-25">Example</a></h5>
+<h5 id="example-26"><a class="link" href="#example-26">Example</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1113,26 +1235,13 @@ starting from the latest command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo"><a class="link" href="#redo">3.6.2. redo</a></h4>
-<div class="sect4">
-<h5 id="format-2"><a class="link" href="#format-2">Format</a></h5>
+<h4 id="redo"><a class="link" href="#redo">3.5.2. redo</a></h4>
 <div class="paragraph">
-<p><code>redo [NUMBER]</code></p>
+<p>Format: <code>redo [NUMBER]</code></p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="example-26"><a class="link" href="#example-26">Example</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>redo</code>&#8201;&#8212;&#8201;This command will redo the latest command undone by the user.
-It is equivalent to the command <code>redo 1</code></p>
-</li>
-<li>
-<p><code>redo 5</code>&#8201;&#8212;&#8201;This command will redo the 5 latest commands undone by the user,
-starting from the latest command that was undone.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>where <code>[NUMBER]</code> is an optional argument indicating the number of commands that you
+want to <code>redo</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1141,11 +1250,42 @@ starting from the latest command that was undone.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Suppose you have undone a few commands, if you were to enter in new commands,
-you will not be able to redo the commands.
+<code>[NUMBER]</code> should be a positive integer, no larger than
+the available number of commands that can be undone. (Don&#8217;t worry, JARVIS
+will let you know if <code>[NUMBER]</code> is out of range).
+<br>
+<br>
+If <code>[NUMBER]</code> is not
+supplied, then it is taken to be the default value of <strong>1</strong>.
 </td>
 </tr>
 </table>
+</div>
+<div class="sect4">
+<h5 id="example-27"><a class="link" href="#example-27">Example</a></h5>
+<div class="paragraph">
+<p><code>redo</code>&#8201;&#8212;&#8201;This command will redo the latest command undone by the user.
+It is equivalent to the command <code>redo 1</code></p>
+</div>
+<div class="paragraph">
+<p><code>redo 5</code>&#8201;&#8212;&#8201;This command will redo the 5 latest commands undone by the user,
+starting from the latest command that was undone.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you have entered new commands after undoing previous commands, you will not be able to redo the old
+commands.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 </div>
 </div>
@@ -1164,78 +1304,80 @@ you will not be able to redo the commands.
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Q:</strong> What if I am still learning this application and I make a mistake on the application and I do not know how to revert the changes made in my latest command?</p>
+<p><strong>Q:</strong> Are official NUS CCAs supported in the CCA Tracker?</p>
 </div>
 <div class="paragraph">
-<p><strong>A:</strong> Simple undo the command, the application will revert your changes automatically.</p>
+<p><strong>A:</strong> Not in the current version, but you can look forward to it in v2.0!</p>
+</div>
+<div class="paragraph">
+<p><strong>Q:</strong> Am I able to manage my non-computing courses in the Course Planner?
+<strong>A:</strong> As the information is obtained directly from NUSMods, you are able to add any official NUS module to the Course
+Planner, as long as it is available on NUSMods as well.</p>
 </div>
 <hr>
+<div class="paragraph">
+<p> <br></p>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>A convenient summary of all the commands you can use in <code>Jarvis</code>.</p>
+</div>
 <div class="sect2">
-<h3 id="task-scheduler-2"><a class="link" href="#task-scheduler-2">5.1. Task Scheduler</a></h3>
+<h3 id="task-planner-2"><a class="link" href="#task-planner-2">5.1. Task Planner</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list {d/DATE | #TAG&#8230;&#8203;}</code></p>
+<p><code>add-task t/todo des/TASK-DESCRIPTION [#TAG]&#8230;&#8203; [p/PRIORITY f/FREQ]</code></p>
 </li>
 <li>
-<p><code>add-task t/TASK-TYPE/TASK-DESCRIPTION [d/DATE] [#TAG]&#8230;&#8203; [p/PRIORITY] [r/FREQ]</code></p>
+<p><code>add-task t/event des/TASK-DESCRIPTION d/START-DATE//END-DATE [#TAG]&#8230;&#8203; [p/PRIORITY f/FREQ]</code></p>
 </li>
 <li>
-<p><code>delete-task {INDEX | t/TASK-DESCRIPTION}</code></p>
+<p><code>add-task t/deadline des/TASK-DESCRIPTION d/DUE-DATE [#TAG]&#8230;&#8203; [p/PRIORITY f/FREQ]</code></p>
 </li>
 <li>
-<p><code>find-task k/KEYWORD</code></p>
+<p><code>delete-task INDEX</code></p>
 </li>
 <li>
-<p><code>edit-task {t/TASK-DESCRIPTION/NEW-DESCRIPTION | INDEX/NEW-DESCRIPTION}</code></p>
-</li>
-<li>
-<p><code>create #TAG&#8230;&#8203;</code></p>
+<p><code>find-task KEYWORD&#8230;&#8203;</code></p>
 </li>
 <li>
 <p><code>done-task INDEX</code></p>
 </li>
 <li>
-<p><code>clear-task [#TAG]&#8230;&#8203; [d/DATE]</code></p>
+<p><code>pull-task { t/TYPE | #TAG | p/PRIORITY-LEVEL | f/FREQUENCY-LEVEL | d/DATE }</code></p>
+</li>
+<li>
+<p><code>list-task</code></p>
+</li>
+<li>
+<p><code>edit-task INDEX//NEW-DESCRIPTION&#8230;&#8203;</code> [v2.0]</p>
+</li>
+<li>
+<p><code>clear-task [#TAG]&#8230;&#8203; [d/DATE]</code> [v2.0]</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="finance-tracker"><a class="link" href="#finance-tracker">5.2. Finance Tracker</a></h3>
+<h3 id="course-planner-2"><a class="link" href="#course-planner-2">5.2. Course Planner</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-paid d/PURCHASE-DESCRIPTION a/AMOUNT</code></p>
+<p><code>add-course c/COURSECODE&#8230;&#8203;</code></p>
 </li>
 <li>
-<p><code>delete-paid INDEX</code></p>
+<p><code>delete-course {c/COURSECODE | INDEX}</code></p>
 </li>
 <li>
-<p><code>add-install d/INSTALLMENT-DESCRIPTION a/AMOUNT</code></p>
+<p><code>lookup c/COURSECODE</code></p>
 </li>
 <li>
-<p><code>edit-install INDEX {d/INSTALLMENT-DESCRIPTION | a/AMOUNT}</code></p>
-</li>
-<li>
-<p><code>delete-install INDEX</code></p>
-</li>
-<li>
-<p><code>set-monthly a/AMOUNT</code></p>
-</li>
-<li>
-<p><code>find-paid k/KEYWORD</code></p>
-</li>
-<li>
-<p><code>list-finances</code></p>
-</li>
-<li>
-<p><code>export {csv | txt | xlsx} f/FILENAME</code></p>
+<p><code>check c/COURSECODE</code></p>
 </li>
 </ul>
 </div>
@@ -1245,22 +1387,22 @@ you will not be able to redo the commands.
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-cca n/NAME t/TYPE [e/EQUIPMENT]</code></p>
+<p><code>add-cca n/NAME t/TYPE [e/EQUIPMENT]&#8230;&#8203;</code></p>
 </li>
 <li>
 <p><code>delete-cca INDEX</code></p>
 </li>
 <li>
-<p><code>edit-cca INDEX [n/NAME] [t/TYPE] [e/EQUIPMENT]</code></p>
+<p><code>edit-cca INDEX { n/NAME | t/TYPE | e/EQUIPMENT&#8230;&#8203;}</code></p>
 </li>
 <li>
 <p><code>list-cca</code></p>
 </li>
 <li>
-<p><code>find-cca KEYWORD</code></p>
+<p><code>find-cca KEYWORD&#8230;&#8203;</code></p>
 </li>
 <li>
-<p><code>add-progress INDEX p/MILESTONE</code></p>
+<p><code>add-progress INDEX p/MILESTONE&#8230;&#8203;</code></p>
 </li>
 <li>
 <p><code>increment-progress INDEX</code></p>
@@ -1269,26 +1411,50 @@ you will not be able to redo the commands.
 </div>
 </div>
 <div class="sect2">
-<h3 id="course-planner-2"><a class="link" href="#course-planner-2">5.4. Course Planner</a></h3>
+<h3 id="finance-tracker-2"><a class="link" href="#finance-tracker-2">5.4. Finance Tracker</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-course c/COURSECODE [g/GRADE]</code></p>
+<p><code>add-paid d/PURCHASE-DESCRIPTION a/AMOUNT</code></p>
 </li>
 <li>
-<p><code>delete-course c/COURSECODE</code></p>
+<p><code>delete-paid INDEX</code></p>
 </li>
 <li>
-<p><code>lookup c/COURSECODE</code></p>
+<p><code>find-paid k/KEYWORD</code></p>
 </li>
 <li>
-<p><code>check c/COURSECODE</code></p>
+<p><code>add-install d/INSTALLMENT-DESCRIPTION a/AMOUNT</code></p>
 </li>
 <li>
-<p><code>cap</code></p>
+<p><code>delete-install INDEX</code></p>
 </li>
 <li>
-<p><code>focus n/FOCUS-AREA</code></p>
+<p><code>edit-install INDEX { d/INSTALLMENT-DESCRIPTION | a/AMOUNT | d/INSTALLMENT-DESCRIPTION a/AMOUNT }</code></p>
+</li>
+<li>
+<p><code>set-limit a/AMOUNT</code></p>
+</li>
+<li>
+<p><code>list-finances</code></p>
+</li>
+<li>
+<p><code>export {csv | txt | xlsx} f/FILENAME</code> [v2.0]</p>
+</li>
+<li>
+<p><code>add-owe d/DESCRIPTION n/PERSON a/AMOUNT</code> [v2.0]</p>
+</li>
+<li>
+<p><code>add-debt d/DESCRIPTION n/PERSON a/AMOUNT</code> [v2.0]</p>
+</li>
+<li>
+<p><code>add-tab d/DESCRIPTION a/TOTAL-AMOUNT n/PERSON&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><code>done-debt INDEX</code></p>
+</li>
+<li>
+<p><code>done-owe INDEX</code></p>
 </li>
 </ul>
 </div>
@@ -1307,4 +1473,4 @@ you will not be able to redo the commands.
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 11:55:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 12:31:47 UTC</div></div></div></body></html>
