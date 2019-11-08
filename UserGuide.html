@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Jarvis - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jarvis - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Jarvis</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T10-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jarvis - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team T10-1</code>      Since: <code>Sep 2019</code>      Licence: <code>MIT</code></p>
@@ -1156,6 +1156,11 @@ Redo commands will redo command(s) starting from the latest command that was und
 </table>
 </div>
 <div class="paragraph">
+<p>If you are not sure of how many commands you have undone or redone, do not worry!
+Jarvis can tell you how many commands you have undone or redone before you make any
+further changes!</p>
+</div>
+<div class="paragraph">
 <p>You can see how to undo and redo commands in JARVIS in the following
 sections below, which will cover two new commands:</p>
 </div>
@@ -1166,6 +1171,9 @@ sections below, which will cover two new commands:</p>
 </li>
 <li>
 <p><code>redo [NUMBER]</code></p>
+</li>
+<li>
+<p><code>list-history</code></p>
 </li>
 </ul>
 </div>
@@ -1192,7 +1200,7 @@ supplied, then <code>[NUMBER]</code> is taken to be the value <strong>1</strong>
 </table>
 </div>
 <div class="sect3">
-<h4 id="undo"><a class="link" href="#undo">3.5.1. undo</a></h4>
+<h4 id="undo-command-s-code-undo-code"><a class="link" href="#undo-command-s-code-undo-code">3.5.1. undo command(s): <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>undo [NUMBER]</code></p>
 </div>
@@ -1235,7 +1243,7 @@ starting from the latest command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo"><a class="link" href="#redo">3.5.2. redo</a></h4>
+<h4 id="redo-command-s-code-redo-code"><a class="link" href="#redo-command-s-code-redo-code">3.5.2. redo command(s): <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>redo [NUMBER]</code></p>
 </div>
@@ -1284,9 +1292,20 @@ commands.
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-the-number-of-commands-you-can-undo-or-redo-code-list-history-code"><a class="link" href="#list-the-number-of-commands-you-can-undo-or-redo-code-list-history-code">3.5.3. list the number of commands you can undo or redo: <code>list-history</code></a></h4>
+<div class="paragraph">
+<p>Format: <code>list-history</code></p>
+</div>
+<div class="paragraph">
+<p>Lists the number of available commands to be undone, number of available commands to be redone,
+and the limit of the maximum number of commands Jarvis can remember for you to support undo and
+redo commands.</p>
+</div>
 <div class="paragraph">
 <p> <br></p>
-</div>
 </div>
 </div>
 </div>
@@ -1469,8 +1488,11 @@ Planner, as long as it is available on NUSMods as well.</p>
 <li>
 <p><code>redo [NUMBER]</code></p>
 </li>
+<li>
+<p><code>list-history</code></p>
+</li>
 </ul>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 12:31:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 01:21:06 UTC</div></div></div></body></html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Jarvis - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jarvis - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Jarvis</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103T-T10-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jarvis - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team T10-1</code>      Since: <code>Aug 2019</code>      Licence: <code>MIT</code></p>
@@ -9,31 +9,32 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#preface">1. Preface</a></li>
+<li><a href="#setting-up">2. Setting up</a></li>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture: High-Level View</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Commons">3.6. Commons Component</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#undo-redo-feature">3.1. Undo / Redo Feature</a></li>
-<li><a href="#course-planner-feature">3.2. Course Planner feature</a></li>
-<li><a href="#finance-tracker-feature">3.3. Finance Tracker feature</a></li>
-<li><a href="#planner-feature">3.4. Planner Feature</a></li>
-<li><a href="#ccatracker-feature">3.5. CcaTracker Feature</a></li>
-<li><a href="#logging">3.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
+<li><a href="#undo-redo-feature">4.1. Undo / Redo Feature</a></li>
+<li><a href="#course-planner-feature">4.2. Course Planner feature</a></li>
+<li><a href="#finance-tracker-feature">4.3. Finance Tracker feature</a></li>
+<li><a href="#planner-feature">4.4. Planner Feature</a></li>
+<li><a href="#ccatracker-feature">4.5. CcaTracker Feature</a></li>
+<li><a href="#logging">4.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.7. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#documentation">5. Documentation</a></li>
+<li><a href="#testing">6. Testing</a></li>
+<li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
@@ -51,7 +52,18 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="preface"><a class="link" href="#preface">1. Preface</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the Developer Guide to Jarvis, a productivity manager tool designed
+for NUS students who want to consolidate their schedule, tasks, finances and
+modules in one place. The link to the GitHub repository can
+be found <a href="https://github.com/AY1920S1-CS2103T-T10-1/main">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
@@ -59,10 +71,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture: High-Level View</a></h3>
+<div class="paragraph">
+<p>The architecture diagram below explains the high-level design of Jarvis.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -70,180 +85,204 @@
 <div class="title">Figure 1. Architecture Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the
-App. Given below is a quick overview of each component.</p>
+<p><code>Main</code> has three classes called
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/Main.java"><code>Main</code></a>,
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/MainApp.java"><code>MainApp</code></a>, and
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/AppParameters.java"><code>AppParameters</code></a></p>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>.
-They are responsible for,</p>
+<p>They are responsible for:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>At app launch: Initializes the components in the correct sequence, and
-connects them up with each other.</p>
+<p>On launch of Jarvis</p>
+<div class="paragraph">
+<p>Initialises all components (<code>Ui</code>, <code>Logic</code>, <code>Storage</code>, etc) in the correct
+sequence and establishes the relevant links between each component.</p>
+</div>
 </li>
 <li>
-<p>At shut down: Shuts down the components and invokes cleanup method where
-necessary.</p>
+<p>On exit of Jarvis</p>
+<div class="paragraph">
+<p>Shuts down all components and invokes any clean-up methods where necessary.</p>
+</div>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
-<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used byx
-multiple other components. The following class plays an important role at the
-architecture level:</p>
+<p>The rest of Jarvis consists of another four components:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log
-file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The rest of the App consists of four components.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
-</li>
-<li>
-<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
-</li>
-<li>
-<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
-</li>
-<li>
-<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the
-hard disk.</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Design-Ui"><strong><code>UI</code></strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Handles all UI logic in the application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Design-Logic"><strong><code>Logic</code></strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Handles all parsing and execution of commands
+'                                 that operates on <code>Model</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Design-Model"><strong><code>Model</code></strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Handles all reading and updating of runtime
+                                  data within Jarvis.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Design-Storage"><strong><code>Storage</code></strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Handles all reading and writing of Jarvis'
+                                  data, from and to the hard-disk.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Each of the four components</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as its corresponding
+component.</p>
 </li>
 <li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+<p>Exposes its functionality using a <code>{ComponentName}Manager</code> concrete class.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines
-it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using
-the <code>LogicManager.java</code> class.</p>
+<p>For example, the <code>Logic</code> component defines its API using an interface <code>Logic</code>.
+<code>Logic</code> is then implemented by the <code>LogicManager</code> concrete class, which
+exposes its functionality to the rest of the application.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
-</div>
-<div class="title">Figure 2. Class Diagram of the Logic Component</div>
-</div>
-<h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
+<div class="sect3">
+<h4 id="architecture-interactions-between-components"><a class="link" href="#architecture-interactions-between-components">3.1.1. Architecture: Interactions between Components</a></h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each
+<p>The sequence diagram below shows how the components interact with each
 other for the scenario where the user issues the command <code>delete 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 2. Component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
+<div class="paragraph">
+<p>The UI component defines the user-viewable part of the application. It consists
+of a <code>MainWindow</code> made up of parts, such as the <code>StatusBarFooter</code>, <code>CommandBox</code>
+and <code>HelpWindow</code>. Every part inherits from the abstract class <code>UiPart</code>. Shown
+below is the structure of the UI component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 4. Structure of the UI Component</div>
+<div class="title">Figure 3. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>,
-<code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these,
-including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are
-defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code>
-folder. For example, the layout of the
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a>
+<p>The <code>Ui</code> component uses the JavaFX UI framework. The layout of every part
+is defined in matching <code>.fxml</code> files found in <code>/src/main/resources/view</code>.
+For example, the layout of
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/ui/MainWindow.java"><code>MainWindow</code></a>
 is specified in
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component,</p>
+<p>The UI has the following functionality:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
+<p>Takes in user input from the GUI, and using it in tandem with <code>Logic</code> to
+create the relevant commands.</p>
 </li>
 <li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the
+<p>Executes the constructed commands using <code>Logic</code>.</p>
+</li>
+<li>
+<p>Listens for changes to <code>Model</code> so that the UI can be updated with the
 modified data.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/ui/Ui.java">[API]</a>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/ui/">[Package]</a></p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
-<div id="fig-LogicClassDiagram" class="imageblock">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
+<div class="paragraph">
+<p>The <code>Logic</code> component is the "brains" of Jarvis. While the <code>Ui</code> defines
+the GUI and <code>Model</code> defines in-memory data, the <code>Logic</code> component does most
+of the heavy-lifting in terms of deciding what to change within the <code>Model</code>
+and what to return to the <code>Ui</code>. The diagram below shows the structure of the
+<code>Logic</code> component.</p>
+</div>
+<div class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 4. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> :
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<p>The diagram above shows how the <code>Logic</code> component interacts with its internal
+parts.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>JarvisParser</code> class to parse the user command.</p>
+<p>Once a user input is obtained from the GUI, <code>Logic</code> uses <code>JarvisParser</code> to
+parse to command to return a <code>Command</code> object.</p>
 </li>
 <li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+<p>The <code>Command</code> is executed by <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p>Depending on the command created, it may mutate the <code>Model</code>, such as adding
+a new task or course.</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code>
-object which is passed back to the <code>Ui</code>.</p>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> that
+is returned to <code>Ui</code>.</p>
 </li>
 <li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to
-perform certain actions, such as displaying help to the user.</p>
+<p>These <code>CommandResults</code> can instruct the <code>Ui</code> to perform certain actions,
+such as switching tabs between the various views, and displaying help or
+error messages to the user.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code>
-component for the <code>execute("delete 1")</code> API call.</p>
+<p>Shown below is the Sequence Diagram within the <code>Logic</code> component for the API
+call: <code>execute("add-course c/CS1010")</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>add-course c/CS1010</code> Command</div>
+</div>
+<div class="paragraph">
+<p>The original caller to <code>LogicManager</code>, in the context of Jarvis, is the <code>Ui</code>
+component.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -259,9 +298,13 @@ of diagram.
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/logic/Logic.java">[API]</a>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/logic/">[Package]</a></p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="paragraph">
 <p>The <code>Model</code> API is responsible for interacting with the data in JARVIS including
 the various aspects such as user&#8217;s preferences, command history,
@@ -275,10 +318,7 @@ from the feature specific model interfaces.</p>
 <div class="content">
 <img src="images/model/ModelInterfaceClassDiagram.png" alt="ModelInterfaceClassDiagram">
 </div>
-<div class="title">Figure 7. Model Interface</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<div class="title">Figure 6. Model Interface</div>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code> component,</p>
@@ -286,7 +326,7 @@ from the feature specific model interfaces.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+<p>Stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
 <p>Stores the <code>HistoryManager</code> data</p>
@@ -305,13 +345,17 @@ from the feature specific model interfaces.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/Model.java">[API]</a>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/">[Package]</a></p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="paragraph">
-<p>The <code>Storage</code> API is responsible for reading and writing data in
-json format. This allows the application is remember information in
-json format when the user closes the application.</p>
+<p>The <code>Storage</code> API is responsible for reading and writing data in json format.
+This allows the application is remember information in json format when the
+user closes the application.</p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> API acts as a facade that handles interaction regarding
@@ -325,10 +369,7 @@ inherits from feature specific storage interfaces.</p>
 <div class="content">
 <img src="images/storage/StorageInterfaceClassDiagram.png" alt="StorageInterfaceClassDiagram">
 </div>
-<div class="title">Figure 8. Storage Interface</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<div class="title">Figure 7. Storage Interface</div>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -356,7 +397,7 @@ the storage for <code>UserPrefs</code>, <code>FinanceTracker</code>, <code>CcaTr
 <div class="content">
 <img src="images/storage/UpdatedStorageClassDiagram.png" alt="UpdatedStorageClassDiagram">
 </div>
-<div class="title">Figure 9. <code>StorageManager</code> class</div>
+<div class="title">Figure 8. <code>StorageManager</code> class</div>
 </div>
 <div class="paragraph">
 <p>Each feature of JARVIS is able to save its information to local storage
@@ -368,52 +409,88 @@ in <code>JSON</code> format, by adapting each feature component into
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/storage/HistoryManagerStorageClassDiagram.png" alt="HistoryManagerStorageClassDiagram">
+<img src="images/storage/HistoryManagerStorageClassDiagram.png" alt="300" width="200">
 </div>
-<div class="title">Figure 10. <code>JsonSerializableHistoryManager</code></div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/storage/CcaTrackerStorageClassDiagram.png" alt="CcaTrackerStorageClassDiagram">
-</div>
-<div class="title">Figure 11. <code>JsonSerializableCcaTracker</code></div>
+<div class="title">Figure 9. <code>JsonSerializableHistoryManager</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/storage/CoursePlannerStorageClassDiagram.png" alt="CoursePlannerStorageClassDiagram">
+<img src="images/storage/CcaTrackerStorageClassDiagram.png" alt="600" width="400">
 </div>
-<div class="title">Figure 12. <code>JsonSerializableCoursePlanner</code></div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/storage/FinanceTrackerStorageClassDiagram.png" alt="FinanceTrackerStorageClassDiagram">
-</div>
-<div class="title">Figure 13. <code>JsonSerializableFinanceTracker</code></div>
+<div class="title">Figure 10. <code>JsonSerializableCcaTracker</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/storage/PlannerStorageClassDiagram.png" alt="PlannerStorageClassDiagram">
+<img src="images/storage/CoursePlannerStorageClassDiagram.png" alt="300" width="200">
 </div>
-<div class="title">Figure 14. <code>JsonSerializablePlanner</code></div>
+<div class="title">Figure 11. <code>JsonSerializableCoursePlanner</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/storage/FinanceTrackerStorageClassDiagram.png" alt="600" width="400">
+</div>
+<div class="title">Figure 12. <code>JsonSerializableFinanceTracker</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/storage/PlannerStorageClassDiagram.png" alt="600" width="400">
+</div>
+<div class="title">Figure 13. <code>JsonSerializablePlanner</code></div>
+</div>
+<div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/Storage.java">[API]</a>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/">[Package]</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Commons Component</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.jarvis.commons</code> package.</p>
+<p>The <code>commons</code> package represents a set of common classes and utilities used by
+the multiple components throughout Jarvis.</p>
+</div>
+<div class="paragraph">
+<p>Some examples are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/commons/util/JsonUtil.java"><code>JsonUtil</code></a></p>
+<div class="paragraph">
+<p>A class for formatting, reading and writing of <code>.json</code> files, heavily used by
+the <a href="#Design-Storage"><code>Storage</code></a> component.</p>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/commons/core/Messages.java"><code>Messages</code></a></p>
+<div class="paragraph">
+<p>A class that stores generic messages (i.e not specific to a particular feature)
+to be displayed to the user throughout the application.</p>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/commons/core/LogsCenter.java/"><code>LogsCenter</code></a></p>
+<div class="paragraph">
+<p>A class used by many classes for writing and displaying log messages in Jarvis'
+log file.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/commons/">[Package]</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>T   his section describes some noteworthy details on how certain features are
 implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo / Redo Feature</a></h3>
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo / Redo Feature</a></h3>
 <div class="paragraph">
 <p>This section covers in detail the undo/redo feature of JARVIS.</p>
 </div>
@@ -441,7 +518,7 @@ implemented.</p>
 Considerations section below.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.1. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p>There were several available behavioral design patterns that we were
 considering to adopt to implement our undo/redo feature in the application.</p>
@@ -751,7 +828,7 @@ considered that would influence the logic of how we implement undo/redo.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-details"><a class="link" href="#feature-details">3.1.2. Feature Details</a></h4>
+<h4 id="feature-details"><a class="link" href="#feature-details">4.1.2. Feature Details</a></h4>
 <div class="paragraph">
 <p>The application should be able to undo and redo changes made by commands to
 give the user more flexibility in their inputs. Undo and redo operations
@@ -764,13 +841,13 @@ reflected in the Activity Diagrams below.</p>
 <div class="content">
 <img src="images/undoredo/UndoCommandActivityDiagram.png" alt="UndoCommandActivityDiagram">
 </div>
-<div class="title">Figure 15. Activity Diagram for undo command</div>
+<div class="title">Figure 14. Activity Diagram for undo command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/undoredo/RedoCommandActivityDiagram.png" alt="RedoCommandActivityDiagram">
 </div>
-<div class="title">Figure 16. Activity Diagram for redo command</div>
+<div class="title">Figure 15. Activity Diagram for redo command</div>
 </div>
 <div class="paragraph">
 <p>Therefore there is a need to remember commands that change the state of the
@@ -814,14 +891,14 @@ user types in a command:</p>
 <div class="content">
 <img src="images/undoredo/InverseCommandActivityDiagram.png" alt="InverseCommandActivityDiagram">
 </div>
-<div class="title">Figure 17. Activity Diagram for how commands are remembered after their successful execution</div>
+<div class="title">Figure 16. Activity Diagram for how commands are remembered after their successful execution</div>
 </div>
 <div class="paragraph">
 <p>The section below will discuss in more detail how undo/redo is implemented.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.3. Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.3. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo feature mechanism is facilitated by <code>HistoryManager</code>.
 <code>HistoryManager</code> remembers <strong>invertible commands</strong>. These commands are stored
@@ -916,7 +993,7 @@ called.</p>
 <div class="content">
 <img src="images/undoredo/HistoryManagerModelClassDiagram.png" alt="HistoryManagerModelClassDiagram">
 </div>
-<div class="title">Figure 18. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
+<div class="title">Figure 17. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>
@@ -929,7 +1006,7 @@ undo or redo, represented by <code>UndoCommand#numberOfTimes</code> and
 <div class="content">
 <img src="images/undoredo/CommandClassDiagram.png" alt="CommandClassDiagram">
 </div>
-<div class="title">Figure 19. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
+<div class="title">Figure 18. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Below are two sequence diagrams of how a <code>UndoCommand</code> and <code>RedoCommand</code>
@@ -944,7 +1021,7 @@ executes in the program.</p>
 <div class="content">
 <img src="images/undoredo/UndoSequenceDiagramNew.png" alt="UndoSequenceDiagramNew">
 </div>
-<div class="title">Figure 20. Sequence Diagram for <code>UndoCommand</code> (undo a single command)</div>
+<div class="title">Figure 19. Sequence Diagram for <code>UndoCommand</code> (undo a single command)</div>
 </div>
 <div class="paragraph">
 <p>Below is a Sequence Diagram of how a <code>RedoCommand</code> to redo a single command
@@ -954,14 +1031,14 @@ executes in the program.</p>
 <div class="content">
 <img src="images/undoredo/RedoSequenceDiagramNew.png" alt="RedoSequenceDiagramNew">
 </div>
-<div class="title">Figure 21. Sequence Diagram for <code>RedoCommand</code> (redo a single command)</div>
+<div class="title">Figure 20. Sequence Diagram for <code>RedoCommand</code> (redo a single command)</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="user-scenario-demonstrating-undo-redo"><a class="link" href="#user-scenario-demonstrating-undo-redo">3.1.4. User Scenario demonstrating undo/redo</a></h4>
+<h4 id="user-scenario-demonstrating-undo-redo"><a class="link" href="#user-scenario-demonstrating-undo-redo">4.1.4. User Scenario demonstrating undo/redo</a></h4>
 <div class="paragraph">
 <p>Step 1. The user launches the application for the first time. The
 <code>HistoryManager</code> is initialized. <code>HistoryManager#executedCommands</code> and
@@ -1078,9 +1155,9 @@ redo actions are cleared.
 </div>
 </div>
 <div class="sect2">
-<h3 id="course-planner-feature"><a class="link" href="#course-planner-feature">3.2. Course Planner feature</a></h3>
+<h3 id="course-planner-feature"><a class="link" href="#course-planner-feature">4.2. Course Planner feature</a></h3>
 <div class="sect3">
-<h4 id="overview"><a class="link" href="#overview">3.2.1. Overview</a></h4>
+<h4 id="overview"><a class="link" href="#overview">4.2.1. Overview</a></h4>
 <div class="paragraph">
 <p>The Course Planner feature allows the user to track what courses they</p>
 </div>
@@ -1106,7 +1183,7 @@ convenient add, delete and check operations on the user&#8217;s course list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="the-course-planner-model"><a class="link" href="#the-course-planner-model">3.2.2. The Course Planner Model</a></h4>
+<h4 id="the-course-planner-model"><a class="link" href="#the-course-planner-model">4.2.2. The Course Planner Model</a></h4>
 <div class="paragraph">
 <p>The <code>CoursePlanner</code> class within the model provides an interface between the
 components of the feature and the updating of the overall model. Like other
@@ -1156,7 +1233,7 @@ printing to a displayable form, etc.</p>
 <div class="content">
 <img src="images/ModelCoursePlannerClassDiagram.png" alt="ModelCoursePlannerClassDiagram">
 </div>
-<div class="title">Figure 22. Course Model Class Diagram</div>
+<div class="title">Figure 21. Course Model Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>Every <code>Course</code> has a few non-nullable attributes - <code>Title</code>, <code>CourseCode</code>,
@@ -1166,7 +1243,7 @@ depends on the course&#8217;s data.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.3. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p>As explained above, the <code>CoursePlanner</code> is implemented by <code>Model</code> and follows
 much of the extendable OOP solution implemented within Jarvis that is common
@@ -1375,7 +1452,7 @@ of <code>{"2", "3"}</code>.</p>
 <div class="content">
 <img src="images/AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
 </div>
-<div class="title">Figure 23. AndOrNode Inheritance Diagram</div>
+<div class="title">Figure 22. AndOrNode Inheritance Diagram</div>
 </div>
 <div class="paragraph">
 <p>Using this format, a static method of the form <code>AndOrNode#createNode(T,String)</code>
@@ -1465,7 +1542,7 @@ shown below:</p>
 <div class="content">
 <img src="images/AndOrSequenceDiagramSimplified.png" alt="AndOrSequenceDiagramSimplified">
 </div>
-<div class="title">Figure 24. buildTree() Sequence Diagram</div>
+<div class="title">Figure 23. buildTree() Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class looks at each node - checks if its is an <code>Object</code>, <code>Array</code> or a
@@ -1538,7 +1615,7 @@ overloading of the <code>buildTree()</code> method.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.4. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.4. Implementation</a></h4>
 <div class="paragraph">
 <p>With the significant individual components covered, the process of the
 Course Planner can be discussed. We will be covering the <code>check</code> command
@@ -1556,7 +1633,7 @@ when the user types a <code>check</code> command.</p>
 <div class="content">
 <img src="images/CheckActivityDiagram.png" alt="TODO">
 </div>
-<div class="title">Figure 25. Check Command Activity Diagram</div>
+<div class="title">Figure 24. Check Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>Additionally, the following below shows the sequence diagram of how the
@@ -1566,14 +1643,14 @@ program checks if the user satisfies the course&#8217;s prerequisites.</p>
 <div class="content">
 <img src="images/CheckCommandSequenceDiagram.png" alt="CheckCommandSequenceDiagram">
 </div>
-<div class="title">Figure 26. CheckCommand Sequence Diagram</div>
+<div class="title">Figure 25. CheckCommand Sequence Diagram</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="finance-tracker-feature"><a class="link" href="#finance-tracker-feature">3.3. Finance Tracker feature</a></h3>
+<h3 id="finance-tracker-feature"><a class="link" href="#finance-tracker-feature">4.3. Finance Tracker feature</a></h3>
 <div class="sect3">
-<h4 id="overview-2"><a class="link" href="#overview-2">3.3.1. Overview</a></h4>
+<h4 id="overview-2"><a class="link" href="#overview-2">4.3.1. Overview</a></h4>
 <div class="paragraph">
 <p>The Finance Tracker feature allows the user to track what purchases they have
 made for the month and the list of installments that they have subscribed to.
@@ -1584,7 +1661,7 @@ of his expenses for the month.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.2. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The Finance Tracker feature closely follows the extendable OOP solution already
 implemented within AB3. In the Finance Tracker, the <code>Installment</code> objects
@@ -1653,7 +1730,7 @@ by user</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="installments"><a class="link" href="#installments">3.3.3. Installments</a></h4>
+<h4 id="installments"><a class="link" href="#installments">4.3.3. Installments</a></h4>
 <div class="paragraph">
 <p>Installments are added by the user to the FinanceTracker and are stored in an
 <code>InstallmentList</code>. The current codebase requires that all installments
@@ -1674,7 +1751,7 @@ by user</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="purchases"><a class="link" href="#purchases">3.3.4. Purchases</a></h4>
+<h4 id="purchases"><a class="link" href="#purchases">4.3.4. Purchases</a></h4>
 <div class="paragraph">
 <p>Purchases are added by the user to the FinanceTracker and are stored in a
 <code>PurchaseList</code>. The current codebase requires that all purchases <strong>must</strong> have
@@ -1695,7 +1772,7 @@ the following attributes:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="command-execution"><a class="link" href="#command-execution">3.3.5. Command Execution</a></h4>
+<h4 id="command-execution"><a class="link" href="#command-execution">4.3.5. Command Execution</a></h4>
 <div class="paragraph">
 <p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
 execution on model. The following activity diagram illustrates how an
@@ -1762,11 +1839,11 @@ in target installment being edited with the corresponding fields.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.6. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.6. Design Considerations</a></h4>
 
 </div>
 <div class="sect3">
-<h4 id="aspect-whether-to-encapsulate-fields-for-code-installment-code-and-code-purchase-code-objects"><a class="link" href="#aspect-whether-to-encapsulate-fields-for-code-installment-code-and-code-purchase-code-objects">3.3.7. Aspect: Whether to encapsulate fields for <code>Installment</code> and <code>Purchase</code> objects.</a></h4>
+<h4 id="aspect-whether-to-encapsulate-fields-for-code-installment-code-and-code-purchase-code-objects"><a class="link" href="#aspect-whether-to-encapsulate-fields-for-code-installment-code-and-code-purchase-code-objects">4.3.7. Aspect: Whether to encapsulate fields for <code>Installment</code> and <code>Purchase</code> objects.</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1832,7 +1909,7 @@ application.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code"><a class="link" href="#aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code">3.3.8. Aspect: Whether <code>ObservableList`s should be used for `InstallmentList</code></a></h4>
+<h4 id="aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code"><a class="link" href="#aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code">4.3.8. Aspect: Whether <code>ObservableList`s should be used for `InstallmentList</code></a></h4>
 <div class="paragraph">
 <p>and <code>PurchaseList</code>.</p>
 </div>
@@ -1897,9 +1974,9 @@ rendering when implementing the Ui of JARVIS.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="planner-feature"><a class="link" href="#planner-feature">3.4. Planner Feature</a></h3>
+<h3 id="planner-feature"><a class="link" href="#planner-feature">4.4. Planner Feature</a></h3>
 <div class="sect3">
-<h4 id="overview-3"><a class="link" href="#overview-3">3.4.1. Overview</a></h4>
+<h4 id="overview-3"><a class="link" href="#overview-3">4.4.1. Overview</a></h4>
 <div class="paragraph">
 <p>The planner feature in JARVIS enables users to easily organise and manage
 their different tasks in school. Users will be able to keep track of tasks
@@ -1927,7 +2004,7 @@ as add <code>Priority</code> and <code>Frequency</code> levels to them.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">3.4.2. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks
 a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
@@ -1936,7 +2013,7 @@ a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
 <div class="content">
 <img src="images/plannermodel.png" alt="plannermodel">
 </div>
-<div class="title">Figure 27. Overview of the entire Planner</div>
+<div class="title">Figure 26. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
 <p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations
@@ -1978,7 +2055,7 @@ is specified, the <code>Task</code> is appended to the end of the <code>TaskList
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.3. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-task-descriptions-in-a-task"><a class="link" href="#aspect-task-descriptions-in-a-task">Aspect: Task Descriptions in a Task</a></h5>
 <div class="ulist">
@@ -2017,9 +2094,9 @@ String <code>TaskDes</code> directly</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ccatracker-feature"><a class="link" href="#ccatracker-feature">3.5. CcaTracker Feature</a></h3>
+<h3 id="ccatracker-feature"><a class="link" href="#ccatracker-feature">4.5. CcaTracker Feature</a></h3>
 <div class="sect3">
-<h4 id="overview-4"><a class="link" href="#overview-4">3.5.1. Overview</a></h4>
+<h4 id="overview-4"><a class="link" href="#overview-4">4.5.1. Overview</a></h4>
 <div class="paragraph">
 <p>The application is able to track Ccas. Each user can have multiple Ccas and
 each Cca can have multiple equipments needed. In addition, the application is
@@ -2029,7 +2106,7 @@ can perform create, read, update and delete operations on each Cca.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">3.5.2. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>CcaTracker</code> mechanism is facilitated by <code>CcaTrackerModel</code>.</p>
 </div>
@@ -2178,7 +2255,7 @@ the <code>currentProgress</code> variable being incremented by 1.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.5.3. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-whether-to-have-subclasses-for-each-type-of-cca"><a class="link" href="#aspect-whether-to-have-subclasses-for-each-type-of-cca">Aspect: Whether to have subclasses for each type of cca.</a></h5>
 <div class="ulist">
@@ -2255,7 +2332,7 @@ CcaProgressList is nested several classes within <code>Cca</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.6. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class
 is used to manage the logging levels and logging destinations.</p>
@@ -2264,7 +2341,7 @@ is used to manage the logging levels and logging destinations.</p>
 <ul>
 <li>
 <p>The logging level can be controlled using the <code>logLevel</code> setting in the
-configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+configuration file (See <a href="#Implementation-Configuration">Section 4.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code>
@@ -2298,7 +2375,7 @@ debugging e.g. print the actual list instead of just its size</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file
 location, logging level) through the configuration file (default:
@@ -2308,7 +2385,7 @@ location, logging level) through the configuration file (default:
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -2316,7 +2393,7 @@ location, logging level) through the configuration file (default:
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -2324,7 +2401,7 @@ location, logging level) through the configuration file (default:
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -2767,4 +2844,4 @@ behavior}</em></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 12:31:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 01:21:06 UTC</div></div></div></body></html>
