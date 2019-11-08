@@ -87,13 +87,13 @@ on your PC.</p>
 home folder for the application.</p>
 </li>
 <li>
-<p>Run <code>jarvis.jar</code> to start the app. You should see the following on starting the application up:</p>
+<p>Run <code>jarvis.jar</code> to start the app. You should see something similar when starting the application up:</p>
 </li>
 </ol>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StartUpGUI.png" alt="StartUpGUI">
+<img src="images/ug/StartUpUI.png" alt="StartUpUI">
 </div>
 <div class="title">Figure 1. Jarvis' Graphical User Interface (GUI)</div>
 </div>
@@ -101,27 +101,39 @@ home folder for the application.</p>
 <p> <br></p>
 </div>
 <div class="paragraph">
-<p>Jarvis' <a href="#link-main-features">four main features</a> have been split into four distinct tabs. You can
-toggle between tabs by either clicking on the tabs themselves, pressing the <code>tab</code> key or by using
-the <code>list</code> command in each feature.</p>
+<p>In Figure 1, there are three boxes labelled with numbers - these are the shared GUI sections across all the features:</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-You can also use the <code>enter</code> key to return focus to the command box.
-</td>
-</tr>
-</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>HelpDesk</code> - Unique to each feature&#8217;s tab, it will display a list of commands you can use so you do not need to
+remember them all!</p>
+</li>
+<li>
+<p>Feature Tabs - The <a href="#link-main-features">four main features</a> of <code>Jarvis</code> have been split into distinct tabs.
+The tab that you are currently on would be underlined in red, as seen in Figure 1.
+You can also toggle between tabs by either clicking on the tabs themselves, pressing the <code>tab</code> key or by using the
+features' <code>list</code> commands.</p>
+</li>
+<li>
+<p>Command Result (top) &amp; Command Entry (bottom) Boxes - Keying commands into the Command Entry Box will cause the
+respective Command Results to show in the Command Result Box. An invalid command will result in a red border around
+the Command Entry Box and an appropriate error message will be displayed in the Command Result Box, as shown in an
+example in Figure 2 below.</p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p>You can learn more about each feature&#8217;s individual GUI and its respective commands in the coming sections.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/ErrorMessage.png" alt="ErrorMessage">
+</div>
+<div class="title">Figure 2. Adding a non-existent course into the Course Planner will result in a display like this</div>
 </div>
 <div class="paragraph">
 <p> <br></p>
+</div>
+<div class="paragraph">
+<p>You can learn more about the each feature&#8217;s individual GUI and its respective commands in the coming sections.</p>
 </div>
 </div>
 </div>
@@ -310,15 +322,35 @@ surrounded by curly braces, e.g <code>{param1 | param2}</code>.</p>
 <div class="sect1">
 <h2 id="features"><a class="link" href="#features">4. Features</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p> <br></p>
-</div>
 <div class="sect2">
 <h3 id="task-planner"><a class="link" href="#task-planner">4.1. Task Planner</a></h3>
 <div class="paragraph">
 <p>A digital planner to help you stay organized; <code>Jarvis</code> can help you cope with your interminable lists of deadlines,
 events, errands and more. Tagging and prioritizing tasks are just two of the many ways <code>Jarvis</code> will
 enable you to stay on top of everything you need to do!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/PlannerUI.png" alt="PlannerUI">
+</div>
+<div class="title">Figure 3. GUI for the Task Planner</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="paragraph">
+<p>The Planner feature of <code>Jarvis</code> has a very intuitive user interface, with three main sections - as seen in Figure 3.</p>
+</div>
+<div class="paragraph">
+<p>Each task is represented by a task card (an example of which is boxed in green in Figure 3). Each task card has the task
+description right at the top, followed by the task type, and the optional fields (if present). The icon at the bottom
+of each task card indicates whether a task has been done, or not - a red cross for tasks that have not been completed
+and a green tick for tasks that have.</p>
+</div>
+<div class="paragraph">
+<p>The default display ia a column on the left for all the tasks in the planner, and a column on the right for your
+schedule. The schedule consists two lists stacked on top of each other - the top one showing tasks happening on that
+day and the bottom showing tasks happening that week.</p>
 </div>
 <div class="sect3">
 <h4 id="adding-a-task-code-add-task-code"><a class="link" href="#adding-a-task-code-add-task-code">4.1.1. Adding a task: <code>add-task</code></a></h4>
@@ -439,6 +471,15 @@ your tasks for you!</p>
 <p>Too many tasks to comb through? Ask <code>Jarvis</code> to find a task for you based on one or more keywords that match the
 descriptions of your tasks.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/find-task.png" alt="find task">
+</div>
+<div class="title">Figure 4. Display for find-task</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
 <div class="paragraph">
 <p>Format: <code>find-task KEYWORD&#8230;&#8203;</code></p>
 </div>
@@ -469,7 +510,16 @@ find-task homework cs ma1101r</pre>
 <div class="paragraph">
 <p>Once you have completed a task (hooray!), you can let <code>Jarvis</code> know. By default on
 <code>add-task</code>, all tasks are marked as undone, represented by a <code>[✗]</code>. Upon marking the task as done, the task will be
-represented with a <code>[✓]</code>.</p>
+represented with a <code>[✓]</code>, as seen in Figure 5 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/done-task.png" alt="done task">
+</div>
+<div class="title">Figure 5. Comparison between a task that is marked as done, and one that is not</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>done-task INDEX</code></p>
@@ -483,6 +533,15 @@ represented with a <code>[✓]</code>.</p>
 <div class="paragraph">
 <p>To get a quick glimpse of all the tasks you have in your Planner that match a certain <a href="#link-attributes">attribute</a>,
 simply pull all tasks relating to that attribute.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/pull-task.png" alt="pull task">
+</div>
+<div class="title">Figure 6. Display for pull-task</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>pull-task { t/TYPE | #TAG | p/PRIORITY-LEVEL | f/FREQUENCY-LEVEL | d/DATE }</code></p>
@@ -590,13 +649,22 @@ clear-task d/12/09/2019</pre>
 monthly subscriptions and monthly spending amount.</p>
 </div>
 <div class="paragraph">
-<p>On switching to the Finance tab, you will be able to see a list of purchases on
-the left and a list of your monthly subscriptions on the right. On the bottom left, Jarvis will show the accumulative
-spending for that month, as well as how much you are left with (if you have set a spending limit).</p>
-</div>
-<div class="paragraph">
 <p>As students, we often fail to keep our spending habits in check. But do not worry, as with <code>Jarvis</code>, you will never
 have to worry about not saving enough for that new laptop or yet another trip with your friends.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/FinanceUI.png" alt="FinanceUI">
+</div>
+<div class="title">Figure 7. GUI for the Finance Tracker</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="paragraph">
+<p>In Figure 7, you will be able to see a list of purchases on
+the left and a list of your monthly subscriptions on the right. On the bottom left, Jarvis will show the accumulative
+spending for that month, as well as how much you are left with (if you have set a spending limit).</p>
 </div>
 <div class="sect3">
 <h4 id="add-a-single-use-purchase-code-add-paid-code"><a class="link" href="#add-a-single-use-purchase-code-add-paid-code">4.2.1. Add a single-use purchase: <code>add-paid</code></a></h4>
@@ -662,6 +730,15 @@ This also means that the index must exist within this list!
 <div class="paragraph">
 <p>To have a quick view of the number of cups of Gongcha you have bought over the last month, you can used <code>find-paid</code>
 to pull up purchases with descriptions matching <code>KEYWORD</code> provided.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/find-paid.png" alt="find paid">
+</div>
+<div class="title">Figure 8. Display for find-paid</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>find-paid KEYWORD</code></p>
@@ -810,6 +887,34 @@ Jarvis will export the file containing all expenditures to its current directory
 <code>Jarvis</code> can support milestone tracking, equipment management and so much more! Never has being in multiple
 CCAs been so easy.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/CcaUI.png" alt="CcaUI">
+</div>
+<div class="title">Figure 9. GUI for the CCA Tracker</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="paragraph">
+<p>All CCAs are added to a main list, with each CCA having a Progress Tracker and an Equipment List, as seen in
+Figure 9.
+Within the Progress Tracker:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Box 1 displays the percentage of milestones of the CCA that have been completed.</p>
+</li>
+<li>
+<p>Box 2 shows all the milestones assigned to that CCA.</p>
+</li>
+<li>
+<p>The area below Box 2 displays the current milestone you are at, the next milestone succeeding the current
+one, and the fraction of milestones that have been completed.</p>
+</li>
+</ol>
+</div>
 <div class="sect3">
 <h4 id="adding-a-cca-code-add-cca-code"><a class="link" href="#adding-a-cca-code-add-cca-code">4.3.1. Adding a CCA: <code>add-cca</code></a></h4>
 <div class="paragraph">
@@ -926,6 +1031,15 @@ pull up the CCA Tracker tab.</p>
 <div class="paragraph">
 <p>For a quick view of CCAs matching one or more keywords, <code>find-cca</code> will come in useful.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/find-cca.png" alt="find cca">
+</div>
+<div class="title">Figure 10. Display for find-cca</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
 <div class="paragraph">
 <p>Format: <code>find-cca KEYWORD&#8230;&#8203;</code></p>
 </div>
@@ -942,8 +1056,8 @@ find-cca canoeing guitar</pre>
 <div class="sect3">
 <h4 id="adding-progress-levels-for-a-cca-code-add-progress-code"><a class="link" href="#adding-progress-levels-for-a-cca-code-add-progress-code">4.3.6. Adding progress levels for a CCA: <code>add-progress</code></a></h4>
 <div class="paragraph">
-<p>Often, we strive to reach certain milestones in our CCAs. For example, in learning piano, you might be aiming to
-progress through the various grade levels (shown in the example below) available. With <code>add-progress</code>,
+<p>Often, we strive to reach certain milestones in our CCAs. For example, in learning the piano, you might be aiming to
+progress through the various grade levels available. With <code>add-progress</code>,
 <code>Jarvis</code> can help you set and keep track of your progress towards each milestone in each of your CCAs.</p>
 </div>
 <div class="paragraph">
@@ -964,6 +1078,19 @@ add-progress 2 p/LCP p/Corporal p/Sergeant p/Staff Sergeant p/Warrant Officer p/
 <div class="paragraph">
 <p>Each time you have made progress towards any of your milestones, let <code>Jarvis</code> know! The progress bar for each CCA
 provides a clear view of how much closer you are to their respective milestones.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/increment-progress.png" alt="increment progress">
+</div>
+<div class="title">Figure 11. Display for increment-progress</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="paragraph">
+<p>In Figure 11 above, using <code>increment-progress</code> on Swimming will raise the progress percentage from 50% to
+62.5%.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>increment-progress INDEX</code></p>
@@ -1015,8 +1142,22 @@ Note that progress can only be incremented if <code>add-progress</code> has prev
 <div class="paragraph">
 <p>NUSMods serves as a complete knowledge bank of all modules in NUS. We often use it to plan our timetables,
 map out academic routes and learn more about the variety of courses NUS has to offer.
-As the Course Planner section of <code>Jarvis</code> is thoroughly integrated with NUSMods, you will be able to consolidate all
+As the Course Planner is thoroughly integrated with NUSMods, you will be able to consolidate all
 the courses you have taken in NUS to date, as well as figure out what courses you could possibly take in the future.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/CoursePlannerUI.png" alt="CoursePlannerUI">
+</div>
+<div class="title">Figure 12. GUI for the Course Planner</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="paragraph">
+<p>The default display for the Course Planner is a list of courses on the left and an empty Result Box on the right -
+as shown in Figure 12. This box will display different pieces of information depending on the commands
+entered.</p>
 </div>
 <div class="sect3">
 <h4 id="adding-a-course-code-add-course-code"><a class="link" href="#adding-a-course-code-add-course-code">4.4.1. Adding a course: <code>add-course</code></a></h4>
@@ -1062,8 +1203,18 @@ delete-course 2</pre>
 <div class="sect3">
 <h4 id="looking-up-a-course-s-information-code-lookup-code"><a class="link" href="#looking-up-a-course-s-information-code-lookup-code">4.4.3. Looking up a course&#8217;s information: <code>lookup</code></a></h4>
 <div class="paragraph">
-<p>You can also retrieve information about a specific course - such as name, course code,
-number of credits and its prerequisites.</p>
+<p>You can also retrieve information about a specific course - such as course title, course code,
+number of credits and its prerequisites. The information will be displayed in the Result Box on the right of
+the Course Planner, as seen below in Figure 13.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/lookup.png" alt="lookup">
+</div>
+<div class="title">Figure 13. Display for lookup</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>lookup c/COURSECODE</code></p>
@@ -1083,6 +1234,15 @@ number of credits and its prerequisites.</p>
 <p>If you are not sure if you can take a certain course next semester, this command would come in handy. Simply <code>check</code>
 the course in question.The result is dependent on the courses you have added to your list. <code>Jarvis</code> will
 display a very helpful tree to show you what requirements you need for each course.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/check.png" alt="check">
+</div>
+<div class="title">Figure 14. Display for check</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>check c/COURSECODE</code></p>
@@ -1301,6 +1461,19 @@ commands.
 <div class="sect3">
 <h4 id="list-the-number-of-commands-you-can-undo-or-redo-code-list-history-code"><a class="link" href="#list-the-number-of-commands-you-can-undo-or-redo-code-list-history-code">4.5.3. list the number of commands you can undo or redo: <code>list-history</code></a></h4>
 <div class="paragraph">
+<p><code>Jarvis</code> can provide you with the maximum number of commands you can <code>undo</code> and <code>redo</code> - which will be shown
+in the Command Result Box.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ug/list-history.png" alt="list history">
+</div>
+<div class="title">Figure 15. Display for list-history</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="paragraph">
 <p>Format: <code>list-history</code></p>
 </div>
 <div class="paragraph">
@@ -1509,4 +1682,4 @@ Planner, as long as it is available on NUSMods as well.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 06:57:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 15:01:14 UTC</div></div></div></body></html>
