@@ -31,9 +31,10 @@
 <ul class="sectlevel2">
 <li><a href="#task-planner-2">6.1. Task Planner</a></li>
 <li><a href="#finance-tracker-2">6.2. Finance Tracker</a></li>
-<li><a href="#cca-tracker-2">6.3. Cca Tracker</a></li>
-<li><a href="#course-planner-2">6.4. Course Planner</a></li>
-<li><a href="#app-history-2">6.5. App History</a></li>
+<li><a href="#course-planner-2">6.3. Course Planner</a></li>
+<li><a href="#cca-tracker-2">6.4. Cca Tracker</a></li>
+<li><a href="#course-planner-3">6.5. Course Planner</a></li>
+<li><a href="#app-history-2">6.6. App History</a></li>
 </ul>
 </li>
 </ul>
@@ -586,7 +587,7 @@ clear-task d/12/09/2019</pre>
 <h3 id="finance-tracker"><a class="link" href="#finance-tracker">4.2. Finance Tracker</a></h3>
 <div class="paragraph">
 <p>Introducing the Finance Tracker feature of Jarvis - responsible for keeping track of all your purchases,
-monthly subscriptions and debts owed.</p>
+monthly subscriptions and monthly spending amount.</p>
 </div>
 <div class="paragraph">
 <p>On switching to the Finance tab, you will be able to see a list of purchases on
@@ -796,111 +797,6 @@ Jarvis will export the file containing all expenditures to its current directory
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-owed-amounts-code-owe-code-code-debt-code-v2-0"><a class="link" href="#adding-owed-amounts-code-owe-code-code-debt-code-v2-0">4.2.10. Adding owed amounts: <code>owe</code> &amp; <code>debt</code> [v2.0]</a></h4>
-<div class="paragraph">
-<p>A night out with friends usually ends in someone paying first and subsequently, splitting the tab with the rest of the
-group. If you need an easy way of remembered who owes whom, let <code>Jarvis</code> take care of your debts.</p>
-</div>
-<div class="paragraph">
-<p><code>add-owe</code>: someone else paid the bill, and now you owe him/her.</p>
-</div>
-<div class="paragraph">
-<p><code>add-debt</code>: you paid the bill, and now people owe you.</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="paragraph">
-<p><code>add-owe d/DESCRIPTION n/PERSON a/AMOUNT</code></p>
-</div>
-<div class="paragraph">
-<p>or</p>
-</div>
-<div class="paragraph">
-<p><code>add-debt d/DESCRIPTION n/PERSON a/AMOUNT</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-13"><a class="link" href="#example-13">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>add-owe n/Jamie a/5.50
-add-debt n/Sean a/10</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="splitting-a-tab-code-add-tab-code-v2-0"><a class="link" href="#splitting-a-tab-code-add-tab-code-v2-0">4.2.11. Splitting a Tab: <code>add-tab</code> [v2.0]</a></h4>
-<div class="paragraph">
-<p>You settled the bill first this time? Let <code>Jarvis</code> do the math!</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add-tab d/DESCRIPTION a/TOTAL-AMOUNT n/PERSON&#8230;&#8203;</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-14"><a class="link" href="#example-14">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>add-tab d/pizza party a/20 n/Alice n/Bob n/Charlie</pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The above example is equivalent to adding these commands separately:<br>
-<code>add paid d/pizza party a/5</code><br>
-<code>add-debt n/Alice a/5</code><br>
-<code>add-debt n/Bob a/5</code><br>
-<code>add-debt n/Charlie a/5</code>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="mark-a-debt-owe-as-paid-code-paid-debt-code-v2-0"><a class="link" href="#mark-a-debt-owe-as-paid-code-paid-debt-code-v2-0">4.2.12. Mark a debt/owe as paid: <code>paid-debt</code> - [v2.0]</a></h4>
-<div class="paragraph">
-<p>Updating settled debts can be easily done through <code>paid-debt</code>. Soon <code>Jarvis</code> will be able to mark your debts or owed
-amounts as done.</p>
-</div>
-<div class="paragraph">
-<p><code>done-owe</code> should be used when someone has paid you back for money they have owed you.</p>
-</div>
-<div class="paragraph">
-<p><code>done-debt</code> should be used when you have paid someone back from money you owed them.</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="paragraph">
-<p><code>done-debt INDEX</code></p>
-</div>
-<div class="paragraph">
-<p>or</p>
-</div>
-<div class="paragraph">
-<p><code>done-owe INDEX</code></p>
-</div>
-<div class="paragraph">
-<p>where <code>INDEX</code> corresponds to the <strong>one based</strong> index shown on the list of debts under the Finance tab. This also
-means that the index must exist within this list!</p>
-</div>
-<div class="sect4">
-<h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>done-owe INDEX 1
-done-debt INDEX 2</pre>
-</div>
-</div>
 <div class="paragraph">
 <p> <br></p>
 </div>
@@ -943,7 +839,7 @@ the name of the cca and the type of the CCA.</p>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
+<h5 id="example-13"><a class="link" href="#example-13">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-cca n/Canoeing t/sport
@@ -962,7 +858,7 @@ add-cca n/Red cross t/uniformedGroup e/uniform e/first aid kit e/stretcher e/ber
 <p>Format: <code>delete-cca INDEX</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
+<h5 id="example-14"><a class="link" href="#example-14">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>delete-cca 1</pre>
@@ -993,7 +889,7 @@ know so that the changes to your CCAs can be updated!</p>
 <p>Format: <code>edit-cca INDEX { n/NAME | t/TYPE | e/EQUIPMENT&#8230;&#8203; | p/MILESTONE&#8230;&#8203; | l/PROGRESS-LEVEL }</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
+<h5 id="example-15"><a class="link" href="#example-15">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>edit-cca 1 n/Piano t/performingArt e/piano e/musical score e/metronome e/tuner e/piano book
@@ -1034,7 +930,7 @@ pull up the CCA Tracker tab.</p>
 <p>Format: <code>find-cca KEYWORD&#8230;&#8203;</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
+<h5 id="example-16"><a class="link" href="#example-16">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>find-cca swimming
@@ -1054,7 +950,7 @@ progress through the various grade levels (shown in the example below) available
 <p>Format: <code>add-progress INDEX p/MILESTONE&#8230;&#8203;</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-20"><a class="link" href="#example-20">Example</a></h5>
+<h5 id="example-17"><a class="link" href="#example-17">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-progress 1 p/Grade 1 p/Grade 2 p/Grade 3 p/Grade 4 p/Grade 5 p/Grade 6 p/Grade 7 p/Grade 8 p/Diploma
@@ -1073,7 +969,7 @@ provides a clear view of how much closer you are to their respective milestones.
 <p>Format: <code>increment-progress INDEX</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-21"><a class="link" href="#example-21">Example</a></h5>
+<h5 id="example-18"><a class="link" href="#example-18">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>increment-progress 1</pre>
@@ -1102,7 +998,7 @@ Note that progress can only be incremented if <code>add-progress</code> has prev
 <p>Format: <code>add-cca n/NAME t/TYPE [e/EQUIPMENT]&#8230;&#8203; [d/TRAINING DATE]&#8230;&#8203;</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
+<h5 id="example-19"><a class="link" href="#example-19">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-cca n/Piano t/performingArt d/1/12/2019 d/7/12/2019</pre>
@@ -1135,7 +1031,7 @@ the courses you have taken in NUS to date, as well as figure out what courses yo
 want to add.</p>
 </div>
 <div class="sect4">
-<h5 id="example-23"><a class="link" href="#example-23">Example</a></h5>
+<h5 id="example-20"><a class="link" href="#example-20">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>add-course c/CS1010
@@ -1154,7 +1050,7 @@ or by its course code.</p>
 <p>Format: <code>delete-course {c/COURSECODE | INDEX}</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-24"><a class="link" href="#example-24">Example</a></h5>
+<h5 id="example-21"><a class="link" href="#example-21">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>delete-course c/CS1010
@@ -1173,7 +1069,7 @@ number of credits and its prerequisites.</p>
 <p>Format: <code>lookup c/COURSECODE</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-25"><a class="link" href="#example-25">Example</a></h5>
+<h5 id="example-22"><a class="link" href="#example-22">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>lookup c/CS1010</pre>
@@ -1192,7 +1088,7 @@ display a very helpful tree to show you what requirements you need for each cour
 <p>Format: <code>check c/COURSECODE</code></p>
 </div>
 <div class="sect4">
-<h5 id="example-26"><a class="link" href="#example-26">Example</a></h5>
+<h5 id="example-23"><a class="link" href="#example-23">Example</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre>check c/CS1010</pre>
@@ -1335,7 +1231,7 @@ supplied, then it is taken to be the default value of <strong>1</strong>.
 </table>
 </div>
 <div class="sect4">
-<h5 id="example-27"><a class="link" href="#example-27">Example</a></h5>
+<h5 id="example-24"><a class="link" href="#example-24">Example</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1378,7 +1274,7 @@ supplied, then it is taken to be the default value of <strong>1</strong>.
 </table>
 </div>
 <div class="sect4">
-<h5 id="example-28"><a class="link" href="#example-28">Example</a></h5>
+<h5 id="example-25"><a class="link" href="#example-25">Example</a></h5>
 <div class="paragraph">
 <p><code>redo</code>&#8201;&#8212;&#8201;This command will redo the latest command undone by the user.
 It is equivalent to the command <code>redo 1</code></p>
@@ -1524,26 +1420,30 @@ Planner, as long as it is available on NUSMods as well.</p>
 <li>
 <p><code>export {csv | txt | xlsx} f/FILENAME</code> [v2.0]</p>
 </li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="course-planner-2"><a class="link" href="#course-planner-2">6.3. Course Planner</a></h3>
+<div class="ulist">
+<ul>
 <li>
-<p><code>add-owe d/DESCRIPTION n/PERSON a/AMOUNT</code> [v2.0]</p>
+<p><code>add-course c/COURSECODE&#8230;&#8203;</code></p>
 </li>
 <li>
-<p><code>add-debt d/DESCRIPTION n/PERSON a/AMOUNT</code> [v2.0]</p>
+<p><code>delete-course {c/COURSECODE | INDEX}</code></p>
 </li>
 <li>
-<p><code>add-tab d/DESCRIPTION a/TOTAL-AMOUNT n/PERSON&#8230;&#8203;</code></p>
+<p><code>lookup c/COURSECODE</code></p>
 </li>
 <li>
-<p><code>done-debt INDEX</code></p>
-</li>
-<li>
-<p><code>done-owe INDEX</code></p>
+<p><code>check c/COURSECODE</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="cca-tracker-2"><a class="link" href="#cca-tracker-2">6.3. Cca Tracker</a></h3>
+<h3 id="cca-tracker-2"><a class="link" href="#cca-tracker-2">6.4. Cca Tracker</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1574,7 +1474,7 @@ Planner, as long as it is available on NUSMods as well.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="course-planner-2"><a class="link" href="#course-planner-2">6.4. Course Planner</a></h3>
+<h3 id="course-planner-3"><a class="link" href="#course-planner-3">6.5. Course Planner</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1593,7 +1493,7 @@ Planner, as long as it is available on NUSMods as well.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="app-history-2"><a class="link" href="#app-history-2">6.5. App History</a></h3>
+<h3 id="app-history-2"><a class="link" href="#app-history-2">6.6. App History</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1609,4 +1509,4 @@ Planner, as long as it is available on NUSMods as well.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 05:56:02 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 06:57:11 UTC</div></div></div></body></html>
