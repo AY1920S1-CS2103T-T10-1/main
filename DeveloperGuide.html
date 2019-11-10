@@ -1239,9 +1239,6 @@ redo actions are cleared.
 <p>The feature offers updated information on courses offered by NUS, along with
 convenient add, delete and check operations on the user&#8217;s course list.</p>
 </div>
-<div class="paragraph">
-<p>The <code>CoursePlanner</code></p>
-</div>
 </div>
 <div class="sect3">
 <h4 id="the-course-planner-model"><a class="link" href="#the-course-planner-model">4.2.2. The Course Planner Model</a></h4>
@@ -1713,71 +1710,55 @@ program checks if the user satisfies the course&#8217;s prerequisites.</p>
 <div class="sect3">
 <h4 id="overview-2"><a class="link" href="#overview-2">4.3.1. Overview</a></h4>
 <div class="paragraph">
-<p>The Finance Tracker feature allows the user to track what purchases they have
-made for the month and the list of installments that they have subscribed to.
-Such installments would be added to their purchases once a month. The user
-can store the information of the description and the amount of both purchases
-and installments. Furthermore, the user can set a monthly limit to keep track
-of his expenses for the month.</p>
+<p>The Finance Tracker feature allows the user to track their</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Purchases</p>
+</li>
+<li>
+<p>Monthly subscriptions (aka Installments)</p>
+</li>
+<li>
+<p>Total &amp; remaining spending</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The feature offers the user to view his purchases and installments in two
+separate lists, as well as be able to add, delete, find, edit these items.
+Furthermore, the feature keeps track of the overall spending by the user
+for the month, and if the user has set a limit, the feature tracks their
+remaining available spending.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.2. Implementation</a></h4>
+<h4 id="the-finance-tracker-model"><a class="link" href="#the-finance-tracker-model">4.3.2. The Finance Tracker Model</a></h4>
 <div class="paragraph">
-<p>The Finance Tracker feature closely follows the extendable OOP solution already
-implemented within AB3. In the Finance Tracker, the <code>Installment</code> objects
-(containing <code>InstallmentDescription</code> and <code>InstallmentMoneyPaid</code> objects) and
-the <code>Purchase</code> objects (containing <code>PurchaseDescription</code> and
-<code>PurchaseMoneySpent</code> objects) manage most aspects related to this feature.</p>
+<p>The <code>FinanceTracker</code> class within the model provides an interface between the
+components of the feature and the updating of the overall model. Like other
+features, <code>Model</code> is associated with the finance tracker feature by
+implementing <code>FinanceTrackerModel</code>, from which <code>Model</code> implements.</p>
 </div>
 <div class="paragraph">
-<p>The finance tracker mechanism is facilitated by <code>FinanceTrackerModel</code>.</p>
+<p>Some of the more significant methods within the <code>FinanceTracker</code> are shown
+below:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Model#getFinanceTracker()</code> - Gets the <code>FinanceTracker</code> instance</p>
+<p><code>Model#addPurchase(Purchase)</code> - Adds a single use payment to the top of the
+list</p>
 </li>
 <li>
-<p><code>Model#getPurchase(index)</code> - Retrieves the purchase at that index</p>
-</li>
-<li>
-<p><code>Model#updateFilteredPurchaseList(Predicate)</code> - Updates the filter of the
-purchase list with the predicate</p>
-</li>
-<li>
-<p><code>Model#getFilteredPurchaseList()</code> - Retrieves the list of purchases with
-current predicate applied</p>
-</li>
-<li>
-<p><code>Model#addPurchase(Purchase)</code> - Adds a single use payment to the top of the list</p>
-</li>
-<li>
-<p><code>Model#deletePurchase(index)</code> - Deletes single use payment at that index</p>
-</li>
-<li>
-<p><code>Model#hasPurchase(Purchase)</code> - Checks for the existence of the purchase</p>
-</li>
-<li>
-<p><code>Model#getInstallment(index)</code> - Retrieves the installment at that index</p>
-</li>
-<li>
-<p><code>Model#updateFilteredInstallmentList(Predicate)</code> - Updates the filter of the
-installment list with the predicate</p>
-</li>
-<li>
-<p><code>Model#getFilteredInstallmentList()</code> - Retrieves the list of installments
-with current predicate applied</p>
+<p><code>Model#deletePurchase(Index)</code> - Deletes single use payment at that index</p>
 </li>
 <li>
 <p><code>Model#addInstallment(Installment)</code> - Adds an installment</p>
 </li>
 <li>
-<p><code>Model#deleteInstallment(index)</code> - Deletes installment at that index</p>
-</li>
-<li>
-<p><code>Model#hasInstallment(Installment)</code> - Checks for the existence of the same
-installment in the finance tracker</p>
+<p><code>Model#deleteInstallment(Index)</code> - Deletes installment at that index</p>
 </li>
 <li>
 <p><code>Model#hasSimilarInstallment(Installment)</code> - Checks for the existence of an
@@ -1785,40 +1766,48 @@ installment with the same description in the finance tracker</p>
 </li>
 <li>
 <p><code>Model#setInstallment(Installment, Installment)</code> - Replaces an existing
-installment with a new installment for editing</p>
-</li>
-<li>
-<p><code>Model#setMonthlyLimit(MonthlyLimit)</code> - Sets the monthly limit for spending</p>
-</li>
-<li>
-<p><code>Model#getMonthlyLimit()</code> - Retrieves the monthly limit if it has been set
-by user</p>
+installment with a new installment</p>
 </li>
 <li>
 <p><code>Model#calculateTotalSpending()</code> - Calculates the total expenditure by the
 user for this month</p>
 </li>
 <li>
-<p><code>Model#getTotalSpending()</code> - Returns the total expenditure by the user to be
-rendered onto Ui</p>
-</li>
-<li>
-<p><code>Model#calculateRemainingAmount()</code> - Calculates the remaining amount
+<p><code>Model#calculateRemainingAmount()</code> - Calculates the remaining spending amount
 available to user</p>
-</li>
-<li>
-<p><code>Model#getRemainingAmount()</code> - Returns the remaining amount available to
-user to be rendered onto Ui</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>The Finance Tracker feature closely follows the extendable OOP solution already
+implemented within AB3. In the Finance Tracker, the <code>Installment</code> objects and
+the <code>Purchase</code> objects manage most aspects related to this feature. These
+objects are stored in their respective <code>ObservableList</code> - <code>InstallmentList</code>
+and <code>PurchaseList</code>, which provide an abstraction with <code>add</code>, <code>delete</code>, and
+<code>set</code> operations that are called by <code>FinanceTracker</code> and its model.</p>
+</div>
+<div class="paragraph">
+<p>Shown below is the class diagram for the Finance Tracker.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/finance-tracker/ModelFinanceTrackerClassDiagram.png" alt="ModelFinanceTrackerClassDiagram">
+</div>
+<div class="title">Figure 33. Finance Tracker Class Diagram</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="installments"><a class="link" href="#installments">4.3.3. Installments</a></h4>
+<h4 id="finance-tracker-components"><a class="link" href="#finance-tracker-components">4.3.3. Finance Tracker Components</a></h4>
 <div class="paragraph">
-<p>Installments are added by the user to the FinanceTracker and are stored in an
-<code>InstallmentList</code>. The current codebase requires that all installments
-<strong>must</strong> have the following attributes:</p>
+<p>As mentioned above, the Finance Tracker contains <code>Installment</code> and <code>Purchase</code>
+objects.</p>
+</div>
+<div class="sect4">
+<h5 id="installments"><a class="link" href="#installments">Installments</a></h5>
+<div class="paragraph">
+<p>Installments are monthly subscriptions added by the user to the Finance
+Tracker and are stored in an <code>InstallmentList</code>. The current codebase requires
+that all installments <strong>must</strong> have the following <strong>non-nullable</strong> attributes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1830,16 +1819,13 @@ user to be rendered onto Ui</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>These attributes are <strong>non-nullable</strong>*.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="purchases"><a class="link" href="#purchases">4.3.4. Purchases</a></h4>
+<div class="sect4">
+<h5 id="purchases"><a class="link" href="#purchases">Purchases</a></h5>
 <div class="paragraph">
-<p>Purchases are added by the user to the FinanceTracker and are stored in a
-<code>PurchaseList</code>. The current codebase requires that all purchases <strong>must</strong> have
-the following attributes:</p>
+<p>Purchases are single use payments added by the user to the Finance Tracker
+and are stored in a <code>PurchaseList</code>. The current codebase requires that all
+purchases <strong>must</strong> have the following <strong>non-nullable</strong> attributes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1851,15 +1837,61 @@ the following attributes:</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-details-2"><a class="link" href="#feature-details-2">4.3.4. Feature Details</a></h4>
 <div class="paragraph">
-<p>These attributes are <strong>non-nullable</strong>*.</p>
+<p>The application should be able to add and delete both types of objects.
+Furthermore, it should be able to find specific purchases and allow editing of
+installments by their index in the <code>InstallmentList</code>.</p>
+</div>
+<div class="paragraph">
+<p>We will be focusing on the editing of
+installments.</p>
+</div>
+<div class="sect4">
+<h5 id="editing-an-installment"><a class="link" href="#editing-an-installment">Editing an installment</a></h5>
+<div class="paragraph">
+<p>The user has to specify the index of the installment he wishes
+to edit, as well as any of the fields he wishes to change. If the index does
+not exist, the system will inform the user of the error. As long as the
+fields provided by the user to be edited are valid (prefixed with "d/" and
+"a/"), then the correct installment will be accurately edited. This is
+reflected in the Activity Diagram below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+An index is considered invalid if the numerical value provided is less
+than or equal to zero, or greater than the largest index in <code>InstallmentList</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/finance-tracker/EditInstallmentActivityDiagram.png" alt="EditInstallmentActivityDiagram">
+</div>
+<div class="title">Figure 34. Activity Diagram for edit-install command</div>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="command-execution"><a class="link" href="#command-execution">4.3.5. Command Execution</a></h4>
 <div class="paragraph">
-<p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
-execution on model. The following activity diagram illustrates how an
+<p>For brevity&#8217;s sake, we will illustrate only 2 specific commands and its
+executions on model. These two commands are the <code>edit-install</code> and the
+<code>delete-paid</code> commands.</p>
+</div>
+<div class="sect4">
+<h5 id="command-code-edit-install-code"><a class="link" href="#command-code-edit-install-code">Command <code>edit-install</code></a></h5>
+<div class="paragraph">
+<p>The following activity diagram illustrates how an
 <code>Installment</code> is edited when a user types in a <code>edit-install</code> command:</p>
 </div>
 <div class="paragraph">
@@ -1903,7 +1935,7 @@ This in turns calls the
 <code>#InstallmentList#setInstallment(Installment, Installment)</code> method.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. This <code>#InstallmentList#setInstallment(Installment, Installment)</code>
+<p>Step 5. This <code>InstallmentList#setInstallment(Installment, Installment)</code>
 method first finds the <code>Installment</code> based on its corresponding index. Then,
 it sets the edited installment at the index found earlier.</p>
 </div>
@@ -1914,146 +1946,145 @@ it sets the edited installment at the index found earlier.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-TLDR: The calling of the <code>#setInstallment</code> method at the <code>FinanceTracker</code>
+TLDR: The calling of the <code>#setInstallment</code> method at the <code>Model</code>
 level triggers a cascading series of <code>#setInstallment</code> method which culminates
 in target installment being edited with the corresponding fields.
 </td>
 </tr>
 </table>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/finance-tracker/EditInstallmentSequenceDiagram.png" alt="EditInstallmentSequenceDiagram">
+</div>
+<div class="title">Figure 35. Sequence Diagram for edit-install command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="command-code-delete-paid-code"><a class="link" href="#command-code-delete-paid-code">Command <code>delete-paid</code></a></h5>
+<div class="paragraph">
+<p>The following activity diagram illustrates how a
+<code>Purchase</code> is deleted when a user types in a <code>delete-paid</code> command:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The
+<code>FinanceTracker</code> is initialized. Assume that a valid <code>Purchase</code> has already
+been added to the <code>PurchaseList</code> in <code>FinanceTracker</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>delete-paid 1</code> command to delete an existing
+Purchase in the FinanceTracker. An <code>RemovePaidCommandParser</code> object is
+created and its <code>#parse</code> method is called. The parse method returns a new
+<code>RemovePaidCommand</code> object.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <code>RemovePaidCommand</code> object is executed on the model. The
+<code>RemovePaidCommand#execute</code> method is called. In this method,
+<code>Model#deletePurchase(Index)</code> method is called.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>RemovePaidCommand#execute</code> method first checks for whether the
+index is within the size of PurchaseList.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
+methods in the <code>FinanceTracker</code> class. As such, the
+<code>FinanceTracker#deletePurchase(Index)</code> method is called.
+This in turns calls the`#PurchaseList#deletePurchase(Index)` method.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. This <code>PurchaseList#deletePurchase(Index)</code> method will then delete
+the corresponding purchase at the given index.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TLDR: The calling of the <code>#deletePurchase</code> method at the <code>Model</code>
+level triggers a cascading series of <code>#deletePurchase</code> method which
+culminates in target purchase being deleted from model.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/finance-tracker/DeletePurchaseSequenceDiagram.png" alt="DeletePurchaseSequenceDiagram">
+</div>
+<div class="title">Figure 36. Sequence Diagram for delete-paid command</div>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.6. Design Considerations</a></h4>
-
+<div class="paragraph">
+<p>There were several design choices that we had to consider for the
+implementation of the Finance Tracker feature.</p>
 </div>
-<div class="sect3">
-<h4 id="aspect-whether-to-encapsulate-fields-for-code-installment-code-and-code-purchase-code-objects"><a class="link" href="#aspect-whether-to-encapsulate-fields-for-code-installment-code-and-code-purchase-code-objects">4.3.7. Aspect: Whether to encapsulate fields for <code>Installment</code> and <code>Purchase</code> objects.</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (Current choice):</strong> Encapsulate fields into separate classes.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros:</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div class="sect4">
+<h5 id="aspect-encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects"><a class="link" href="#aspect-encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects">Aspect: Encapsulation of fields for <code>Installment</code> and <code>Purchase</code> objects.</a></h5>
+<div class="sect5">
+<h6 id="current-choice"><a class="link" href="#current-choice">Current choice</a></h6>
+<div class="paragraph">
+<p>Our current choice was to encapsulate the constituent objects in <code>Installment</code>
+and <code>Purchase</code> objects in their own wrapper classes. As mentioned above,
+<code>Installment</code> would contain <code>InstallmentDescription</code> and <code>InstallmentMoneyPaid</code>
+objects while <code>Purchase</code> would contain <code>PurchaseDescription</code> and
+<code>PurchaseMoneySpent</code> objects.</p>
 </div>
 <div class="paragraph">
-<p>Increases OOP to allow better manipulation of objects and makes objects more
-extensible.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Cons:</p>
-</li>
-</ul>
+<p>This would increase OOP, which would provide a clearer modular structure to
+hide implementation details. Furthermore, this would also allow the objects to
+be re-used as they are more extensible, which is something we had to consider
+for subsequent features.</p>
 </div>
 <div class="paragraph">
-<p>More code needed.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 2:</strong> Use primitive Java data types for fields in <code>Installment</code>
-and <code>Purchase</code> objects.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros:</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>In further development of our application, increasing OOP would also allow
+developers to maintain the application more easily and hopefully aid in
+quicker development since the code is easier to read and maintain.</p>
 </div>
 <div class="paragraph">
-<p>Less code needed.</p>
+<p>However, as we had already begun implementing some basic methods, making
+this decision resulted in a steep increase in code as everything had to
+abstracted into separate classes. Regardless, we still believed that the
+right decision was made as it made subsequent implementation easier.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Cons:</p>
-</li>
-</ul>
+</div>
+<div class="sect5">
+<h6 id="strong-alternative-strong"><a class="link" href="#strong-alternative-strong"><strong>Alternative</strong></a></h6>
+<div class="paragraph">
+<p>The alternative would have been to leave the corresponding fields as
+primitive data types. This would have been the easier alternative at the time
+as it was the original implementation. Furthermore, our team thought that
+since the <code>Installment</code> and <code>Purchase</code> objects were not extremely complex,
+we could go without further encapsulation.</p>
 </div>
 <div class="paragraph">
-<p>Less extensible as all data contained is primitive.</p>
+<p>However, we decided that in the long-term vision of the application to
+continue to be developed, we should increase OOP as much as possible.</p>
 </div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="our-thoughts-4"><a class="link" href="#our-thoughts-4">Our Thoughts</a></h5>
 <div class="paragraph">
-<p>We ultimately went with alternative #1 as it allowed us to better practice
-OOP, providing a clear modular structure for abstracting data types in which
-implementation details are hidden. Furthermore, it would make the codebase
-easier to maintain. The objects created can also be reused across the
-application.</p>
+<p>In general, our decision was based primarily on following good software
+engineering principles and providing the ability to allow for better
+understanding and maintenance of our code base in the future. Thus,
+we went with the first choice.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code"><a class="link" href="#aspect-whether-code-observablelist-s-should-be-used-for-installmentlist-code">4.3.8. Aspect: Whether <code>ObservableList`s should be used for `InstallmentList</code></a></h4>
-<div class="paragraph">
-<p>and <code>PurchaseList</code>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (Current choice):</strong> Implement them as <code>ObservableList</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros:</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Easier to manipulate for JavaFx.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Cons:</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Potentially complicated nesting when passing arguments to it</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 2:</strong> Implement them as normal <code>List`s e.g. `ArrayList</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros:</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Does not require predicates to be passed in.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Cons:</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Might be more complicated when rendering in Javafx.</p>
-</div>
-<div class="paragraph">
-<p>We ultimately went with alternative #1 as it provided better support for
-rendering when implementing the Ui of JARVIS.</p>
 </div>
 </div>
 </div>
@@ -2088,7 +2119,7 @@ as add <code>Priority</code> and <code>Frequency</code> levels to them.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.2. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.4.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks
 a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
@@ -2097,7 +2128,7 @@ a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
 <div class="content">
 <img src="images/plannermodel.png" alt="plannermodel">
 </div>
-<div class="title">Figure 33. Overview of the entire Planner</div>
+<div class="title">Figure 37. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
 <p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations
@@ -2190,7 +2221,7 @@ can perform create, read, update and delete operations on each Cca.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.2. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.5.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>CcaTracker</code> mechanism is facilitated by <code>CcaTrackerModel</code>.</p>
 </div>
@@ -2928,4 +2959,4 @@ behavior}</em></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 02:14:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 02:33:39 UTC</div></div></div></body></html>
