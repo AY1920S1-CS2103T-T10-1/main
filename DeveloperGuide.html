@@ -306,7 +306,7 @@ of diagram.
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="paragraph">
-<p>The <code>Model</code> API is responsible for interacting with the data in JARVIS including
+<p>The <code>Model</code> API is responsible for interacting with the data in <code>Jarvis</code> including
 the various aspects such as user&#8217;s preferences, command history,
 finance management, cca information, courses and schedule information.</p>
 </div>
@@ -465,7 +465,7 @@ the storage for <code>UserPrefs</code>, <code>FinanceTracker</code>, <code>CcaTr
 <div class="title">Figure 15. <code>StorageManager</code> class</div>
 </div>
 <div class="paragraph">
-<p>Each feature of JARVIS is able to save its information to local storage
+<p>Each feature of <code>Jarvis</code> is able to save its information to local storage
 in <code>JSON</code> format, by adapting each feature component into
 <code>JsonSerializable{Component Name}</code> class.</p>
 </div>
@@ -553,7 +553,7 @@ implemented.</p>
 <div class="sect2">
 <h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo / Redo Feature</a></h3>
 <div class="paragraph">
-<p>This section covers in detail the undo/redo feature of JARVIS.</p>
+<p>This section covers in detail the undo/redo feature of <code>Jarvis</code>.</p>
 </div>
 <div class="paragraph">
 <p>We will cover these main points:</p>
@@ -2093,9 +2093,10 @@ we went with the first choice.</p>
 <div class="sect3">
 <h4 id="overview-3"><a class="link" href="#overview-3">4.4.1. Overview</a></h4>
 <div class="paragraph">
-<p>The planner feature in JARVIS enables users to easily organise and manage
+<p>The planner feature in <code>Jarvis</code> enables users to easily organise and manage
 their different tasks in school. Users will be able to keep track of tasks
-they have done, and tasks they have yet to do.</p>
+they have done, tasks they have yet to do, and sort these tasks by
+different attributes like task type and priority levels.</p>
 </div>
 <div class="paragraph">
 <p>There are three types of tasks in the planner:</p>
@@ -2122,7 +2123,11 @@ as add <code>Priority</code> and <code>Frequency</code> levels to them.</p>
 <h4 id="implementation-4"><a class="link" href="#implementation-4">4.4.2. Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks
-a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
+a user has. Each task has a <code>TaskType</code> and <code>Status</code> and may also have a <code>Priority</code> level,
+<code>Frequency</code> level and any number of <code>Tag</code> objects.</p>
+</div>
+<div class="paragraph">
+<p>A simple outline of the <code>Planner</code> can be seen below, in Figure 26.</p>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
@@ -2131,7 +2136,7 @@ a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
 <div class="title">Figure 37. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
-<p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations
+<p>The <code>Model</code> in <code>Jarvis</code> extends <code>PlannerModel</code> which facilitates all operations
 necessary to carry out commands by the user.</p>
 </div>
 <div class="ulist">
@@ -2164,9 +2169,56 @@ is specified, the <code>Task</code> is appended to the end of the <code>TaskList
 <code>Planner</code>.</p>
 </li>
 <li>
+<p><code>Model#markTaskAsDone(Index i)</code> - Changes the <code>Status</code> of a <code>Task</code> at the given
+<code>Index</code> from <code>DONE</code> to <code>NOT_DONE</code></p>
+</li>
+<li>
 <p><code>Model#getTasks()</code>&#8201;&#8212;&#8201;Returns the <code>TaskList</code> in the <code>Planner</code>.</p>
 </li>
+<li>
+<p><code>Model#getTask(Index index)</code> - Retrieves the <code>Task</code> at the specified <code>Index</code> of
+the <code>TaskList</code></p>
+</li>
+<li>
+<p><code>Model#updateFilteredTaskList(Predicate&lt;Task&gt; predicate)</code> - Updates the <code>FilteredList</code> in the
+<code>Planner</code> according to the given <code>Predicate</code>.</p>
+</li>
+<li>
+<p><code>Model#updateSchedule()</code> - Updates the <code>FilteredList</code> of <code>Task</code> objects whose dates coincide with
+the current date.</p>
+</li>
+<li>
+<p><code>Model#getUnfilteredTaskList()</code> - Returns an <code>ObservableList&lt;Task&gt;</code> of all the <code>Task</code> objects
+in the <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#getFilteredTaskList()</code> - Returns an <code>ObservableList&lt;Task&gt;</code> of all the <code>Task</code> objects in
+the <code>FilteredList</code>.</p>
+</li>
+<li>
+<p><code>Model#getTasksToday()</code> - Returns an unmodifiable view of the list of <code>Task</code> objects that coincide with
+the current day, backed by the <code>FilteredList</code> of <code>Planner</code></p>
+</li>
+<li>
+<p><code>Model#getTasksThisWeek()</code> - Returns an unmodifiable view of the list of <code>Task</code> objects that coincide with
+the current week, backed by the <code>FilteredList</code> of <code>Planner</code>.</p>
+</li>
 </ul>
+</div>
+<div class="paragraph">
+<p>One example of the interaction between the <code>Model</code> and commands for the <code>Planner</code> can be seen when the user
+executes a <code>pull-task</code> command.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="images/PullTaskSequenceDiagram.png" alt="PullTaskSequenceDiagram">
+</div>
+<div class="title">Figure 38. Sequence Diagram for pull-task command</div>
+</div>
+<div class="paragraph">
+<p>In the figure above, <code>pull-task</code> will result in the filtered lists in the <code>Planner</code> to be updated according to
+the appropriate predicates. In this case, the predicate called will be <code>TaskPredicateMatchesPredicate</code> as the
+user had specified a <code>pull-task</code> according to the <code>Priority</code> levels of the <code>Task</code> objects.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2176,21 +2228,21 @@ is specified, the <code>Task</code> is appended to the end of the <code>TaskList
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (Current choice):</strong> As a string attribute in <code>Task</code></p>
+<p><strong>Option 1 (Current choice):</strong> As a string attribute in <code>Task</code></p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Intuitive, easy to implement, less code required</p>
 </li>
 <li>
-<p>Cons: Provides a lower level of abstraction, especially when <code>edit-task</code>
+<p>Cons: Provides a lower level of abstraction, especially if an <code>edit-task</code>
 command is implemented</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Building a separate <code>TaskDescription</code> class</p>
+<p><strong>Option 2:</strong> Building a separate <code>TaskDescription</code> class</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2204,6 +2256,13 @@ String <code>TaskDes</code> directly</p>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Ultimately, we decided on Option 1 as there are no limitations on what a description of
+a <code>Task</code> should be (other than not <em>null</em>). Further more, there is no manipulation of the
+Task Description at the current stage of <code>Jarvis</code>, hence there is no real need to provide an
+additional layer of abstraction for it. If we do intend to continue developing <code>Jarvis</code> in
+the future, however, Option 2 might be a viable choice.</p>
 </div>
 </div>
 </div>
@@ -2627,7 +2686,7 @@ tight budget</p>
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>JARVIS</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>Jarvis</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-set-tabs-in-finance-tracker" class="discrete">Use case: Set tabs in finance tracker</h3>
 <div class="paragraph">
@@ -2639,19 +2698,19 @@ tight budget</p>
 <p>User inputs amount paid and the names of people who he paid for</p>
 </li>
 <li>
-<p>JARVIS calculates equal tab for all names including user</p>
+<p><code>Jarvis</code> calculates equal tab for all names including user</p>
 </li>
 <li>
-<p>JARVIS stores individual tabs for names input</p>
+<p><code>Jarvis</code> stores individual tabs for names input</p>
 </li>
 <li>
-<p>JARVIS prompts user that tabs have been added</p>
+<p><code>Jarvis</code> prompts user that tabs have been added</p>
 </li>
 <li>
 <p>User requests to see list of debts owed to him</p>
 </li>
 <li>
-<p>JARVIS shows list of debts</p>
+<p><code>Jarvis</code> shows list of debts</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2668,13 +2727,13 @@ tight budget</p>
 <p>User requests to list tasks in planner</p>
 </li>
 <li>
-<p>JARVIS shows lists of tasks in planner</p>
+<p><code>Jarvis</code> shows lists of tasks in planner</p>
 </li>
 <li>
 <p>User requests to mark a certain task as done</p>
 </li>
 <li>
-<p>JARVIS finds task and marks it as done</p>
+<p><code>Jarvis</code> finds task and marks it as done</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2711,13 +2770,13 @@ tight budget</p>
 <p>User adds a project meeting into planner</p>
 </li>
 <li>
-<p>JARVIS adds meeting into planner</p>
+<p><code>Jarvis</code> adds meeting into planner</p>
 </li>
 <li>
 <p>User requests to undo project meeting</p>
 </li>
 <li>
-<p>JARVIS rolls backs back the command</p>
+<p><code>Jarvis</code> rolls backs back the command</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2734,7 +2793,7 @@ tight budget</p>
 <p>User requests to for the prerequisite tree of a certain module</p>
 </li>
 <li>
-<p>JARVIS shows the prerequisite tree</p>
+<p><code>Jarvis</code> shows the prerequisite tree</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2769,7 +2828,7 @@ tight budget</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>JARVIS should work on any mainstream OS as long as it has Java 11 or
+<p><code>Jarvis</code> should work on any mainstream OS as long as it has Java 11 or
 above installed.</p>
 </li>
 <li>
@@ -2778,14 +2837,14 @@ code, not system admin commands) should be able to accomplish most of the
 tasks faster using commands than using the mouse.</p>
 </li>
 <li>
-<p>JARVIS should respond within two seconds.</p>
+<p><code>Jarvis</code> should respond within two seconds.</p>
 </li>
 <li>
-<p>JARVIS should be usable by a novice who has never used a command line
+<p><code>Jarvis</code> should be usable by a novice who has never used a command line
 interface.</p>
 </li>
 <li>
-<p>JARVIS should be able to work without any internet connection.</p>
+<p><code>Jarvis</code> should be able to work without any internet connection.</p>
 </li>
 </ol>
 </div>
@@ -2959,4 +3018,4 @@ behavior}</em></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 02:33:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 08:53:33 UTC</div></div></div></body></html>
