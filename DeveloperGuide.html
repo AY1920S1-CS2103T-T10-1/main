@@ -311,12 +311,19 @@ the various aspects such as user&#8217;s preferences, command history,
 finance management, cca information, courses and schedule information.</p>
 </div>
 <div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/Model.java">[API]</a>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/">[Package]</a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code> API acts as a facade that handles interaction with the data of Jarvis.</p>
+</div>
+<div class="paragraph">
 <p>Below is a class diagram involving the <code>Model</code> interface, which inherits
 from the feature specific model interfaces.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/model/ModelInterfaceClassDiagram.png" alt="ModelInterfaceClassDiagram">
+<img src="images/ModelInterfaceClassDiagram.png" alt="ModelInterfaceClassDiagram">
 </div>
 <div class="title">Figure 6. Model Interface</div>
 </div>
@@ -346,8 +353,62 @@ from the feature specific model interfaces.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/Model.java">[API]</a>
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/">[Package]</a></p>
+<p>The concrete class <code>ModelManager</code> implements <code>Model</code> and manages the data
+for Jarvis. <code>ModelManager</code> contains <code>UserPrefs</code>, <code>HistoryManager</code>, <code>CcaTracker</code>,
+<code>CoursePlanner</code>, <code>FinanceTracker</code> and <code>Planner</code>. These classes manages the
+data related to their specific features.</p>
+</div>
+<div class="paragraph">
+<p>Below is a class diagram for <code>ModelManager</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UpdatedModelClassDiagram.png" alt="UpdatedModelClassDiagram">
+</div>
+<div class="title">Figure 7. <code>ModelManager</code> class</div>
+</div>
+<div class="paragraph">
+<p>Each feature has a class managing the data related to that feature as mentioned
+earlier.</p>
+</div>
+<div class="paragraph">
+<p>Below are the class diagrams of these classes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelUserPrefsClassDiagram.png" alt="ModelUserPrefsClassDiagram">
+</div>
+<div class="title">Figure 8. <code>UserPrefs</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelHistoryManagerClassDiagram.png" alt="ModelHistoryManagerClassDiagram">
+</div>
+<div class="title">Figure 9. <code>HistoryManager</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelCcaTrackerClassDiagram.png" alt="ModelCcaTrackerClassDiagram">
+</div>
+<div class="title">Figure 10. <code>CcaTracker</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelCoursePlannerClassDiagram.png" alt="ModelCoursePlannerClassDiagram">
+</div>
+<div class="title">Figure 11. <code>CoursePlanner</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelFinanceTrackerClassDiagram.png" alt="ModelFinanceTrackerClassDiagram">
+</div>
+<div class="title">Figure 12. <code>FinanceTracker</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelPlannerClassDiagram.png" alt="ModelPlannerClassDiagram">
+</div>
+<div class="title">Figure 13. <code>Planner</code></div>
 </div>
 </div>
 <div class="sect2">
@@ -356,6 +417,10 @@ from the feature specific model interfaces.</p>
 <p>The <code>Storage</code> API is responsible for reading and writing data in json format.
 This allows the application is remember information in json format when the
 user closes the application.</p>
+</div>
+<div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/Storage.java">[API]</a>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/">[Package]</a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> API acts as a facade that handles interaction regarding
@@ -367,9 +432,9 @@ inherits from feature specific storage interfaces.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/storage/StorageInterfaceClassDiagram.png" alt="StorageInterfaceClassDiagram">
+<img src="images/StorageInterfaceClassDiagram.png" alt="StorageInterfaceClassDiagram">
 </div>
-<div class="title">Figure 7. Storage Interface</div>
+<div class="title">Figure 14. Storage Interface</div>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -395,9 +460,9 @@ the storage for <code>UserPrefs</code>, <code>FinanceTracker</code>, <code>CcaTr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/storage/UpdatedStorageClassDiagram.png" alt="UpdatedStorageClassDiagram">
+<img src="images/UpdatedStorageClassDiagram.png" alt="UpdatedStorageClassDiagram">
 </div>
-<div class="title">Figure 8. <code>StorageManager</code> class</div>
+<div class="title">Figure 15. <code>StorageManager</code> class</div>
 </div>
 <div class="paragraph">
 <p>Each feature of JARVIS is able to save its information to local storage
@@ -409,37 +474,33 @@ in <code>JSON</code> format, by adapting each feature component into
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/storage/HistoryManagerStorageClassDiagram.png" alt="300" width="200">
+<img src="images/HistoryManagerStorageClassDiagram.png" alt="300" width="200">
 </div>
-<div class="title">Figure 9. <code>JsonSerializableHistoryManager</code></div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/storage/CcaTrackerStorageClassDiagram.png" alt="600" width="400">
-</div>
-<div class="title">Figure 10. <code>JsonSerializableCcaTracker</code></div>
+<div class="title">Figure 16. <code>JsonSerializableHistoryManager</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/storage/CoursePlannerStorageClassDiagram.png" alt="300" width="200">
+<img src="images/CcaTrackerStorageClassDiagram.png" alt="600" width="400">
 </div>
-<div class="title">Figure 11. <code>JsonSerializableCoursePlanner</code></div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/storage/FinanceTrackerStorageClassDiagram.png" alt="600" width="400">
-</div>
-<div class="title">Figure 12. <code>JsonSerializableFinanceTracker</code></div>
+<div class="title">Figure 17. <code>JsonSerializableCcaTracker</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/storage/PlannerStorageClassDiagram.png" alt="600" width="400">
+<img src="images/CoursePlannerStorageClassDiagram.png" alt="300" width="200">
 </div>
-<div class="title">Figure 13. <code>JsonSerializablePlanner</code></div>
+<div class="title">Figure 18. <code>JsonSerializableCoursePlanner</code></div>
 </div>
-<div class="paragraph">
-<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/Storage.java">[API]</a>
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/">[Package]</a></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/FinanceTrackerStorageClassDiagram.png" alt="600" width="400">
+</div>
+<div class="title">Figure 19. <code>JsonSerializableFinanceTracker</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PlannerStorageClassDiagram.png" alt="600" width="400">
+</div>
+<div class="title">Figure 20. <code>JsonSerializablePlanner</code></div>
 </div>
 </div>
 <div class="sect2">
@@ -839,15 +900,15 @@ reflected in the Activity Diagrams below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/undoredo/UndoCommandActivityDiagram.png" alt="UndoCommandActivityDiagram">
+<img src="images/UndoCommandActivityDiagram.png" alt="UndoCommandActivityDiagram">
 </div>
-<div class="title">Figure 14. Activity Diagram for undo command</div>
+<div class="title">Figure 21. Activity Diagram for undo command</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/undoredo/RedoCommandActivityDiagram.png" alt="RedoCommandActivityDiagram">
+<img src="images/RedoCommandActivityDiagram.png" alt="RedoCommandActivityDiagram">
 </div>
-<div class="title">Figure 15. Activity Diagram for redo command</div>
+<div class="title">Figure 22. Activity Diagram for redo command</div>
 </div>
 <div class="paragraph">
 <p>Therefore there is a need to remember commands that change the state of the
@@ -889,9 +950,9 @@ user types in a command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/undoredo/InverseCommandActivityDiagram.png" alt="InverseCommandActivityDiagram">
+<img src="images/InverseCommandActivityDiagram.png" alt="InverseCommandActivityDiagram">
 </div>
-<div class="title">Figure 16. Activity Diagram for how commands are remembered after their successful execution</div>
+<div class="title">Figure 23. Activity Diagram for how commands are remembered after their successful execution</div>
 </div>
 <div class="paragraph">
 <p>The section below will discuss in more detail how undo/redo is implemented.</p>
@@ -991,9 +1052,9 @@ called.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/undoredo/HistoryManagerModelClassDiagram.png" alt="HistoryManagerModelClassDiagram">
+<img src="images/HistoryManagerModelClassDiagram.png" alt="HistoryManagerModelClassDiagram">
 </div>
-<div class="title">Figure 17. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
+<div class="title">Figure 24. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>
@@ -1004,9 +1065,9 @@ undo or redo, represented by <code>UndoCommand#numberOfTimes</code> and
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/undoredo/CommandClassDiagram.png" alt="CommandClassDiagram">
+<img src="images/CommandClassDiagram.png" alt="CommandClassDiagram">
 </div>
-<div class="title">Figure 18. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
+<div class="title">Figure 25. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Below are two sequence diagrams of how a <code>UndoCommand</code> and <code>RedoCommand</code>
@@ -1019,9 +1080,9 @@ executes in the program.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/undoredo/UndoSequenceDiagramNew.png" alt="UndoSequenceDiagramNew">
+<img src="images/UndoSequenceDiagramNew.png" alt="UndoSequenceDiagramNew">
 </div>
-<div class="title">Figure 19. Sequence Diagram for <code>UndoCommand</code> (undo a single command)</div>
+<div class="title">Figure 26. Sequence Diagram for <code>UndoCommand</code> (undo a single command)</div>
 </div>
 <div class="paragraph">
 <p>Below is a Sequence Diagram of how a <code>RedoCommand</code> to redo a single command
@@ -1029,9 +1090,9 @@ executes in the program.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/undoredo/RedoSequenceDiagramNew.png" alt="RedoSequenceDiagramNew">
+<img src="images/RedoSequenceDiagramNew.png" alt="RedoSequenceDiagramNew">
 </div>
-<div class="title">Figure 20. Sequence Diagram for <code>RedoCommand</code> (redo a single command)</div>
+<div class="title">Figure 27. Sequence Diagram for <code>RedoCommand</code> (redo a single command)</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
@@ -1233,7 +1294,7 @@ printing to a displayable form, etc.</p>
 <div class="content">
 <img src="images/ModelCoursePlannerClassDiagram.png" alt="ModelCoursePlannerClassDiagram">
 </div>
-<div class="title">Figure 21. Course Model Class Diagram</div>
+<div class="title">Figure 28. Course Model Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>Every <code>Course</code> has a few non-nullable attributes - <code>Title</code>, <code>CourseCode</code>,
@@ -1452,7 +1513,7 @@ of <code>{"2", "3"}</code>.</p>
 <div class="content">
 <img src="images/AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
 </div>
-<div class="title">Figure 22. AndOrNode Inheritance Diagram</div>
+<div class="title">Figure 29. AndOrNode Inheritance Diagram</div>
 </div>
 <div class="paragraph">
 <p>Using this format, a static method of the form <code>AndOrNode#createNode(T,String)</code>
@@ -1542,7 +1603,7 @@ shown below:</p>
 <div class="content">
 <img src="images/AndOrSequenceDiagramSimplified.png" alt="AndOrSequenceDiagramSimplified">
 </div>
-<div class="title">Figure 23. buildTree() Sequence Diagram</div>
+<div class="title">Figure 30. buildTree() Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The class looks at each node - checks if its is an <code>Object</code>, <code>Array</code> or a
@@ -1633,7 +1694,7 @@ when the user types a <code>check</code> command.</p>
 <div class="content">
 <img src="images/CheckActivityDiagram.png" alt="TODO">
 </div>
-<div class="title">Figure 24. Check Command Activity Diagram</div>
+<div class="title">Figure 31. Check Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>Additionally, the following below shows the sequence diagram of how the
@@ -1643,7 +1704,7 @@ program checks if the user satisfies the course&#8217;s prerequisites.</p>
 <div class="content">
 <img src="images/CheckCommandSequenceDiagram.png" alt="CheckCommandSequenceDiagram">
 </div>
-<div class="title">Figure 25. CheckCommand Sequence Diagram</div>
+<div class="title">Figure 32. CheckCommand Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -2036,7 +2097,7 @@ a user has. A simple outline of the <code>Planner</code> can be seen below.</p>
 <div class="content">
 <img src="images/plannermodel.png" alt="plannermodel">
 </div>
-<div class="title">Figure 26. Overview of the entire Planner</div>
+<div class="title">Figure 33. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
 <p>JARVIS' <code>Model</code> extends <code>PlannerModel</code> which facilitates all operations
@@ -2867,4 +2928,4 @@ behavior}</em></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 16:29:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 02:12:59 UTC</div></div></div></body></html>
