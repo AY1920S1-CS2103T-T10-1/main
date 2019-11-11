@@ -293,7 +293,7 @@ component.</p>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="paragraph">
-<p>The <code>Model</code> API is responsible for interacting with the data in <code>Jarvis</code> including
+<p>The <code>Model</code> API is responsible for interacting with the data in Jarvis including
 the various aspects such as user&#8217;s preferences, command history,
 finance management, cca information, courses and schedule information.</p>
 </div>
@@ -320,7 +320,7 @@ from the feature specific model interfaces.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+<p>Stores a <code>UserPref</code> object that represents the user&#8217;s preferences</p>
 </li>
 <li>
 <p>Stores the <code>HistoryManager</code> data</p>
@@ -452,7 +452,7 @@ the storage for <code>UserPrefs</code>, <code>FinanceTracker</code>, <code>CcaTr
 <div class="title">Figure 15. <code>StorageManager</code> class</div>
 </div>
 <div class="paragraph">
-<p>Each feature of <code>Jarvis</code> is able to save its information to local storage
+<p>Each feature of Jarvis is able to save its information to local storage
 in <code>JSON</code> format, by adapting each feature component into
 <code>JsonSerializable{Component Name}</code> class.</p>
 </div>
@@ -518,7 +518,7 @@ to be displayed to the user throughout the application.</p>
 <li>
 <p><a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/commons/core/LogsCenter.java/"><code>LogsCenter</code></a></p>
 <div class="paragraph">
-<p>A class used by many classes for writing and displaying log messages in Jarvis'
+<p>A class used by many classes for writing and displaying log messages in Jarvis
 log file.</p>
 </div>
 </li>
@@ -540,7 +540,7 @@ implemented.</p>
 <div class="sect2">
 <h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo / Redo Feature</a></h3>
 <div class="paragraph">
-<p>This section covers in detail the undo/redo feature of <code>Jarvis</code>.</p>
+<p>This section covers in detail the undo/redo feature of Jarvis.</p>
 </div>
 <div class="paragraph">
 <p>We will cover these main points:</p>
@@ -1062,7 +1062,7 @@ executes in the program. The sequence diagrams below show the process of undo
 and redo of a single command for simplicity and clarity.</p>
 </div>
 <div class="paragraph">
-<p>Below is a Sequence Diagram of how an <code>UndoCommand</code> to undo a single command
+<p>Below is a sequence diagram of how an <code>UndoCommand</code> to undo a single command
 executes in the program.</p>
 </div>
 <div class="imageblock">
@@ -1072,7 +1072,7 @@ executes in the program.</p>
 <div class="title">Figure 26. Sequence Diagram for <code>UndoCommand</code> (undo a single command)</div>
 </div>
 <div class="paragraph">
-<p>Below is a Sequence Diagram of how a <code>RedoCommand</code> to redo a single command
+<p>Below is a sequence diagram of how a <code>RedoCommand</code> to redo a single command
 executes in the program.</p>
 </div>
 <div class="imageblock">
@@ -2018,20 +2018,6 @@ This in turns calls the`#PurchaseList#deletePurchase(Index)` method.</p>
 <p>Step 5. This <code>PurchaseList#deletePurchase(Index)</code> method will then delete
 the corresponding purchase at the given index.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-TLDR: The calling of the <code>#deletePurchase</code> method at the <code>Model</code>
-level triggers a cascading series of <code>#deletePurchase</code> method which
-culminates in target purchase being deleted from model.
-</td>
-</tr>
-</table>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeletePurchaseSequenceDiagram.png" alt="DeletePurchaseSequenceDiagram">
@@ -2117,7 +2103,7 @@ we went with the first option.</p>
 <div class="sect3">
 <h4 id="overview-3"><a class="link" href="#overview-3">4.4.1. Overview</a></h4>
 <div class="paragraph">
-<p>The planner feature in <code>Jarvis</code> enables users to easily organise and manage
+<p>The planner feature in Jarvis enables users to easily organise and manage
 their different tasks in school. Users will be able to keep track of tasks
 they have done, tasks they have yet to do, and sort these tasks by
 different attributes like task type and priority levels.</p>
@@ -2160,7 +2146,7 @@ a user has. Each task has a <code>TaskType</code> and <code>Status</code> and ma
 <div class="title">Figure 37. Overview of the entire Planner</div>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code> in <code>Jarvis</code> extends <code>PlannerModel</code> which facilitates all operations
+<p>The <code>Model</code> in Jarvis extends <code>PlannerModel</code> which facilitates all operations
 necessary to carry out commands by the user.</p>
 </div>
 <div class="ulist">
@@ -2284,8 +2270,8 @@ String <code>TaskDes</code> directly</p>
 <div class="paragraph">
 <p>Ultimately, we decided on Option 1 as there are no limitations on what a description of
 a <code>Task</code> should be (other than not <em>null</em>). Further more, there is no manipulation of the
-Task Description at the current stage of <code>Jarvis</code>, hence there is no real need to provide an
-additional layer of abstraction for it. If we do intend to continue developing <code>Jarvis</code> in
+Task Description at the current stage of Jarvis, hence there is no real need to provide an
+additional layer of abstraction for it. If we do intend to continue developing Jarvis in
 the future, however, Option 2 might be a viable choice.</p>
 </div>
 </div>
@@ -2735,7 +2721,7 @@ tight budget</p>
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>Jarvis</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the Jarvis and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-set-tabs-in-finance-tracker" class="discrete">Use case: Set tabs in finance tracker</h3>
 <div class="paragraph">
@@ -2747,19 +2733,19 @@ tight budget</p>
 <p>User inputs amount paid and the names of people who he paid for</p>
 </li>
 <li>
-<p><code>Jarvis</code> calculates equal tab for all names including user</p>
+<p>Jarvis calculates equal tab for all names including user</p>
 </li>
 <li>
-<p><code>Jarvis</code> stores individual tabs for names input</p>
+<p>Jarvis stores individual tabs for names input</p>
 </li>
 <li>
-<p><code>Jarvis</code> prompts user that tabs have been added</p>
+<p>Jarvis prompts user that tabs have been added</p>
 </li>
 <li>
 <p>User requests to see list of debts owed to him</p>
 </li>
 <li>
-<p><code>Jarvis</code> shows list of debts</p>
+<p>Jarvis shows list of debts</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2776,13 +2762,13 @@ tight budget</p>
 <p>User requests to list tasks in planner</p>
 </li>
 <li>
-<p><code>Jarvis</code> shows lists of tasks in planner</p>
+<p>Jarvis shows lists of tasks in planner</p>
 </li>
 <li>
 <p>User requests to mark a certain task as done</p>
 </li>
 <li>
-<p><code>Jarvis</code> finds task and marks it as done</p>
+<p>Jarvis finds task and marks it as done</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2819,13 +2805,13 @@ tight budget</p>
 <p>User adds a project meeting into planner</p>
 </li>
 <li>
-<p><code>Jarvis</code> adds meeting into planner</p>
+<p>Jarvis adds meeting into planner</p>
 </li>
 <li>
 <p>User requests to undo project meeting</p>
 </li>
 <li>
-<p><code>Jarvis</code> rolls backs back the command</p>
+<p>Jarvis rolls backs back the command</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3138,4 +3124,4 @@ made, the program will generate a data files in <code>./data/</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:13:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:17:18 UTC</div></div></div></body></html>
