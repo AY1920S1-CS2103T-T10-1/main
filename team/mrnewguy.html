@@ -44,7 +44,7 @@ enhancements.</p>
 <div class="paragraph">
 <p>This section shows a summary of coding, documentation, and other helpful
 contributions to this team project. The link to the code I have contributed
-can be found at {misc_codecontributed}[this link].</p>
+can be found at <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/commits?author=mrnewguy">this link</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="cca-tracker"><a class="link" href="#cca-tracker">Cca Tracker</a></h4>
@@ -257,31 +257,6 @@ below:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Model#containsCca(Cca cca)</code>&#8201;&#8212;&#8201;Checks if the <code>CcaTracker</code> contains the
-given cca.</p>
-</li>
-<li>
-<p><code>Model#addCca(Cca cca)</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#removeCca(Cca cca)</code>&#8201;&#8212;&#8201;Removes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#updateCca(Cca toBeUpdatedCca, Cca updatedCca)</code>&#8201;&#8212;&#8201;Updates a <code>Cca</code> in
-the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#getCcaTracker()</code>&#8201;&#8212;&#8201;Gets the <code>CcaTracker</code> instance.</p>
-</li>
-<li>
-<p><code>Model#getNumberOfCcas()</code>&#8201;&#8212;&#8201;Returns the number of <code>Ccas</code> currently in the
-<code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#getCca(Index index)</code>&#8201;&#8212;&#8201;Gets the <code>Cca</code> instance by its index in the
-<code>CcaTracker</code>.</p>
-</li>
-<li>
 <p><code>Model#updateFilteredCcaList(Predicate&lt;Cca&gt; predicate)</code>&#8201;&#8212;&#8201;Updates the
 <code>FilteredCcaList</code> by passing it a predicate.</p>
 </li>
@@ -317,54 +292,25 @@ number of <code>Cca</code> objects (including none).</p>
 <div class="paragraph">
 <p>More interestingly, each <code>Cca</code> is made up of the following components, all of which are <strong>non-nullable</strong> attributes:</p>
 </div>
-<div class="sect4">
-<h5 id="ccaname"><a class="link" href="#ccaname">CcaName</a></h5>
-<div class="paragraph">
-<p>Each <code>CcaName</code> is essentially just a wrapper class around a string that is the <code>Cca</code> 's name.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="ccatype"><a class="link" href="#ccatype">CcaType</a></h5>
-<div class="paragraph">
-<p>Each <code>CcaType</code> is also just a wrapper class around a string that is the <code>Cca</code> 's type. Note that each <code>CcaType</code> is
-restricted to 1 of the 4 enum types:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>sport</p>
+<p>CcaName</p>
 </li>
 <li>
-<p>performingArt</p>
+<p>CcaType</p>
 </li>
 <li>
-<p>uniformedGroup</p>
+<p>EquipmentList</p>
 </li>
 <li>
-<p>club</p>
+<p>CcaProgress</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="equipmentlist"><a class="link" href="#equipmentlist">EquipmentList</a></h5>
-<div class="paragraph">
-<p>Each <code>EquipmentList</code> is implemented as an <code>ObservableList</code> of <code>Equipment</code> objects. Note that each <code>EquipmentList</code> can
-contain any number of <code>Equipment</code> objects (including none).</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="ccaprogress"><a class="link" href="#ccaprogress">CcaProgress</a></h5>
-<div class="paragraph">
-<p>The <code>CcaProgress</code> is a little more noteworthy. Each <code>CcaProgress</code> object contains a <code>CcaMilestoneList</code> object and a
-<code>CcaCurrentProgress</code> object. As with all the lists in the <code>CcaTracker</code> feature, the <code>CcaMilestoneList</code> object is
-implemented using an <code>ObservableList</code> as well. The <code>CcaCurrentProgress</code> class is merely a wrapper around an integer that
-tracks the exact <code>CcaMilestone</code> that the user is currently at.</p>
 </div>
 <div class="paragraph">
 <p>Now that we have an understanding of the underlying implementation of <code>CcaTracker</code>, lets take a closer look at the
 feature details.</p>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -616,4 +562,4 @@ rendering of an <code>ObservableList</code>. Using an <code>ArrayList</code>  wo
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:54:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:06:36 UTC</div></div></div></body></html>
