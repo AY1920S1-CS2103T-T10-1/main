@@ -353,7 +353,7 @@ schedule. The schedule consists two lists stacked on top of each other - the top
 day and the bottom showing tasks happening that week.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-a-task-code-add-task-code"><a class="link" href="#adding-a-task-code-add-task-code">4.1.1. Adding a task: <code>add-task</code></a></h4>
+<h4 id="add-a-task-code-add-task-code"><a class="link" href="#add-a-task-code-add-task-code">4.1.1. Add a task: <code>add-task</code></a></h4>
 <div class="paragraph">
 <p>The most fundamental command for the Planner - <code>add-task</code> adds a task to the Planner.</p>
 </div>
@@ -446,7 +446,7 @@ your tasks for you!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-task-code-delete-task-code"><a class="link" href="#deleting-a-task-code-delete-task-code">4.1.2. Deleting a task: <code>delete-task</code></a></h4>
+<h4 id="delete-a-task-code-delete-task-code"><a class="link" href="#delete-a-task-code-delete-task-code">4.1.2. Delete a task: <code>delete-task</code></a></h4>
 <div class="paragraph">
 <p>If you want to keep your list of tasks updated and current, you can easily delete tasks from the planner.</p>
 </div>
@@ -466,7 +466,7 @@ your tasks for you!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-a-task-code-find-task-code"><a class="link" href="#finding-a-task-code-find-task-code">4.1.3. Finding a task: <code>find-task</code></a></h4>
+<h4 id="find-a-task-code-find-task-code"><a class="link" href="#find-a-task-code-find-task-code">4.1.3. Find a task: <code>find-task</code></a></h4>
 <div class="paragraph">
 <p>Too many tasks to comb through? Ask <code>Jarvis</code> to find a task for you based on one or more keywords that match the
 descriptions of your tasks.</p>
@@ -506,7 +506,7 @@ find-task homework cs ma1101r</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="updating-a-task-s-status-code-done-task-code"><a class="link" href="#updating-a-task-s-status-code-done-task-code">4.1.4. Updating a task&#8217;s status: <code>done-task</code></a></h4>
+<h4 id="update-a-task-s-status-code-done-task-code"><a class="link" href="#update-a-task-s-status-code-done-task-code">4.1.4. Update a task&#8217;s status: <code>done-task</code></a></h4>
 <div class="paragraph">
 <p>Once you have completed a task (hooray!), you can let <code>Jarvis</code> know. By default on
 <code>add-task</code>, all tasks are marked as undone, represented by a <code>[✗]</code>. Upon marking the task as done, the task will be
@@ -529,7 +529,7 @@ represented with a <code>[✓]</code>, as seen in Figure 5 below.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sorting-tasks-by-attribute-code-pull-task-code"><a class="link" href="#sorting-tasks-by-attribute-code-pull-task-code">4.1.5. Sorting tasks by attribute: <code>pull-task</code></a></h4>
+<h4 id="sort-tasks-by-attribute-code-pull-task-code"><a class="link" href="#sort-tasks-by-attribute-code-pull-task-code">4.1.5. Sort tasks by attribute: <code>pull-task</code></a></h4>
 <div class="paragraph">
 <p>To get a quick glimpse of all the tasks you have in your Planner that match a certain <a href="#link-attributes">attribute</a>,
 simply pull all tasks relating to that attribute.</p>
@@ -570,7 +570,7 @@ by task description only (<code>find-task</code>), and looking for tasks based o
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-tasks-code-list-task-code"><a class="link" href="#listing-all-tasks-code-list-task-code">4.1.6. Listing all tasks: <code>list-task</code></a></h4>
+<h4 id="list-all-tasks-code-list-task-code"><a class="link" href="#list-all-tasks-code-list-task-code">4.1.6. List all tasks: <code>list-task</code></a></h4>
 <div class="paragraph">
 <p>Lists all the tasks in the Planner. Using <code>list-task</code> while on another page of Jarvis will
 pull up the Planner tab.</p>
@@ -580,7 +580,7 @@ pull up the Planner tab.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-task-code-edit-task-code-v2-0"><a class="link" href="#editing-a-task-code-edit-task-code-v2-0">4.1.7. Editing a task: <code>edit-task</code> [v2.0]</a></h4>
+<h4 id="edit-a-task-code-edit-task-code-v2-0"><a class="link" href="#edit-a-task-code-edit-task-code-v2-0">4.1.7. Edit a task: <code>edit-task</code> [v2.0]</a></h4>
 <div class="paragraph">
 <p>As you approach the deadlines for certain tasks, you might want to increase their priority levels. Soon, you will be able
 to edit existing tasks instead of deleting and adding them back in again.</p>
@@ -618,7 +618,7 @@ edit-task 3//f/weekly</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-entries-code-clear-task-code-v2-0"><a class="link" href="#clearing-entries-code-clear-task-code-v2-0">4.1.8. Clearing entries: <code>clear-task</code> [v2.0]</a></h4>
+<h4 id="clear-entries-code-clear-task-code-v2-0"><a class="link" href="#clear-entries-code-clear-task-code-v2-0">4.1.8. Clear entries: <code>clear-task</code> [v2.0]</a></h4>
 <div class="paragraph">
 <p>Soon you will also be able to delete multiple entries at one go. Tasks can be cleared by <code>#TAG</code> or <code>d/DATE</code> - where
 tasks with the specified tag or date will be cleared.
@@ -726,9 +726,9 @@ This also means that the index must exist within this list!
 </div>
 </div>
 <div class="sect3">
-<h4 id="searching-for-a-purchase-code-find-paid-code"><a class="link" href="#searching-for-a-purchase-code-find-paid-code">4.2.3. Searching for a purchase: <code>find-paid</code></a></h4>
+<h4 id="find-a-purchase-code-find-paid-code"><a class="link" href="#find-a-purchase-code-find-paid-code">4.2.3. Find a purchase: <code>find-paid</code></a></h4>
 <div class="paragraph">
-<p>To have a quick view of the number of cups of Gongcha you have bought over the last month, you can used <code>find-paid</code>
+<p>To have a quick view to see what you have been eating for dinner over the last month, you can use <code>find-paid</code>
 to pull up purchases with descriptions matching <code>KEYWORD</code> provided.</p>
 </div>
 <div class="imageblock">
@@ -818,7 +818,7 @@ edit-install 2 d/Spotify student plan a/7.50</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="setting-a-monthly-spending-limit-code-set-limit-code"><a class="link" href="#setting-a-monthly-spending-limit-code-set-limit-code">4.2.7. Setting a monthly spending limit: <code>set-limit</code></a></h4>
+<h4 id="set-a-monthly-spending-limit-code-set-limit-code"><a class="link" href="#set-a-monthly-spending-limit-code-set-limit-code">4.2.7. Set a monthly spending limit: <code>set-limit</code></a></h4>
 <div class="paragraph">
 <p>Taking control of your spending might mean asking <code>Jarvis</code> to set a cap on your monthly budget.</p>
 </div>
@@ -836,7 +836,7 @@ set-limit a/500.90</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-finances-code-list-finances-code"><a class="link" href="#listing-finances-code-list-finances-code">4.2.8. Listing finances: <code>list-finances</code></a></h4>
+<h4 id="list-finances-code-list-finances-code"><a class="link" href="#list-finances-code-list-finances-code">4.2.8. List finances: <code>list-finances</code></a></h4>
 <div class="paragraph">
 <p>Lists all the purchases in the Finance Tracker. Using <code>list-task</code> while on another page of <code>Jarvis</code> will
 pull up the Finance tab. If you have previously searched through your purchases for something, <code>list-finances</code>
@@ -847,7 +847,7 @@ will return the original list of purchases.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exporting-to-file-code-export-code-v2-0"><a class="link" href="#exporting-to-file-code-export-code-v2-0">4.2.9. Exporting to File: <code>export</code> [v2.0]</a></h4>
+<h4 id="export-to-file-code-export-code-v2-0"><a class="link" href="#export-to-file-code-export-code-v2-0">4.2.9. Export to File: <code>export</code> [v2.0]</a></h4>
 <div class="paragraph">
 <p>Conveniently export your expenditures to either a txt, csv, or xlsx file..</p>
 </div>
@@ -916,7 +916,7 @@ one, and the fraction of milestones that have been completed.</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="adding-a-cca-code-add-cca-code"><a class="link" href="#adding-a-cca-code-add-cca-code">4.3.1. Adding a CCA: <code>add-cca</code></a></h4>
+<h4 id="add-a-cca-code-add-cca-code"><a class="link" href="#add-a-cca-code-add-cca-code">4.3.1. Add a CCA: <code>add-cca</code></a></h4>
 <div class="paragraph">
 <p>To start, we can add some CCAs to the CCA Tracker. You will need to specify
 the name of the cca and the type of the CCA.</p>
@@ -955,7 +955,7 @@ add-cca n/Red cross t/uniformedGroup e/uniform e/first aid kit e/stretcher e/ber
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-cca-code-delete-cca-code"><a class="link" href="#deleting-a-cca-code-delete-cca-code">4.3.2. Deleting a CCA: <code>delete-cca</code></a></h4>
+<h4 id="delete-a-cca-code-delete-cca-code"><a class="link" href="#delete-a-cca-code-delete-cca-code">4.3.2. Delete a CCA: <code>delete-cca</code></a></h4>
 <div class="paragraph">
 <p>New semester, new CCAs - deleting outdated ones is a breeze.</p>
 </div>
@@ -985,7 +985,7 @@ index must exist within this list!
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-cca-code-edit-cca-code"><a class="link" href="#editing-a-cca-code-edit-cca-code">4.3.3. Editing a CCA: <code>edit-cca</code></a></h4>
+<h4 id="edit-a-cca-code-edit-cca-code"><a class="link" href="#edit-a-cca-code-edit-cca-code">4.3.3. Edit a CCA: <code>edit-cca</code></a></h4>
 <div class="paragraph">
 <p>If you have bought the latest tuner for your piano or some new running shoes, let <code>Jarvis</code>
 know so that the changes to your CCAs can be updated!</p>
@@ -1017,7 +1017,7 @@ Note that you will have to re-type each <code>EQUIPMENT</code> if you wish to ad
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-a-cca-code-list-cca-code"><a class="link" href="#listing-a-cca-code-list-cca-code">4.3.4. Listing a CCA: <code>list-cca</code></a></h4>
+<h4 id="list-a-cca-code-list-cca-code"><a class="link" href="#list-a-cca-code-list-cca-code">4.3.4. List a CCA: <code>list-cca</code></a></h4>
 <div class="paragraph">
 <p>Lists all your CCAs in the CCA Tracker. Using <code>list-cca</code> while on another page of Jarvis will
 pull up the CCA Tracker tab.</p>
@@ -1027,7 +1027,7 @@ pull up the CCA Tracker tab.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-a-cca-code-find-cca-code"><a class="link" href="#finding-a-cca-code-find-cca-code">4.3.5. Finding a CCA: <code>find-cca</code></a></h4>
+<h4 id="find-a-cca-code-find-cca-code"><a class="link" href="#find-a-cca-code-find-cca-code">4.3.5. Find a CCA: <code>find-cca</code></a></h4>
 <div class="paragraph">
 <p>For a quick view of CCAs matching one or more keywords, <code>find-cca</code> will come in useful.</p>
 </div>
@@ -1054,7 +1054,7 @@ find-cca canoeing guitar</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-progress-levels-for-a-cca-code-add-progress-code"><a class="link" href="#adding-progress-levels-for-a-cca-code-add-progress-code">4.3.6. Adding progress levels for a CCA: <code>add-progress</code></a></h4>
+<h4 id="add-progress-levels-for-a-cca-code-add-progress-code"><a class="link" href="#add-progress-levels-for-a-cca-code-add-progress-code">4.3.6. Add progress levels for a CCA: <code>add-progress</code></a></h4>
 <div class="paragraph">
 <p>Often, we strive to reach certain milestones in our CCAs. For example, in learning the piano, you might be aiming to
 progress through the various grade levels available. With <code>add-progress</code>,
@@ -1074,7 +1074,7 @@ add-progress 2 p/LCP p/Corporal p/Sergeant p/Staff Sergeant p/Warrant Officer p/
 </div>
 </div>
 <div class="sect3">
-<h4 id="incrementing-progress-level-code-increment-progress-code"><a class="link" href="#incrementing-progress-level-code-increment-progress-code">4.3.7. Incrementing progress level: <code>increment-progress</code></a></h4>
+<h4 id="increment-progress-level-code-increment-progress-code"><a class="link" href="#increment-progress-level-code-increment-progress-code">4.3.7. Increment progress level: <code>increment-progress</code></a></h4>
 <div class="paragraph">
 <p>Each time you have made progress towards any of your milestones, let <code>Jarvis</code> know! The progress bar for each CCA
 provides a clear view of how much closer you are to their respective milestones.</p>
@@ -1172,7 +1172,7 @@ different pieces of information depending on the commands entered.</p>
 <p>Let&#8217;s see what the Course Planner can do:</p>
 </div>
 <div class="sect3">
-<h4 id="adding-a-course-code-add-course-code"><a class="link" href="#adding-a-course-code-add-course-code">4.4.1. Adding a course: <code>add-course</code></a></h4>
+<h4 id="add-a-course-code-add-course-code"><a class="link" href="#add-a-course-code-add-course-code">4.4.1. Add a course: <code>add-course</code></a></h4>
 <div class="paragraph">
 <p>To get started, you can add specific course(s) to your list. Jarvis is able to
 add multiple courses at one go.</p>
@@ -1195,7 +1195,7 @@ add-course c/CS1010 c/CS2030 c/CS2040</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-course-with-grades-code-add-course-code-v2-0"><a class="link" href="#adding-a-course-with-grades-code-add-course-code-v2-0">4.4.2. Adding a course with grades: <code>add-course</code> [v2.0]</a></h4>
+<h4 id="add-a-course-with-grades-code-add-course-code-v2-0"><a class="link" href="#add-a-course-with-grades-code-add-course-code-v2-0">4.4.2. Add a course with grades: <code>add-course</code> [v2.0]</a></h4>
 <div class="paragraph">
 <p>If you wish, you may add a course that has a grade attached to it. This is to
 facilitate Jarvis' understanding of the courses you have already taken. Jarvis
@@ -1233,7 +1233,7 @@ this command must be entered in the specified order!
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-course-code-delete-course-code"><a class="link" href="#deleting-a-course-code-delete-course-code">4.4.3. Deleting a course: <code>delete-course</code></a></h4>
+<h4 id="delete-a-course-code-delete-course-code"><a class="link" href="#delete-a-course-code-delete-course-code">4.4.3. Delete a course: <code>delete-course</code></a></h4>
 <div class="paragraph">
 <p>You can easily delete a course from your list - either by the index of the
 course in the list, or by its course code.</p>
@@ -1252,7 +1252,7 @@ delete-course 2</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="looking-up-a-course-s-information-code-lookup-code"><a class="link" href="#looking-up-a-course-s-information-code-lookup-code">4.4.4. Looking up a course&#8217;s information: <code>lookup</code></a></h4>
+<h4 id="look-up-a-course-s-information-code-lookup-code"><a class="link" href="#look-up-a-course-s-information-code-lookup-code">4.4.4. Look up a course&#8217;s information: <code>lookup</code></a></h4>
 <div class="paragraph">
 <p>You can also retrieve information about a specific course - such as course
 title, course code, number of credits and what the course is about. The
@@ -1285,7 +1285,7 @@ result box.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="checking-a-course-code-check-code"><a class="link" href="#checking-a-course-code-check-code">4.4.5. Checking a course: <code>check</code></a></h4>
+<h4 id="check-a-course-code-check-code"><a class="link" href="#check-a-course-code-check-code">4.4.5. Check a course: <code>check</code></a></h4>
 <div class="paragraph">
 <p>If you are not sure if you can take a certain course next semester, this
 feature will come in handy. Simply <code>check</code> the course in question. The result
@@ -1319,7 +1319,7 @@ has not filled any of the requirements.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="checking-your-cap-code-cap-code-v2-0"><a class="link" href="#checking-your-cap-code-cap-code-v2-0">4.4.6. Checking your CAP: <code>cap</code> [v2.0]</a></h4>
+<h4 id="check-your-cap-code-cap-code-v2-0"><a class="link" href="#check-your-cap-code-cap-code-v2-0">4.4.6. Check your CAP: <code>cap</code> [v2.0]</a></h4>
 <div class="paragraph">
 <p>If you wish to check your current CAP (Cumulative Average Point), you can do
 so with the command <code>cap</code>. Jarvis assumes that any course that does not have
@@ -1442,7 +1442,7 @@ supplied, then <code>[NUMBER]</code> is taken to be the value <strong>1</strong>
 </table>
 </div>
 <div class="sect3">
-<h4 id="undo-command-s-code-undo-code"><a class="link" href="#undo-command-s-code-undo-code">4.5.1. undo command(s): <code>undo</code></a></h4>
+<h4 id="undo-command-s-code-undo-code"><a class="link" href="#undo-command-s-code-undo-code">4.5.1. Undo command(s): <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>undo [NUMBER]</code></p>
 </div>
@@ -1485,7 +1485,7 @@ starting from the latest command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redo-command-s-code-redo-code"><a class="link" href="#redo-command-s-code-redo-code">4.5.2. redo command(s): <code>redo</code></a></h4>
+<h4 id="redo-command-s-code-redo-code"><a class="link" href="#redo-command-s-code-redo-code">4.5.2. Redo command(s): <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>redo [NUMBER]</code></p>
 </div>
@@ -1537,7 +1537,7 @@ commands.
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-the-number-of-commands-you-can-undo-or-redo-code-list-history-code"><a class="link" href="#list-the-number-of-commands-you-can-undo-or-redo-code-list-history-code">4.5.3. list the number of commands you can undo or redo: <code>list-history</code></a></h4>
+<h4 id="list-the-number-of-commands-you-can-undo-or-redo-code-list-history-code"><a class="link" href="#list-the-number-of-commands-you-can-undo-or-redo-code-list-history-code">4.5.3. List the number of commands you can undo or redo: <code>list-history</code></a></h4>
 <div class="paragraph">
 <p><code>Jarvis</code> can provide you with the maximum number of commands you can <code>undo</code> and <code>redo</code> - which will be shown
 in the Command Result Box.</p>
@@ -1760,4 +1760,4 @@ Planner, as long as it is available on NUSMods as well.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 03:46:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 05:40:40 UTC</div></div></div></body></html>
