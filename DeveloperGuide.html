@@ -2293,14 +2293,16 @@ can perform create, read, update and delete operations on each Cca.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">4.5.2. Implementation</a></h4>
+<h4 id="the-ccatracker-model"><a class="link" href="#the-ccatracker-model">4.5.2. The CcaTracker Model</a></h4>
 <div class="paragraph">
-<p>The <code>CcaTracker</code> mechanism is facilitated by <code>CcaTrackerModel</code>.</p>
+<p>The <code>CcaTracker</code> class within the model provides an interface between the
+components of the feature and the updating of the overall model. Like other
+features, <code>Model</code> is associated with the cca tracker feature by
+implementing <code>CcaTrackerModel</code>, from which <code>Model</code> implements.</p>
 </div>
 <div class="paragraph">
-<p><code>Model</code> supports operations to facilitate
-cca tracking capabilities by extending the <code>CcaTrackerModel</code> which has the
-following operations:</p>
+<p>Some of the more significant methods within the <code>CcaTracker</code> are shown
+below:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2345,6 +2347,9 @@ Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect3">
+<h4 id="cca-tracker-components"><a class="link" href="#cca-tracker-components">4.5.3. Cca Tracker components</a></h4>
 <div class="paragraph">
 <p>The class diagram for CcaTrackerModel is shown below:</p>
 </div>
@@ -2352,7 +2357,68 @@ Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
 <div class="content">
 <img src="images/ModelCcaTrackerClassDiagram.png" alt="ModelCcaTrackerClassDiagram">
 </div>
+<div class="title">Figure 39. CcaTracker Class Diagram</div>
 </div>
+<div class="paragraph">
+<p>As seen in the diagram above, The <code>CcaTracker</code> consists primarily of a single <code>CcaList</code> object. This <code>CcaList</code> object is
+essentially a wrapper around an <code>ObservableList</code> of <code>Cca</code> objects. Do note that the <code>CcaList</code> object can contain any
+number of <code>Cca</code> objects (including none).</p>
+</div>
+<div class="paragraph">
+<p>More interestingly, each <code>Cca</code> is made up of the following components, all of which are <strong>non-nullable</strong> attributes:</p>
+</div>
+<div class="sect4">
+<h5 id="ccaname"><a class="link" href="#ccaname">CcaName</a></h5>
+<div class="paragraph">
+<p>Each <code>CcaName</code> is essentially just a wrapper class around a string that is the <code>Cca</code> 's name.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="ccatype"><a class="link" href="#ccatype">CcaType</a></h5>
+<div class="paragraph">
+<p>Each <code>CcaType</code> is also just a wrapper class around a string that is the <code>Cca</code> 's type. Note that each <code>CcaType</code> is
+restricted to 1 of the 4 enum types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>sport</p>
+</li>
+<li>
+<p>performingArt</p>
+</li>
+<li>
+<p>uniformedGroup</p>
+</li>
+<li>
+<p>club</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="equipmentlist"><a class="link" href="#equipmentlist">EquipmentList</a></h5>
+<div class="paragraph">
+<p>Each <code>EquipmentList</code> is implemented as an <code>ObservableList</code> of <code>Equipment</code> objects. Note that each <code>EquipmentList</code> can
+contain any number of <code>Equipment</code> objects (including none).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="ccaprogress"><a class="link" href="#ccaprogress">CcaProgress</a></h5>
+<div class="paragraph">
+<p>The <code>CcaProgress</code> is a little more noteworthy. Each <code>CcaProgress</code> object contains a <code>CcaMilestoneList</code> object and a
+<code>CcaCurrentProgress</code> object. As with all the lists in the <code>CcaTracker</code> feature, the <code>CcaMilestoneList</code> object is
+implemented using an <code>ObservableList</code> as well. The <code>CcaCurrentProgress</code> class is merely a wrapper around an integer that
+tracks the exact <code>CcaMilestone</code> that the user is currently at.</p>
+</div>
+<div class="paragraph">
+<p>Now that we have an understanding of the underlying implementation of <code>CcaTracker</code>, lets take a closer look at the
+feature details.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-details-3"><a class="link" href="#feature-details-3">4.5.4. Feature details</a></h4>
 <div class="paragraph">
 <p>CcaTracker has 7 specific commands that support the given operations to mutate
 the state of the <code>Model</code>. Each command is represented as seperate class:</p>
@@ -2385,18 +2451,41 @@ keywords specified .</p>
 </div>
 <div class="paragraph">
 <p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
-execution on model. The following activity diagram illustrates how a <code>Cca&#8217;s
-progress is incremented when a user types in a `increase-progress</code> command:</p>
+execution on model.</p>
 </div>
 <div class="paragraph">
-<p>The diagram below is an activity diagram that illustrates the process of incrementing a Cca&#8217;s
-progress.</p>
+<p>The following activity diagram illustrates how a <code>Cca</code> 's
+progress is incremented when a user types in an <code>increase-progress</code> command:</p>
 </div>
+<div class="sect4">
+<h5 id="increasing-a-cca-s-progress"><a class="link" href="#increasing-a-cca-s-progress">Increasing a cca&#8217;s progress</a></h5>
 <div class="imageblock">
 <div class="content">
 <img src="images/ccatracker/IncreaseCcaProgressActivityDiagram.png" alt="IncreaseCcaProgressActivityDiagram">
 </div>
+<div class="title">Figure 40. Activity Diagram for increase-progress command</div>
 </div>
+<div class="paragraph">
+<p>Firstly , before any increasing of progress can take place, the user has to add a <code>Cca</code> to the <code>CcaTracker</code> through the
+<code>add-cca</code> command. The user then has to add a <code>CcaMilestoneList</code> to the <code>CcaTracker</code> through the <code>add-progress</code> command.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that the execution of each command as stated above branches off into different scenarios, all of which present
+themselves to the user in form of prompts in the user interface.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="command-execution-2"><a class="link" href="#command-execution-2">4.5.5. Command Execution</a></h4>
 <div class="paragraph">
 <p>The diagram below shows the sequence diagram of the increase-progress mechanism.</p>
 </div>
@@ -2404,9 +2493,10 @@ progress.</p>
 <div class="content">
 <img src="images/ccatracker/IncreaseProgressSequenceDiagram.png" alt="IncreaseProgressSequenceDiagram">
 </div>
+<div class="title">Figure 41. Sequence diagram for increase-progress command</div>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario of how increase-progress mechanism
+<p>Given below is an example usage scenario of how the increase-progress mechanism
 behaves.</p>
 </div>
 <div class="paragraph">
@@ -2458,7 +2548,7 @@ the <code>currentProgress</code> counter is incremented by 1.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-TLDR: The calling of the <code>#increaseProgress</code> method at the <code>CcaTracker</code> level
+In short, the calling of the <code>#increaseProgress</code> method at the <code>CcaTracker</code> level
 triggers a cascading series of <code>#increaseProgress</code> methods which culminates in
 the <code>currentProgress</code> variable being incremented by 1.
 </td>
@@ -2467,29 +2557,39 @@ the <code>currentProgress</code> variable being incremented by 1.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.3. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.6. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-whether-to-have-subclasses-for-each-type-of-cca"><a class="link" href="#aspect-whether-to-have-subclasses-for-each-type-of-cca">Aspect: Whether to have subclasses for each type of cca.</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (Current choice):</strong> Instantiate a generic <code>CcaProgress</code> for
-each <code>Cca</code>.</p>
+<p><strong>Option 1: Instantiate a <code>CcaProgress</code> object for
+  each <code>Cca</code></strong>
+This entails implementing <code>CcaProgess</code> class as consisting of a <code>CcaMilestoneList</code> and a <code>CcaCurrentProgess</code>. The</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Less code needed.</p>
 </li>
 <li>
-<p>Cons: Less extensible as CcaProgress is now limited to a list of strings.</p>
+<p>Cons: Less extensible as CcaProgress is now limited to what is essentially a list of strings.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Implement <code>CcaProgress</code> as a parent class. Create classes
-such as SportProgress/PerformingArtsProgress that extend from CcaProgress
-for each type of <code>Cca</code></p>
+<p><strong>Option 2: Implement <code>CcaProgress</code> as a parent class.</strong>
+This entails creating classes such as SportProgress/PerformingArtsProgress that extend from CcaProgress for each type
+of <code>Cca</code>. Such an implementation can be represented using the class diagram below:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ccatracker/AlternativeCcaProgressClassDiagram.png" alt="AlternativeCcaProgressClassDiagram">
+</div>
+<div class="title">Figure 42. Class diagram showing the alternative implementation of CcaProgress.</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -2501,8 +2601,22 @@ Jarvis.</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
+</div>
+<div class="sect4">
+<h5 id="our-thoughts-5"><a class="link" href="#our-thoughts-5">Our Thoughts</a></h5>
+<div class="paragraph">
+<p>After much consideration, we have decided to implement <code>CcaProgress</code> as per option 1. This is because we wish to afford
+the user the flexibility to set whichever milestones they wish to in their Cca.</p>
+</div>
+<div class="paragraph">
+<p>Option 2 would entail hardcoding a certain type of <code>CcaMilestone</code> for each type of <code>CcaProgress</code>. For example,
+each <code>UniformedGroupProgress</code> might have included a series of <code>CcaMilestoneRanks</code>, where the user can set each
+CcaMilestoneRanks to be ranks such as Private, Lance Corporal, Corporal, Sergeant etc. Then, the
+<code>UniformedGroupProgress</code> could have individualised attributes such as types of awards etc.</p>
+</div>
+<div class="paragraph">
+<p>However, in light of the fact that Jarvis is a CLI application, it would have been extremely cumbersome for the user to
+type the myriad number of options.</p>
 </div>
 </div>
 <div class="sect4">
@@ -2510,8 +2624,8 @@ Jarvis.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (Current choice):</strong> Implement CcaProgressList as an
-<code>ObservableList</code> .</p>
+<p><strong>Option 1 : Implement CcaProgressList as an
+<code>ObservableList</code></strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -2525,8 +2639,8 @@ CcaProgressList is nested several classes within <code>Cca</code>.</p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Implement CcaProgressList as a normal <code>List</code> e.g.
-<code>ArrayList</code>.</p>
+<p><strong>Option 2: Implement CcaProgressList as a normal <code>List</code> e.g.
+<code>ArrayList</code>.</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -2539,6 +2653,14 @@ CcaProgressList is nested several classes within <code>Cca</code>.</p>
 </div>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="our-thoughts-6"><a class="link" href="#our-thoughts-6">Our Thoughts</a></h5>
+<div class="paragraph">
+<p>Implementing the <code>CcaProgressList</code> as an <code>ArrayList</code> would have been an easier option. However, the implementation of
+the <code>CcaProgressList</code> as an <code>ObservableList</code> proved to be a wiser choice as <code>Javafx</code> fully supports the manipulation and
+rendering of an <code>ObservableList</code>. Using an <code>ArrayList</code>  would have made the building of the ui thoroughly cumbersome.</p>
 </div>
 </div>
 </div>
@@ -3144,4 +3266,4 @@ made, the program will generate a data files in <code>./data/</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:42:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:48:42 UTC</div></div></div></body></html>
