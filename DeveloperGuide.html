@@ -44,7 +44,7 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
+<li><a href="#deleting-data-from-a-list">G.2. Deleting Data from a list</a></li>
 <li><a href="#saving-data">G.3. Saving data</a></li>
 </ul>
 </li>
@@ -168,14 +168,14 @@ exposes its functionality to the rest of the application.</p>
 <div class="sect3">
 <h4 id="architecture-interactions-between-components"><a class="link" href="#architecture-interactions-between-components">3.1.1. Architecture: Interactions between Components</a></h4>
 <div class="paragraph">
-<p>The sequence diagram below shows how the components interact with each
-other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The sequence diagram below shows how the components interact with each other
+for the scenario where the user issues the command <code>delete-task 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 2. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 2. Component interactions for <code>delete-task 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -276,27 +276,13 @@ call: <code>execute("add-course c/CS1010")</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
+<img src="images/AddSequenceDiagram.png" alt="AddSequenceDiagram">
 </div>
 <div class="title">Figure 5. Interactions Inside the Logic Component for the <code>add-course c/CS1010</code> Command</div>
 </div>
 <div class="paragraph">
 <p>The original caller to <code>LogicManager</code>, in the context of Jarvis, is the <code>Ui</code>
 component.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>DeleteAddressCommandParser</code> should end at the destroy
-marker (X) but due to a limitation of PlantUML, the lifeline reaches the end
-of diagram.
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/logic/Logic.java">[API]</a>
@@ -1530,7 +1516,7 @@ of <code>{"2", "3"}</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
+<img src="images/ryanytan-AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
 </div>
 <div class="title">Figure 29. AndOrNode Inheritance Diagram</div>
 </div>
@@ -1620,7 +1606,7 @@ shown below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AndOrSequenceDiagramSimplified.png" alt="AndOrSequenceDiagramSimplified">
+<img src="images/ryanytan-AndOrSequenceDiagramSimplified.png" alt="ryanytan AndOrSequenceDiagramSimplified">
 </div>
 <div class="title">Figure 30. buildTree() Sequence Diagram</div>
 </div>
@@ -1635,21 +1621,21 @@ the tree.</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="code-andortree-code-dependency-on-course"><a class="link" href="#code-andortree-code-dependency-on-course"><code>AndOrTree</code> Dependency on Course</a></h6>
+<h6 id="dependency-on-course"><a class="link" href="#dependency-on-course">Dependency on Course</a></h6>
 <div class="paragraph">
-<p>The <code>AndOrTree</code> posed some difficult for us in the decision to couple the
-implementation of <code>AndOrTree</code> with <code>Course</code>. This is because the tree would
+<p><code>AndOrTree</code> posed some difficulty for us, in the decision to couple the
+implementation of <code>AndOrTree</code> with <code>Course</code>. This is because the tree will
 only ever be used by the Course Planner within the program, and thus it is
 not required to implement the tree using generics. However, this would increase
 coupling between <code>AndOrTree</code> and <code>Course</code>, which is unfavourable for testing.</p>
 </div>
 <div class="paragraph">
-<p>We came up with two possible scenarios to this issue:</p>
+<p>Below are our considerations in implementing this data structure:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Option 1: couple <code>AndOrTree</code> to <code>Course</code></strong></p>
+<p><strong>Option 1: Couple <code>AndOrTree</code> to <code>Course</code></strong></p>
 <div class="paragraph">
 <p>This means that there is no need to pass any mapper function into the
 <code>buildTree()</code> method as the class does not need to know how to map from <code>String</code>
@@ -1711,7 +1697,7 @@ when the user types a <code>check</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/CheckActivityDiagram.png" alt="TODO">
+<img src="images/ryanytan-CheckActivityDiagram.png" alt="TODO">
 </div>
 <div class="title">Figure 31. Check Command Activity Diagram</div>
 </div>
@@ -1721,7 +1707,7 @@ program checks if the user satisfies the course&#8217;s prerequisites.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/CheckCommandSequenceDiagram.png" alt="CheckCommandSequenceDiagram">
+<img src="images/ryanytan-CheckCommandSequenceDiagram.png" alt="ryanytan CheckCommandSequenceDiagram">
 </div>
 <div class="title">Figure 32. CheckCommand Sequence Diagram</div>
 </div>
@@ -2738,7 +2724,7 @@ tight budget</p>
 </li>
 </ol>
 </div>
-<h3 id="use-case-marks-task-in-planner-as-done" class="discrete">Use case: Marks task in planner as done</h3>
+<h3 id="use-case-mark-task-in-planner-as-done" class="discrete">Use case: Mark task in planner as done</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2804,17 +2790,17 @@ tight budget</p>
 </li>
 </ol>
 </div>
-<h3 id="use-case-view-prerequisite-tree" class="discrete">Use case: View prerequisite tree</h3>
+<h3 id="use-case-check-if-the-user-can-check-a-course" class="discrete">Use case: Check if the user can check a course</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to for the prerequisite tree of a certain module</p>
+<p>User requests whether they can take a certain course.</p>
 </li>
 <li>
-<p><code>Jarvis</code> shows the prerequisite tree</p>
+<p>Jarvis shows whether they can take the course.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2827,11 +2813,11 @@ tight budget</p>
 <div class="ulist">
 <ul>
 <li>
-<p>2a. The given module code is invalid</p>
+<p>2a. The given course code is invalid</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. AddressBook shows an error message.</p>
+<p>2a1. Jarvis shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -2849,7 +2835,7 @@ tight budget</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Jarvis</code> should work on any mainstream OS as long as it has Java 11 or
+<p>Jarvis should work on any mainstream OS as long as it has Java 11 or
 above installed.</p>
 </li>
 <li>
@@ -2858,14 +2844,14 @@ code, not system admin commands) should be able to accomplish most of the
 tasks faster using commands than using the mouse.</p>
 </li>
 <li>
-<p><code>Jarvis</code> should respond within two seconds.</p>
+<p>Jarvis should respond within two seconds.</p>
 </li>
 <li>
-<p><code>Jarvis</code> should be usable by a novice who has never used a command line
+<p>Jarvis should be usable by a novice who has never used a command line
 interface.</p>
 </li>
 <li>
-<p><code>Jarvis</code> should be able to work without any internet connection.</p>
+<p>Jarvis should be able to work without any internet connection.</p>
 </li>
 </ol>
 </div>
@@ -2916,10 +2902,8 @@ interface.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
+<p>&#8230;&#8203;
+&#8230;&#8203;</p>
 </li>
 </ul>
 </div>
@@ -2949,22 +2933,24 @@ testers are expected to do more <em>exploratory</em> testing.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Initial launch</p>
+<p><strong>Initial Launch</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
 <p>Download the jar file and copy into an empty folder</p>
 </li>
 <li>
-<p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may
-not be optimum.</p>
+<p>Double-click the jar file</p>
+<div class="paragraph">
+<p>Expected: Shows the GUI with a set of sample data in every feature. The window
+size may not be optimal</p>
+</div>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Saving window preferences</p>
+<p><strong>Saving Window Preferences</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2978,14 +2964,27 @@ Expected: The most recent window size and location is retained.</p>
 </ol>
 </div>
 </li>
+<li>
+<p><strong>Storage</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Launch the application and make a change that changes the state of the
+program, such as <code>add-task</code> or <code>add-course</code>. Close the window.</p>
+</li>
+<li>
+<p>Re-launch the app by double-clicking the jar file.<br>
+Expected: The app should re-launch into the same state as when it was
+closed.</p>
+</li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
+<h3 id="deleting-data-from-a-list"><a class="link" href="#deleting-data-from-a-list">G.2. Deleting Data from a list</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2993,23 +2992,37 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons
-in the list.</p>
+<p>Prerequisites: List all tasks using the <code>list-task</code> command. Multiple
+tasks in the list.</p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted
-contact shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Test case: <code>delete-task 1</code><br>
+Expected: First task is deleted from the list. Details of the deleted
+contact shown in the status message.</p>
 </li>
 <li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message.
+<p>Test case: <code>delete-task 0</code><br>
+Expected: No task is deleted. Error details shown in the result display.
 Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is
-larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
+<p>Other incorrect delete commands to try:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>delete-task</code></p>
+</li>
+<li>
+<p><code>delete-task x</code> (where <code>x</code> is larger than the list size)</p>
+</li>
+<li>
+<p><code>delete-task y</code> (where <code>y</code> is any alphanumeric character)</p>
+<div class="paragraph">
+<p><strong>Expected</strong>: Similar to previous.</p>
+</div>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
@@ -3022,21 +3035,65 @@ Expected: Similar to previous.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
+<p>Missing data files</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected
-behavior}</em></p>
+<p>Run the app once and play around with the application. Once a change is
+made, the program will generate a data files in <code>./data/</code></p>
+</li>
+<li>
+<p>In <code>./data/</code>, delete <code>courseplanner.json</code>.</p>
+</li>
+<li>
+<p>Re-launch the app.</p>
+<div class="paragraph">
+<p><strong>Expected</strong>: Default Course data should now be present in the Courses tab.</p>
+</div>
 </li>
 </ol>
 </div>
 </li>
-</ol>
+<li>
+<p>Corrupted data files</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Run the app once and play around with the application. Once a change is
+made, the program will generate a data files in <code>./data/</code></p>
+</li>
+<li>
+<p>In <code>./data/</code>, open <code>courseplanner.json</code>. On line 2, delete the <code>[</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>1 {
+2   "courses" : [ {
+3 ...</pre>
+</div>
 </div>
 <div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+<p>should become</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>1 {
+2   "courses" : {
+3 ...</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Re-launch the app.</p>
+<div class="paragraph">
+<p><strong>Expected</strong>: Go to the Courses tab and the tab should not have any data.
+<code>courseplanner.json</code> <strong>still exists</strong>.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:32:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:39:53 UTC</div></div></div></body></html>
