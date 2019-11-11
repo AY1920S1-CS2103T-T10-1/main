@@ -23,11 +23,11 @@
 </li>
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#undo-redo-feature">4.1. Undo / Redo Feature</a></li>
-<li><a href="#course-planner-feature">4.2. Course Planner feature</a></li>
-<li><a href="#finance-tracker-feature">4.3. Finance Tracker feature</a></li>
-<li><a href="#planner-feature">4.4. Planner Feature</a></li>
-<li><a href="#ccatracker-feature">4.5. CcaTracker Feature</a></li>
+<li><a href="#planner-feature">4.1. Planner Feature</a></li>
+<li><a href="#finance-tracker-feature">4.2. Finance Tracker feature</a></li>
+<li><a href="#ccatracker-feature">4.3. CcaTracker Feature</a></li>
+<li><a href="#course-planner-feature">4.4. Course Planner feature</a></li>
+<li><a href="#undo-redo-feature">4.5. Undo / Redo Feature</a></li>
 <li><a href="#logging">4.6. Logging</a></li>
 <li><a href="#Implementation-Configuration">4.7. Configuration</a></li>
 </ul>
@@ -40,12 +40,11 @@
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-data-from-a-list">G.2. Deleting Data from a list</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-data-from-a-list">F.2. Deleting Data from a list</a></li>
+<li><a href="#saving-data">F.3. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -173,7 +172,7 @@ other for the scenario where the user issues the command <code>delete-cca 1</cod
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/JarvisArchitectureSequenceDiagram.png" alt="JarvisArchitectureSequenceDiagram">
+<img src="images/JarvisArchitectureSequenceDiagram.png" alt="1000" width="800">
 </div>
 <div class="title">Figure 2. Component interactions for <code>delete-cca 1</code> command</div>
 </div>
@@ -293,16 +292,11 @@ component.</p>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="paragraph">
-<p>The <code>Model</code> API is responsible for interacting with the data in Jarvis including
-the various aspects such as user&#8217;s preferences, command history,
-finance management, cca information, courses and schedule information.</p>
-</div>
-<div class="paragraph">
-<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/Model.java">[API]</a>
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/">[Package]</a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Model</code> API acts as a facade that handles interaction with the data of Jarvis.</p>
+<p>The <code>Model</code> API is responsible for interacting with the data in Jarvis
+including the various aspects such as user&#8217;s preferences, command history,
+finance management, cca information, courses and schedule information. The
+<code>Model</code> API also acts as a facade that handles interaction with the data of
+Jarvis.</p>
 </div>
 <div class="paragraph">
 <p>Below is a class diagram involving the <code>Model</code> interface, which inherits
@@ -350,7 +344,7 @@ data related to their specific features.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UpdatedModelClassDiagram.png" alt="500" width="500">
+<img src="images/UpdatedModelClassDiagram.png" alt="700" width="700">
 </div>
 <div class="title">Figure 7. <code>ModelManager</code> class</div>
 </div>
@@ -363,39 +357,43 @@ earlier.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelUserPrefsClassDiagram.png" alt="200" width="200">
+<img src="images/ModelUserPrefsClassDiagram.png" alt="300" width="300">
 </div>
 <div class="title">Figure 8. <code>UserPrefs</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelHistoryManagerClassDiagram.png" alt="200" width="200">
+<img src="images/ModelHistoryManagerClassDiagram.png" alt="300" width="300">
 </div>
 <div class="title">Figure 9. <code>HistoryManager</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelCcaTrackerClassDiagram.png" alt="500" width="500">
+<img src="images/ModelCcaTrackerClassDiagram.png" alt="700" width="700">
 </div>
 <div class="title">Figure 10. <code>CcaTracker</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelCoursePlannerClassDiagram.png" alt="700" width="700">
+<img src="images/ModelCoursePlannerClassDiagram.png" alt="900" width="900">
 </div>
 <div class="title">Figure 11. <code>CoursePlanner</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelFinanceTrackerClassDiagram.png" alt="500" width="500">
+<img src="images/ModelFinanceTrackerClassDiagram.png" alt="700" width="700">
 </div>
 <div class="title">Figure 12. <code>FinanceTracker</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelPlannerClassDiagram.png" alt="400" width="400">
+<img src="images/ModelPlannerClassDiagram.png" alt="500" width="500">
 </div>
 <div class="title">Figure 13. <code>Planner</code></div>
+</div>
+<div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/Model.java">[API]</a>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/model/">[Package]</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -403,15 +401,8 @@ earlier.</p>
 <div class="paragraph">
 <p>The <code>Storage</code> API is responsible for reading and writing data in json format.
 This allows the application is remember information in json format when the
-user closes the application.</p>
-</div>
-<div class="paragraph">
-<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/Storage.java">[API]</a>
-<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/">[Package]</a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Storage</code> API acts as a facade that handles interaction regarding
-storage related components.</p>
+user closes the application. The <code>Storage</code> API acts as a facade that handles
+interaction regarding storage related components.</p>
 </div>
 <div class="paragraph">
 <p>Below is a class diagram involving the <code>Storage</code> interface, which
@@ -489,6 +480,10 @@ in <code>JSON</code> format, by adapting each feature component into
 </div>
 <div class="title">Figure 20. <code>JsonSerializablePlanner</code></div>
 </div>
+<div class="paragraph">
+<p>Links : <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/Storage.java">[API]</a>
+<a href="https://github.com/AY1920S1-CS2103T-T10-1/main/blob/master/src/main/java/seedu/jarvis/storage/">[Package]</a></p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Commons Component</a></h3>
@@ -538,7 +533,1450 @@ log file.</p>
 implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.1. Undo / Redo Feature</a></h3>
+<h3 id="planner-feature"><a class="link" href="#planner-feature">4.1. Planner Feature</a></h3>
+<div class="sect3">
+<h4 id="overview"><a class="link" href="#overview">4.1.1. Overview</a></h4>
+<div class="paragraph">
+<p>The planner feature in Jarvis enables users to easily organise and manage
+their different tasks in school. Users will be able to keep track of tasks
+they have done, tasks they have yet to do, and sort these tasks by
+different attributes like task type and priority levels.</p>
+</div>
+<div class="paragraph">
+<p>There are three types of tasks in the planner:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Todo</code>: Tasks with a description only</p>
+</li>
+<li>
+<p><code>Event</code>: Tasks with a start and end date</p>
+</li>
+<li>
+<p><code>Deadline</code>: Tasks with a due date</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Users can <code>Tag</code> these tasks to sort them into different categories, as well
+as add <code>Priority</code> and <code>Frequency</code> levels to them.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.2. Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks
+a user has. Each task has a <code>TaskType</code> and <code>Status</code> and may also have a <code>Priority</code> level,
+<code>Frequency</code> level and any number of <code>Tag</code> objects.</p>
+</div>
+<div class="paragraph">
+<p>A simple outline of the <code>Planner</code> can be seen below, in Figure 26.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="images/ModelPlannerClassDiagram.png" alt="ModelPlannerClassDiagram">
+</div>
+<div class="title">Figure 21. Overview of the entire Planner</div>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code> in Jarvis extends <code>PlannerModel</code> which facilitates all operations
+necessary to carry out commands by the user.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model#getPlanner()</code>&#8201;&#8212;&#8201;Returns an instance of a <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#addTask(int zeroBasedIndex, Task task</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the
+planner at the specified <code>Index</code>.</p>
+</li>
+<li>
+<p><code>Model#addTask(Task t)</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the <code>Planner</code>. Since no <code>Index</code>
+is specified, the <code>Task</code> is appended to the end of the <code>TaskList</code>.</p>
+</li>
+<li>
+<p><code>Model#deleteTask(Index index)</code>&#8201;&#8212;&#8201;Deletes the <code>Task</code> at the specified
+<code>Index</code> from the <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#deleteTask(Task t)</code>&#8201;&#8212;&#8201;Deletes the specified <code>Task</code> from the
+<code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#size()</code>&#8201;&#8212;&#8201;Returns the total number of <code>Task</code> objects in the
+<code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#hasTask(Task t)</code>&#8201;&#8212;&#8201;Checks if a given <code>Task</code> is already in the
+<code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#markTaskAsDone(Index i)</code> - Changes the <code>Status</code> of a <code>Task</code> at the given
+<code>Index</code> from <code>DONE</code> to <code>NOT_DONE</code></p>
+</li>
+<li>
+<p><code>Model#getTasks()</code>&#8201;&#8212;&#8201;Returns the <code>TaskList</code> in the <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#getTask(Index index)</code> - Retrieves the <code>Task</code> at the specified <code>Index</code> of
+the <code>TaskList</code></p>
+</li>
+<li>
+<p><code>Model#updateFilteredTaskList(Predicate&lt;Task&gt; predicate)</code> - Updates the <code>FilteredList</code> in the
+<code>Planner</code> according to the given <code>Predicate</code>.</p>
+</li>
+<li>
+<p><code>Model#updateSchedule()</code> - Updates the <code>FilteredList</code> of <code>Task</code> objects whose dates coincide with
+the current date.</p>
+</li>
+<li>
+<p><code>Model#getUnfilteredTaskList()</code> - Returns an <code>ObservableList&lt;Task&gt;</code> of all the <code>Task</code> objects
+in the <code>Planner</code>.</p>
+</li>
+<li>
+<p><code>Model#getFilteredTaskList()</code> - Returns an <code>ObservableList&lt;Task&gt;</code> of all the <code>Task</code> objects in
+the <code>FilteredList</code>.</p>
+</li>
+<li>
+<p><code>Model#getTasksToday()</code> - Returns an unmodifiable view of the list of <code>Task</code> objects that coincide with
+the current day, backed by the <code>FilteredList</code> of <code>Planner</code></p>
+</li>
+<li>
+<p><code>Model#getTasksThisWeek()</code> - Returns an unmodifiable view of the list of <code>Task</code> objects that coincide with
+the current week, backed by the <code>FilteredList</code> of <code>Planner</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>One example of the interaction between the <code>Model</code> and commands for the <code>Planner</code> can be seen when the user
+executes a <code>pull-task</code> command.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="images/PullTaskSequenceDiagram.png" alt="PullTaskSequenceDiagram">
+</div>
+<div class="title">Figure 22. Sequence Diagram for pull-task command</div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="paragraph">
+<p>In the figure above, <code>pull-task</code> will result in the filtered lists in the <code>Planner</code> to be updated according to
+the appropriate predicates. In this case, the predicate called will be <code>TaskPredicateMatchesPredicate</code> as the
+user had specified a <code>pull-task</code> according to the <code>Priority</code> levels of the <code>Task</code> objects.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-task-descriptions-in-a-task"><a class="link" href="#aspect-task-descriptions-in-a-task">Aspect: Task Descriptions in a Task</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Option 1:</strong> As a string attribute in <code>Task</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Intuitive, easy to implement, less code required</p>
+</li>
+<li>
+<p>Cons: Provides a lower level of abstraction, especially if an <code>edit-task</code>
+command is implemented</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Option 2:</strong> Building a separate <code>TaskDescription</code> class</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Higher level of abstraction</p>
+</li>
+<li>
+<p>Cons: More code, will take time to replace current methods that deal with
+String <code>TaskDes</code> directly</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ultimately, we decided on Option 1 as there are no limitations on what a description of
+a <code>Task</code> should be (other than not <em>null</em>). Further more, there is no manipulation of the
+Task Description at the current stage of Jarvis, hence there is no real need to provide an
+additional layer of abstraction for it. If we do intend to continue developing Jarvis in
+the future, however, Option 2 might be a viable choice.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finance-tracker-feature"><a class="link" href="#finance-tracker-feature">4.2. Finance Tracker feature</a></h3>
+<div class="sect3">
+<h4 id="overview-2"><a class="link" href="#overview-2">4.2.1. Overview</a></h4>
+<div class="paragraph">
+<p>The Finance Tracker feature allows the user to track their</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Purchases</p>
+</li>
+<li>
+<p>Monthly subscriptions (aka Installments)</p>
+</li>
+<li>
+<p>Total &amp; remaining spending</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The feature offers the user to view his purchases and installments in two
+separate lists, as well as be able to add, delete, find, edit these items.
+Furthermore, the feature keeps track of the overall spending by the user
+for the month, and if the user has set a limit, the feature tracks their
+remaining available spending.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-finance-tracker-model"><a class="link" href="#the-finance-tracker-model">4.2.2. The Finance Tracker Model</a></h4>
+<div class="paragraph">
+<p>The <code>FinanceTracker</code> class within the model provides an interface between the
+components of the feature and the updating of the overall model. Like other
+features, <code>Model</code> is associated with the finance tracker feature by
+implementing <code>FinanceTrackerModel</code>, from which <code>Model</code> implements.</p>
+</div>
+<div class="paragraph">
+<p>Some of the more significant methods within the <code>FinanceTracker</code> are shown
+below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model#addPurchase(Purchase)</code> - Adds a single use payment to the top of the
+list</p>
+</li>
+<li>
+<p><code>Model#deletePurchase(Index)</code> - Deletes single use payment at that index</p>
+</li>
+<li>
+<p><code>Model#addInstallment(Installment)</code> - Adds an installment</p>
+</li>
+<li>
+<p><code>Model#deleteInstallment(Index)</code> - Deletes installment at that index</p>
+</li>
+<li>
+<p><code>Model#hasSimilarInstallment(Installment)</code> - Checks for the existence of an
+installment with the same description in the finance tracker</p>
+</li>
+<li>
+<p><code>Model#setInstallment(Installment, Installment)</code> - Replaces an existing
+installment with a new installment</p>
+</li>
+<li>
+<p><code>Model#calculateTotalSpending()</code> - Calculates the total expenditure by the
+user for this month</p>
+</li>
+<li>
+<p><code>Model#calculateRemainingAmount()</code> - Calculates the remaining spending amount
+available to user</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Finance Tracker feature closely follows the extendable OOP solution already
+implemented within AB3. In the Finance Tracker, the <code>Installment</code> objects and
+the <code>Purchase</code> objects manage most aspects related to this feature. These
+objects are stored in their respective <code>ObservableList</code> - <code>InstallmentList</code>
+and <code>PurchaseList</code>, which provide an abstraction with <code>add</code>, <code>delete</code>, and
+<code>set</code> operations that are called by <code>FinanceTracker</code> and its model.</p>
+</div>
+<div class="paragraph">
+<p>Shown below is the class diagram for the Finance Tracker.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelFinanceTrackerClassDiagram.png" alt="ModelFinanceTrackerClassDiagram">
+</div>
+<div class="title">Figure 23. Finance Tracker Class Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finance-tracker-components"><a class="link" href="#finance-tracker-components">4.2.3. Finance Tracker Components</a></h4>
+<div class="paragraph">
+<p>As mentioned above, the Finance Tracker contains <code>Installment</code> and <code>Purchase</code>
+objects.</p>
+</div>
+<div class="sect4">
+<h5 id="installments"><a class="link" href="#installments">Installments</a></h5>
+<div class="paragraph">
+<p>Installments are monthly subscriptions added by the user to the Finance
+Tracker and are stored in an <code>InstallmentList</code>. The current codebase requires
+that all installments <strong>must</strong> have the following <strong>non-nullable</strong> attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>InstallmentDescription</code></p>
+</li>
+<li>
+<p><code>InstallmentMoneyPaid</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="purchases"><a class="link" href="#purchases">Purchases</a></h5>
+<div class="paragraph">
+<p>Purchases are single use payments added by the user to the Finance Tracker
+and are stored in a <code>PurchaseList</code>. The current codebase requires that all
+purchases <strong>must</strong> have the following <strong>non-nullable</strong> attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PurchaseDescription</code></p>
+</li>
+<li>
+<p><code>PurchaseMoneySpent</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-details"><a class="link" href="#feature-details">4.2.4. Feature Details</a></h4>
+<div class="paragraph">
+<p>The application should be able to add and delete both types of objects.
+Furthermore, it should be able to find specific purchases and allow editing of
+installments by their index in the <code>InstallmentList</code>.</p>
+</div>
+<div class="paragraph">
+<p>We will be focusing on the editing of installments.</p>
+</div>
+<div class="sect4">
+<h5 id="editing-an-installment"><a class="link" href="#editing-an-installment">Editing an installment</a></h5>
+<div class="paragraph">
+<p>The user has to specify the index of the installment he wishes
+to edit, as well as any of the fields he wishes to change. If the index does
+not exist, the system will inform the user of the error. As long as the
+fields provided by the user to be edited are valid (prefixed with "d/" and
+"a/"), the correct installment will be accurately edited. This is
+reflected in the Activity Diagram below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+An index is considered invalid if the numerical value provided is less
+than or equal to zero, or greater than the largest index in <code>InstallmentList</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditInstallmentActivityDiagram.png" alt="EditInstallmentActivityDiagram">
+</div>
+<div class="title">Figure 24. Activity Diagram for edit-install command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="command-execution"><a class="link" href="#command-execution">4.2.5. Command Execution</a></h4>
+<div class="paragraph">
+<p>For brevity&#8217;s sake, we will illustrate only 2 specific commands and its
+executions on model. These two commands are the <code>edit-install</code> and the
+<code>delete-paid</code> commands.</p>
+</div>
+<div class="sect4">
+<h5 id="command-code-edit-install-code"><a class="link" href="#command-code-edit-install-code">Command <code>edit-install</code></a></h5>
+<div class="paragraph">
+<p>The following sequence diagram illustrates how an
+<code>Installment</code> is edited when a user types in a <code>edit-install</code> command:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The
+<code>FinanceTracker</code> is initialized. Assume that a valid <code>Installment</code> has already
+been added to the <code>InstallmentList</code> in <code>FinanceTracker</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes
+<code>edit-install 1 d/student-price Spotify subscription a/7.50</code>
+command to edit both the description and money spent on the existing
+Installment in the FinanceTracker. An <code>EditInstallmentCommandParser</code> object is
+created and its <code>#parse</code> method is called. The parse method returns a new
+<code>EditInstallmentCommand</code> object.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <code>EditInstallmentCommand</code> object is executed on the model. The
+<code>EditInstallmentCommand#execute</code> method is called, and this will create a new
+<code>Installment</code> object from the existing installment but with all the edited
+fields changed. In this method,
+<code>Model#setInstallment(Installment, Installment)</code> method is called.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>EditInstallmentCommand#execute</code> method first checks for whether the
+index is within the size of InstallmentList.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
+methods in the <code>FinanceTracker</code> class. As such, the
+<code>FinanceTracker#setInstallment(Installment, Installment)</code> method is called.
+This in turns calls the
+<code>#InstallmentList#setInstallment(Installment, Installment)</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. This <code>InstallmentList#setInstallment(Installment, Installment)</code>
+method first finds the <code>Installment</code> based on its corresponding index. Then,
+it sets the edited installment at the index found earlier.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+TLDR: The calling of the <code>#setInstallment</code> method at the <code>Model</code>
+level triggers a cascading series of <code>#setInstallment</code> method which culminates
+in target installment being edited with the corresponding fields.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditInstallmentSequenceDiagram.png" alt="EditInstallmentSequenceDiagram">
+</div>
+<div class="title">Figure 25. Sequence Diagram for edit-install command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="command-code-delete-paid-code"><a class="link" href="#command-code-delete-paid-code">Command <code>delete-paid</code></a></h5>
+<div class="paragraph">
+<p>The following sequence diagram illustrates how a
+<code>Purchase</code> is deleted when a user types in a <code>delete-paid</code> command:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The
+<code>FinanceTracker</code> is initialized. Assume that a valid <code>Purchase</code> has already
+been added to the <code>PurchaseList</code> in <code>FinanceTracker</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>delete-paid 1</code> command to delete an existing
+Purchase in the FinanceTracker. An <code>RemovePaidCommandParser</code> object is
+created and its <code>#parse</code> method is called. The parse method returns a new
+<code>RemovePaidCommand</code> object.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <code>RemovePaidCommand</code> object is executed on the model. The
+<code>RemovePaidCommand#execute</code> method is called. In this method,
+<code>Model#deletePurchase(Index)</code> method is called.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>RemovePaidCommand#execute</code> method first checks for whether the
+index is within the size of PurchaseList.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
+methods in the <code>FinanceTracker</code> class. As such, the
+<code>FinanceTracker#deletePurchase(Index)</code> method is called.
+This in turns calls the`#PurchaseList#deletePurchase(Index)` method.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. This <code>PurchaseList#deletePurchase(Index)</code> method will then delete
+the corresponding purchase at the given index.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeletePurchaseSequenceDiagram.png" alt="DeletePurchaseSequenceDiagram">
+</div>
+<div class="title">Figure 26. Sequence Diagram for delete-paid command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.6. Design Considerations</a></h4>
+<div class="paragraph">
+<p>There were several design choices that we had to consider for the
+implementation of the Finance Tracker feature.</p>
+</div>
+<div class="sect4">
+<h5 id="encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects"><a class="link" href="#encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects">Encapsulation of fields for <code>Installment</code> and <code>Purchase</code> objects.</a></h5>
+<div class="paragraph">
+<p>Given that the <code>Installment</code> objects and the <code>Purchase</code> objects manage most
+aspects related to the Finance Tracker feature, we had to consider how to
+properly build the objects and the fields within them. This was a decision
+that was made after much thinking as we had already begun implementing the
+skeleton of the feature.</p>
+</div>
+<div class="paragraph">
+<p>Below are our considerations in refactoring the implementation at that point
+in time:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Option 1: Encapsulate constituent objects in their own wrapper classes</strong></p>
+<div class="paragraph">
+<p>As mentioned above, <code>Installment</code> would contain <code>InstallmentDescription</code> and <code>InstallmentMoneyPaid</code>
+objects while <code>Purchase</code> would contain <code>PurchaseDescription</code> and
+<code>PurchaseMoneySpent</code> objects.</p>
+</div>
+<div class="paragraph">
+<p>This would increase OOP, which would provide a clearer modular structure to
+hide implementation details. Furthermore, this would also allow the objects to
+be re-used as they are more extensible, which is something we had to consider
+for subsequent features.</p>
+</div>
+<div class="paragraph">
+<p>In further development of our application, increasing OOP would also allow
+developers to maintain the application more easily and hopefully aid in
+quicker development since the code is easier to read and maintain.</p>
+</div>
+<div class="paragraph">
+<p>However, as we had already begun implementing some basic methods, making
+this decision resulted in a steep increase in code as everything had to
+abstracted into separate classes.</p>
+</div>
+</li>
+<li>
+<p><strong>Option 2: Using primitive data types</strong></p>
+<div class="paragraph">
+<p>On one hand, our team thought that since the <code>Installment</code> and <code>Purchase</code>
+objects were not extremely complex, we could go without further encapsulation.
+Furthermore, this would have been the easier alternative at the time
+as it was the original implementation.</p>
+</div>
+<div class="paragraph">
+<p>However, we decided that in the long-term vision of the application to
+continue to be developed, we should increase OOP as much as possible.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="our-thoughts"><a class="link" href="#our-thoughts">Our Thoughts</a></h5>
+<div class="paragraph">
+<p>In general, our decision was based primarily on following good software
+engineering principles and providing the ability to allow for better
+understanding and maintenance of our code base in the future. Thus,
+we went with the first option.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ccatracker-feature"><a class="link" href="#ccatracker-feature">4.3. CcaTracker Feature</a></h3>
+<div class="sect3">
+<h4 id="overview-3"><a class="link" href="#overview-3">4.3.1. Overview</a></h4>
+<div class="paragraph">
+<p>The application is able to track Ccas. Each user can have multiple Ccas and
+each Cca can have multiple equipments needed. In addition, the application is
+able to track the progress of each person in their Ccas. Hence, there is a
+need to represent the CcaTracker as a list of Ccas on which the application
+can perform create, read, update and delete operations on each Cca.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-ccatracker-model"><a class="link" href="#the-ccatracker-model">4.3.2. The CcaTracker Model</a></h4>
+<div class="paragraph">
+<p>The <code>CcaTracker</code> class within the model provides an interface between the
+components of the feature and the updating of the overall model. Like other
+features, <code>Model</code> is associated with the cca tracker feature by
+implementing <code>CcaTrackerModel</code>, from which <code>Model</code> implements.</p>
+</div>
+<div class="paragraph">
+<p>Some of the more significant methods within the <code>CcaTracker</code> are shown
+below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model#containsCca(Cca cca)</code>&#8201;&#8212;&#8201;Checks if the <code>CcaTracker</code> contains the
+given cca.</p>
+</li>
+<li>
+<p><code>Model#addCca(Cca cca)</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#removeCca(Cca cca)</code>&#8201;&#8212;&#8201;Removes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#updateCca(Cca toBeUpdatedCca, Cca updatedCca)</code>&#8201;&#8212;&#8201;Updates a <code>Cca</code> in
+the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#getCcaTracker()</code>&#8201;&#8212;&#8201;Gets the <code>CcaTracker</code> instance.</p>
+</li>
+<li>
+<p><code>Model#getNumberOfCcas()</code>&#8201;&#8212;&#8201;Returns the number of <code>Ccas</code> currently in the
+<code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#getCca(Index index)</code>&#8201;&#8212;&#8201;Gets the <code>Cca</code> instance by its index in the
+<code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>Model#updateFilteredCcaList(Predicate&lt;Cca&gt; predicate)</code>&#8201;&#8212;&#8201;Updates the
+<code>FilteredCcaList</code> by passing it a predicate.</p>
+</li>
+<li>
+<p><code>Model#getFilteredCcaList()</code>&#8201;&#8212;&#8201;Returns an instance of the <code>FilteredCcaList</code></p>
+</li>
+<li>
+<p><code>Model#addProgress(Cca targetCca, CcaProgressList toAddCcaProgressList)</code> -
+Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
+</li>
+<li>
+<p><code>Model#increaseProgress(Index index)</code>&#8201;&#8212;&#8201;Increases the progress of the <code>Cca</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cca-tracker-components"><a class="link" href="#cca-tracker-components">4.3.3. Cca Tracker components</a></h4>
+<div class="paragraph">
+<p>The class diagram for CcaTrackerModel is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelCcaTrackerClassDiagram.png" alt="ModelCcaTrackerClassDiagram">
+</div>
+<div class="title">Figure 27. CcaTracker Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram above, The <code>CcaTracker</code> consists primarily of a single <code>CcaList</code> object. This <code>CcaList</code> object is
+essentially a wrapper around an <code>ObservableList</code> of <code>Cca</code> objects. Do note that the <code>CcaList</code> object can contain any
+number of <code>Cca</code> objects (including none).</p>
+</div>
+<div class="paragraph">
+<p>More interestingly, each <code>Cca</code> is made up of the following components, all of which are <strong>non-nullable</strong> attributes:</p>
+</div>
+<div class="sect4">
+<h5 id="ccaname"><a class="link" href="#ccaname">CcaName</a></h5>
+<div class="paragraph">
+<p>Each <code>CcaName</code> is essentially just a wrapper class around a string that is the <code>Cca</code> 's name.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="ccatype"><a class="link" href="#ccatype">CcaType</a></h5>
+<div class="paragraph">
+<p>Each <code>CcaType</code> is also just a wrapper class around a string that is the <code>Cca</code> 's type. Note that each <code>CcaType</code> is
+restricted to 1 of the 4 enum types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>sport</p>
+</li>
+<li>
+<p>performingArt</p>
+</li>
+<li>
+<p>uniformedGroup</p>
+</li>
+<li>
+<p>club</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="equipmentlist"><a class="link" href="#equipmentlist">EquipmentList</a></h5>
+<div class="paragraph">
+<p>Each <code>EquipmentList</code> is implemented as an <code>ObservableList</code> of <code>Equipment</code> objects. Note that each <code>EquipmentList</code> can
+contain any number of <code>Equipment</code> objects (including none).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="ccaprogress"><a class="link" href="#ccaprogress">CcaProgress</a></h5>
+<div class="paragraph">
+<p>The <code>CcaProgress</code> is a little more noteworthy. Each <code>CcaProgress</code> object contains a <code>CcaMilestoneList</code> object and a
+<code>CcaCurrentProgress</code> object. As with all the lists in the <code>CcaTracker</code> feature, the <code>CcaMilestoneList</code> object is
+implemented using an <code>ObservableList</code> as well. The <code>CcaCurrentProgress</code> class is merely a wrapper around an integer that
+tracks the exact <code>CcaMilestone</code> that the user is currently at.</p>
+</div>
+<div class="paragraph">
+<p>Now that we have an understanding of the underlying implementation of <code>CcaTracker</code>, lets take a closer look at the
+feature details.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="feature-details-2"><a class="link" href="#feature-details-2">4.3.4. Feature details</a></h4>
+<div class="paragraph">
+<p>CcaTracker has 7 specific commands that support the given operations to mutate
+the state of the <code>Model</code>. Each command is represented as seperate class:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AddCcaCommand</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>DeleteCcaCommand</code>&#8201;&#8212;&#8201;Deletes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>EditCcaCommand</code>&#8201;&#8212;&#8201;Edits the selected <code>Cca</code> in the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>FindCcaCommand</code>&#8201;&#8212;&#8201;Finds a <code>Cca</code> from the <code>CcaTracker</code> based on the
+keywords specified .</p>
+</li>
+<li>
+<p><code>ListCcaCommand</code>&#8201;&#8212;&#8201;Lists all the <code>Cca</code> from the <code>CcaTracker</code>.</p>
+</li>
+<li>
+<p><code>AddProgressCommand</code>&#8201;&#8212;&#8201;Adds a progress tracker to a cca.</p>
+</li>
+<li>
+<p><code>IncreaseProgressCommand</code>&#8201;&#8212;&#8201;Increments the progress level of a cca.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
+execution on model.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates how a <code>Cca</code> 's
+progress is incremented when a user types in an <code>increase-progress</code> command:</p>
+</div>
+<div class="sect4">
+<h5 id="increasing-a-cca-s-progress"><a class="link" href="#increasing-a-cca-s-progress">Increasing a cca&#8217;s progress</a></h5>
+<div class="imageblock">
+<div class="content">
+<img src="images/ccatracker/IncreaseCcaProgressActivityDiagram.png" alt="IncreaseCcaProgressActivityDiagram">
+</div>
+<div class="title">Figure 28. Activity Diagram for increase-progress command</div>
+</div>
+<div class="paragraph">
+<p>Firstly, before any increasing of progress can take place, the user has to add a <code>Cca</code> to the <code>CcaTracker</code> through the
+<code>add-cca</code> command. The user then has to add a <code>CcaMilestoneList</code> to the <code>CcaTracker</code> through the <code>add-progress</code> command.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that the execution of each command as stated above branches off into different scenarios, all of which present
+themselves to the user in form of prompts in the user interface.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="command-execution-2"><a class="link" href="#command-execution-2">4.3.5. Command Execution</a></h4>
+<div class="paragraph">
+<p>The diagram below shows the sequence diagram of the increase-progress mechanism.
+Note that some classnames and methods had to be split into multiple lines due
+to image size constraints.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ccatracker/IncreaseProgressSequenceDiagram.png" alt="IncreaseProgressSequenceDiagram">
+</div>
+<div class="title">Figure 29. Sequence diagram for increase-progress command</div>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how the increase-progress mechanism
+behaves.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The <code>CcaTracker</code>
+is initialized. Assume that a <code>Cca</code> has already been added to the Cca and that
+a progress tracker has already been set for that <code>Cca</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>increase-progress 1</code> command to increment the
+progress of the 1st <code>Cca</code> in the CcaTracker. A <code>IncreaseProgressCommandParser</code>
+object is created and its <code>#parse</code> method is called. The parse method returns
+a new <code>IncreaseProgressCommand</code> object.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <code>IncreaseProgressCommand</code> object is then executed on model. The
+<code>IncreaseProgressCommand#execute</code> method is called and in this method, the
+<code>Model#increaseProgress</code> method is called.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>IncreaseProgressCommand#execute</code> method first checks for whether the
+index is within the size of CcaList.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
+methods in the <code>CcaTracker</code> class. As such, the <code>CcaTracker#increaseProgress</code>
+method is called. This in turn calls the <code>CcaList#increaseProgress</code> method.
+This method first finds the <code>Cca</code> based on its corresponding index. Then, it
+calls the <code>Cca#increaseProgress</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. This in turn calls the <code>CcaProgress#increaseProgress</code> method that
+calls <code>CcaCurrentProgress#increaseProgress</code> method. At long last, the final
+<code>#increaseProgress</code> method in the <code>CcaCurrentProgress</code> instance is called and
+the <code>currentProgress</code> counter is incremented by 1.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In short, the calling of the <code>#increaseProgress</code> method at the <code>CcaTracker</code> level
+triggers a cascading series of <code>#increaseProgress</code> methods which culminates in
+the <code>currentProgress</code> variable being incremented by 1.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.6. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-whether-to-have-subclasses-for-each-type-of-cca"><a class="link" href="#aspect-whether-to-have-subclasses-for-each-type-of-cca">Aspect: Whether to have subclasses for each type of cca.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Option 1: Instantiate a <code>CcaProgress</code> object for
+  each <code>Cca</code></strong>
+This entails implementing <code>CcaProgess</code> class as consisting of a <code>CcaMilestoneList</code> and a <code>CcaCurrentProgess</code>. The</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less code needed.</p>
+</li>
+<li>
+<p>Cons: Less extensible as CcaProgress is now limited to what is essentially a list of strings.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Option 2: Implement <code>CcaProgress</code> as a parent class.</strong>
+This entails creating classes such as SportProgress/PerformingArtsProgress that extend from CcaProgress for each type
+of <code>Cca</code>. Such an implementation can be represented using the class diagram below:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ccatracker/AlternativeCcaProgressClassDiagram.png" alt="AlternativeCcaProgressClassDiagram">
+</div>
+<div class="title">Figure 30. Class diagram showing the alternative implementation of CcaProgress.</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to extend functionality for each type of cca.</p>
+</li>
+<li>
+<p>Cons: Does not significantly extend functionality for this version of
+Jarvis.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="our-thoughts-2"><a class="link" href="#our-thoughts-2">Our Thoughts</a></h5>
+<div class="paragraph">
+<p>After much consideration, we have decided to implement <code>CcaProgress</code> as per option 1. This is because we wish to afford
+the user the flexibility to set whichever milestones they wish to in their Cca.</p>
+</div>
+<div class="paragraph">
+<p>Option 2 would entail hardcoding a certain type of <code>CcaMilestone</code> for each type of <code>CcaProgress</code>. For example,
+each <code>UniformedGroupProgress</code> might have included a series of <code>CcaMilestoneRanks</code>, where the user can set each
+CcaMilestoneRanks to be ranks such as Private, Lance Corporal, Corporal, Sergeant etc. Then, the
+<code>UniformedGroupProgress</code> could have individualised attributes such as types of awards etc.</p>
+</div>
+<div class="paragraph">
+<p>However, in light of the fact that Jarvis is a CLI application, it would have been extremely cumbersome for the user to
+type the myriad number of options.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-whether-to-use-observable-list-for-code-ccaprogresslist-code"><a class="link" href="#aspect-whether-to-use-observable-list-for-code-ccaprogresslist-code">Aspect: Whether to use observable list for <code>CcaProgressList</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Option 1 : Implement CcaProgressList as an
+<code>ObservableList</code></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to manipulate for JavaFx.</p>
+</li>
+<li>
+<p>Cons: Potentially complicated nesting when passing arguments to it as
+CcaProgressList is nested several classes within <code>Cca</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Option 2: Implement CcaProgressList as a normal <code>List</code> e.g.
+<code>ArrayList</code>.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Does not require predicates to be passed in.</p>
+</li>
+<li>
+<p>Cons: Might be more complicated when rendering in Javafx.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="our-thoughts-3"><a class="link" href="#our-thoughts-3">Our Thoughts</a></h5>
+<div class="paragraph">
+<p>Implementing the <code>CcaProgressList</code> as an <code>ArrayList</code> would have been an easier option. However, the implementation of
+the <code>CcaProgressList</code> as an <code>ObservableList</code> proved to be a wiser choice as <code>Javafx</code> fully supports the manipulation and
+rendering of an <code>ObservableList</code>. Using an <code>ArrayList</code>  would have made the building of the ui thoroughly cumbersome.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="course-planner-feature"><a class="link" href="#course-planner-feature">4.4. Course Planner feature</a></h3>
+<div class="sect3">
+<h4 id="overview-4"><a class="link" href="#overview-4">4.4.1. Overview</a></h4>
+<div class="paragraph">
+<p>The Course Planner feature allows the user to track what courses they</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Have taken</p>
+</li>
+<li>
+<p>Are taking, and</p>
+</li>
+<li>
+<p>Want to take</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The feature offers updated information on courses offered by NUS, along with
+convenient add, delete and check operations on the user&#8217;s course list.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-course-planner-model"><a class="link" href="#the-course-planner-model">4.4.2. The Course Planner Model</a></h4>
+<div class="paragraph">
+<p>The <code>CoursePlanner</code> class within the model provides an interface between the
+components of the feature and the updating of the overall model. Like other
+features, <code>Model</code> is associated with the course planner feature via
+implementing <code>CoursePlannerModel</code>, from which <code>Model</code> implements.</p>
+</div>
+<div class="paragraph">
+<p>Some of the more interesting methods (i.e not simple accessor and mutator
+methods) within <code>CoursePlanner</code> are shown below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model#addCourse(Course)</code> - Adds a course to the user&#8217;s list</p>
+</li>
+<li>
+<p><code>Model#deleteCourse(Course)</code> - Deletes the course from the user&#8217;s list</p>
+</li>
+<li>
+<p><code>Model#lookUpCourse(Course)</code> - Looks up information about the given course</p>
+</li>
+<li>
+<p><code>Model#checkCourse(Course)</code> - Checks if the user can take this course</p>
+</li>
+<li>
+<p><code>Model#hasCourse(Course)</code> - Checks if the given course exists in the user&#8217;s
+list</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The list of courses of the user is stored internally using a <code>UniqueCourseList</code>
+object, providing an abstraction with <code>add</code> and <code>delete</code> operations that
+are called by <code>CoursePlanner</code> and its model.</p>
+</div>
+<div class="paragraph">
+<p>The text that is displayed to the user within the UI showing information about
+the Course Planner is abstracted within the course text display. This is a
+simple class that uses <code>Observable</code> to track changes to it as the program runs.
+The class abstracts some operations on this string such as setting, getting,
+printing to a displayable form, etc.</p>
+</div>
+<div class="paragraph">
+<p>Shown below is the Class diagram for the Course Planner.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelCoursePlannerClassDiagram.png" alt="ModelCoursePlannerClassDiagram">
+</div>
+<div class="title">Figure 31. Course Model Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>Every <code>Course</code> has a few non-nullable attributes - <code>Title</code>, <code>CourseCode</code>,
+<code>CourseCredit</code>, <code>Faculty</code> and <code>Description</code>. The other three (<code>PrereqTree</code>,
+<code>Preclusion</code> and <code>FulfillRequirements</code>) are not required to exist as it
+depends on the course&#8217;s data.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.3. Design Considerations</a></h4>
+<div class="paragraph">
+<p>As explained above, the <code>CoursePlanner</code> is implemented by <code>Model</code> and follows
+much of the extendable OOP solution implemented within Jarvis that is common
+to the other features.</p>
+</div>
+<div class="paragraph">
+<p>This section will discuss about the individual components that were created
+for this feature, the alternative Software Engineering design choices for each
+one, and our thought process of the eventual choices made for each component.</p>
+</div>
+<div class="sect4">
+<h5 id="course-datasets"><a class="link" href="#course-datasets">Course Datasets</a></h5>
+<div class="paragraph">
+<p>Course datasets are taken directly from the <a href="https://api.nusmods.com/v2/">NUSMods API</a>. These
+datasets are stored using the <code>.json</code> file format on NUSMod&#8217;s API. Since
+Jarvis already heavily uses the Jackson JSON API, we have opted to store all
+course data within Jarvis in their original form. Therefore, all data is read
+directly from <code>.json</code> files.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+NUSMods is a popular website officially affiliated with NUS, where
+students are able to look up information about courses and plan their school
+timetable. This makes its dataset a reliable source of course information.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Each course, and their data, are given its own file. These files are laid out
+in <code>/modinfo</code> within <code>/resources</code> to be easily accessible by the program.</p>
+</div>
+<div class="paragraph">
+<p>A sample, valid <code>AB1234.json</code> is given below for a fictional course <code>AB1234</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    "courseCode": "AB1234",
+    "courseCredit": "4",
+    "description": "Course description for AB1234.",
+    "faculty": "A Faculty in NUS",
+    "fulfillRequirements": [ "AB2234" ],
+    "preclusion": "AB1231, AB1232",
+    "prereqTree": {
+        "and": [
+            {
+                "or": [
+                    "CD1111",
+                    "XY2222"
+                ]
+            },
+            "EF3333"
+        ]
+    },
+    "title": "Course AB1234's title"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As explained above, certain attributes of a <code>Course</code> are non-nullable. This
+choice was made due to the actual course datasets -</p>
+</div>
+<div class="paragraph">
+<p>This also means that every semester, all datasets must be pre-processed before
+being deployed into the application. It is quite simple to create a script to do
+the pre-processing, and is such a good trade-off as opposed to manually
+checking every field when pulling data from a course file.</p>
+</div>
+<div class="sect5">
+<h6 id="storing-of-course-datasets"><a class="link" href="#storing-of-course-datasets">Storing of Course Datasets</a></h6>
+<div class="paragraph">
+<p>A decision we had to make concerned the way we would store the data to be
+referenced on runtime. Considering the multiple options, two stood out as
+being the most feasible within Jarvis.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Option 1: Storing every course in a single, large JSON file</strong></p>
+<div class="paragraph">
+<p>This makes file handling easier to manage. Every course can be found in single
+file and the code need not deal with many <code>FileNotFoundException</code> or
+<code>IOException</code> upon lookup, as the file is guaranteed to exist.</p>
+</div>
+<div class="paragraph">
+<p>The trade-off is that a large file will be difficult to view for a developer.
+It will also have slow performance as the entire file would have to be
+processed to look up one course.</p>
+</div>
+<div class="paragraph">
+<p>The developer may also:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Store the whole file in a buffer for faster lookup, but this may be
+time-consuming and troublesome to implement, especially due to the memory
+consumption, or:</p>
+</li>
+<li>
+<p>Process the whole file and create all <code>Course</code> objects upon start-up.
+However, due to the large number of course files (11000+), this may also
+have significant memory overhead.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Option 2: Storing each course as its own file</strong></p>
+<div class="paragraph">
+<p>This allows for fast lookup as the contents of all 11000+ course files of data
+do not need to be scanned directly. Fast string concatenation of file paths
+directly to the relevant <code>.json</code> file can be used instead.</p>
+</div>
+<div class="paragraph">
+<p>Unfortunately, this also makes the data-set difficult to manage. If we want
+to modify the data-set in any way, a script will have to be written to process
+every file in the data-set. Additionally, every lookup must deal with
+file-related exceptions.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="our-thoughts-4"><a class="link" href="#our-thoughts-4">Our Thoughts</a></h6>
+<div class="paragraph">
+<p>We decided to go with Option 2, as once the files were downloaded and
+processed, there was no need to modify them any further. Processing, or loading
+inside a buffer, of very large text files are likely to significantly hamper
+performance for little benefit. Manual lookup information about a specific
+course during development is also much easier with such a method.</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="and-or-tree"><a class="link" href="#and-or-tree">And-Or Tree</a></h5>
+<div class="paragraph">
+<p>The <code>AndOrTree&lt;R&gt;</code> is a tree data structure served by the <code>util/andor</code> package
+that provides an abstraction for processing the prerequisite tree.  The
+prerequisite tree (henceforth referred to as <code>prereqTree</code>) is an attribute of a
+<code>Course</code> that is available in the NUSMod&#8217;s course data-set, the data comes in
+the form of a <code>String</code> and will be covered shortly.</p>
+</div>
+<div class="paragraph">
+<p>Before covering the tree itself, it would be helpful to cover its building
+blocks.</p>
+</div>
+<div class="sect5">
+<h6 id="the-code-andornode-code-class"><a class="link" href="#the-code-andornode-code-class">The <code>AndOrNode</code> Class</a></h6>
+<div class="paragraph">
+<p>Each node in the tree of type <code>R</code> is represented by an <code>AndOrNode&lt;R&gt;</code>. Every
+node has a <code>List&lt;AndOrNode&lt;R&gt;&gt;</code>, to be used in checking the truth condition
+of the tree, and every node is either an <code>AndNode</code>, <code>OrNode</code> or <code>DataNode</code>
+node. This determines the conditional used to check the truth condition of a
+node.</p>
+</div>
+<div class="paragraph">
+<p>The truth condition of a node is determined using the method:
+<code>boolean fulfills(Collection&lt;R&gt;)</code>. This checks the truth condition of the node
+based on the following predicates:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The node is an <code>AndNode</code></p>
+<div class="paragraph">
+<p>Any subset of elements in <code>Collection&lt;R&gt;</code> must match all children of this
+node.</p>
+</div>
+</li>
+<li>
+<p>The node is an <code>OrNode</code></p>
+<div class="paragraph">
+<p>Any element in <code>Collection&lt;R&gt;</code> must match at least one of the children of this
+node.</p>
+</div>
+</li>
+<li>
+<p>The node is a <code>DataNode</code></p>
+<div class="paragraph">
+<p>Any element in <code>Collection&lt;R&gt;</code> must match the data stored in this node.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>So, an <code>AndNode&lt;String&gt;</code> with children <code>{"1", "2", "3"}</code> will match <code>true</code>
+against a collection of <code>{"1", "2", "3", "4"}</code> and <code>false</code> against a collection
+of <code>{"2", "3"}</code>.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="node-creation"><a class="link" href="#node-creation">Node Creation</a></h6>
+<div class="paragraph">
+<p>The following class diagram demonstrates the structure of the <code>abstract class</code>
+<code>AndOrNode</code> and its sub-classes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ryanytan-AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
+</div>
+<div class="title">Figure 32. AndOrNode Inheritance Diagram</div>
+</div>
+<div class="paragraph">
+<p>Using this format, a static method of the form <code>AndOrNode#createNode(T,String)</code>
+is able to construct all instances of its sub-class, thus the caller will not
+need to know of the different type of nodes.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="the-code-andortree-code-class"><a class="link" href="#the-code-andortree-code-class">The <code>AndOrTree</code> Class</a></h6>
+<div class="paragraph">
+<p>The following are <code>public</code> methods in <code>AndOrTree</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>buildTree(String, Function&lt;String, ? extends R&gt;)</code></p>
+<div class="paragraph">
+<p>Builds a tree from the given jsonString. <code>Function</code> is a mapper that processes
+a <code>String</code> and returns a value of type <code>R</code>, where <code>R</code> is the type of data
+stored by each node in the tree.</p>
+</div>
+</li>
+<li>
+<p><code>fulfills(Collection&lt;R&gt;)</code></p>
+<div class="paragraph">
+<p>Checks if the given <code>Collection</code> of type <code>R</code> fulfills the condition specified
+by this tree. <code>AndOrNode</code> has its own corresponding <code>fulfill</code> that checks its
+children or data against <code>Collection</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Due to the arbitrary ordering of the tree, <code>insert()</code> and <code>delete()</code> operations
+commonly found in implementations of ordered trees are difficult to implement.
+Instead, the tree is fully created upon the call to <code>buildTree()</code> and is then
+enforced to be immutable once built. This is reflected in the class' lack of
+mutator methods.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="building-of-the-code-andortree-code"><a class="link" href="#building-of-the-code-andortree-code">Building of the <code>AndOrTree</code></a></h6>
+<div class="paragraph">
+<p>As mentioned above, we use the <code>prereqTree</code> attribute in order to build the
+tree. An example of a processable json string is as such:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>"prereqTree": {
+    "and": [
+        {
+            "or": [
+                "CD1111",
+                "XY2222"
+            ]
+        },
+        "EF3333"
+    ]
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This can be read as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>To take AB1234, you require...
+ |
+ └ all of
+   ├── one of
+   |   ├─ "CD1111"
+   |   └─ "XY2222"
+   └─ "EF3333"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This means that to take the fictional course <code>AB1234</code>, a user would have to
+complete <code>EF3333</code>, <strong>and</strong> either <code>CD1111</code> or <code>XY2222</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>buildTree()</code> method takes in the <code>json</code> string as an input. The Jackson
+API uses this string to create a root <code>JsonNode</code> object, and the tree is built
+recursively from the root. The sequence diagram of the tree building process is
+shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ryanytan-AndOrSequenceDiagramSimplified.png" alt="ryanytan AndOrSequenceDiagramSimplified">
+</div>
+<div class="title">Figure 33. buildTree() Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>The class looks at each node - checks if its is an <code>Object</code>, <code>Array</code> or a
+<code>String</code>, and does the appropriate actions and function calls.</p>
+</div>
+<div class="paragraph">
+<p>Other ways of building the tree can be easily extended by overloading the
+<code>buildTree</code> method. However, this will not override the immutable properties of
+the tree.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="dependency-on-course"><a class="link" href="#dependency-on-course">Dependency on Course</a></h6>
+<div class="paragraph">
+<p><code>AndOrTree</code> posed some difficulty for us, in the decision to couple the
+implementation of <code>AndOrTree</code> with <code>Course</code>. This is because the tree will
+only ever be used by the Course Planner within the program, and thus it is
+not required to implement the tree using generics. However, this would increase
+coupling between <code>AndOrTree</code> and <code>Course</code>, which is unfavourable for testing.</p>
+</div>
+<div class="paragraph">
+<p>Below are our considerations in implementing this data structure:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Option 1: Couple <code>AndOrTree</code> to <code>Course</code></strong></p>
+<div class="paragraph">
+<p>This means that there is no need to pass any mapper function into the
+<code>buildTree()</code> method as the class does not need to know how to map from <code>String</code>
+to <code>R</code>. This also makes handling mapping exceptions easier as they can be
+handled directly by <code>Course</code> instead of by <code>AndOrTree</code>.</p>
+</div>
+<div class="paragraph">
+<p>However, this increases coupling between the tree and <code>Course</code>, resulting in
+the correctness of the <code>AndOrTree</code> class being dependent on <code>Course</code> as there
+is no way to stub it. The tree will also only be locked to <code>Course</code> and is
+non-extendable.</p>
+</div>
+</li>
+<li>
+<p><strong>Option 2: Using Generics</strong></p>
+<div class="paragraph">
+<p>This makes the tree reusable in the future. The tree will also
+be able to store any data-type which allows for easier unit testing, since
+it won&#8217;t be dependent on the correctness of <code>Course</code>. Instead well-tested
+libraries such as Java&#8217;s <code>String</code> API can be used to test the class instead.</p>
+</div>
+<div class="paragraph">
+<p>However, due to how the tree is built (i.e from a json string), a
+mapper function must be passed into the <code>buildTree()</code> method to process
+the string in each node to the generic type of the tree. The function is of
+the type <code>Function&lt;String, ? extends R&gt;</code>, for a tree of type <code>R</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="our-thoughts-5"><a class="link" href="#our-thoughts-5">Our Thoughts</a></h6>
+<div class="paragraph">
+<p>Due to its benefits far outweighing its disadvantages, we picked the second
+choice of using generics. While extendability and re-usability of the class is
+a nice bonus, the decrease in coupling and increase in testability was the
+deciding factor in choosing between these two approaches. Furthermore, behavior
+of the building of the tree can be easily extended by either inheritance, or
+overloading of the <code>buildTree()</code> method.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">4.4.4. Implementation</a></h4>
+<div class="paragraph">
+<p>With the significant individual components covered, the process of the
+Course Planner can be discussed. We will be covering the <code>check</code> command
+since the rest of the commands are either simple insert and delete operations
+on a list, or retrieving data from a file. This command allows us to see the
+full extent of back-end to front-end operations on the Course Planner.</p>
+</div>
+<div class="paragraph">
+<p>The <code>check</code> operation allows users to check if they are able to take a certain
+course. Whether the user can take the course depends on the courses in their
+list. The following is the activity diagram of general overview of the process
+when the user types a <code>check</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ryanytan-CheckActivityDiagram.png" alt="TODO">
+</div>
+<div class="title">Figure 34. Check Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>Additionally, the following below shows the sequence diagram of how the
+program checks if the user satisfies the course&#8217;s prerequisites.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ryanytan-CheckCommandSequenceDiagram.png" alt="ryanytan CheckCommandSequenceDiagram">
+</div>
+<div class="title">Figure 35. CheckCommand Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>The implementation in the back-end is quite similar to the other features, as
+seen in the similarities between the above sequence diagram and the one
+<a href="#Design-ArchitectureInteraction">under the Architecture section</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.5. Undo / Redo Feature</a></h3>
 <div class="paragraph">
 <p>This section covers in detail the undo/redo feature of Jarvis.</p>
 </div>
@@ -566,7 +2004,7 @@ implemented.</p>
 Considerations section below.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.1. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p>There were several available behavioral design patterns that we were
 considering to adopt to implement our undo/redo feature in the application.</p>
@@ -771,7 +2209,7 @@ fields to be saved in <code>Model</code>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="our-thoughts"><a class="link" href="#our-thoughts">Our Thoughts</a></h5>
+<h5 id="our-thoughts-6"><a class="link" href="#our-thoughts-6">Our Thoughts</a></h5>
 <div class="paragraph">
 <p>These are the following questions we asked ourselves when deciding between
 these two approaches</p>
@@ -876,7 +2314,7 @@ considered that would influence the logic of how we implement undo/redo.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="feature-details"><a class="link" href="#feature-details">4.1.2. Feature Details</a></h4>
+<h4 id="feature-details-3"><a class="link" href="#feature-details-3">4.5.2. Feature Details</a></h4>
 <div class="paragraph">
 <p>The application should be able to undo and redo changes made by commands to
 give the user more flexibility in their inputs. Undo and redo operations
@@ -889,13 +2327,13 @@ reflected in the Activity Diagrams below.</p>
 <div class="content">
 <img src="images/UndoCommandActivityDiagram.png" alt="UndoCommandActivityDiagram">
 </div>
-<div class="title">Figure 21. Activity Diagram for undo command</div>
+<div class="title">Figure 36. Activity Diagram for undo command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/RedoCommandActivityDiagram.png" alt="RedoCommandActivityDiagram">
 </div>
-<div class="title">Figure 22. Activity Diagram for redo command</div>
+<div class="title">Figure 37. Activity Diagram for redo command</div>
 </div>
 <div class="paragraph">
 <p>Therefore there is a need to remember commands that change the state of the
@@ -939,14 +2377,14 @@ user types in a command:</p>
 <div class="content">
 <img src="images/InverseCommandActivityDiagram.png" alt="InverseCommandActivityDiagram">
 </div>
-<div class="title">Figure 23. Activity Diagram for how commands are remembered after their successful execution</div>
+<div class="title">Figure 38. Activity Diagram for how commands are remembered after their successful execution</div>
 </div>
 <div class="paragraph">
 <p>The section below will discuss in more detail how undo/redo is implemented.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.3. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.5.3. Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo feature mechanism is facilitated by <code>HistoryManager</code>.
 <code>HistoryManager</code> remembers <strong>invertible commands</strong>. These commands are stored
@@ -997,12 +2435,12 @@ command.</p>
 </li>
 <li>
 <p><code>Model#rememberInverselyExecutedCommand(Command)</code>&#8201;&#8212;&#8201;Remembers the given
-<code>Command</code> and stores it in <code>inverselyExecutedCommands</code> to facilitate redo
+  <code>Command</code> and stores it in <code>inverselyExecutedCommands</code> to facilitate redo
 capability for this command.</p>
 </li>
 <li>
 <p><code>Model#rollback()</code>&#8201;&#8212;&#8201;Inversely executes the latest command stored in
-<code>executedCommands</code> to revert the changes of the latest executed command
+  <code>executedCommands</code> to revert the changes of the latest executed command
 made onto <code>Model</code>.</p>
 </li>
 <li>
@@ -1041,7 +2479,7 @@ called.</p>
 <div class="content">
 <img src="images/HistoryManagerModelClassDiagram.png" alt="HistoryManagerModelClassDiagram">
 </div>
-<div class="title">Figure 24. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
+<div class="title">Figure 39. Class Diagram for <code>Model</code>, <code>ModelManager</code>, <code>HistoryManager</code>, <code>CommandDeque</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Undo and redo operations are executed with <code>UndoCommand</code> and <code>RedoCommand</code>
@@ -1054,7 +2492,7 @@ undo or redo, represented by <code>UndoCommand#numberOfTimes</code> and
 <div class="content">
 <img src="images/CommandClassDiagram.png" alt="CommandClassDiagram">
 </div>
-<div class="title">Figure 25. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
+<div class="title">Figure 40. Class Diagram for <code>UndoCommand</code>, <code>RedoCommand</code> and <code>Command</code></div>
 </div>
 <div class="paragraph">
 <p>Below are two sequence diagrams of how a <code>UndoCommand</code> and <code>RedoCommand</code>
@@ -1069,7 +2507,7 @@ executes in the program.</p>
 <div class="content">
 <img src="images/UndoSequenceDiagramNew.png" alt="UndoSequenceDiagramNew">
 </div>
-<div class="title">Figure 26. Sequence Diagram for <code>UndoCommand</code> (undo a single command)</div>
+<div class="title">Figure 41. Sequence Diagram for <code>UndoCommand</code> (undo a single command)</div>
 </div>
 <div class="paragraph">
 <p>Below is a sequence diagram of how a <code>RedoCommand</code> to redo a single command
@@ -1079,14 +2517,14 @@ executes in the program.</p>
 <div class="content">
 <img src="images/RedoSequenceDiagramNew.png" alt="RedoSequenceDiagramNew">
 </div>
-<div class="title">Figure 27. Sequence Diagram for <code>RedoCommand</code> (redo a single command)</div>
+<div class="title">Figure 42. Sequence Diagram for <code>RedoCommand</code> (redo a single command)</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how undo/redo mechanism behaves.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="user-scenario-demonstrating-undo-redo"><a class="link" href="#user-scenario-demonstrating-undo-redo">4.1.4. User Scenario demonstrating undo/redo</a></h4>
+<h4 id="user-scenario-demonstrating-undo-redo"><a class="link" href="#user-scenario-demonstrating-undo-redo">4.5.4. User Scenario demonstrating undo/redo</a></h4>
 <div class="paragraph">
 <p>Step 1. The user launches the application for the first time. The
 <code>HistoryManager</code> is initialized. <code>HistoryManager#executedCommands</code> and
@@ -1225,1447 +2663,6 @@ similar to how navigation works between pages you visit in a browser tab.
 </div>
 </div>
 <div class="sect2">
-<h3 id="course-planner-feature"><a class="link" href="#course-planner-feature">4.2. Course Planner feature</a></h3>
-<div class="sect3">
-<h4 id="overview"><a class="link" href="#overview">4.2.1. Overview</a></h4>
-<div class="paragraph">
-<p>The Course Planner feature allows the user to track what courses they</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Have taken</p>
-</li>
-<li>
-<p>Are taking, and</p>
-</li>
-<li>
-<p>Want to take</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The feature offers updated information on courses offered by NUS, along with
-convenient add, delete and check operations on the user&#8217;s course list.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="the-course-planner-model"><a class="link" href="#the-course-planner-model">4.2.2. The Course Planner Model</a></h4>
-<div class="paragraph">
-<p>The <code>CoursePlanner</code> class within the model provides an interface between the
-components of the feature and the updating of the overall model. Like other
-features, <code>Model</code> is associated with the course planner feature via
-implementing <code>CoursePlannerModel</code>, from which <code>Model</code> implements.</p>
-</div>
-<div class="paragraph">
-<p>Some of the more interesting methods (i.e not simple accessor and mutator
-methods) within <code>CoursePlanner</code> are shown below:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Model#addCourse(Course)</code> - Adds a course to the user&#8217;s list</p>
-</li>
-<li>
-<p><code>Model#deleteCourse(Course)</code> - Deletes the course from the user&#8217;s list</p>
-</li>
-<li>
-<p><code>Model#lookUpCourse(Course)</code> - Looks up information about the given course</p>
-</li>
-<li>
-<p><code>Model#checkCourse(Course)</code> - Checks if the user can take this course</p>
-</li>
-<li>
-<p><code>Model#hasCourse(Course)</code> - Checks if the given course exists in the user&#8217;s
-list</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The list of courses of the user is stored internally using a <code>UniqueCourseList</code>
-object, providing an abstraction with <code>add</code> and <code>delete</code> operations that
-are called by <code>CoursePlanner</code> and its model.</p>
-</div>
-<div class="paragraph">
-<p>The text that is displayed to the user within the UI showing information about
-the Course Planner is abstracted within the course text display. This is a
-simple class that uses <code>Observable</code> to track changes to it as the program runs.
-The class abstracts some operations on this string such as setting, getting,
-printing to a displayable form, etc.</p>
-</div>
-<div class="paragraph">
-<p>Shown below is the Class diagram for the Course Planner.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ModelCoursePlannerClassDiagram.png" alt="ModelCoursePlannerClassDiagram">
-</div>
-<div class="title">Figure 28. Course Model Class Diagram</div>
-</div>
-<div class="paragraph">
-<p>Every <code>Course</code> has a few non-nullable attributes - <code>Title</code>, <code>CourseCode</code>,
-<code>CourseCredit</code>, <code>Faculty</code> and <code>Description</code>. The other three (<code>PrereqTree</code>,
-<code>Preclusion</code> and <code>FulfillRequirements</code>) are not required to exist as it
-depends on the course&#8217;s data.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.3. Design Considerations</a></h4>
-<div class="paragraph">
-<p>As explained above, the <code>CoursePlanner</code> is implemented by <code>Model</code> and follows
-much of the extendable OOP solution implemented within Jarvis that is common
-to the other features.</p>
-</div>
-<div class="paragraph">
-<p>This section will discuss about the individual components that were created
-for this feature, the alternative Software Engineering design choices for each
-one, and our thought process of the eventual choices made for each component.</p>
-</div>
-<div class="sect4">
-<h5 id="course-datasets"><a class="link" href="#course-datasets">Course Datasets</a></h5>
-<div class="paragraph">
-<p>Course datasets are taken directly from the <a href="https://api.nusmods.com/v2/">NUSMods API</a>. These
-datasets are stored using the <code>.json</code> file format on NUSMod&#8217;s API. Since
-Jarvis already heavily uses the Jackson JSON API, we have opted to store all
-course data within Jarvis in their original form. Therefore, all data is read
-directly from <code>.json</code> files.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-NUSMods is a popular website officially affiliated with NUS, where
-students are able to look up information about courses and plan their school
-timetable. This makes its dataset a reliable source of course information.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Each course, and their data, are given its own file. These files are laid out
-in <code>/modinfo</code> within <code>/resources</code> to be easily accessible by the program.</p>
-</div>
-<div class="paragraph">
-<p>A sample, valid <code>AB1234.json</code> is given below for a fictional course <code>AB1234</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-    "courseCode": "AB1234",
-    "courseCredit": "4",
-    "description": "Course description for AB1234.",
-    "faculty": "A Faculty in NUS",
-    "fulfillRequirements": [ "AB2234" ],
-    "preclusion": "AB1231, AB1232",
-    "prereqTree": {
-        "and": [
-            {
-                "or": [
-                    "CD1111",
-                    "XY2222"
-                ]
-            },
-            "EF3333"
-        ]
-    },
-    "title": "Course AB1234's title"
-}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>As explained above, certain attributes of a <code>Course</code> are non-nullable. This
-choice was made due to the actual course datasets -</p>
-</div>
-<div class="paragraph">
-<p>This also means that every semester, all datasets must be pre-processed before
-being deployed into the application. It is quite simple to create a script to do
-the pre-processing, and is such a good trade-off as opposed to manually
-checking every field when pulling data from a course file.</p>
-</div>
-<div class="sect5">
-<h6 id="storing-of-course-datasets"><a class="link" href="#storing-of-course-datasets">Storing of Course Datasets</a></h6>
-<div class="paragraph">
-<p>A decision we had to make concerned the way we would store the data to be
-referenced on runtime. Considering the multiple options, two stood out as
-being the most feasible within Jarvis.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Option 1: Storing every course in a single, large JSON file</strong></p>
-<div class="paragraph">
-<p>This makes file handling easier to manage. Every course can be found in single
-file and the code need not deal with many <code>FileNotFoundException</code> or
-<code>IOException</code> upon lookup, as the file is guaranteed to exist.</p>
-</div>
-<div class="paragraph">
-<p>The trade-off is that a large file will be difficult to view for a developer.
-It will also have slow performance as the entire file would have to be
-processed to look up one course.</p>
-</div>
-<div class="paragraph">
-<p>The developer may also:</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Store the whole file in a buffer for faster lookup, but this may be
-time-consuming and troublesome to implement, especially due to the memory
-consumption, or:</p>
-</li>
-<li>
-<p>Process the whole file and create all <code>Course</code> objects upon start-up.
-However, due to the large number of course files (11000+), this may also
-have significant memory overhead.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><strong>Option 2: Storing each course as its own file</strong></p>
-<div class="paragraph">
-<p>This allows for fast lookup as the contents of all 11000+ course files of data
-do not need to be scanned directly. Fast string concatenation of file paths
-directly to the relevant <code>.json</code> file can be used instead.</p>
-</div>
-<div class="paragraph">
-<p>Unfortunately, this also makes the data-set difficult to manage. If we want
-to modify the data-set in any way, a script will have to be written to process
-every file in the data-set. Additionally, every lookup must deal with
-file-related exceptions.</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect5">
-<h6 id="our-thoughts-2"><a class="link" href="#our-thoughts-2">Our Thoughts</a></h6>
-<div class="paragraph">
-<p>We decided to go with Option 2, as once the files were downloaded and
-processed, there was no need to modify them any further. Processing, or loading
-inside a buffer, of very large text files are likely to significantly hamper
-performance for little benefit. Manual lookup information about a specific
-course during development is also much easier with such a method.</p>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="and-or-tree"><a class="link" href="#and-or-tree">And-Or Tree</a></h5>
-<div class="paragraph">
-<p>The <code>AndOrTree&lt;R&gt;</code> is a tree data structure served by the <code>util/andor</code> package
-that provides an abstraction for processing the prerequisite tree.  The
-prerequisite tree (henceforth referred to as <code>prereqTree</code>) is an attribute of a
-<code>Course</code> that is available in the NUSMod&#8217;s course data-set, the data comes in
-the form of a <code>String</code> and will be covered shortly.</p>
-</div>
-<div class="paragraph">
-<p>Before covering the tree itself, it would be helpful to cover its building
-blocks.</p>
-</div>
-<div class="sect5">
-<h6 id="the-code-andornode-code-class"><a class="link" href="#the-code-andornode-code-class">The <code>AndOrNode</code> Class</a></h6>
-<div class="paragraph">
-<p>Each node in the tree of type <code>R</code> is represented by an <code>AndOrNode&lt;R&gt;</code>. Every
-node has a <code>List&lt;AndOrNode&lt;R&gt;&gt;</code>, to be used in checking the truth condition
-of the tree, and every node is either an <code>AndNode</code>, <code>OrNode</code> or <code>DataNode</code>
-node. This determines the conditional used to check the truth condition of a
-node.</p>
-</div>
-<div class="paragraph">
-<p>The truth condition of a node is determined using the method:
-<code>boolean fulfills(Collection&lt;R&gt;)</code>. This checks the truth condition of the node
-based on the following predicates:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The node is an <code>AndNode</code></p>
-<div class="paragraph">
-<p>Any subset of elements in <code>Collection&lt;R&gt;</code> must match all children of this
-node.</p>
-</div>
-</li>
-<li>
-<p>The node is an <code>OrNode</code></p>
-<div class="paragraph">
-<p>Any element in <code>Collection&lt;R&gt;</code> must match at least one of the children of this
-node.</p>
-</div>
-</li>
-<li>
-<p>The node is a <code>DataNode</code></p>
-<div class="paragraph">
-<p>Any element in <code>Collection&lt;R&gt;</code> must match the data stored in this node.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>So, an <code>AndNode&lt;String&gt;</code> with children <code>{"1", "2", "3"}</code> will match <code>true</code>
-against a collection of <code>{"1", "2", "3", "4"}</code> and <code>false</code> against a collection
-of <code>{"2", "3"}</code>.</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="node-creation"><a class="link" href="#node-creation">Node Creation</a></h6>
-<div class="paragraph">
-<p>The following class diagram demonstrates the structure of the <code>abstract class</code>
-<code>AndOrNode</code> and its sub-classes.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ryanytan-AndOrNodeInheritanceClassDiagram.png" alt="800" width="600">
-</div>
-<div class="title">Figure 29. AndOrNode Inheritance Diagram</div>
-</div>
-<div class="paragraph">
-<p>Using this format, a static method of the form <code>AndOrNode#createNode(T,String)</code>
-is able to construct all instances of its sub-class, thus the caller will not
-need to know of the different type of nodes.</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="the-code-andortree-code-class"><a class="link" href="#the-code-andortree-code-class">The <code>AndOrTree</code> Class</a></h6>
-<div class="paragraph">
-<p>The following are <code>public</code> methods in <code>AndOrTree</code>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>buildTree(String, Function&lt;String, ? extends R&gt;)</code></p>
-<div class="paragraph">
-<p>Builds a tree from the given jsonString. <code>Function</code> is a mapper that processes
-a <code>String</code> and returns a value of type <code>R</code>, where <code>R</code> is the type of data
-stored by each node in the tree.</p>
-</div>
-</li>
-<li>
-<p><code>fulfills(Collection&lt;R&gt;)</code></p>
-<div class="paragraph">
-<p>Checks if the given <code>Collection</code> of type <code>R</code> fulfills the condition specified
-by this tree. <code>AndOrNode</code> has its own corresponding <code>fulfill</code> that checks its
-children or data against <code>Collection</code>.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Due to the arbitrary ordering of the tree, <code>insert()</code> and <code>delete()</code> operations
-commonly found in implementations of ordered trees are difficult to implement.
-Instead, the tree is fully created upon the call to <code>buildTree()</code> and is then
-enforced to be immutable once built. This is reflected in the class' lack of
-mutator methods.</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="building-of-the-code-andortree-code"><a class="link" href="#building-of-the-code-andortree-code">Building of the <code>AndOrTree</code></a></h6>
-<div class="paragraph">
-<p>As mentioned above, we use the <code>prereqTree</code> attribute in order to build the
-tree. An example of a processable json string is as such:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>"prereqTree": {
-    "and": [
-        {
-            "or": [
-                "CD1111",
-                "XY2222"
-            ]
-        },
-        "EF3333"
-    ]
-}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This can be read as:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>To take AB1234, you require...
- |
- └ all of
-   ├── one of
-   |   ├─ "CD1111"
-   |   └─ "XY2222"
-   └─ "EF3333"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This means that to take the fictional course <code>AB1234</code>, a user would have to
-complete <code>EF3333</code>, <strong>and</strong> either <code>CD1111</code> or <code>XY2222</code>.</p>
-</div>
-<div class="paragraph">
-<p>The <code>buildTree()</code> method takes in the <code>json</code> string as an input. The Jackson
-API uses this string to create a root <code>JsonNode</code> object, and the tree is built
-recursively from the root. The sequence diagram of the tree building process is
-shown below:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ryanytan-AndOrSequenceDiagramSimplified.png" alt="ryanytan AndOrSequenceDiagramSimplified">
-</div>
-<div class="title">Figure 30. buildTree() Sequence Diagram</div>
-</div>
-<div class="paragraph">
-<p>The class looks at each node - checks if its is an <code>Object</code>, <code>Array</code> or a
-<code>String</code>, and does the appropriate actions and function calls.</p>
-</div>
-<div class="paragraph">
-<p>Other ways of building the tree can be easily extended by overloading the
-<code>buildTree</code> method. However, this will not override the immutable properties of
-the tree.</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="dependency-on-course"><a class="link" href="#dependency-on-course">Dependency on Course</a></h6>
-<div class="paragraph">
-<p><code>AndOrTree</code> posed some difficulty for us, in the decision to couple the
-implementation of <code>AndOrTree</code> with <code>Course</code>. This is because the tree will
-only ever be used by the Course Planner within the program, and thus it is
-not required to implement the tree using generics. However, this would increase
-coupling between <code>AndOrTree</code> and <code>Course</code>, which is unfavourable for testing.</p>
-</div>
-<div class="paragraph">
-<p>Below are our considerations in implementing this data structure:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Option 1: Couple <code>AndOrTree</code> to <code>Course</code></strong></p>
-<div class="paragraph">
-<p>This means that there is no need to pass any mapper function into the
-<code>buildTree()</code> method as the class does not need to know how to map from <code>String</code>
-to <code>R</code>. This also makes handling mapping exceptions easier as they can be
-handled directly by <code>Course</code> instead of by <code>AndOrTree</code>.</p>
-</div>
-<div class="paragraph">
-<p>However, this increases coupling between the tree and <code>Course</code>, resulting in
-the correctness of the <code>AndOrTree</code> class being dependent on <code>Course</code> as there
-is no way to stub it. The tree will also only be locked to <code>Course</code> and is
-non-extendable.</p>
-</div>
-</li>
-<li>
-<p><strong>Option 2: Using Generics</strong></p>
-<div class="paragraph">
-<p>This makes the tree reusable in the future. The tree will also
-be able to store any data-type which allows for easier unit testing, since
-it won&#8217;t be dependent on the correctness of <code>Course</code>. Instead well-tested
-libraries such as Java&#8217;s <code>String</code> API can be used to test the class instead.</p>
-</div>
-<div class="paragraph">
-<p>However, due to how the tree is built (i.e from a json string), a
-mapper function must be passed into the <code>buildTree()</code> method to process
-the string in each node to the generic type of the tree. The function is of
-the type <code>Function&lt;String, ? extends R&gt;</code>, for a tree of type <code>R</code>.</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect5">
-<h6 id="our-thoughts-3"><a class="link" href="#our-thoughts-3">Our Thoughts</a></h6>
-<div class="paragraph">
-<p>Due to its benefits far outweighing its disadvantages, we picked the second
-choice of using generics. While extendability and re-usability of the class is
-a nice bonus, the decrease in coupling and increase in testability was the
-deciding factor in choosing between these two approaches. Furthermore, behavior
-of the building of the tree can be easily extended by either inheritance, or
-overloading of the <code>buildTree()</code> method.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.4. Implementation</a></h4>
-<div class="paragraph">
-<p>With the significant individual components covered, the process of the
-Course Planner can be discussed. We will be covering the <code>check</code> command
-since the rest of the commands are either simple insert and delete operations
-on a list, or retrieving data from a file. This command allows us to see the
-full extent of back-end to front-end operations on the Course Planner.</p>
-</div>
-<div class="paragraph">
-<p>The <code>check</code> operation allows users to check if they are able to take a certain
-course. Whether the user can take the course depends on the courses in their
-list. The following is the activity diagram of general overview of the process
-when the user types a <code>check</code> command.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ryanytan-CheckActivityDiagram.png" alt="TODO">
-</div>
-<div class="title">Figure 31. Check Command Activity Diagram</div>
-</div>
-<div class="paragraph">
-<p>Additionally, the following below shows the sequence diagram of how the
-program checks if the user satisfies the course&#8217;s prerequisites.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ryanytan-CheckCommandSequenceDiagram.png" alt="ryanytan CheckCommandSequenceDiagram">
-</div>
-<div class="title">Figure 32. CheckCommand Sequence Diagram</div>
-</div>
-<div class="paragraph">
-<p>The implementation in the back-end is quite similar to the other features, as
-seen in the similarities between the above sequence diagram and the one
-<a href="#Design-ArchitectureInteraction">under the Architecture section</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="finance-tracker-feature"><a class="link" href="#finance-tracker-feature">4.3. Finance Tracker feature</a></h3>
-<div class="sect3">
-<h4 id="overview-2"><a class="link" href="#overview-2">4.3.1. Overview</a></h4>
-<div class="paragraph">
-<p>The Finance Tracker feature allows the user to track their</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Purchases</p>
-</li>
-<li>
-<p>Monthly subscriptions (aka Installments)</p>
-</li>
-<li>
-<p>Total &amp; remaining spending</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The feature offers the user to view his purchases and installments in two
-separate lists, as well as be able to add, delete, find, edit these items.
-Furthermore, the feature keeps track of the overall spending by the user
-for the month, and if the user has set a limit, the feature tracks their
-remaining available spending.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="the-finance-tracker-model"><a class="link" href="#the-finance-tracker-model">4.3.2. The Finance Tracker Model</a></h4>
-<div class="paragraph">
-<p>The <code>FinanceTracker</code> class within the model provides an interface between the
-components of the feature and the updating of the overall model. Like other
-features, <code>Model</code> is associated with the finance tracker feature by
-implementing <code>FinanceTrackerModel</code>, from which <code>Model</code> implements.</p>
-</div>
-<div class="paragraph">
-<p>Some of the more significant methods within the <code>FinanceTracker</code> are shown
-below:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Model#addPurchase(Purchase)</code> - Adds a single use payment to the top of the
-list</p>
-</li>
-<li>
-<p><code>Model#deletePurchase(Index)</code> - Deletes single use payment at that index</p>
-</li>
-<li>
-<p><code>Model#addInstallment(Installment)</code> - Adds an installment</p>
-</li>
-<li>
-<p><code>Model#deleteInstallment(Index)</code> - Deletes installment at that index</p>
-</li>
-<li>
-<p><code>Model#hasSimilarInstallment(Installment)</code> - Checks for the existence of an
-installment with the same description in the finance tracker</p>
-</li>
-<li>
-<p><code>Model#setInstallment(Installment, Installment)</code> - Replaces an existing
-installment with a new installment</p>
-</li>
-<li>
-<p><code>Model#calculateTotalSpending()</code> - Calculates the total expenditure by the
-user for this month</p>
-</li>
-<li>
-<p><code>Model#calculateRemainingAmount()</code> - Calculates the remaining spending amount
-available to user</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The Finance Tracker feature closely follows the extendable OOP solution already
-implemented within AB3. In the Finance Tracker, the <code>Installment</code> objects and
-the <code>Purchase</code> objects manage most aspects related to this feature. These
-objects are stored in their respective <code>ObservableList</code> - <code>InstallmentList</code>
-and <code>PurchaseList</code>, which provide an abstraction with <code>add</code>, <code>delete</code>, and
-<code>set</code> operations that are called by <code>FinanceTracker</code> and its model.</p>
-</div>
-<div class="paragraph">
-<p>Shown below is the class diagram for the Finance Tracker.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ModelFinanceTrackerClassDiagram.png" alt="ModelFinanceTrackerClassDiagram">
-</div>
-<div class="title">Figure 33. Finance Tracker Class Diagram</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="finance-tracker-components"><a class="link" href="#finance-tracker-components">4.3.3. Finance Tracker Components</a></h4>
-<div class="paragraph">
-<p>As mentioned above, the Finance Tracker contains <code>Installment</code> and <code>Purchase</code>
-objects.</p>
-</div>
-<div class="sect4">
-<h5 id="installments"><a class="link" href="#installments">Installments</a></h5>
-<div class="paragraph">
-<p>Installments are monthly subscriptions added by the user to the Finance
-Tracker and are stored in an <code>InstallmentList</code>. The current codebase requires
-that all installments <strong>must</strong> have the following <strong>non-nullable</strong> attributes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>InstallmentDescription</code></p>
-</li>
-<li>
-<p><code>InstallmentMoneyPaid</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="purchases"><a class="link" href="#purchases">Purchases</a></h5>
-<div class="paragraph">
-<p>Purchases are single use payments added by the user to the Finance Tracker
-and are stored in a <code>PurchaseList</code>. The current codebase requires that all
-purchases <strong>must</strong> have the following <strong>non-nullable</strong> attributes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>PurchaseDescription</code></p>
-</li>
-<li>
-<p><code>PurchaseMoneySpent</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="feature-details-2"><a class="link" href="#feature-details-2">4.3.4. Feature Details</a></h4>
-<div class="paragraph">
-<p>The application should be able to add and delete both types of objects.
-Furthermore, it should be able to find specific purchases and allow editing of
-installments by their index in the <code>InstallmentList</code>.</p>
-</div>
-<div class="paragraph">
-<p>We will be focusing on the editing of installments.</p>
-</div>
-<div class="sect4">
-<h5 id="editing-an-installment"><a class="link" href="#editing-an-installment">Editing an installment</a></h5>
-<div class="paragraph">
-<p>The user has to specify the index of the installment he wishes
-to edit, as well as any of the fields he wishes to change. If the index does
-not exist, the system will inform the user of the error. As long as the
-fields provided by the user to be edited are valid (prefixed with "d/" and
-"a/"), the correct installment will be accurately edited. This is
-reflected in the Activity Diagram below.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-An index is considered invalid if the numerical value provided is less
-than or equal to zero, or greater than the largest index in <code>InstallmentList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EditInstallmentActivityDiagram.png" alt="EditInstallmentActivityDiagram">
-</div>
-<div class="title">Figure 34. Activity Diagram for edit-install command</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="command-execution"><a class="link" href="#command-execution">4.3.5. Command Execution</a></h4>
-<div class="paragraph">
-<p>For brevity&#8217;s sake, we will illustrate only 2 specific commands and its
-executions on model. These two commands are the <code>edit-install</code> and the
-<code>delete-paid</code> commands.</p>
-</div>
-<div class="sect4">
-<h5 id="command-code-edit-install-code"><a class="link" href="#command-code-edit-install-code">Command <code>edit-install</code></a></h5>
-<div class="paragraph">
-<p>The following sequence diagram illustrates how an
-<code>Installment</code> is edited when a user types in a <code>edit-install</code> command:</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The
-<code>FinanceTracker</code> is initialized. Assume that a valid <code>Installment</code> has already
-been added to the <code>InstallmentList</code> in <code>FinanceTracker</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes
-<code>edit-install 1 d/student-price Spotify subscription a/7.50</code>
-command to edit both the description and money spent on the existing
-Installment in the FinanceTracker. An <code>EditInstallmentCommandParser</code> object is
-created and its <code>#parse</code> method is called. The parse method returns a new
-<code>EditInstallmentCommand</code> object.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. The <code>EditInstallmentCommand</code> object is executed on the model. The
-<code>EditInstallmentCommand#execute</code> method is called, and this will create a new
-<code>Installment</code> object from the existing installment but with all the edited
-fields changed. In this method,
-<code>Model#setInstallment(Installment, Installment)</code> method is called.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <code>EditInstallmentCommand#execute</code> method first checks for whether the
-index is within the size of InstallmentList.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
-methods in the <code>FinanceTracker</code> class. As such, the
-<code>FinanceTracker#setInstallment(Installment, Installment)</code> method is called.
-This in turns calls the
-<code>#InstallmentList#setInstallment(Installment, Installment)</code> method.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. This <code>InstallmentList#setInstallment(Installment, Installment)</code>
-method first finds the <code>Installment</code> based on its corresponding index. Then,
-it sets the edited installment at the index found earlier.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-TLDR: The calling of the <code>#setInstallment</code> method at the <code>Model</code>
-level triggers a cascading series of <code>#setInstallment</code> method which culminates
-in target installment being edited with the corresponding fields.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/EditInstallmentSequenceDiagram.png" alt="EditInstallmentSequenceDiagram">
-</div>
-<div class="title">Figure 35. Sequence Diagram for edit-install command</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="command-code-delete-paid-code"><a class="link" href="#command-code-delete-paid-code">Command <code>delete-paid</code></a></h5>
-<div class="paragraph">
-<p>The following sequence diagram illustrates how a
-<code>Purchase</code> is deleted when a user types in a <code>delete-paid</code> command:</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The
-<code>FinanceTracker</code> is initialized. Assume that a valid <code>Purchase</code> has already
-been added to the <code>PurchaseList</code> in <code>FinanceTracker</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete-paid 1</code> command to delete an existing
-Purchase in the FinanceTracker. An <code>RemovePaidCommandParser</code> object is
-created and its <code>#parse</code> method is called. The parse method returns a new
-<code>RemovePaidCommand</code> object.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. The <code>RemovePaidCommand</code> object is executed on the model. The
-<code>RemovePaidCommand#execute</code> method is called. In this method,
-<code>Model#deletePurchase(Index)</code> method is called.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <code>RemovePaidCommand#execute</code> method first checks for whether the
-index is within the size of PurchaseList.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
-methods in the <code>FinanceTracker</code> class. As such, the
-<code>FinanceTracker#deletePurchase(Index)</code> method is called.
-This in turns calls the`#PurchaseList#deletePurchase(Index)` method.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. This <code>PurchaseList#deletePurchase(Index)</code> method will then delete
-the corresponding purchase at the given index.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeletePurchaseSequenceDiagram.png" alt="DeletePurchaseSequenceDiagram">
-</div>
-<div class="title">Figure 36. Sequence Diagram for delete-paid command</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.6. Design Considerations</a></h4>
-<div class="paragraph">
-<p>There were several design choices that we had to consider for the
-implementation of the Finance Tracker feature.</p>
-</div>
-<div class="sect4">
-<h5 id="encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects"><a class="link" href="#encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects">Encapsulation of fields for <code>Installment</code> and <code>Purchase</code> objects.</a></h5>
-<div class="paragraph">
-<p>Given that the <code>Installment</code> objects and the <code>Purchase</code> objects manage most
-aspects related to the Finance Tracker feature, we had to consider how to
-properly build the objects and the fields within them. This was a decision
-that was made after much thinking as we had already begun implementing the
-skeleton of the feature.</p>
-</div>
-<div class="paragraph">
-<p>Below are our considerations in refactoring the implementation at that point
-in time:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Option 1: Encapsulate constituent objects in their own wrapper classes</strong></p>
-<div class="paragraph">
-<p>As mentioned above, <code>Installment</code> would contain <code>InstallmentDescription</code> and <code>InstallmentMoneyPaid</code>
-objects while <code>Purchase</code> would contain <code>PurchaseDescription</code> and
-<code>PurchaseMoneySpent</code> objects.</p>
-</div>
-<div class="paragraph">
-<p>This would increase OOP, which would provide a clearer modular structure to
-hide implementation details. Furthermore, this would also allow the objects to
-be re-used as they are more extensible, which is something we had to consider
-for subsequent features.</p>
-</div>
-<div class="paragraph">
-<p>In further development of our application, increasing OOP would also allow
-developers to maintain the application more easily and hopefully aid in
-quicker development since the code is easier to read and maintain.</p>
-</div>
-<div class="paragraph">
-<p>However, as we had already begun implementing some basic methods, making
-this decision resulted in a steep increase in code as everything had to
-abstracted into separate classes.</p>
-</div>
-</li>
-<li>
-<p><strong>Option 2: Using primitive data types</strong></p>
-<div class="paragraph">
-<p>On one hand, our team thought that since the <code>Installment</code> and <code>Purchase</code>
-objects were not extremely complex, we could go without further encapsulation.
-Furthermore, this would have been the easier alternative at the time
-as it was the original implementation.</p>
-</div>
-<div class="paragraph">
-<p>However, we decided that in the long-term vision of the application to
-continue to be developed, we should increase OOP as much as possible.</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="our-thoughts-4"><a class="link" href="#our-thoughts-4">Our Thoughts</a></h5>
-<div class="paragraph">
-<p>In general, our decision was based primarily on following good software
-engineering principles and providing the ability to allow for better
-understanding and maintenance of our code base in the future. Thus,
-we went with the first option.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="planner-feature"><a class="link" href="#planner-feature">4.4. Planner Feature</a></h3>
-<div class="sect3">
-<h4 id="overview-3"><a class="link" href="#overview-3">4.4.1. Overview</a></h4>
-<div class="paragraph">
-<p>The planner feature in Jarvis enables users to easily organise and manage
-their different tasks in school. Users will be able to keep track of tasks
-they have done, tasks they have yet to do, and sort these tasks by
-different attributes like task type and priority levels.</p>
-</div>
-<div class="paragraph">
-<p>There are three types of tasks in the planner:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Todo</code>: Tasks with a description only</p>
-</li>
-<li>
-<p><code>Event</code>: Tasks with a start and end date</p>
-</li>
-<li>
-<p><code>Deadline</code>: Tasks with a due date</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Users can <code>Tag</code> these tasks to sort them into different categories, as well
-as add <code>Priority</code> and <code>Frequency</code> levels to them.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">4.4.2. Implementation</a></h4>
-<div class="paragraph">
-<p>The <code>Planner</code> contains a <code>TaskList</code>, which in turn, contains a number of tasks
-a user has. Each task has a <code>TaskType</code> and <code>Status</code> and may also have a <code>Priority</code> level,
-<code>Frequency</code> level and any number of <code>Tag</code> objects.</p>
-</div>
-<div class="paragraph">
-<p>A simple outline of the <code>Planner</code> can be seen below, in Figure 26.</p>
-</div>
-<div class="imageblock" style="text-align: left">
-<div class="content">
-<img src="images/ModelPlannerClassDiagram.png" alt="ModelPlannerClassDiagram">
-</div>
-<div class="title">Figure 37. Overview of the entire Planner</div>
-</div>
-<div class="paragraph">
-<p>The <code>Model</code> in Jarvis extends <code>PlannerModel</code> which facilitates all operations
-necessary to carry out commands by the user.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Model#getPlanner()</code>&#8201;&#8212;&#8201;Returns an instance of a <code>Planner</code>.</p>
-</li>
-<li>
-<p><code>Model#addTask(int zeroBasedIndex, Task task</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the
-planner at the specified <code>Index</code>.</p>
-</li>
-<li>
-<p><code>Model#addTask(Task t)</code>&#8201;&#8212;&#8201;Adds a <code>Task</code> to the <code>Planner</code>. Since no <code>Index</code>
-is specified, the <code>Task</code> is appended to the end of the <code>TaskList</code>.</p>
-</li>
-<li>
-<p><code>Model#deleteTask(Index index)</code>&#8201;&#8212;&#8201;Deletes the <code>Task</code> at the specified
-<code>Index</code> from the <code>Planner</code>.</p>
-</li>
-<li>
-<p><code>Model#deleteTask(Task t)</code>&#8201;&#8212;&#8201;Deletes the specified <code>Task</code> from the
-<code>Planner</code>.</p>
-</li>
-<li>
-<p><code>Model#size()</code>&#8201;&#8212;&#8201;Returns the total number of <code>Task</code> objects in the
-<code>Planner</code>.</p>
-</li>
-<li>
-<p><code>Model#hasTask(Task t)</code>&#8201;&#8212;&#8201;Checks if a given <code>Task</code> is already in the
-<code>Planner</code>.</p>
-</li>
-<li>
-<p><code>Model#markTaskAsDone(Index i)</code> - Changes the <code>Status</code> of a <code>Task</code> at the given
-<code>Index</code> from <code>DONE</code> to <code>NOT_DONE</code></p>
-</li>
-<li>
-<p><code>Model#getTasks()</code>&#8201;&#8212;&#8201;Returns the <code>TaskList</code> in the <code>Planner</code>.</p>
-</li>
-<li>
-<p><code>Model#getTask(Index index)</code> - Retrieves the <code>Task</code> at the specified <code>Index</code> of
-the <code>TaskList</code></p>
-</li>
-<li>
-<p><code>Model#updateFilteredTaskList(Predicate&lt;Task&gt; predicate)</code> - Updates the <code>FilteredList</code> in the
-<code>Planner</code> according to the given <code>Predicate</code>.</p>
-</li>
-<li>
-<p><code>Model#updateSchedule()</code> - Updates the <code>FilteredList</code> of <code>Task</code> objects whose dates coincide with
-the current date.</p>
-</li>
-<li>
-<p><code>Model#getUnfilteredTaskList()</code> - Returns an <code>ObservableList&lt;Task&gt;</code> of all the <code>Task</code> objects
-in the <code>Planner</code>.</p>
-</li>
-<li>
-<p><code>Model#getFilteredTaskList()</code> - Returns an <code>ObservableList&lt;Task&gt;</code> of all the <code>Task</code> objects in
-the <code>FilteredList</code>.</p>
-</li>
-<li>
-<p><code>Model#getTasksToday()</code> - Returns an unmodifiable view of the list of <code>Task</code> objects that coincide with
-the current day, backed by the <code>FilteredList</code> of <code>Planner</code></p>
-</li>
-<li>
-<p><code>Model#getTasksThisWeek()</code> - Returns an unmodifiable view of the list of <code>Task</code> objects that coincide with
-the current week, backed by the <code>FilteredList</code> of <code>Planner</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>One example of the interaction between the <code>Model</code> and commands for the <code>Planner</code> can be seen when the user
-executes a <code>pull-task</code> command.</p>
-</div>
-<div class="imageblock" style="text-align: left">
-<div class="content">
-<img src="images/PullTaskSequenceDiagram.png" alt="PullTaskSequenceDiagram">
-</div>
-<div class="title">Figure 38. Sequence Diagram for pull-task command</div>
-</div>
-<div class="paragraph">
-<p> <br></p>
-</div>
-<div class="paragraph">
-<p>In the figure above, <code>pull-task</code> will result in the filtered lists in the <code>Planner</code> to be updated according to
-the appropriate predicates. In this case, the predicate called will be <code>TaskPredicateMatchesPredicate</code> as the
-user had specified a <code>pull-task</code> according to the <code>Priority</code> levels of the <code>Task</code> objects.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.3. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-task-descriptions-in-a-task"><a class="link" href="#aspect-task-descriptions-in-a-task">Aspect: Task Descriptions in a Task</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Option 1 (Current choice):</strong> As a string attribute in <code>Task</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Intuitive, easy to implement, less code required</p>
-</li>
-<li>
-<p>Cons: Provides a lower level of abstraction, especially if an <code>edit-task</code>
-command is implemented</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Option 2:</strong> Building a separate <code>TaskDescription</code> class</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Higher level of abstraction</p>
-</li>
-<li>
-<p>Cons: More code, will take time to replace current methods that deal with
-String <code>TaskDes</code> directly</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Ultimately, we decided on Option 1 as there are no limitations on what a description of
-a <code>Task</code> should be (other than not <em>null</em>). Further more, there is no manipulation of the
-Task Description at the current stage of Jarvis, hence there is no real need to provide an
-additional layer of abstraction for it. If we do intend to continue developing Jarvis in
-the future, however, Option 2 might be a viable choice.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="ccatracker-feature"><a class="link" href="#ccatracker-feature">4.5. CcaTracker Feature</a></h3>
-<div class="sect3">
-<h4 id="overview-4"><a class="link" href="#overview-4">4.5.1. Overview</a></h4>
-<div class="paragraph">
-<p>The application is able to track Ccas. Each user can have multiple Ccas and
-each Cca can have multiple equipments needed. In addition, the application is
-able to track the progress of each person in their Ccas. Hence, there is a
-need to represent the CcaTracker as a list of Ccas on which the application
-can perform create, read, update and delete operations on each Cca.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="the-ccatracker-model"><a class="link" href="#the-ccatracker-model">4.5.2. The CcaTracker Model</a></h4>
-<div class="paragraph">
-<p>The <code>CcaTracker</code> class within the model provides an interface between the
-components of the feature and the updating of the overall model. Like other
-features, <code>Model</code> is associated with the cca tracker feature by
-implementing <code>CcaTrackerModel</code>, from which <code>Model</code> implements.</p>
-</div>
-<div class="paragraph">
-<p>Some of the more significant methods within the <code>CcaTracker</code> are shown
-below:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Model#containsCca(Cca cca)</code>&#8201;&#8212;&#8201;Checks if the <code>CcaTracker</code> contains the
-given cca.</p>
-</li>
-<li>
-<p><code>Model#addCca(Cca cca)</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#removeCca(Cca cca)</code>&#8201;&#8212;&#8201;Removes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#updateCca(Cca toBeUpdatedCca, Cca updatedCca)</code>&#8201;&#8212;&#8201;Updates a <code>Cca</code> in
-the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#getCcaTracker()</code>&#8201;&#8212;&#8201;Gets the <code>CcaTracker</code> instance.</p>
-</li>
-<li>
-<p><code>Model#getNumberOfCcas()</code>&#8201;&#8212;&#8201;Returns the number of <code>Ccas</code> currently in the
-<code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#getCca(Index index)</code>&#8201;&#8212;&#8201;Gets the <code>Cca</code> instance by its index in the
-<code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>Model#updateFilteredCcaList(Predicate&lt;Cca&gt; predicate)</code>&#8201;&#8212;&#8201;Updates the
-<code>FilteredCcaList</code> by passing it a predicate.</p>
-</li>
-<li>
-<p><code>Model#getFilteredCcaList()</code>&#8201;&#8212;&#8201;Returns an instance of the <code>FilteredCcaList</code></p>
-</li>
-<li>
-<p><code>Model#addProgress(Cca targetCca, CcaProgressList toAddCcaProgressList)</code> -
-Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
-</li>
-<li>
-<p><code>Model#increaseProgress(Index index)</code>&#8201;&#8212;&#8201;Increases the progress of the <code>Cca</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="cca-tracker-components"><a class="link" href="#cca-tracker-components">4.5.3. Cca Tracker components</a></h4>
-<div class="paragraph">
-<p>The class diagram for CcaTrackerModel is shown below:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ModelCcaTrackerClassDiagram.png" alt="ModelCcaTrackerClassDiagram">
-</div>
-<div class="title">Figure 39. CcaTracker Class Diagram</div>
-</div>
-<div class="paragraph">
-<p>As seen in the diagram above, The <code>CcaTracker</code> consists primarily of a single <code>CcaList</code> object. This <code>CcaList</code> object is
-essentially a wrapper around an <code>ObservableList</code> of <code>Cca</code> objects. Do note that the <code>CcaList</code> object can contain any
-number of <code>Cca</code> objects (including none).</p>
-</div>
-<div class="paragraph">
-<p>More interestingly, each <code>Cca</code> is made up of the following components, all of which are <strong>non-nullable</strong> attributes:</p>
-</div>
-<div class="sect4">
-<h5 id="ccaname"><a class="link" href="#ccaname">CcaName</a></h5>
-<div class="paragraph">
-<p>Each <code>CcaName</code> is essentially just a wrapper class around a string that is the <code>Cca</code> 's name.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="ccatype"><a class="link" href="#ccatype">CcaType</a></h5>
-<div class="paragraph">
-<p>Each <code>CcaType</code> is also just a wrapper class around a string that is the <code>Cca</code> 's type. Note that each <code>CcaType</code> is
-restricted to 1 of the 4 enum types:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>sport</p>
-</li>
-<li>
-<p>performingArt</p>
-</li>
-<li>
-<p>uniformedGroup</p>
-</li>
-<li>
-<p>club</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="equipmentlist"><a class="link" href="#equipmentlist">EquipmentList</a></h5>
-<div class="paragraph">
-<p>Each <code>EquipmentList</code> is implemented as an <code>ObservableList</code> of <code>Equipment</code> objects. Note that each <code>EquipmentList</code> can
-contain any number of <code>Equipment</code> objects (including none).</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="ccaprogress"><a class="link" href="#ccaprogress">CcaProgress</a></h5>
-<div class="paragraph">
-<p>The <code>CcaProgress</code> is a little more noteworthy. Each <code>CcaProgress</code> object contains a <code>CcaMilestoneList</code> object and a
-<code>CcaCurrentProgress</code> object. As with all the lists in the <code>CcaTracker</code> feature, the <code>CcaMilestoneList</code> object is
-implemented using an <code>ObservableList</code> as well. The <code>CcaCurrentProgress</code> class is merely a wrapper around an integer that
-tracks the exact <code>CcaMilestone</code> that the user is currently at.</p>
-</div>
-<div class="paragraph">
-<p>Now that we have an understanding of the underlying implementation of <code>CcaTracker</code>, lets take a closer look at the
-feature details.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="feature-details-3"><a class="link" href="#feature-details-3">4.5.4. Feature details</a></h4>
-<div class="paragraph">
-<p>CcaTracker has 7 specific commands that support the given operations to mutate
-the state of the <code>Model</code>. Each command is represented as seperate class:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>AddCcaCommand</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>DeleteCcaCommand</code>&#8201;&#8212;&#8201;Deletes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>EditCcaCommand</code>&#8201;&#8212;&#8201;Edits the selected <code>Cca</code> in the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>FindCcaCommand</code>&#8201;&#8212;&#8201;Finds a <code>Cca</code> from the <code>CcaTracker</code> based on the
-keywords specified .</p>
-</li>
-<li>
-<p><code>ListCcaCommand</code>&#8201;&#8212;&#8201;Lists all the <code>Cca</code> from the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>AddProgressCommand</code>&#8201;&#8212;&#8201;Adds a progress tracker to a cca.</p>
-</li>
-<li>
-<p><code>IncreaseProgressCommand</code>&#8201;&#8212;&#8201;Increments the progress level of a cca.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
-execution on model.</p>
-</div>
-<div class="paragraph">
-<p>The following activity diagram illustrates how a <code>Cca</code> 's
-progress is incremented when a user types in an <code>increase-progress</code> command:</p>
-</div>
-<div class="sect4">
-<h5 id="increasing-a-cca-s-progress"><a class="link" href="#increasing-a-cca-s-progress">Increasing a cca&#8217;s progress</a></h5>
-<div class="imageblock">
-<div class="content">
-<img src="images/ccatracker/IncreaseCcaProgressActivityDiagram.png" alt="IncreaseCcaProgressActivityDiagram">
-</div>
-<div class="title">Figure 40. Activity Diagram for increase-progress command</div>
-</div>
-<div class="paragraph">
-<p>Firstly , before any increasing of progress can take place, the user has to add a <code>Cca</code> to the <code>CcaTracker</code> through the
-<code>add-cca</code> command. The user then has to add a <code>CcaMilestoneList</code> to the <code>CcaTracker</code> through the <code>add-progress</code> command.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Note that the execution of each command as stated above branches off into different scenarios, all of which present
-themselves to the user in form of prompts in the user interface.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="command-execution-2"><a class="link" href="#command-execution-2">4.5.5. Command Execution</a></h4>
-<div class="paragraph">
-<p>The diagram below shows the sequence diagram of the increase-progress mechanism.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ccatracker/IncreaseProgressSequenceDiagram.png" alt="IncreaseProgressSequenceDiagram">
-</div>
-<div class="title">Figure 41. Sequence diagram for increase-progress command</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario of how the increase-progress mechanism
-behaves.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>CcaTracker</code>
-is initialized. Assume that a <code>Cca</code> has already been added to the Cca and that
-a progress tracker has already been set for that <code>Cca</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>increase-progress 1</code> command to increment the
-progress of the 1st <code>Cca</code> in the CcaTracker. A <code>IncreaseProgressCommandParser</code>
-object is created and its <code>#parse</code> method is called. The parse method returns
-a new <code>IncreaseProgressCommand</code> object.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. The <code>IncreaseProgressCommand</code> object is then executed on model. The
-<code>IncreaseProgressCommand#execute</code> method is called and in this method, the
-<code>Model#increaseProgress</code> method is called.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <code>IncreaseProgressCommand#execute</code> method first checks for whether the
-index is within the size of CcaList.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. As mentioned in section 2, the methods in <code>Model</code> merely mirrors the
-methods in the <code>CcaTracker</code> class. As such, the <code>CcaTracker#increaseProgress</code>
-method is called. This in turn calls the <code>CcaList#increaseProgress</code> method.
-This method first finds the <code>Cca</code> based on its corresponding index. Then, it
-calls the <code>Cca#increaseProgress</code> method.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. This in turn calls the <code>CcaProgress#increaseProgress</code> method that
-calls <code>CcaCurrentProgress#increaseProgress</code> method. At long last, the final
-<code>#increaseProgress</code> method in the <code>CcaCurrentProgress</code> instance is called and
-the <code>currentProgress</code> counter is incremented by 1.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-In short, the calling of the <code>#increaseProgress</code> method at the <code>CcaTracker</code> level
-triggers a cascading series of <code>#increaseProgress</code> methods which culminates in
-the <code>currentProgress</code> variable being incremented by 1.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.6. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-whether-to-have-subclasses-for-each-type-of-cca"><a class="link" href="#aspect-whether-to-have-subclasses-for-each-type-of-cca">Aspect: Whether to have subclasses for each type of cca.</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Option 1: Instantiate a <code>CcaProgress</code> object for
-  each <code>Cca</code></strong>
-This entails implementing <code>CcaProgess</code> class as consisting of a <code>CcaMilestoneList</code> and a <code>CcaCurrentProgess</code>. The</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Less code needed.</p>
-</li>
-<li>
-<p>Cons: Less extensible as CcaProgress is now limited to what is essentially a list of strings.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Option 2: Implement <code>CcaProgress</code> as a parent class.</strong>
-This entails creating classes such as SportProgress/PerformingArtsProgress that extend from CcaProgress for each type
-of <code>Cca</code>. Such an implementation can be represented using the class diagram below:</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ccatracker/AlternativeCcaProgressClassDiagram.png" alt="AlternativeCcaProgressClassDiagram">
-</div>
-<div class="title">Figure 42. Class diagram showing the alternative implementation of CcaProgress.</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easier to extend functionality for each type of cca.</p>
-</li>
-<li>
-<p>Cons: Does not significantly extend functionality for this version of
-Jarvis.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="our-thoughts-5"><a class="link" href="#our-thoughts-5">Our Thoughts</a></h5>
-<div class="paragraph">
-<p>After much consideration, we have decided to implement <code>CcaProgress</code> as per option 1. This is because we wish to afford
-the user the flexibility to set whichever milestones they wish to in their Cca.</p>
-</div>
-<div class="paragraph">
-<p>Option 2 would entail hardcoding a certain type of <code>CcaMilestone</code> for each type of <code>CcaProgress</code>. For example,
-each <code>UniformedGroupProgress</code> might have included a series of <code>CcaMilestoneRanks</code>, where the user can set each
-CcaMilestoneRanks to be ranks such as Private, Lance Corporal, Corporal, Sergeant etc. Then, the
-<code>UniformedGroupProgress</code> could have individualised attributes such as types of awards etc.</p>
-</div>
-<div class="paragraph">
-<p>However, in light of the fact that Jarvis is a CLI application, it would have been extremely cumbersome for the user to
-type the myriad number of options.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-whether-to-use-observable-list-for-code-ccaprogresslist-code"><a class="link" href="#aspect-whether-to-use-observable-list-for-code-ccaprogresslist-code">Aspect: Whether to use observable list for <code>CcaProgressList</code></a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Option 1 : Implement CcaProgressList as an
-<code>ObservableList</code></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easier to manipulate for JavaFx.</p>
-</li>
-<li>
-<p>Cons: Potentially complicated nesting when passing arguments to it as
-CcaProgressList is nested several classes within <code>Cca</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Option 2: Implement CcaProgressList as a normal <code>List</code> e.g.
-<code>ArrayList</code>.</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Does not require predicates to be passed in.</p>
-</li>
-<li>
-<p>Cons: Might be more complicated when rendering in Javafx.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="our-thoughts-6"><a class="link" href="#our-thoughts-6">Our Thoughts</a></h5>
-<div class="paragraph">
-<p>Implementing the <code>CcaProgressList</code> as an <code>ArrayList</code> would have been an easier option. However, the implementation of
-the <code>CcaProgressList</code> as an <code>ObservableList</code> proved to be a wiser choice as <code>Javafx</code> fully supports the manipulation and
-rendering of an <code>ObservableList</code>. Using an <code>ArrayList</code>  would have made the building of the ui thoroughly cumbersome.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
 <h3 id="logging"><a class="link" href="#logging">4.6. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class
@@ -2754,7 +2751,7 @@ location, logging level) through the configuration file (default:
 <p>NUS student</p>
 </li>
 <li>
-<p>plans his own modules</p>
+<p>plans his own courses</p>
 </li>
 <li>
 <p>prefers typing over mouse input</p>
@@ -2848,7 +2845,7 @@ tight budget</p>
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the Jarvis and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-set-tabs-in-finance-tracker" class="discrete">Use case: Set tabs in finance tracker</h3>
+<h3 id="use-case-set-tabs-in-finance-tracker" class="discrete">Use case: Set tabs in Finance Tracker</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2910,7 +2907,7 @@ tight budget</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. Jarvis shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -3045,42 +3042,7 @@ unit by a computer</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;
-&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -3099,7 +3061,7 @@ testers are expected to do more <em>exploratory</em> testing.
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3112,7 +3074,7 @@ testers are expected to do more <em>exploratory</em> testing.
 <li>
 <p>Double-click the jar file</p>
 <div class="paragraph">
-<p>Expected: Shows the GUI with a set of sample data in every feature. The window
+<p><strong>Expected</strong>: Shows the GUI with a set of sample data in every feature. The window
 size may not be optimal</p>
 </div>
 </li>
@@ -3128,8 +3090,10 @@ size may not be optimal</p>
 location. Close the window.</p>
 </li>
 <li>
-<p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location is retained.</p>
+<p>Re-launch the app by double-clicking the jar file.</p>
+<div class="paragraph">
+<p><strong>Expected</strong>: The most recent window size and location is retained.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -3143,9 +3107,11 @@ Expected: The most recent window size and location is retained.</p>
 program, such as <code>add-task</code> or <code>add-course</code>. Close the window.</p>
 </li>
 <li>
-<p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The app should re-launch into the same state as when it was
+<p>Re-launch the app by double-clicking the jar file.</p>
+<div class="paragraph">
+<p><strong>Expected</strong>: The app should re-launch into the same state as when it was
 closed.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -3154,7 +3120,7 @@ closed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-data-from-a-list"><a class="link" href="#deleting-data-from-a-list">G.2. Deleting Data from a list</a></h3>
+<h3 id="deleting-data-from-a-list"><a class="link" href="#deleting-data-from-a-list">F.2. Deleting Data from a list</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3166,14 +3132,18 @@ closed.</p>
 tasks in the list.</p>
 </li>
 <li>
-<p>Test case: <code>delete-task 1</code><br>
-Expected: First task is deleted from the list. Details of the deleted
+<p>Test case: <code>delete-task 1</code></p>
+<div class="paragraph">
+<p><strong>Expected</strong>: First task is deleted from the list. Details of the deleted
 contact shown in the status message.</p>
+</div>
 </li>
 <li>
-<p>Test case: <code>delete-task 0</code><br>
-Expected: No task is deleted. Error details shown in the result display.
+<p>Test case: <code>delete-task 0</code></p>
+<div class="paragraph">
+<p><strong>Expected</strong>: No task is deleted. Error details shown in the result display.
 Status bar remains the same.</p>
+</div>
 </li>
 <li>
 <p>Other incorrect delete commands to try:</p>
@@ -3201,7 +3171,7 @@ Status bar remains the same.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3266,4 +3236,4 @@ made, the program will generate a data files in <code>./data/</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:48:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:36:27 UTC</div></div></div></body></html>
