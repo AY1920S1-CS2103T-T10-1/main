@@ -166,16 +166,16 @@ component.</p>
 exposes its functionality to the rest of the application.</p>
 </div>
 <div class="sect3">
-<h4 id="architecture-interactions-between-components"><a class="link" href="#architecture-interactions-between-components">3.1.1. Architecture: Interactions between Components</a></h4>
+<h4 id="Design-ArchitectureInteraction"><a class="link" href="#Design-ArchitectureInteraction">3.1.1. Architecture: Interactions between Components</a></h4>
 <div class="paragraph">
-<p>The sequence diagram below shows how the components interact with each other
-for the scenario where the user issues the command <code>delete-task 1</code>.</p>
+<p>The sequence diagram below shows how the components interact with each
+other for the scenario where the user issues the command <code>delete-cca 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+<img src="images/JarvisArchitectureSequenceDiagram.png" alt="JarvisArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 2. Component interactions for <code>delete-task 1</code> command</div>
+<div class="title">Figure 2. Component interactions for <code>delete-cca 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -187,7 +187,8 @@ for the scenario where the user issues the command <code>delete-task 1</code>.</
 <div class="paragraph">
 <p>The UI component defines the user-viewable part of the application. It consists
 of a <code>MainWindow</code> made up of parts, such as the <code>StatusBarFooter</code>, <code>CommandBox</code>
-and <code>HelpWindow</code>. Every part inherits from the abstract class <code>UiPart</code>. Shown
+and <code>HelpWindow</code>. Each individual feature of Jarvis inherits from the <code>View</code> class, which in turn inherits from the
+abstract class <code>UiPart</code>. Every other non-feature related part inherits from the abstract class <code>UiPart</code>. Shown
 below is the structure of the UI component.</p>
 </div>
 <div class="imageblock">
@@ -1354,7 +1355,7 @@ in <code>/modinfo</code> within <code>/resources</code> to be easily accessible 
 <div class="content">
 <pre>{
     "courseCode": "AB1234",
-    "courseCredit": "4",]
+    "courseCredit": "4",
     "description": "Course description for AB1234.",
     "faculty": "A Faculty in NUS",
     "fulfillRequirements": [ "AB2234" ],
@@ -1710,6 +1711,11 @@ program checks if the user satisfies the course&#8217;s prerequisites.</p>
 <img src="images/ryanytan-CheckCommandSequenceDiagram.png" alt="ryanytan CheckCommandSequenceDiagram">
 </div>
 <div class="title">Figure 32. CheckCommand Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>The implementation in the back-end is quite similar to the other features, as
+seen in the similarities between the above sequence diagram and the one
+<a href="#Design-ArchitectureInteraction">under the Architecture section</a>.</p>
 </div>
 </div>
 </div>
@@ -2340,6 +2346,14 @@ Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
 </ul>
 </div>
 <div class="paragraph">
+<p>The class diagram for CcaTrackerModel is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelCcaTrackerClassDiagram.png" alt="ModelCcaTrackerClassDiagram">
+</div>
+</div>
+<div class="paragraph">
 <p>CcaTracker has 7 specific commands that support the given operations to mutate
 the state of the <code>Model</code>. Each command is represented as seperate class:</p>
 </div>
@@ -2373,6 +2387,23 @@ keywords specified .</p>
 <p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
 execution on model. The following activity diagram illustrates how a <code>Cca&#8217;s
 progress is incremented when a user types in a `increase-progress</code> command:</p>
+</div>
+<div class="paragraph">
+<p>The diagram below is an activity diagram that illustrates the process of incrementing a Cca&#8217;s
+progress.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ccatracker/IncreaseCcaProgressActivityDiagram.png" alt="IncreaseCcaProgressActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The diagram below shows the sequence diagram of the increase-progress mechanism.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ccatracker/IncreaseProgressSequenceDiagram.png" alt="IncreaseProgressSequenceDiagram">
+</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how increase-progress mechanism
@@ -3096,4 +3127,4 @@ made, the program will generate a data files in <code>./data/</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 10:36:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:03:13 UTC</div></div></div></body></html>
