@@ -139,197 +139,33 @@ following examples in this <a href="https://github.com/mrnewguy/ped/issues">link
 <div class="paragraph">
 <p>We were put in charge of our own sections of the User Guide content while
 another member had styled and verified the cohesiveness of the User Guide as a
-whole. The following is a small excerpt of my section, which shows some commands of
-the <code>CcaTracker</code> feature in the User Guide:</p>
+whole. The following is a small excerpt of my section in the User Guide. It shows the entire process of incrementing
+ a Cca&#8217;s progress for a Cca. This process consists of both the <code>add-progress</code> and <code>increase-progress</code> command in the
+ <code>CcaTracker</code> feature.</p>
 </div>
 <hr>
-</div>
-<div class="sect3">
-<h4 id="add-a-cca-code-add-cca-code"><a class="link" href="#add-a-cca-code-add-cca-code">Add a CCA: <code>add-cca</code></a></h4>
-<div class="paragraph">
-<p>To start, we can add some CCAs to the CCA Tracker. You will need to specify
-the name of the cca and the type of the CCA.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add-cca n/NAME t/TYPE [e/EQUIPMENT]&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>The <code>types</code> of the CCA are limited to the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>performingArt</code></p>
-</li>
-<li>
-<p><code>sport</code></p>
-</li>
-<li>
-<p><code>club</code></p>
-</li>
-<li>
-<p><code>uniformedGroup</code></p>
-</li>
-</ul>
-</div>
-<div class="sect4">
-<h5 id="example"><a class="link" href="#example">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>add-cca n/Canoeing t/sport
-add-cca n/Piano t/performingArt e/piano e/musical score e/metronome
-add-cca n/Red cross t/uniformedGroup e/uniform e/first aid kit e/stretcher e/beret</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-a-cca-code-delete-cca-code"><a class="link" href="#delete-a-cca-code-delete-cca-code">Delete a CCA: <code>delete-cca</code></a></h4>
-<div class="paragraph">
-<p>New semester, new CCAs - deleting outdated ones is a breeze.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>delete-cca INDEX</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-2"><a class="link" href="#example-2">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>delete-cca 1</pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<code>INDEX</code> corresponds to the <strong>one based index</strong> shown on the list of Ccas under the Ccas tab. This also means that the
-index must exist within this list!
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="edit-a-cca-code-edit-cca-code"><a class="link" href="#edit-a-cca-code-edit-cca-code">Edit a CCA: <code>edit-cca</code></a></h4>
-<div class="paragraph">
-<p>If you have bought the latest tuner for your piano or some new running shoes, let <code>Jarvis</code>
-know so that the changes to your CCAs can be updated!</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>edit-cca INDEX { n/NAME | t/TYPE | e/EQUIPMENT&#8230;&#8203; | p/MILESTONE&#8230;&#8203; | l/PROGRESS-LEVEL }</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-3"><a class="link" href="#example-3">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>edit-cca 1 n/Piano t/performingArt e/piano e/musical score e/metronome e/tuner e/piano book
-edit-cca 2 n/Running e/shoes e/water bottle e/snack bar
-edit-cca 2 p/beginner p/intermediate p/advanced p/half-marathon p/full marathon p/ultramarathon l/5</pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Note that you will have to re-type each <code>EQUIPMENT</code> if you wish to add additional <code>EQUIPMENT</code> to the selected cca!
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-a-cca-code-list-cca-code"><a class="link" href="#list-a-cca-code-list-cca-code">List a CCA: <code>list-cca</code></a></h4>
-<div class="paragraph">
-<p>Lists all your CCAs in the CCA Tracker. Using <code>list-cca</code> while on another page of Jarvis will
-pull up the CCA Tracker tab.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>list-cca</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="find-a-cca-code-find-cca-code"><a class="link" href="#find-a-cca-code-find-cca-code">Find a CCA: <code>find-cca</code></a></h4>
-<div class="paragraph">
-<p>For a quick view of CCAs matching one or more keywords, <code>find-cca</code> will come in useful.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ug/find-cca.png" alt="find cca">
-</div>
-<div class="title">Figure 2. Display for find-cca</div>
-</div>
-<div class="paragraph">
-<p> <br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>find-cca KEYWORD&#8230;&#8203;</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-4"><a class="link" href="#example-4">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>find-cca swimming
-find-cca canoeing guitar</pre>
-</div>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="add-progress-levels-for-a-cca-code-add-progress-code"><a class="link" href="#add-progress-levels-for-a-cca-code-add-progress-code">Add progress levels for a CCA: <code>add-progress</code></a></h4>
 <div class="paragraph">
-<p>Often, we strive to reach certain milestones in our CCAs. For example, in learning the piano, you might be aiming to
+<p>Often, we strive to reach certain milestones in our CCAs. For example, in learning the swimming, you might be aiming to
 progress through the various grade levels available. With <code>add-progress</code>,
-<code>Jarvis</code> can help you set and keep track of your progress towards each milestone in each of your CCAs.</p>
+<code>Jarvis</code> can help you set and keep track of your progress towards each milestone in swimming.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-progress INDEX p/MILESTONE&#8230;&#8203;</code></p>
 </div>
-<div class="sect4">
-<h5 id="example-5"><a class="link" href="#example-5">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>add-progress 1 p/Grade 1 p/Grade 2 p/Grade 3 p/Grade 4 p/Grade 5 p/Grade 6 p/Grade 7 p/Grade 8 p/Diploma
-add-progress 2 p/LCP p/Corporal p/Sergeant p/Staff Sergeant p/Warrant Officer p/Senior Warrant Officer</pre>
-</div>
-</div>
-</div>
 </div>
 <div class="sect3">
-<h4 id="increment-progress-level-code-increment-progress-code"><a class="link" href="#increment-progress-level-code-increment-progress-code">Increment progress level: <code>increment-progress</code></a></h4>
+<h4 id="step-1"><a class="link" href="#step-1">Step 1</a></h4>
 <div class="paragraph">
-<p>Each time you have made progress towards any of your milestones, let <code>Jarvis</code> know! The progress bar for each CCA
-provides a clear view of how much closer you are to their respective milestones.</p>
+<p>Select a Cca which currently does not have a progress yet.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ug/increment-progress.png" alt="increment progress">
+<img src="../images/ccatracker/mrnewgy-progressNotSet.png" alt="mrnewgy progressNotSet">
 </div>
-<div class="title">Figure 3. Display for increment-progress</div>
-</div>
-<div class="paragraph">
-<p> <br></p>
-</div>
-<div class="paragraph">
-<p>In Figure 11 above, using <code>increment-progress</code> on Swimming will raise the progress percentage from 50% to
-62.5%.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>increment-progress INDEX</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-6"><a class="link" href="#example-6">Example</a></h5>
-<div class="listingblock">
-<div class="content">
-<pre>increment-progress 1</pre>
-</div>
+<div class="title">Figure 2. showing a <code>Cca</code> without a progress.</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -338,30 +174,58 @@ provides a clear view of how much closer you are to their respective milestones.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note that progress can only be incremented if <code>add-progress</code> has previously been executed on that particular Cca.
+This step assumes that you have already added a swimming <code>Cca</code> to the <code>CcaTracker</code>.
 </td>
 </tr>
 </table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="step-2"><a class="link" href="#step-2">Step 2</a></h4>
+<div class="paragraph">
+<p>Add a progress to the selected <code>Cca</code> using the <code>add-progress</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ccatracker/mrnewgy-progressAdded.png" alt="mrnewgy progressAdded">
+</div>
+<div class="title">Figure 3. showing a <code>Cca</code> with an added progress.</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="add-training-date-code-add-cca-code-v2-0"><a class="link" href="#add-training-date-code-add-cca-code-v2-0">Add training date: <code>add-cca</code> [v2.0]</a></h4>
+<h4 id="step-3"><a class="link" href="#step-3">Step 3</a></h4>
 <div class="paragraph">
-<p>Need a reminder on Cca trainings? Add training dates to each Cca. Note that the training date is an optional parameter.</p>
+<p>Increment the progress on the selected <code>Cca</code> using the <code>increment-progress</code> command.</p>
 </div>
-<div class="paragraph">
-<p>Format: <code>add-cca n/NAME t/TYPE [e/EQUIPMENT]&#8230;&#8203; [d/TRAINING DATE]&#8230;&#8203;</code></p>
-</div>
-<div class="sect4">
-<h5 id="example-7"><a class="link" href="#example-7">Example</a></h5>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre>add-cca n/Piano t/performingArt d/1/12/2019 d/7/12/2019</pre>
+<img src="../images/ccatracker/mrnewgy-progresIncremented.png" alt="mrnewgy progresIncremented">
 </div>
+<div class="title">Figure 4. showing a <code>Cca</code> with the progress incremented.</div>
+</div>
+<div class="paragraph">
+<p>Here is a more detailed explanation of each component in the <code>Progress Tracker</code> segment of each <code>Cca</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ccatracker/mrnewgy-detailedProgressDescription.png" alt="mrnewgy detailedProgressDescription">
+</div>
+<div class="title">Figure 5. detailed explanation of the Progress Tracker.</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that progress can only be incremented if <code>add-progress</code> has previously been executed on that particular Cca
+(see steps 1 and 2!)
+</td>
+</tr>
+</table>
 </div>
 <hr>
-</div>
 </div>
 <div class="sect3">
 <h4 id="contributions-to-developer-guide"><a class="link" href="#contributions-to-developer-guide">Contributions to Developer Guide</a></h4>
@@ -443,7 +307,7 @@ Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
 <div class="content">
 <img src="../images/ModelCcaTrackerClassDiagram.png" alt="ModelCcaTrackerClassDiagram">
 </div>
-<div class="title">Figure 4. CcaTracker Class Diagram</div>
+<div class="title">Figure 6. CcaTracker Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram above, The <code>CcaTracker</code> consists primarily of a single <code>CcaList</code> object. This <code>CcaList</code> object is
@@ -549,7 +413,7 @@ progress is incremented when a user types in an <code>increase-progress</code> c
 <div class="content">
 <img src="../images/ccatracker/IncreaseCcaProgressActivityDiagram.png" alt="IncreaseCcaProgressActivityDiagram">
 </div>
-<div class="title">Figure 5. Activity Diagram for increase-progress command</div>
+<div class="title">Figure 7. Activity Diagram for increase-progress command</div>
 </div>
 <div class="paragraph">
 <p>Firstly , before any increasing of progress can take place, the user has to add a <code>Cca</code> to the <code>CcaTracker</code> through the
@@ -579,7 +443,7 @@ themselves to the user in form of prompts in the user interface.
 <div class="content">
 <img src="../images/ccatracker/IncreaseProgressSequenceDiagram.png" alt="IncreaseProgressSequenceDiagram">
 </div>
-<div class="title">Figure 6. Sequence diagram for increase-progress command</div>
+<div class="title">Figure 8. Sequence diagram for increase-progress command</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how the increase-progress mechanism
@@ -674,7 +538,7 @@ of <code>Cca</code>. Such an implementation can be represented using the class d
 <div class="content">
 <img src="../images/ccatracker/AlternativeCcaProgressClassDiagram.png" alt="AlternativeCcaProgressClassDiagram">
 </div>
-<div class="title">Figure 7. Class diagram showing the alternative implementation of CcaProgress.</div>
+<div class="title">Figure 9. Class diagram showing the alternative implementation of CcaProgress.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -752,4 +616,4 @@ rendering of an <code>ObservableList</code>. Using an <code>ArrayList</code>  wo
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:09:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:54:53 UTC</div></div></div></body></html>
