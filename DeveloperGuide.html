@@ -2047,13 +2047,24 @@ culminates in target purchase being deleted from model.
 implementation of the Finance Tracker feature.</p>
 </div>
 <div class="sect4">
-<h5 id="aspect-encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects"><a class="link" href="#aspect-encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects">Aspect: Encapsulation of fields for <code>Installment</code> and <code>Purchase</code> objects.</a></h5>
-<div class="sect5">
-<h6 id="current-choice"><a class="link" href="#current-choice">Current choice</a></h6>
+<h5 id="encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects"><a class="link" href="#encapsulation-of-fields-for-code-installment-code-and-code-purchase-code-objects">Encapsulation of fields for <code>Installment</code> and <code>Purchase</code> objects.</a></h5>
 <div class="paragraph">
-<p>Our current choice was to encapsulate the constituent objects in <code>Installment</code>
-and <code>Purchase</code> objects in their own wrapper classes. As mentioned above,
-<code>Installment</code> would contain <code>InstallmentDescription</code> and <code>InstallmentMoneyPaid</code>
+<p>Given that the <code>Installment</code> objects and the <code>Purchase</code> objects manage most
+aspects related to the Finance Tracker feature, we had to consider how to
+properly build the objects and the fields within them. This was a decision
+that was made after much thinking as we had already begun implementing the
+skeleton of the feature.</p>
+</div>
+<div class="paragraph">
+<p>Below are our considerations in refactoring the implementation at that point
+in time:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Option 1: Encapsulate constituent objects in their own wrapper classes</strong></p>
+<div class="paragraph">
+<p>As mentioned above, <code>Installment</code> would contain <code>InstallmentDescription</code> and <code>InstallmentMoneyPaid</code>
 objects while <code>Purchase</code> would contain <code>PurchaseDescription</code> and
 <code>PurchaseMoneySpent</code> objects.</p>
 </div>
@@ -2071,23 +2082,23 @@ quicker development since the code is easier to read and maintain.</p>
 <div class="paragraph">
 <p>However, as we had already begun implementing some basic methods, making
 this decision resulted in a steep increase in code as everything had to
-abstracted into separate classes. Regardless, we still believed that the
-right decision was made as it made subsequent implementation easier.</p>
+abstracted into separate classes.</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="alternative"><a class="link" href="#alternative">Alternative</a></h6>
+</li>
+<li>
+<p><strong>Option 2: Using primitive data types</strong></p>
 <div class="paragraph">
-<p>The alternative would have been to leave the corresponding fields as
-primitive data types. This would have been the easier alternative at the time
-as it was the original implementation. Furthermore, our team thought that
-since the <code>Installment</code> and <code>Purchase</code> objects were not extremely complex,
-we could go without further encapsulation.</p>
+<p>On one hand, our team thought that since the <code>Installment</code> and <code>Purchase</code>
+objects were not extremely complex, we could go without further encapsulation.
+Furthermore, this would have been the easier alternative at the time
+as it was the original implementation.</p>
 </div>
 <div class="paragraph">
 <p>However, we decided that in the long-term vision of the application to
 continue to be developed, we should increase OOP as much as possible.</p>
 </div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect4">
@@ -2096,7 +2107,7 @@ continue to be developed, we should increase OOP as much as possible.</p>
 <p>In general, our decision was based primarily on following good software
 engineering principles and providing the ability to allow for better
 understanding and maintenance of our code base in the future. Thus,
-we went with the first choice.</p>
+we went with the first option.</p>
 </div>
 </div>
 </div>
@@ -3127,4 +3138,4 @@ made, the program will generate a data files in <code>./data/</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:31:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 11:34:41 UTC</div></div></div></body></html>
