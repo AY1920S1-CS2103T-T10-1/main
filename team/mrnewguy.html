@@ -96,8 +96,8 @@ the model, logic and ui components so that developers of the project could switc
 <div class="paragraph">
 <p>I also oversaw the changing of the graphical user interface layout from the original AB3 layout to our new layout. This
 new layout was chosen because we believed that the command box would be better suited to be placed at the bottom of
-the tabs rather than on top of it, as it allowed for the user to better see the changes to the UI as new commands are
-entered.
+the tabs rather than on top of it, as it allowed for the user to better visualise the changes to the UI as new commands
+are entered.
 <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/pull/323">#323</a></p>
 </div>
 </li>
@@ -105,9 +105,15 @@ entered.
 <p>Added the helpdesk box</p>
 <div class="paragraph">
 <p>In an attempt to streamline the user experience even further, I implemented
-the Helpdesk box. This serves as a mini 'user guide' to the user so that they will know whatever commands can be used
-for each feature.
+the Helpdesk box. This serves as a mini 'user guide' to the user so that they will know all the commands that can be
+used for each feature.
 <a href="https://github.com/AY1920S1-CS2103T-T10-1/main/pull/343">#343</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ccatracker/mrnewgy-helpdesk.png" alt="mrnewgy helpdesk">
+</div>
+<div class="title">Figure 2. showing the helpdesk that I implemented</div>
 </div>
 </li>
 </ul>
@@ -165,7 +171,7 @@ progress through the various grade levels available. With <code>add-progress</co
 <div class="content">
 <img src="../images/ccatracker/mrnewgy-progressNotSet.png" alt="mrnewgy progressNotSet">
 </div>
-<div class="title">Figure 2. showing a <code>Cca</code> without a progress.</div>
+<div class="title">Figure 3. showing a <code>Cca</code> without a progress.</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -189,7 +195,7 @@ This step assumes that you have already added a swimming <code>Cca</code> to the
 <div class="content">
 <img src="../images/ccatracker/mrnewgy-progressAdded.png" alt="mrnewgy progressAdded">
 </div>
-<div class="title">Figure 3. showing a <code>Cca</code> with an added progress.</div>
+<div class="title">Figure 4. showing a <code>Cca</code> with an added progress.</div>
 </div>
 </div>
 <div class="sect3">
@@ -201,7 +207,7 @@ This step assumes that you have already added a swimming <code>Cca</code> to the
 <div class="content">
 <img src="../images/ccatracker/mrnewgy-progresIncremented.png" alt="mrnewgy progresIncremented">
 </div>
-<div class="title">Figure 4. showing a <code>Cca</code> with the progress incremented.</div>
+<div class="title">Figure 5. showing a <code>Cca</code> with the progress incremented.</div>
 </div>
 <div class="paragraph">
 <p>Here is a more detailed explanation of each component in the <code>Progress Tracker</code> segment of each <code>Cca</code>.</p>
@@ -210,7 +216,7 @@ This step assumes that you have already added a swimming <code>Cca</code> to the
 <div class="content">
 <img src="../images/ccatracker/mrnewgy-detailedProgressDescription.png" alt="mrnewgy detailedProgressDescription">
 </div>
-<div class="title">Figure 5. detailed explanation of the Progress Tracker.</div>
+<div class="title">Figure 6. detailed explanation of the Progress Tracker.</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -282,7 +288,7 @@ Adds <code>CcaProgressList</code> to the target <code>Cca</code>.</p>
 <div class="content">
 <img src="../images/ModelCcaTrackerClassDiagram.png" alt="ModelCcaTrackerClassDiagram">
 </div>
-<div class="title">Figure 6. CcaTracker Class Diagram</div>
+<div class="title">Figure 7. CcaTracker Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram above, The <code>CcaTracker</code> consists primarily of a single <code>CcaList</code> object. This <code>CcaList</code> object is
@@ -317,33 +323,9 @@ feature details.</p>
 <h4 id="feature-details"><a class="link" href="#feature-details">Feature details</a></h4>
 <div class="paragraph">
 <p>CcaTracker has 7 specific commands that support the given operations to mutate
-the state of the <code>Model</code>. Each command is represented as seperate class:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>AddCcaCommand</code>&#8201;&#8212;&#8201;Adds a <code>Cca</code> to the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>DeleteCcaCommand</code>&#8201;&#8212;&#8201;Deletes a <code>Cca</code> from the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>EditCcaCommand</code>&#8201;&#8212;&#8201;Edits the selected <code>Cca</code> in the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>FindCcaCommand</code>&#8201;&#8212;&#8201;Finds a <code>Cca</code> from the <code>CcaTracker</code> based on the
-keywords specified .</p>
-</li>
-<li>
-<p><code>ListCcaCommand</code>&#8201;&#8212;&#8201;Lists all the <code>Cca</code> from the <code>CcaTracker</code>.</p>
-</li>
-<li>
-<p><code>AddProgressCommand</code>&#8201;&#8212;&#8201;Adds a progress tracker to a cca.</p>
-</li>
-<li>
-<p><code>IncreaseProgressCommand</code>&#8201;&#8212;&#8201;Increments the progress level of a cca.</p>
-</li>
-</ul>
+the state of the <code>Model</code>. Each command is represented as seperate class. They include the following classes:
+<code>AddCcaCommand</code>, <code>DeleteCcaCommand</code>, <code>EditCcaCommand</code>, <code>FindCcaCommand</code>, <code>ListCcaCommand</code>, <code>AddProgressCommand</code> and
+<code>IncreaseProgressCommand</code>.</p>
 </div>
 <div class="paragraph">
 <p>For brevity&#8217;s sake, we will illustrate only 1 specific command and its
@@ -359,7 +341,7 @@ progress is incremented when a user types in an <code>increase-progress</code> c
 <div class="content">
 <img src="../images/ccatracker/IncreaseCcaProgressActivityDiagram.png" alt="IncreaseCcaProgressActivityDiagram">
 </div>
-<div class="title">Figure 7. Activity Diagram for increase-progress command</div>
+<div class="title">Figure 8. Activity Diagram for increase-progress command</div>
 </div>
 <div class="paragraph">
 <p>Firstly , before any increasing of progress can take place, the user has to add a <code>Cca</code> to the <code>CcaTracker</code> through the
@@ -389,7 +371,7 @@ themselves to the user in form of prompts in the user interface.
 <div class="content">
 <img src="../images/ccatracker/IncreaseProgressSequenceDiagram.png" alt="IncreaseProgressSequenceDiagram">
 </div>
-<div class="title">Figure 8. Sequence diagram for increase-progress command</div>
+<div class="title">Figure 9. Sequence diagram for increase-progress command</div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how the increase-progress mechanism
@@ -484,7 +466,7 @@ of <code>Cca</code>. Such an implementation can be represented using the class d
 <div class="content">
 <img src="../images/ccatracker/AlternativeCcaProgressClassDiagram.png" alt="AlternativeCcaProgressClassDiagram">
 </div>
-<div class="title">Figure 9. Class diagram showing the alternative implementation of CcaProgress.</div>
+<div class="title">Figure 10. Class diagram showing the alternative implementation of CcaProgress.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -562,4 +544,4 @@ rendering of an <code>ObservableList</code>. Using an <code>ArrayList</code>  wo
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:06:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 15:25:40 UTC</div></div></div></body></html>
